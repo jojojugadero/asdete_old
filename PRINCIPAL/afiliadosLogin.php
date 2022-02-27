@@ -11,6 +11,7 @@
     <script>
 
         function volver() {
+            
             document.location.href="index.php";
         }
     </script>
