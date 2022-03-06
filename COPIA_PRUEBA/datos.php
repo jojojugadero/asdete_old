@@ -85,11 +85,50 @@
 		mysqli_close($conexion);
 	}
 
+	//Comprobamos que el nombre del SUPERADMIN sea correcto
+
+	function existeSuperAdmin($nombre){
+		$conexion = crearConexion("asdete");
+
+		$consulta = "SELECT * FROM superadmin WHERE nickname = '" . $nombre . "'";
+		
+		$resultado = mysqli_query($conexion, $consulta);
+
+		if (mysqli_num_rows($resultado) > 0) {
+			return true;
+			echo "El SUPERADMIN existe";
+		} else {
+			return false;
+			echo "El SUPERADMIN NO existe";
+		}
+
+		mysqli_close($conexion);
+	}
+
 	//Verificamos que el password del personal del sindicato sea correcto en base de datos
 	function verificaPassAdmin($nombre,$pass){
 		$conexion = crearConexion("asdete");
 
 		$consulta = "SELECT * FROM administradores WHERE nickname = '" . $nombre . "' and password = '" . $pass . "'";
+		
+		$resultado = mysqli_query($conexion, $consulta);
+
+		if (mysqli_num_rows($resultado) > 0) {
+			return true;
+			
+		} else {
+			return false;
+			
+		}
+
+		mysqli_close($conexion);
+	}
+
+	//Verificamos que el password del SUPERADMIN del sindicato sea correcto en base de datos
+	function verificaPassSuperAdmin($nombre,$pass){
+		$conexion = crearConexion("asdete");
+
+		$consulta = "SELECT * FROM superadmin WHERE nickname = '" . $nombre . "' and password = '" . $pass . "'";
 		
 		$resultado = mysqli_query($conexion, $consulta);
 

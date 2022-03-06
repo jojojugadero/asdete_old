@@ -17,18 +17,18 @@
 		// Si se ha enviado un nombre por el formulario
 		if (isset($nombre)){
 			// Si existe
-			if (existeAdmin($nombre) && verificaPassAdmin($nombre,$pass)) {
+			if (existeSuperAdmin($nombre) && verificaPassSuperAdmin($nombre,$pass)) {
 				// Creo una cookie con su nombre, para poderla comprobar más adelante.
 				session_start();
-                $_SESSION['personal_sesion'] ="personal_sesion";
-				setcookie("personal_cookie", $nombre, 1);
-				$url ="appPersonal.php";
+                $_SESSION['superadmin_sesion'] ="superadmin_sesion";
+				setcookie("superadmin_cookie", $nombre, 1);
+				$url ="appSuperAdmin.php";
 				header('Location: '.$url);
 			}else{
-				echo "Clave o usuario no validos";
+				echo "Clave o usuario no validos como -SUPERADMIN-";
 			}
 		}else{
-			echo "Usuario no encontrado;";
+			echo "Usuario no es SUPERADMIN";
 		}
 
 
