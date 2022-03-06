@@ -61,7 +61,7 @@
         <a href="index.php">Indice</a>
 
         <!––Formulario con los datos del personal ––>
-        <form action="logCompruebaPersonal.php" method="POST" id="creacion">
+        <form action="logCompruebaSuperAdmin.php" method="POST" id="creacion">
 
             <div align="center" style="margin-top:100px;">
                 <div class="perdiv">
