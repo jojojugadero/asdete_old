@@ -234,7 +234,7 @@ if(isset($_SESSION['personal_sesion']) == 'personal_sesion') {
   <p>&nbsp;</p>
 </form>
     </article>
-    <footer class="pie"><?php include "pie.php" ?></footer>
+    <footer class="pie"><?php include "VISTA/pie.php" ?></footer>
     
 
 </body>

@@ -11,7 +11,7 @@
     <!––Función en javascript, para ponerla en el "onclick()" para volver al indice ––>
         <script>
             function volver() {
-                document.location.href = "index.php";
+                document.location.href = "VISTA/index.php";
             }
         </script>
 </head>
@@ -90,7 +90,7 @@
         </form>
 
     </article>
-    <footer class="pie"><?php include "pie.php" ?></footer>
+    <footer class="pie"><?php include "VISTA/pie.php" ?></footer>
 
 </body>
 

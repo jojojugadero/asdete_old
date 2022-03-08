@@ -10,7 +10,7 @@
 </head>
 <?php
 
-include 'datos.php';
+include 'MODELO/BBDD/datos.php';
 
 session_start();
 

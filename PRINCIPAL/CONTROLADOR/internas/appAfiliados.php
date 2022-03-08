@@ -140,7 +140,7 @@ if(isset($_SESSION['afiliado_sesion']) == 'afiliado_sesion') {
   <p>&nbsp;</p>
 </form>
     </article>
-    <footer class="pie"><?php VISTA/include "pie.php" ?></footer>
+    <footer class="pie"><?php include "VISTA/pie.php" ?></footer>
     
 
 </body>

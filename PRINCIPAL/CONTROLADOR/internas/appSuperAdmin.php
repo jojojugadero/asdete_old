@@ -237,7 +237,7 @@ session_start();
   <p>&nbsp;</p>
 </form>
     </article>
-    <footer class="pie"><?php include "pie.php" ?></footer>
+    <footer class="pie"><?php include "VISTA/pie.php" ?></footer>
     
 
 </body>

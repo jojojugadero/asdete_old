@@ -66,7 +66,9 @@ if(isset($_SESSION['afiliado_sesion']) == 'afiliado_sesion') {
 
 
     </article>
-    <footer class="pie">FOOTER</footer>
+    <footer class="pie">
+    <?php include "VISTA/pie.php" ?>
+    </footer>
     
 
 </body>

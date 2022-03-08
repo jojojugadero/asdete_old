@@ -88,7 +88,7 @@
         </form>
 
     </article>
-    <footer class="pie"><?php include "pie.php" ?></footer>
+    <footer class="pie"><?php include "VISTA/pie.php" ?></footer>
 
 </body>
 
