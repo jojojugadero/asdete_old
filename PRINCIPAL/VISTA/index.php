@@ -7,7 +7,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Asdete</title>
    <!––Linkamos hoja de estilos ––>
-   <link rel="stylesheet" href="estilos.css">
+   <link rel="stylesheet" href="VISTA/css/estilos.css">
 </head>
 
 

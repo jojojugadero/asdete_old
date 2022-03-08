@@ -6,11 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <title>App Personal</title>
-    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="VISTA/css/estilos.css">
 </head>
 <?php
 
-include 'datos.php';
+include 'MODELO/BBDD/datos.php';
 
 session_start();
 
@@ -52,7 +52,7 @@ if(isset($_SESSION['afiliado_sesion']) == 'afiliado_sesion') {
 
 
     <header class="cabecera">
-      <?php include "cabecera.php" ?>
+      <?php include "VISTA/cabecera.php" ?>
     </header>
 
     <!––En la parte izquierda seleccionamos las empresas de una lista en HTML ––>
@@ -140,7 +140,7 @@ if(isset($_SESSION['afiliado_sesion']) == 'afiliado_sesion') {
   <p>&nbsp;</p>
 </form>
     </article>
-    <footer class="pie"><?php include "pie.php" ?></footer>
+    <footer class="pie"><?php VISTA/include "pie.php" ?></footer>
     
 
 </body>
