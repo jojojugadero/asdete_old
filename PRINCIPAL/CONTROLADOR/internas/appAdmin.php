@@ -76,23 +76,23 @@ if(isset($_SESSION['personal_sesion']) == 'personal_sesion') {
 
 
     <header class="cabecera">
-      <?php include "cabecera.php" ?>
+        <?php include "cabecera.php" ?>
     </header>
 
     <!––En la parte izquierda seleccionamos las empresas de una lista en HTML ––>
    <nav class="navega"><?php
 
-include 'VISTA\includes\administradores\navegaAdministradores.php';?>
+          include 'VISTA\includes\administradores\navegaAdministradores.php';?>
    </nav>
 
      <aside class="barra"><?php
 
-      include 'VISTA\includes\administradores\barraAdministradores.php';?>
+        include 'VISTA\includes\administradores\barraAdministradores.php';?>
    </aside>
 
 
     <article class="skynet">
-    <?php include 'VISTA\includes\administradores\articleAppAdmin.php';?>
+               <?php include 'VISTA\includes\administradores\articleAppAdmin.php';?>
     </article>
     <footer class="pie"><?php include "VISTA/pie.php" ?></footer>
     
