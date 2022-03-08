@@ -10,7 +10,7 @@
 
 <?php 
 
-		include "datos.php";
+		include "MODELO\BBDD\datos.php";
 
 		$nombre=$_POST['nombre'];
 		$pass=$_POST['clave'];
@@ -22,7 +22,7 @@
 				session_start();
                 $_SESSION['personal_sesion'] ="personal_sesion";
 				setcookie("personal_cookie", $nombre, 1);
-				$url ="appPersonal.php";
+				$url ="VISTA\includes\administradores\vistaAdmin.php";
 				header('Location: '.$url);
 			}else{
 				echo "Clave o usuario no validos";

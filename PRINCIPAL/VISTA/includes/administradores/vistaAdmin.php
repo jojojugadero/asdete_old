@@ -37,7 +37,7 @@
 <a href="index.php">Indice</a> > <a href="CONTROLADOR\login\adminLogin.php">Login</a>
 
 <!––Formulario para realizar todas las operaciones de base de datos––>
-<form name="formTabla" id="formTabla" href="appAdmin.php" method="post">
+<form name="formTabla" id="formTabla" href="CONTROLADOR\internas\appAdmin.php" method="post">
 
 <table class="estilo_tabla" width="50%" align="center" >
 <tr class="estilo_cab_tabla">
@@ -90,7 +90,7 @@
   <td><input value="<?php echo $swmodificar != 'S' ? '' :$afil_modi['direccion']; ?>" type='text' name='direccion' size='10' class='centrado'></td>
   <td>
 
-  
+
   <!––En este select recogemos las empresa de base de datos para selecionarlas si insertamos o modificamos ––>
     <select name='empresa' class='centrado'>
       <option value="">Seleccionar</option>

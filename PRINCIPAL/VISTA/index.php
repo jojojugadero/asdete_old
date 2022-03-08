@@ -55,10 +55,10 @@
       <div style="margin-top:200px;">
 
          <span class="boton-padding boton-afiliado1">
-            <button onclick="document.location.href='afiliadosLogin.php';" class="botafil" style="margin:5px;width:180px;padding:20px;font-size:28px;"><span>AFILIADOS</span></button>
+            <button onclick="document.location.href='CONTROLADOR\login\afiliadosLogin.php';" class="botafil" style="margin:5px;width:180px;padding:20px;font-size:28px;"><span>AFILIADOS</span></button>
          </span>
          <span class="boton-padding boton-afiliado1">
-            <button onclick="document.location.href='personalLogin.php';" class="botpers" style="margin:5px;width:180px;padding:20px;font-size:28px;"><span>PERSONAL</span></button>
+            <button onclick="document.location.href='CONTROLADOR\login\adminLogin.php';" class="botpers" style="margin:5px;width:180px;padding:20px;font-size:28px;"><span>PERSONAL</span></button>
          </span>
       </div>
 
