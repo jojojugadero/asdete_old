@@ -1,61 +1,9 @@
 <?php
 
-echo "<!––Migas de pan (breadcrumbs) ––>
-<a href="index.php">Indice</a> > <a href="CONTROLADOR\login\adminLogin.php">Login</a>
+echo "
 
-<!––Formulario para realizar todas las operaciones de base de datos––>
-<form name="formTabla" id="formTabla" href="appAdmin.php" method="post">
 
-<table class="estilo_tabla" width="50%" align="center" >
-<tr class="estilo_cab_tabla">
-  <th class="subtitulo" colspan="12"><h1><span >Gestión de afiliados</span></h1></th>
-</tr>
-<tr class="estilo_subcab_tabla" >
-  <td class="primera_fila">Id</td>
-  <td class="primera_fila">NIF</td>
-  <td class="primera_fila">Password</td>
-  <td class="primera_fila">Nombre</td>
-  <td class="primera_fila">Apellido 1</td>
-  <td class="primera_fila">Apellido 2</td>
-  <td class="primera_fila">Teléfono</td>
-  <td class="primera_fila">Email</td>
-  <td class="primera_fila">Dirección</td>
-  <td class="primera_fila">Empresa</td>
-  <td class="primera_fila">Modificar</td>
-  <td class="primera_fila">Eliminar</td>
-</tr> 
-
-<?php
-  //Comprobamos si hay registros
-    if (mysqli_num_rows($afiliados) == 0) {
-      echo '<tr>\n
-          <td colspan="11">No se han encontrado afiliados</td>
-         </tr>';
-    } else {
-      $num = 0;
-      //Si hay registros se recorren para mostar las filas
-      foreach($afiliados as $fila){
-        $empresa = getEmpresa($fila['id_empresa_fk']);
-        //Con este operador ternario damos estilo a cada de las lineas del formulario
-        $color_fila = $num%2 == 1 ? 'estilo_fila1_tabla':'estilo_fila2_tabla';
-        $num++;
-  ?>
-      <!––Mostramos los registros de base de datos ––>
-    <tr class="<?php echo $color_fila;?>" >
-      <td><?php echo $fila['id'] ?></td>
-      <td><?php echo $fila['nif'] ?></td>
-      <td><?php echo $fila['password'] ?></td>
-      <td><?php echo $fila['nombre'] ?></td>
-      <td><?php echo $fila['apellido1'] ?></td>
-      <td><?php echo $fila['apellido2'] ?></td>
-      <td><?php echo $fila['telefono'] ?></td>
-      <td><?php echo $fila['email'] ?></td>
-      <td><?php echo $fila['direccion'] ?></td>
-      <td><?php echo $empresa['nombre'] ?></td>
-      <!––Botones con las operaciones a seleccionar en javascript de modificar o borrar un registro existente ––>
-      <td class="bot"><input onclick="document.getElementById('swmodificar').value = 'S';document.getElementById('id').value = <?php echo $fila['id'] ?>;" type='submit' name='up' id='up' value='Actualizar'></td>
-      <td class='bot'><input onclick="document.getElementById('sweliminar').value = 'S';document.getElementById('id').value = <?php echo $fila['id'] ?>;" type='submit' name='del' id='del' value='Borrar'></td>
-    </tr>   
+      
 <?php
       }
   }
