@@ -14,39 +14,20 @@
 
     <!––Incluimos la cabecera ––>
         <header class="cabecera">
-            <?php include "cabecera.php" ?>
+        <?php include "VISTA\includes\afiliados\cabeceraAfiliados.php"?>
         </header>
 
         <!––En la parte izquierda seleccionamos las empresas de una lista en HTML ––>
-            <nav class="navega">
-                <p style="font-size:large;">Empresas del sector</p>
+        <nav class="navega">
+            <?php include "VISTA\includes\afiliados\navegaAfiliados.php"?>
 
-                <ul>
-                    <li class="li_sidebar"><a href="empresa1.php" class="enlace_sidebar">Empresa 1</a></li>
-                    <li class="li_sidebar"><a href="empresa2.php" class="enlace_sidebar">Empresa 2</a></li>
-                    <li class="li_sidebar"><a href="empresa3.php" class="enlace_sidebar">Empresa 3</a></li>
-                    <li class="li_sidebar"><a href="empresa4.php" class="enlace_sidebar">Empresa 4</a></li>
-                    <li class="li_sidebar"><a href="empresa5.php" class="enlace_sidebar">Empresa 5</a></li>
-                    <li class="li_sidebar"><a href="empresa6.php" class="enlace_sidebar">Empresa 6</a></li>
-                    <li class="li_sidebar"><a href="empresa7.php" class="enlace_sidebar">Empresa 7</a></li>
-                    <li class="li_sidebar"><a href="empresa8.php" class="enlace_sidebar">Empresa 8</a></li>
-                    <li class="li_sidebar"><a href="empresa9.php" class="enlace_sidebar">Empresa 9</a></li>
-                    <li class="li_sidebar"><a href="empresa10.php" class="enlace_sidebar">Empresa 10</a></li>
-                    <li class="li_sidebar"><a href="empresa11.php" class="enlace_sidebar">Empresa 11</a></li>
-                    <li class="li_sidebar"><a href="empresa12.php" class="enlace_sidebar">Empresa 12</a></li>
-                </ul>
+            
             </nav>
+            
             <aside class="barra">
-                <p style="font-size:large;">Contactos</p>
-                <!––En la parte derecha ponemos los contactos de la web con una lista en HTML ––>
-                    <ul>
-                        <li class="li_nav1">Teléfono</li>
-                        <li class="li_nav2">912345678</li>
-                        <li class="li_nav1">Email</li>
-                        <li class="li_nav2">admin@asdete.com</li>
-                        <li class="li_nav1">Dirección</li>
-                        <li class="li_nav2">C\ Asdete 123</li>
-                    </ul>
+            <!––En la parte derecha ponemos los contactos de la web con una lista en HTML ––>
+            <?php include "VISTA\includes\afiliados\barraAfiliados.php"?>
+               
             </aside>
 
 
