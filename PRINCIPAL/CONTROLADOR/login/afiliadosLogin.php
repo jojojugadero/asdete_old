@@ -59,7 +59,7 @@
         <a href="index.php">Indice</a>
 
         <!––Formulario que enviará datos para comprobar que el usuario y password estan correctos en base de datos ––>
-        <form action="logCompruebaafiliados.php" method="POST" id="creacion" >
+        <form action="CONTROLADOR/redirecciones/logCompruebaafiliados.php" method="POST" id="creacion" >
             
             <div align="center" style="margin-top:100px;">
                 <div class="afidiv" >
