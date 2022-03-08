@@ -70,6 +70,72 @@ if(isset($_SESSION['personal_sesion']) == 'personal_sesion') {
 
   //Si vamos a modificar el afiliado se recoge el afiliado por ID para su modificación
   $afil_modi = $swmodificar == 'S' ? getAfiliado($id) : '';
+
+  function llamaCabecera(){
+    
+
+      echo "<h1>ASDETE, la unión hace la fuerza...</h1>";
+
+      echo "<p><a href ='VISTA/index.php'>Volver</a></p>";
+
+      echo "<p><a href ='index.php'>VolverMal</a></p>";
+
+
+
+
+  }
+
+  function navegaAdministradores(){
+    echo "<p style="font-size:large;">Empresas del sector</p>
+
+<ul >
+   <li class="li_sidebar"><a href="empresa1.php" class="enlace_sidebar">Empresa 1</a></li>
+   <li class="li_sidebar"><a href="empresa2.php" class="enlace_sidebar">Empresa 2</a></li>
+   <li class="li_sidebar"><a href="empresa3.php" class="enlace_sidebar">Empresa 3</a></li>
+   <li class="li_sidebar"><a href="empresa4.php" class="enlace_sidebar">Empresa 4</a></li>
+   <li class="li_sidebar"><a href="empresa5.php" class="enlace_sidebar">Empresa 5</a></li>
+   <li class="li_sidebar"><a href="empresa6.php" class="enlace_sidebar">Empresa 6</a></li>
+   <li class="li_sidebar"><a href="empresa7.php" class="enlace_sidebar">Empresa 7</a></li>
+   <li class="li_sidebar"><a href="empresa8.php" class="enlace_sidebar">Empresa 8</a></li>
+   <li class="li_sidebar"><a href="empresa9.php" class="enlace_sidebar">Empresa 9</a></li>
+   <li class="li_sidebar"><a href="empresa10.php" class="enlace_sidebar">Empresa 10</a></li>
+   <li class="li_sidebar"><a href="empresa11.php" class="enlace_sidebar">Empresa 11</a></li>
+   <li class="li_sidebar"><a href="empresa12.php" class="enlace_sidebar">Empresa 12</a></li>
+</ul>";
+  }
+
+
+  function barraAdministradores (){
+
+    echo " <p style="font-size:large;">Contactos</p>
+               
+<ul>
+    <li class="li_nav1">Teléfono</li>
+    <li class="li_nav2">912345678</li>
+    <li class="li_nav1">Email</li>
+    <li class="li_nav2">admin@asdete.com</li>
+    <li class="li_nav1">Dirección</li>
+    <li class="li_nav2">C\ Asdete 123</li>
+</ul>";
+  }
+
+  function compruebaRegistrosAdmin(){
+  
+  //Comprobamos si hay registros
+    if (mysqli_num_rows($afiliados) == 0) {
+      echo '<tr>\n
+          <td colspan="11">No se han encontrado afiliados</td>
+         </tr>';
+    } else {
+      $num = 0;
+      //Si hay registros se recorren para mostar las filas
+      foreach($afiliados as $fila){
+        $empresa = getEmpresa($fila['id_empresa_fk']);
+        //Con este operador ternario damos estilo a cada de las lineas del formulario
+        $color_fila = $num%2 == 1 ? 'estilo_fila1_tabla':'estilo_fila2_tabla';
+        $num++;
+  
+  }
 ?>
 
 <body class="cuerpo_contenedor" >

@@ -19,25 +19,24 @@
 
 <body class="cuerpo_contenedor">
 
+<?php include "CONTROLADOR\internas\appAdmin.php";?>
 
 <!––Incluimos la cabecera ––>
 
-           <header class="cabecera">
-
-                        <?php include "VISTA\includes\afiliados\cabeceraAfiliados.php" ?>
-
-            </header>
-
+          <header class="cabecera">
+        <?php llamaCabecera(); ?>
+    </header>
 
     <!––En la parte izquierda seleccionamos las empresas de una lista en HTML ––>
-    <nav class="navega"><?php
+            <nav class="navega">
 
-      include 'VISTA\includes\administradores\navegaAdministradores.php';?>
+                <?php  navegaAdministradores();?>
 
-    </nav>
-   <aside class="barra"><?php
+   </nav>
 
-         include 'VISTA\includes\administradores\barraAdministradores.php';?>
+     <aside class="barra"><?php
+
+        barraAdministradores();?>
 
    </aside>
 
