@@ -1,0 +1,219 @@
+@import url("https://fonts.googleapis.com/css2?family=Public+Sans&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  height: 100%;
+}
+
+body {
+  font-family: "Public Sans", sans-serif;
+  font-size: 1.2rem;
+  min-height: 100%;
+}
+
+/*Creamos unos estilos para todos los hijos del body*/
+
+.cuerpo_contenedor > * {
+  box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
+  border-radius: 4px;
+  padding: 10px;
+  text-align: center;
+}
+
+.cabecera {
+  grid-area: cabecera;
+  background-color: #d3d3d3;
+}
+
+.navega {
+  grid-area: navega;
+  background-color: #d3d3d3;
+}
+
+.barra {
+  grid-area: barra;
+  background-color: #d3d3d3;
+}
+
+.skynet {
+  grid-area: skynet;
+  background-color: #f5f5f5;
+}
+
+.pie {
+  grid-area: pie;
+  background-color: #8c96a0;
+}
+
+/*Diseño responsive para telefonos*/
+.cuerpo_contenedor {
+  display: grid;
+  /*separamos elementos 10 pixeles*/
+  gap: 10px;
+
+  /*Creamos las areas que tendrá nuestro grid*/
+  grid-template-areas:
+    "cabecera" 100px
+    "navega" 50px
+    "skynet" auto
+    "barra" 100px
+    "pie" 100px;
+}
+
+/*Hacemos una media query para el diseño responsive en vista de  tablet*/
+
+@media (min-width: 600px) {
+  .cuerpo_contenedor {
+    grid-template:
+      "cabecera  cabecera" 100px
+      "navega  navega" 50px
+      "barra skynet" auto
+      "pie  pie" 100px /
+      200px auto;
+  }
+}
+
+@media (min-width: 900px) {
+  .cuerpo_contenedor {
+    grid-template:
+      "cabecera  cabecera cabecera" 100px
+      "navega  skynet barra" auto
+      "pie  pie pie" 100px /
+      200px auto 200px;
+  }
+}
+
+.divbar {
+  margin-left: 15px;
+  text-align: left;
+}
+.tabla {
+  padding: auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
+  margin-bottom: auto;
+}
+
+.botpers {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4682b4;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+.botafil {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #2e8b57;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.botpers:hover {
+  background-color: #151616;
+}
+
+.botpers:active {
+  background-color: #fc0a0a;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+.botafil:hover {
+  background-color: #101110;
+}
+
+.botafil:active {
+  background-color: #fc0a0a;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.boton-padding {
+  padding: 8px 16px !important;
+}
+.boton-afiliado1 {
+  color: #000 !important;
+}
+.boton-afiliado2 {
+  color: #fff !important;
+  background-color: #000 !important;
+}
+
+
+.perdiv {
+  background-color: #87cefa;
+  padding: 25px;
+  width: 500px;
+  border: black solid;
+}
+.afidiv {
+  background-color: #90EE90;
+  padding: 25px;
+  width: 500px;
+  border: black solid;
+}
+
+.estilo_tabla {
+  margin-top: 100px;
+  font-size: medium;
+  background-color: #000000;
+  box-shadow: 0px 10px 10px black;
+
+}
+.estilo_cab_tabla {
+  background-color: #87CEFA;
+ 
+}
+.estilo_subcab_tabla {
+  background-color: #ADD8E6;
+}
+.estilo_fila1_tabla {
+  background-color: #c0c0c0;
+}
+.estilo_fila2_tabla {
+  background-color: #f8f8ff;
+}
+.estilo_bottom_tabla {
+  background-color: #708090;
+}
+
+.enlace_sidebar {
+  color: black;
+  font-size:16px;
+  }
+  .enlace_sidebar:hover {
+  color:#059862;
+  }
+  .li_sidebar{
+    padding-top:10px;
+  }
+  .li_nav1 {
+    font-size:16px;
+    padding-top:10px;
+    list-style-type: none;
+    text-align:left;
+    }
+    .li_nav2 {
+      font-size:16px;
+      list-style-type: none;
+      text-align:left;
+      }
