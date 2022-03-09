@@ -11,7 +11,7 @@
     <!––Función en javascript, para ponerla en el "onclick()" para volver al indice ––>
         <script>
             function volver() {
-                document.location.href = "index.php";
+                document.location.href = "MVC_TOCAR\VISTA\index.php";
             }
         </script>
 </head>
@@ -21,7 +21,7 @@
 
 
 <!––Incluimos la cabecera ––>
-<header class="cabecera">
+<header class="MVC_TOCAR\VISTA\INCLUDES\cabecera.php">
       <?php include "cabecera.php" ?>
     </header>
 
@@ -58,10 +58,10 @@
 
 
     <article class="skynet">
-        <a href="index.php">Indice</a>
+        <a href="MVC_TOCAR\VISTA\index.php">Indice</a>
 
-        <!––Formulario con los datos del personal ––>
-        <form action="logCompruebaPersonal.php" method="POST" id="creacion">
+        <!––Formulario con los datos de los administradores ––>
+        <form action="MVC_TOCAR\CONTROLADOR\ADMINISTRADORES\logCompruebaAdmin.php" method="POST" id="creacion">
 
             <div align="center" style="margin-top:100px;">
                 <div class="perdiv">

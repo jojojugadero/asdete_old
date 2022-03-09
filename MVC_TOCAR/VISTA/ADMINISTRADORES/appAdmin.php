@@ -10,7 +10,7 @@
 </head>
 <?php
 
-include 'datos.php';
+include 'MVC_TOCAR\MODELO\datos.php';
 
 
 //Iniciamos sesión
@@ -18,10 +18,10 @@ session_start();
 
 //Comprobamos que la sesión es correcta y si es correcta se queda en la página se queda en la página y si no, nos redirige a index.php 
 if(isset($_SESSION['personal_sesion']) == 'personal_sesion') {
-    $url1 ="appPersonal.php";
-    //header('Location: '.$url1);
+    $url1 ="MVC_TOCAR\VISTA\ADMINISTRADORES\appAdmin.php";
+    header('Location: '.$url1);
   } else {
-    $url2 ="index.php";
+    $url2 ="C:\Users\Usuario\www\asdete\MVC_TOCAR\VISTA\index.php";
     header('Location: '.$url2);
   }
 
@@ -76,7 +76,7 @@ if(isset($_SESSION['personal_sesion']) == 'personal_sesion') {
 
 
     <header class="cabecera">
-      <?php include "cabecera.php" ?>
+      <?php include "MVC_TOCAR\VISTA\INCLUDES\cabecera.php" ?>
     </header>
 
     <!––En la parte izquierda seleccionamos las empresas de una lista en HTML ––>
@@ -113,10 +113,10 @@ if(isset($_SESSION['personal_sesion']) == 'personal_sesion') {
 
     <article class="skynet">
     <!––Migas de pan (breadcrumbs) ––>
-    <a href="index.php">Indice</a> > <a href="personalLogin.php">Login</a>
+    <a href="MVC_TOCAR\VISTA\index.php">Indice</a> > <a href="MVC_TOCAR\VISTA\ADMINISTRADORES\adminLogin.php">Login</a>
     
     <!––Formulario para realizar todas las operaciones de base de datos––>
-<form name="formTabla" id="formTabla" href="appPersonal.php" method="post">
+<form name="formTabla" id="formTabla" href="MVC_TOCAR\VISTA\AFILIADOS\appAfiliados.php" method="post">
   
   <table class="estilo_tabla" width="50%" align="center" >
     <tr class="estilo_cab_tabla">
