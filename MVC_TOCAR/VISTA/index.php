@@ -7,7 +7,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Asdete</title>
    <!––Linkamos hoja de estilos ––>
-   <link rel="stylesheet" href="estilos.css">
+   <link rel="stylesheet" href="MVC_TOCAR\VISTA\ESTILOS\estilos.css">
 </head>
 
 
@@ -15,7 +15,7 @@
 
 <!––Incluimos la cabecera ––>
 <header class="cabecera">
-      <?php include "cabecera.php" ?>
+      <?php include "MVC_TOCAR\VISTA\INCLUDES\cabecera.php" ?>
     </header>
 
     <!––En la parte izquierda seleccionamos las empresas de una lista en HTML ––>
@@ -55,16 +55,16 @@
       <div style="margin-top:200px;">
 
          <span class="boton-padding boton-afiliado1">
-            <button onclick="document.location.href='afiliadosLogin.php';" class="botafil" style="margin:5px;width:180px;padding:20px;font-size:28px;"><span>AFILIADOS</span></button>
+            <button onclick="document.location.href='MVC_TOCAR\VISTA\AFILIADOS\afiliadosLogin.php;" class="botafil" style="margin:5px;width:180px;padding:20px;font-size:28px;"><span>AFILIADOS</span></button>
          </span>
          <span class="boton-padding boton-afiliado1">
-            <button onclick="document.location.href='personalLogin.php';" class="botpers" style="margin:5px;width:180px;padding:20px;font-size:28px;"><span>PERSONAL</span></button>
+            <button onclick="document.location.href='MVC_TOCAR\VISTA\ADMINISTRADORES\adminLogin.php';" class="botpers" style="margin:5px;width:180px;padding:20px;font-size:28px;"><span>PERSONAL</span></button>
          </span>
       </div>
 
    </article>
    <!––Pie de la página con un include en PHP ––>
-   <footer class="pie"><?php include "pie.php" ?></footer>
+   <footer class="pie"><?php include "MVC_TOCAR\VISTA\INCLUDES\pie.php" ?></footer>
 
 </body>
 
