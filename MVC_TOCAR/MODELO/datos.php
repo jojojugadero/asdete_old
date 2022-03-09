@@ -13,7 +13,7 @@
 
 		return $conexion;
 	}
-
+	
 	//Verificamos el nombre del afiliado en base de datos
 
 	function existeUsuario($nombre){

@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Comprueba personal</title>
+	<title>Comprueba Afiliados</title>
 </head>
 
 <body>
@@ -14,7 +14,7 @@
 
 	//Incluimos la clase para gestión de la base de datos
 
-	include "datos.php";
+	include "MVC_TOCAR\MODELO\datos.php";
 
 	//Recogemos el nombre y el password del formulario 
 	$nombre = $_POST['nombre'];
@@ -34,17 +34,17 @@
 			// Creamos una cookie con su nombre.
 			setcookie("afiliado_cookie", $nombre, 1);
 			//Despues de crear la sesión y la cookie redirimos al usuario (si es correcto) a appAfiliados.php 
-			$url = "appAfiliados.php";
+			$url = "MVC_TOCAR\VISTA\AFILIADOS\appAfiliados.php";
 			header('Location: ' . $url);
 		} else {
 			//Si no mostramos un mensaje de no encontrado y un link a index
 			echo "Clave o usuario no validos";
-			echo "<a href='index.php'>Volver indice</a>";
+			echo "<a href='MVC_TOCAR\VISTA\index.php'>Volver indice</a>";
 		}
 	} else {
 		//Si no mostramos un mensaje de no encontrado y un link a index
 		echo "Usuario no encontrado;";
-		echo "<a href='index.php'>Volver indice</a>";
+		echo "<a href='MVC_TOCAR\VISTA\index.php'>Volver indice</a>";
 	}
 
 	?>

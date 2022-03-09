@@ -25,44 +25,4 @@
 	}
 
 
-    function eliminar($conexion, $id)
-    {
-
-        $sql = "DELETE FROM clientes WHERE nombre = '$id'";
-        mysqli_query($conexion, $sql);
-    }
-
-    function borrarCiudad($identificador) {
-		$DB = crearConexion("world");
-
-		$sql = "DELETE FROM city WHERE ID='" . $identificador . "'";
-
-		$result = mysqli_query($DB, $sql);
-
-		if ($result) {
-			return $result;
-		// Si no, enviamos un mensaje de error.
-		} else {
-			echo "Error en funcion borrarCiudad.";
-		}
-
-		mysqli_close($DB);
-	}
-
-    function anadirCiudad($nombre, $codigoPais, $distrito, $poblacion) {
-		$DB = crearConexion("world");
-
-		$sql = "INSERT INTO city (Name, CountryCode, District, Population) 
-				VALUES ('" . $nombre . "', '" . $codigoPais . "', '" . $distrito . "', '" . $poblacion . "')";  
-				// Mucho cuidado con las comillas que abren y cierran.
-
-		$result = mysqli_query($DB, $sql);
-
-		if ($result) {
-			return $result;
-		// Si no, enviamos un mensaje de error.
-		} else {
-			echo "Error en funcion anadirCiudad.";
-		}
-		mysqli_close($DB);
-	}
+    ?>

@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comprueba personal</title>
+    <title>Comprueba Administradores</title>
 </head>
 <body>
 
 <?php 
 
-		include "datos.php";
+		include "MVC_TOCAR\MODELO\datos.php";
 
 		$nombre=$_POST['nombre'];
 		$pass=$_POST['clave'];
@@ -22,7 +22,7 @@
 				session_start();
                 $_SESSION['personal_sesion'] ="personal_sesion";
 				setcookie("personal_cookie", $nombre, 1);
-				$url ="appPersonal.php";
+				$url ="MVC_TOCAR\VISTA\ADMINISTRADORES\appAdmin.php";
 				header('Location: '.$url);
 			}else{
 				echo "Clave o usuario no validos";
