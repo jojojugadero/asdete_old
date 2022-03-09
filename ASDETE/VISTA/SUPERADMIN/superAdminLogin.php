@@ -6,12 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Asdete</title>
-    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="ASDETE\VISTA\ESTILOS\estilos.css">
 
     <!––Función en javascript, para ponerla en el "onclick()" para volver al indice ––>
         <script>
             function volver() {
-                document.location.href = "index.php";
+                document.location.href = "ASDETE\VISTA\index.php";
             }
         </script>
 </head>
