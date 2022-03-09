@@ -22,7 +22,7 @@
 
 <!––Incluimos la cabecera ––>
 <header class="cabecera">
-      <?php include "cabecera.php" ?>
+      <?php include "ASDETE\VISTA\INCLUDES\cabecera.php" ?>
     </header>
 
 
@@ -58,10 +58,10 @@
 
 
     <article class="skynet">
-        <a href="index.php">Indice</a>
+        <a href="ASDETE\VISTA\index.php">Indice</a>
 
         <!––Formulario con los datos del personal ––>
-        <form action="logCompruebaSuperAdmin.php" method="POST" id="creacion">
+        <form action="ASDETE\CONTROLADOR\SUPERADMIN\logCompruebaSuperAdmin.php" method="POST" id="creacion">
 
             <div align="center" style="margin-top:100px;">
                 <div class="perdiv">
@@ -90,7 +90,7 @@
         </form>
 
     </article>
-    <footer class="pie"><?php include "pie.php" ?></footer>
+    <footer class="pie"><?php include "ASDETE\VISTA\INCLUDES\pie.php" ?></footer>
 
 </body>
 
