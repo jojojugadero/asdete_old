@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <title>App Personal</title>
-    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="MVC_TOCAR\VISTA\ESTILOS\estilos.css">
 </head>
 <?php
 
@@ -19,7 +19,7 @@ $empresa_conv = getEmpresa($id_empresa_conv);
 
 if(isset($_SESSION['afiliado_sesion']) == 'afiliado_sesion') {
     $url1 ="MVC_TOCAR\VISTA\AFILIADOS\appAfiliados.php";
-    //header('Location: '.$url1);
+    header('Location: '.$url1);
   } else {
     $url2 ="MVC_TOCAR\VISTA\index.php";
     header('Location: '.$url2);
@@ -50,7 +50,7 @@ if(isset($_SESSION['afiliado_sesion']) == 'afiliado_sesion') {
 
 
     <header class="cabecera">
-      <?php include "cabecera.php" ?>
+      <?php include "MVC_TOCAR\VISTA\INCLUDES\cabecera.php" ?>
     </header>
 
     <nav class="navega">
@@ -66,7 +66,7 @@ if(isset($_SESSION['afiliado_sesion']) == 'afiliado_sesion') {
 
 
     </article>
-    <footer class="pie">FOOTER</footer>
+    <footer class="pie"><?php include "MVC_TOCAR\VISTA\INCLUDES\pie.php" ?></footer>
     
 
 </body>
