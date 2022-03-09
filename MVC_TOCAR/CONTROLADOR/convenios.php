@@ -10,7 +10,7 @@
 </head>
 <?php
 
-include 'datos.php';
+include 'MVC_TOCAR\MODELO\datos.php';
 
 session_start();
 
@@ -18,10 +18,10 @@ $id_empresa_conv = $_POST['empresa'];
 $empresa_conv = getEmpresa($id_empresa_conv);
 
 if(isset($_SESSION['afiliado_sesion']) == 'afiliado_sesion') {
-    $url1 ="appAfiliados.php";
+    $url1 ="MVC_TOCAR\VISTA\AFILIADOS\appAfiliados.php";
     //header('Location: '.$url1);
   } else {
-    $url2 ="index.php";
+    $url2 ="MVC_TOCAR\VISTA\index.php";
     header('Location: '.$url2);
   }
   $id_afil =  $_SESSION['id_afiliado'];
@@ -33,13 +33,13 @@ if(isset($_SESSION['afiliado_sesion']) == 'afiliado_sesion') {
 
   //Elegimos el convenio de  empresas desde la pantalla de afiliados en un select
   if($id_empresa_conv == 1) {
-    $url = "convenios_empresa_1.php";
+    $url = "MVC_TOCAR\VISTA\CONVENIOS\convenios_empresa_1.php";
     header("Location: ".$url);
   }elseif($id_empresa_conv == 2 ){
-    $url = "convenios_empresa_2.php";
+    $url = "MVC_TOCAR\VISTA\CONVENIOS\convenios_empresa_2.php";
     header("Location: ".$url);
   }elseif($id_empresa_conv == 3 ){
-    $url = "convenios_empresa_3.php";
+    $url = "MVC_TOCAR\VISTA\CONVENIOS\convenios_empresa_3.php";
     header("Location: ".$url);
   }
 

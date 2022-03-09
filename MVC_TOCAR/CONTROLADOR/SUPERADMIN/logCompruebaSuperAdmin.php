@@ -10,7 +10,7 @@
 
 <?php 
 
-		include "datos.php";
+		include "MVC_TOCAR\MODELO\datos.php";
 
 		$nombre=$_POST['nombre'];
 		$pass=$_POST['clave'];
@@ -22,7 +22,7 @@
 				session_start();
                 $_SESSION['superadmin_sesion'] ="superadmin_sesion";
 				setcookie("superadmin_cookie", $nombre, 1);
-				$url ="appSuperAdmin.php";
+				$url ="MVC_TOCAR\VISTA\SUPERADMIN\appSuperAdmin.php";
 				header('Location: '.$url);
 			}else{
 				echo "Clave o usuario no validos como -SUPERADMIN-";
