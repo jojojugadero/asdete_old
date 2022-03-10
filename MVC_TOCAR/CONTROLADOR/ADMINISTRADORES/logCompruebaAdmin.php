@@ -10,7 +10,7 @@
 
 <?php 
 
-		include "MVC_TOCAR\MODELO\datos.php";
+		include "MODELO\datos.php";
 
 		$nombre=$_POST['nombre'];
 		$pass=$_POST['clave'];
