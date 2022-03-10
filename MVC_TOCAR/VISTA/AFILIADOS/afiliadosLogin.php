@@ -6,13 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Asdete</title>
-    <link rel="stylesheet" href="MVC_TOCAR\VISTA\ESTILOS\estilos.css">
+    <link rel="stylesheet" href="..\ESTILOS\estilos.css">
     <!––Función en javascript, para ponerla en el "onclick()" para volver al indice ––>
     <script>
 
         function volver() {
             
-            document.location.href="index.php";
+            document.location.href = "..\index.php";
         }
     </script>
 </head>
@@ -21,7 +21,7 @@
 <body class="cuerpo_contenedor">
 
 
-    <header class="cabecera"><?php include "cabecera.php" ?></header>
+    <header class="cabecera"><?php include "..\INCLUDES\cabecera.php" ?></header>
 
     <!––En la parte izquierda seleccionamos las empresas de una lista en HTML ––>
    <nav class="navega"><p style="font-size:large;">Empresas del sector</p>
@@ -56,10 +56,10 @@
 
     <article class="skynet">
     <!––Miga de pan (Breadcrumbs) ––>
-        <a href="index.php">Indice</a>
+        <a href="afiliados/index.php">Indice</a>
 
         <!––Formulario que enviará datos para comprobar que el usuario y password estan correctos en base de datos ––>
-        <form action="logCompruebaafiliados.php" method="POST" id="creacion" >
+        <form action="CONTROLADOR\AFILIADOS\logCompruebaafiliados.php" method="POST" id="creacion" >
             
             <div align="center" style="margin-top:100px;">
                 <div class="afidiv" >
@@ -88,7 +88,7 @@
         </form>
 
     </article>
-    <footer class="pie"><?php include "pie.php" ?></footer>
+    <footer class="pie"><?php include "..\INCLUDES\pie.php" ?></footer>
 
 </body>
 

@@ -6,12 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Asdete</title>
-    <link rel="stylesheet" href="MVC_TOCAR\VISTA\ESTILOS\estilos.css">
+    <link rel="stylesheet" href="..\ESTILOS\estilos.css">
 
     <!––Función en javascript, para ponerla en el "onclick()" para volver al indice ––>
         <script>
             function volver() {
-                document.location.href = "MVC_TOCAR\VISTA\index.php";
+                document.location.href = "..\index.php";
             }
         </script>
 </head>
@@ -21,8 +21,8 @@
 
 
 <!––Incluimos la cabecera ––>
-<header class="MVC_TOCAR\VISTA\INCLUDES\cabecera.php">
-      <?php include "cabecera.php" ?>
+<header class="cabecera">
+        <?php include "..\INCLUDES\cabecera.php" ?>
     </header>
 
 
@@ -58,10 +58,10 @@
 
 
     <article class="skynet">
-        <a href="MVC_TOCAR\VISTA\index.php">Indice</a>
+        <a href="..\index.php">Indice</a>
 
         <!––Formulario con los datos de los administradores ––>
-        <form action="MVC_TOCAR\CONTROLADOR\ADMINISTRADORES\logCompruebaAdmin.php" method="POST" id="creacion">
+        <form action="CONTROLADOR\ADMINISTRADORES\logCompruebaAdmin.php" method="POST" id="creacion">
 
             <div align="center" style="margin-top:100px;">
                 <div class="perdiv">
@@ -90,7 +90,7 @@
         </form>
 
     </article>
-    <footer class="pie"><?php include "pie.php" ?></footer>
+    <footer class="pie"><?php include "..\INCLUDES\pie.php" ?></footer>
 
 </body>
 

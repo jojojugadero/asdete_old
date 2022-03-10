@@ -12,10 +12,10 @@
 
 
 <body class="cuerpo_contenedor">
-
+<?php include "CONTROLADOR\internas\appAdmin.php";?>
 <!––Incluimos la cabecera ––>
 <header class="cabecera">
-      <?php include "cabecera.php" ?>
+<?php llamaCabecera(); ?>
     </header>
 
     <!––En la parte izquierda seleccionamos las empresas de una lista en HTML ––>
@@ -64,7 +64,7 @@
 
    </article>
    <!––Pie de la página con un include en PHP ––>
-   <footer class="pie"><?php include "pie.php" ?></footer>
+   <footer class="pie"><?php include "VISTA/pie.php" ?></footer>
 
 </body>
 
