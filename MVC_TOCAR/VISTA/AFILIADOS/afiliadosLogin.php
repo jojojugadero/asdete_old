@@ -12,7 +12,7 @@
 
         function volver() {
             
-            document.location.href = "..\index.php";
+            document.location.href = "VISTA\index.php";
         }
     </script>
 </head>
@@ -56,7 +56,7 @@
 
     <article class="skynet">
     <!––Miga de pan (Breadcrumbs) ––>
-        <a href="afiliados/index.php">Indice</a>
+        <a href="..\index.php">Indice</a>
 
         <!––Formulario que enviará datos para comprobar que el usuario y password estan correctos en base de datos ––>
         <form action="CONTROLADOR\AFILIADOS\logCompruebaafiliados.php" method="POST" id="creacion" >
