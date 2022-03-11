@@ -10,7 +10,7 @@
 
 <?php 
 
-		include "MODELO\datos.php";
+		include "..\..\MODELO\datos.php";
 
 		$nombre=$_POST['nombre'];
 		$pass=$_POST['clave'];
@@ -22,7 +22,7 @@
 				session_start();
                 $_SESSION['personal_sesion'] ="personal_sesion";
 				setcookie("personal_cookie", $nombre, 1);
-				$url ="MVC_TOCAR\VISTA\ADMINISTRADORES\appAdmin.php";
+				$url ="..\VISTA\ADMINISTRADORES\appAdmin.php";
 				header('Location: '.$url);
 			}else{
 				echo "Clave o usuario no validos";
