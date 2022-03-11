@@ -15,7 +15,7 @@
 
 <!––Incluimos la cabecera ––>
 <header class="cabecera">
-      <?php include "INCLUDES\cabecera.php" ?>
+      <?php include "VI_INCLUDES\cabecera.php" ?>
     </header>
 
     <!––En la parte izquierda seleccionamos las empresas de una lista en HTML ––>
@@ -55,16 +55,16 @@
       <div style="margin-top:200px;">
 
          <span class="boton-padding boton-afiliado1">
-            <button onclick="document.location.href='AFILIADOS/afiliadosLogin.php'" class="botafil" style="margin:5px;width:180px;padding:20px;font-size:28px;"><span>AFILIADOS</span></button>
+            <button onclick="document.location.href='VI_AFILIADOS/afiliadosLogin.php'" class="botafil" style="margin:5px;width:180px;padding:20px;font-size:28px;"><span>AFILIADOS</span></button>
          </span>
          <span class="boton-padding boton-afiliado1">
-            <button onclick="document.location.href='ADMINISTRADORES/adminLogin.php'" class="botpers" style="margin:5px;width:180px;padding:20px;font-size:28px;"><span>PERSONAL</span></button>
+            <button onclick="document.location.href='VI_ADMINISTRADORES/adminLogin.php'" class="botpers" style="margin:5px;width:180px;padding:20px;font-size:28px;"><span>PERSONAL</span></button>
          </span>
       </div>
 
    </article>
    <!––Pie de la página con un include en PHP ––>
-   <footer class="pie"><?php include "INCLUDES\pie.php" ?></footer>
+   <footer class="pie"><?php include "VI_INCLUDES\pie.php" ?></footer>
 
 </body>
 

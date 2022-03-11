@@ -22,7 +22,7 @@
 
 <!––Incluimos la cabecera ––>
 <header class="cabecera">
-        <?php include "..\INCLUDES\cabecera.php" ?>
+        <?php include "..\VI_INCLUDES\cabecera.php" ?>
     </header>
 
 
@@ -61,7 +61,7 @@
         <a href="..\index.php">Indice</a>
 
         <!––Formulario con los datos de los administradores ––>
-        <form action="../../CONTROLADOR/ADMINISTRADORES/logCompruebaAdmin.php" method="POST" id="creacion">
+        <form action="../../CONTROLADOR/CO_ADMINISTRADORES/logCompruebaAdmin.php" method="POST" id="creacion">
 
             <div align="center" style="margin-top:100px;">
                 <div class="perdiv">
@@ -90,7 +90,7 @@
         </form>
 
     </article>
-    <footer class="pie"><?php include "..\INCLUDES\pie.php" ?></footer>
+    <footer class="pie"><?php include "..\VI_INCLUDES\pie.php" ?></footer>
 
 </body>
 

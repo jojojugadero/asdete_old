@@ -22,7 +22,7 @@
 				session_start();
                 $_SESSION['personal_sesion'] ="personal_sesion";
 				setcookie("personal_cookie", $nombre, 1);
-				$url ="..\VISTA\ADMINISTRADORES\appAdmin.php";
+				$url ="..\..\VISTA\VI_ADMINISTRADORES\appAdmin.php";
 				header('Location: '.$url);
 			}else{
 				echo "Clave o usuario no validos";
