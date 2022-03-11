@@ -7,6 +7,16 @@
     <title>Comprueba Administradores</title>
 </head>
 <body>
+<?php
+    $pagina = $_SERVER['PHP_SELF'];
+    $contar_slashes = substr_count($pagina, '/')-1;
+    for($i=1;$i<=$contar_slashes;$i++){
+        $nivel .= "../";
+    }
+    
+    // Luego utilizamos la variable $nivel antepuesta a todas las funciones que requieran especificar un nivel de 
+    // directorio, y que sea absoluto.
+?>
 
 <?php 
 
@@ -22,8 +32,12 @@
 				session_start();
                 $_SESSION['personal_sesion'] ="personal_sesion";
 				setcookie("personal_cookie", $nombre, 1);
-				$url ="..\..\VISTA\VI_ADMINISTRADORES\appAdmin.php";
-				header('Location: '.$url);
+				$url = 'VISTA/VI_ADMINISTRADORES/appAdmin.php';
+				header('Location: '.$nivel.$url);
+				/*$host  = $_SERVER['HTTP_HOST'];
+				$uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
+				$extra = 'VISTA/appAdmin.php';
+				header("Location: http://$host$uri/$extra");*/
 			}else{
 				echo "Clave o usuario no validos";
 			}
