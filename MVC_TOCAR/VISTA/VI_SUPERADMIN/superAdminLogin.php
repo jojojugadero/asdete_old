@@ -1,3 +1,11 @@
+<?php
+$pagina = $_SERVER['PHP_SELF'];
+$arrayDir = preg_split('/\//',$pagina);
+$dirRoot = '/'.$arrayDir[1].'/';
+$incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
+?>
+
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -6,12 +14,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Asdete</title>
-    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="..\ESTILOS\estilos.css">
 
     <!––Función en javascript, para ponerla en el "onclick()" para volver al indice ––>
         <script>
             function volver() {
-                document.location.href = "index.php";
+                document.location.href = <?php echo $dirRoot; ?>"MVC_TOCAR/VISTA/index.php";
             }
         </script>
 </head>
@@ -22,7 +30,7 @@
 
 <!––Incluimos la cabecera ––>
 <header class="cabecera">
-      <?php include "cabecera.php" ?>
+        <?php include $incRoot."MVC_TOCAR/VISTA/VI_INCLUDES/cabecera.php" ?>
     </header>
 
 
@@ -58,16 +66,16 @@
 
 
     <article class="skynet">
-        <a href="index.php">Indice</a>
+        <a href="<?php echo $dirRoot; ?>MVC_TOCAR\VISTA\index.php">Indice</a>
 
-        <!––Formulario con los datos del personal ––>
-        <form action="logCompruebaSuperAdmin.php" method="POST" id="creacion">
+        <!––Formulario con los datos de los administradores ––>
+        <form action="<?php echo $dirRoot; ?>MVC_TOCAR/CONTROLADOR/CO_SUPERADMIN/logCompruebaSuperAdmin.php" method="POST" id="creacion">
 
             <div align="center" style="margin-top:100px;">
-                <div class="perdiv">
+                <div class="saddiv">
                     <table>
                         <tr>
-                            <td align="center" colspan="2">SUPER ADMIN</td>
+                            <td align="center" colspan="2">SuperAdmin Login</td>
                         </tr>
                         <tr>
                             <td colspan="2" style="padding-top:20px;">Introduce tu nombre y tu password</td>
@@ -90,8 +98,9 @@
         </form>
 
     </article>
-    <footer class="pie"><?php include "pie.php" ?></footer>
+    <footer class="pie"> <?php include $incRoot."MVC_TOCAR\VISTA\VI_INCLUDES\pie.php" ?></footer>
 
+    
 </body>
 
 </html>

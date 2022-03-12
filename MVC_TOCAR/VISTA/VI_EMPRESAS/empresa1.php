@@ -1,3 +1,10 @@
+<?php
+$pagina = $_SERVER['PHP_SELF'];
+$arrayDir = preg_split('/\//',$pagina);
+$dirRoot = '/'.$arrayDir[1].'/';
+$incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -6,7 +13,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Asdete</title>
-    <link rel="stylesheet" href="MVC_TOCAR\VISTA\ESTILOS\estilos.css">
+    <link rel="stylesheet" href="..\ESTILOS\estilos.css">
 </head>
 
 
@@ -14,7 +21,7 @@
 
     <!––Incluimos la cabecera ––>
         <header class="cabecera">
-            <?php include "cabecera.php" ?>
+            <?php include $incRoot.'MVC_TOCAR\VISTA\VI_INCLUDES\cabecera.php'?> 
         </header>
 
         <!––En la parte izquierda seleccionamos las empresas de una lista en HTML ––>
@@ -101,7 +108,7 @@
 
 
             </article>
-            <footer class="pie"><?php include "pie.php" ?></footer>
+            <footer class="pie"> <?php include $incRoot."MVC_TOCAR\VISTA\VI_INCLUDES\pie.php" ?></footer>
 
 </body>
 

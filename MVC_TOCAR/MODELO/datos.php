@@ -215,7 +215,7 @@
 	function getAfiliados() {
 		$conexion = crearConexion("asdete");
 
-		$consulta = "SELECT * FROM afiliados";
+		$consulta = "SELECT * FROM afiliados ORDER BY ID ASC";
 
 		$resultado = mysqli_query($conexion, $consulta);
 
@@ -232,7 +232,33 @@
 
 		$resultado = mysqli_query($conexion, $consulta);
 
-		return mysqli_fetch_assoc($resultado);
+		if (isset($resultado)) {
+			if(mysqli_num_rows($resultado) > 0) {
+				return mysqli_fetch_assoc($resultado);
+			} else {
+				$vacio = [];
+				return $vacio;
+			}
+		} else {
+			$vacio = [];
+			return $vacio;
+		}
+
+		mysqli_close($conexion);
+	}
+	//Nos devuelve todos los datos del afiliado a través de su NIF
+	function getAfiliadoNIF($nif) {
+		$conexion = crearConexion("asdete");
+
+		$consulta = "SELECT * FROM afiliados WHERE nif = '".$nif."'";
+
+		$resultado = mysqli_query($conexion, $consulta);
+		if (mysqli_num_rows($resultado) > 0) {
+			return mysqli_fetch_assoc($resultado);
+		} else {
+			$vacio = [];
+			return $vacio;
+		}
 
 		mysqli_close($conexion);
 	}
