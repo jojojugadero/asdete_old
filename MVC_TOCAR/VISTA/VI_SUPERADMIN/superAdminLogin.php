@@ -28,8 +28,8 @@ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
 <body class="cuerpo_contenedor">
 
 
-<!––Incluimos la cabecera ––>
-<header class="cabecera">
+    <!––Incluimos la cabecera ––>
+    <header class="cabecera">
         <?php include $incRoot."MVC_TOCAR/VISTA/VI_INCLUDES/cabecera.php" ?>
     </header>
 
