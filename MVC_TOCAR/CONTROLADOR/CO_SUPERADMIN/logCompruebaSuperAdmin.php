@@ -29,12 +29,12 @@ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
 		// Si se ha enviado un nombre por el formulario
 		if (isset($nombre)){
 			// Si existe
-			if (existeSuperAdmin($nombre) && verificaSuperPassAdmin($nombre,$pass)) {
+			if (existeSuperAdmin($nombre) && verificaPassSuperAdmin($nombre,$pass)) {
 				// Creo una cookie con su nombre, para poderla comprobar más adelante.
 				session_start();
                 $_SESSION['superadmin_session'] ="superadmin_session";
 				setcookie("superadmin_cookie", $nombre, 1);
-				$url = $dirRoot.'MVC_TOCAR/VISTA/VI_SUPERADMIN/appSuperAdmin.php';
+				$url = $dirRoot.'MVC_TOCAR/VISTA/VI_SUPERADMIN/appSuperAdminMenu.php';
 				header('Location: '.$url);
 			/*	$host  = $_SERVER['HTTP_HOST'];
 				$uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
