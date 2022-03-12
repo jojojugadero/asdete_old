@@ -1,4 +1,9 @@
-
+<?php
+$pagina = $_SERVER['PHP_SELF'];
+$arrayDir = preg_split('/\//',$pagina);
+$dirRoot = '/'.$arrayDir[1].'/';
+$incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -6,11 +11,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <title>App Personal</title>
-    <link rel="stylesheet" href="MVC_TOCAR\VISTA\ESTILOS\estilos.css">
+    <link rel="stylesheet" href="<?php echo $dirRoot; ?>MVC_TOCAR\VISTA\ESTILOS\estilos.css">
 </head>
 <?php
 
-include 'MVC_TOCAR\MODELO\datos.php';
+include $incRoot.'MVC_TOCAR/MODELO/datos.php';
 
 
 //Iniciamos sesión
@@ -18,10 +23,10 @@ session_start();
 
 //Comprobamos que la sesión es correcta y si es correcta se queda en la página se queda en la página y si no, nos redirige a index.php 
 if(isset($_SESSION['personal_sesion']) == 'personal_sesion') {
-    $url1 ="MVC_TOCAR\VISTA\ADMINISTRADORES\appAdmin.php";
-    header('Location: '.$url1);
+    //$url1 ="MVC_TOCAR\VISTA\ADMINISTRADORES\appAdmin.php";
+    //header('Location: '.$url1);
   } else {
-    $url2 ="C:\Users\Usuario\www\asdete\MVC_TOCAR\VISTA\index.php";
+    $url2 =$dirRoot."MVC_TOCAR/VISTA/index.php";
     header('Location: '.$url2);
   }
 
@@ -76,8 +81,9 @@ if(isset($_SESSION['personal_sesion']) == 'personal_sesion') {
 
 
     <header class="cabecera">
-      <?php include "MVC_TOCAR\VISTA\INCLUDES\cabecera.php" ?>
+      <?php include $incRoot."MVC_TOCAR\VISTA\VI_INCLUDES\cabecera.php" ?>
     </header>
+    <?php echo $incRoot;?>
 
     <!––En la parte izquierda seleccionamos las empresas de una lista en HTML ––>
    <nav class="navega"><p style="font-size:large;">Empresas del sector</p>
@@ -234,7 +240,7 @@ if(isset($_SESSION['personal_sesion']) == 'personal_sesion') {
   <p>&nbsp;</p>
 </form>
     </article>
-    <footer class="pie"><?php include "pie.php" ?></footer>
+    <footer class="pie"><?php include $incRoot."MVC_TOCAR\VISTA\VI_INCLUDES\pie.php" ?></footer>
     
 
 </body>
