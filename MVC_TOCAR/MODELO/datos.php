@@ -224,6 +224,8 @@
 		mysqli_close($conexion);
 	}
 
+	
+
 	//Nos devuelve todos los datos del afiliado a través de su ID
 	function getAfiliado($id) {
 		$conexion = crearConexion("asdete");
@@ -271,7 +273,124 @@
 
 		$resultado = mysqli_query($conexion, $consulta);
 
-		return mysqli_fetch_assoc($resultado);
+		if (isset($resultado)) {
+			if(mysqli_num_rows($resultado) > 0) {
+				return mysqli_fetch_assoc($resultado);
+			} else {
+				$vacio = [];
+				return $vacio;
+			}
+		} else {
+			$vacio = [];
+			return $vacio;
+		}
+
+		mysqli_close($conexion);
+	}
+
+
+
+	//Nos devuelve todos los administradores de la base de datos
+	function getAdministradores() {
+
+		$conexion = crearConexion("asdete");
+
+		$consulta = "SELECT * FROM administradores ORDER BY ID ASC";
+
+		$resultado = mysqli_query($conexion, $consulta);
+
+		return $resultado;
+
+		mysqli_close($conexion);
+	}
+
+	//Nos devuelve todos los datos del administrador a través de su NICK
+	function getAdministradorNick($nick) {
+		$conexion = crearConexion("asdete");
+
+		$consulta = "SELECT * FROM administradores WHERE nickname = '".$nick."'";
+
+		$resultado = mysqli_query($conexion, $consulta);
+		if (mysqli_num_rows($resultado) > 0) {
+			return mysqli_fetch_assoc($resultado);
+		} else {
+			$vacio = [];
+			return $vacio;
+		}
+
+		mysqli_close($conexion);
+	}
+	
+	
+	//Nos devuelve todos los datos de un adminstrador a través de su ID
+	function getAdministradorId($id) {
+		$conexion = crearConexion("asdete");
+
+		$consulta = "SELECT * FROM administradores WHERE id = '" . $id . "'";
+
+		$resultado = mysqli_query($conexion, $consulta);
+
+		if (isset($resultado)) {
+			if(mysqli_num_rows($resultado) > 0) {
+				return mysqli_fetch_assoc($resultado);
+			} else {
+				$vacio = [];
+				return $vacio;
+			}
+		} else {
+			$vacio = [];
+			return $vacio;
+		}
+
+		mysqli_close($conexion);
+	}
+
+	//Da de alta una empresa con los datos introducidos por pantalla
+	function altaEmpresa($datos) {
+		$conexion = crearConexion("asdete");
+
+		$consulta = "INSERT INTO `empresa`(`cif`,  `nombre`, `telefono`, `email`, `direccion`) VALUES ('".
+		$datos['cif']."','".
+		$datos['nombre']."','".
+		$datos['telefono']."','".
+		$datos['email']."','".
+		$datos['direccion']."')";
+
+		echo $consulta;
+
+		$resultado = mysqli_query($conexion, $consulta);
+		var_dump($resultado);
+
+		mysqli_close($conexion);
+	}
+
+	//Modifica la empresa con los datos introducidos por pantalla
+
+	function modEmpresa($datos) {
+		$conexion = crearConexion("asdete");
+
+		$consulta = "UPDATE `empresa` SET 
+		`cif`='".$datos['cif']."',
+		`nombre`='".$datos['nombre']."',
+		`telefono`='".$datos['telefono']."',
+		`email`='".$datos['email']."',
+		`direccion`='".$datos['direccion']."' WHERE id = ".$datos['id'];
+
+
+		$resultado = mysqli_query($conexion, $consulta);
+
+		mysqli_close($conexion);
+	}
+
+	//Elimina una empresa por su ID
+
+	function eliminarEmpresa($id) {
+
+		$conexion = crearConexion("asdete");
+
+		$consulta = "DELETE FROM empresa WHERE id = ".$id;
+
+		$resultado = mysqli_query($conexion, $consulta);
 
 		mysqli_close($conexion);
 	}
