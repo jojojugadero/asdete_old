@@ -31,8 +31,8 @@ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
 
 
     <header class="cabecera">
-        
-        <?php include $incRoot.'MVC_TOCAR\VISTA\INCLUDES\cabecera.php'?> 
+
+        <?php include $incRoot.'MVC_TOCAR\VISTA\VI_INCLUDES\cabecera.php'?> 
     
     </header>
 
@@ -72,7 +72,7 @@ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
         <a href="<?php echo $dirRoot; ?>MVC_TOCAR\VISTA\index.php">Indice</a>
 
         <!––Formulario que enviará datos para comprobar que el usuario y password estan correctos en base de datos ––>
-        <form action="<?php echo $dirRoot; ?>MVC_TOCAR\CONTROLADOR\AFILIADOS\logCompruebaafiliados.php" method="POST" id="creacion" >
+        <form action="<?php echo $dirRoot; ?>MVC_TOCAR\CONTROLADOR\CO_AFILIADOS\logCompruebaafiliados.php" method="POST" id="creacion" >
             
             <div align="center" style="margin-top:100px;">
                 <div class="afidiv" >
@@ -101,7 +101,7 @@ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
         </form>
 
     </article>
-    <?php include $incRoot."MVC_TOCAR\VISTA\INCLUDES\pie.php" ?>
+    <footer class="pie"> <?php include $incRoot."MVC_TOCAR\VISTA\VI_INCLUDES\pie.php" ?></footer>
 
 </body>
 
