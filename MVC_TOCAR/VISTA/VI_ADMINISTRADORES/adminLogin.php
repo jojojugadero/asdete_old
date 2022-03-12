@@ -66,10 +66,10 @@ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
 
 
     <article class="skynet">
-        <a href="..\index.php">Indice</a>
+        <a href="<?php echo $dirRoot; ?>MVC_TOCAR\VISTA\index.php">Indice</a>
 
         <!––Formulario con los datos de los administradores ––>
-        <form action="../../CONTROLADOR/CO_ADMINISTRADORES/logCompruebaAdmin.php" method="POST" id="creacion">
+        <form action="<?php echo $dirRoot; ?>MVC_TOCAR/CONTROLADOR/CO_ADMINISTRADORES/logCompruebaAdmin.php" method="POST" id="creacion">
 
             <div align="center" style="margin-top:100px;">
                 <div class="perdiv">
@@ -98,7 +98,7 @@ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
         </form>
 
     </article>
-    <footer class="pie"><?php include "..\VI_INCLUDES\pie.php" ?></footer>
+    <footer class="pie"> <?php include $incRoot."MVC_TOCAR\VISTA\INCLUDES\pie.php" ?></footer>
 
 </body>
 

@@ -23,8 +23,8 @@ session_start();
 
 //Comprobamos que la sesión es correcta y si es correcta se queda en la página se queda en la página y si no, nos redirige a index.php 
 if(isset($_SESSION['personal_sesion']) == 'personal_sesion') {
-    //$url1 ="MVC_TOCAR\VISTA\ADMINISTRADORES\appAdmin.php";
-    //header('Location: '.$url1);
+    $url1 = $dirRoot."MVC_TOCAR\VISTA\ADMINISTRADORES\appAdmin.php";
+    header('Location: '.$url1);
   } else {
     $url2 =$dirRoot."MVC_TOCAR/VISTA/index.php";
     header('Location: '.$url2);
@@ -119,10 +119,10 @@ if(isset($_SESSION['personal_sesion']) == 'personal_sesion') {
 
     <article class="skynet">
     <!––Migas de pan (breadcrumbs) ––>
-    <a href="MVC_TOCAR\VISTA\index.php">Indice</a> > <a href="MVC_TOCAR\VISTA\ADMINISTRADORES\adminLogin.php">Login</a>
+    <a href="<?php echo $dirRoot; ?>MVC_TOCAR\VISTA\index.php">Indice</a> > <a href="<?php echo $dirRoot; ?>MVC_TOCAR\VISTA\ADMINISTRADORES\adminLogin.php">Login</a>
     
     <!––Formulario para realizar todas las operaciones de base de datos––>
-<form name="formTabla" id="formTabla" href="MVC_TOCAR\VISTA\AFILIADOS\appAfiliados.php" method="post">
+<form name="formTabla" id="formTabla" href="<?php echo $dirRoot; ?>MVC_TOCAR\VISTA\AFILIADOS\appAfiliados.php" method="post">
   
   <table class="estilo_tabla" width="50%" align="center" >
     <tr class="estilo_cab_tabla">
@@ -240,7 +240,7 @@ if(isset($_SESSION['personal_sesion']) == 'personal_sesion') {
   <p>&nbsp;</p>
 </form>
     </article>
-    <footer class="pie"><?php include $incRoot."MVC_TOCAR\VISTA\VI_INCLUDES\pie.php" ?></footer>
+    <footer class="pie"><?php include $incRoot."MVC_TOCAR\VISTA\INCLUDES\pie.php" ?></footer>
     
 
 </body>

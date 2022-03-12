@@ -1,3 +1,12 @@
+<?php
+$pagina = $_SERVER['PHP_SELF'];
+$arrayDir = preg_split('/\//',$pagina);
+$dirRoot = '/'.$arrayDir[1].'/';
+$incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -12,7 +21,7 @@
 
         function volver() {
             
-            document.location.href = "VISTA\index.php";
+            document.location.href = "<?php echo $dirRoot; ?>MVC_TOCAR\VISTA\index.php";
         }
     </script>
 </head>
@@ -21,7 +30,11 @@
 <body class="cuerpo_contenedor">
 
 
-    <header class="cabecera"><?php include "..\INCLUDES\cabecera.php" ?></header>
+    <header class="cabecera">
+        
+        <?php include $incRoot.'MVC_TOCAR\VISTA\INCLUDES\cabecera.php'?> 
+    
+    </header>
 
     <!––En la parte izquierda seleccionamos las empresas de una lista en HTML ––>
    <nav class="navega"><p style="font-size:large;">Empresas del sector</p>
@@ -56,10 +69,10 @@
 
     <article class="skynet">
     <!––Miga de pan (Breadcrumbs) ––>
-        <a href="..\index.php">Indice</a>
+        <a href="<?php echo $dirRoot; ?>MVC_TOCAR\VISTA\index.php">Indice</a>
 
         <!––Formulario que enviará datos para comprobar que el usuario y password estan correctos en base de datos ––>
-        <form action="CONTROLADOR\AFILIADOS\logCompruebaafiliados.php" method="POST" id="creacion" >
+        <form action="<?php echo $dirRoot; ?>MVC_TOCAR\CONTROLADOR\AFILIADOS\logCompruebaafiliados.php" method="POST" id="creacion" >
             
             <div align="center" style="margin-top:100px;">
                 <div class="afidiv" >
@@ -88,7 +101,7 @@
         </form>
 
     </article>
-    <footer class="pie"><?php include "..\INCLUDES\pie.php" ?></footer>
+    <?php include $incRoot."MVC_TOCAR\VISTA\INCLUDES\pie.php" ?>
 
 </body>
 

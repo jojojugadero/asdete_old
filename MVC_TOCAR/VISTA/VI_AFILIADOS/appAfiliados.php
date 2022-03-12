@@ -1,4 +1,13 @@
 
+
+<?php
+$pagina = $_SERVER['PHP_SELF'];
+$arrayDir = preg_split('/\//',$pagina);
+$dirRoot = '/'.$arrayDir[1].'/';
+$incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
+?>
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -6,11 +15,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <title>App Personal</title>
-    <link rel="stylesheet" href="MVC_TOCAR\VISTA\ESTILOS\estilos.css">
+    <link rel="stylesheet" href="<?php echo $dirRoot; ?>MVC_TOCAR\VISTA\ESTILOS\estilos.css">
 </head>
 <?php
 
-include 'datos.php';
+include $incRoot.'MVC_TOCAR/MODELO/datos.php';
 
 session_start();
 
@@ -21,7 +30,7 @@ if(isset($_SESSION['afiliado_sesion']) == 'afiliado_sesion') {
     
     //Si no se ha inicado la sesión de afiliado lo redireccionamos al indice
   } else {
-    $url2 ="index.php";
+    $url2 = $dirRoot.'MVC_TOCAR/VISTA/index.php';
     header('Location: '.$url2);
   }
 
@@ -52,7 +61,7 @@ if(isset($_SESSION['afiliado_sesion']) == 'afiliado_sesion') {
 
 
     <header class="cabecera">
-      <?php include "cabecera.php" ?>
+    <?php include $incRoot."MVC_TOCAR\VISTA\INCLUDES\cabecera.php" ?>
     </header>
 
     <!––En la parte izquierda seleccionamos las empresas de una lista en HTML ––>
@@ -88,7 +97,8 @@ if(isset($_SESSION['afiliado_sesion']) == 'afiliado_sesion') {
 
     <article class="skynet">
     <!––Migas de pan (breadcrumbs) ––>
-    <a href="index.php">Indice</a> > <a href="afiliadosLogin.php">Login</a>
+   
+    <a href="<?php echo $dirRoot; ?>MVC_TOCAR\VISTA\index.php">Indice</a> > <a href="<?php echo $dirRoot; ?>MVC_TOCAR\VISTA\AFILIADOS\afiliadosLogin.php">Login</a>
     
     <!––Mostramos el nombre del afiliado con un saludo y con sus datos y si no son correctos le dejamos un link para escriba a administración y modifique sus datos ––>
 
@@ -140,7 +150,7 @@ if(isset($_SESSION['afiliado_sesion']) == 'afiliado_sesion') {
   <p>&nbsp;</p>
 </form>
     </article>
-    <footer class="pie"><?php include "pie.php" ?></footer>
+    <?php include $incRoot."MVC_TOCAR\VISTA\INCLUDES\pie.php" ?>
     
 
 </body>
