@@ -1,3 +1,11 @@
+<?php
+$pagina = $_SERVER['PHP_SELF'];
+$arrayDir = preg_split('/\//',$pagina);
+$dirRoot = '/'.$arrayDir[1].'/';
+$incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
+?>
+
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -11,7 +19,7 @@
     <!––Función en javascript, para ponerla en el "onclick()" para volver al indice ––>
         <script>
             function volver() {
-                document.location.href = "..\index.php";
+                document.location.href = <?php echo $dirRoot; ?>"MVC_TOCAR/VISTA/index.php";
             }
         </script>
 </head>
@@ -22,7 +30,7 @@
 
 <!––Incluimos la cabecera ––>
 <header class="cabecera">
-        <?php include "..\VI_INCLUDES\cabecera.php" ?>
+        <?php include $incRoot."MVC_TOCAR/VISTA/VI_INCLUDES/cabecera.php" ?>
     </header>
 
 

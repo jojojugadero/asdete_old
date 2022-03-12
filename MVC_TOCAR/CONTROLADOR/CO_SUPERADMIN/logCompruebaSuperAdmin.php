@@ -1,3 +1,12 @@
+<?php
+$pagina = $_SERVER['PHP_SELF'];
+$arrayDir = preg_split('/\//',$pagina);
+$dirRoot = '/'.$arrayDir[1].'/';
+$incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +19,7 @@
 
 <?php 
 
-		include "MVC_TOCAR\MODELO\datos.php";
+include $incRoot.'MVC_TOCAR/MODELO/datos.php';
 
 		$nombre=$_POST['nombre'];
 		$pass=$_POST['clave'];

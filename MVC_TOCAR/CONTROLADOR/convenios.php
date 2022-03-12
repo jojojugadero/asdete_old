@@ -1,3 +1,9 @@
+<?php
+$pagina = $_SERVER['PHP_SELF'];
+$arrayDir = preg_split('/\//',$pagina);
+$dirRoot = '/'.$arrayDir[1].'/';
+$incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
+?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -10,7 +16,7 @@
 </head>
 <?php
 
-include 'MVC_TOCAR\MODELO\datos.php';
+include $incRoot.'MVC_TOCAR/MODELO/datos.php';
 
 session_start();
 
@@ -18,10 +24,10 @@ $id_empresa_conv = $_POST['empresa'];
 $empresa_conv = getEmpresa($id_empresa_conv);
 
 if(isset($_SESSION['afiliado_sesion']) == 'afiliado_sesion') {
-    $url1 ="MVC_TOCAR\VISTA\AFILIADOS\appAfiliados.php";
+    $url1 =$dirRoot."MVC_TOCAR\VISTA\AFILIADOS\appAfiliados.php";
     header('Location: '.$url1);
   } else {
-    $url2 ="MVC_TOCAR\VISTA\index.php";
+    $url2 =$dirRoot."MVC_TOCAR\VISTA\index.php";
     header('Location: '.$url2);
   }
   $id_afil =  $_SESSION['id_afiliado'];
@@ -33,13 +39,13 @@ if(isset($_SESSION['afiliado_sesion']) == 'afiliado_sesion') {
 
   //Elegimos el convenio de  empresas desde la pantalla de afiliados en un select
   if($id_empresa_conv == 1) {
-    $url = "MVC_TOCAR\VISTA\CONVENIOS\convenios_empresa_1.php";
+    $url = $dirRoot."MVC_TOCAR\VISTA\CONVENIOS\convenios_empresa_1.php";
     header("Location: ".$url);
   }elseif($id_empresa_conv == 2 ){
-    $url = "MVC_TOCAR\VISTA\CONVENIOS\convenios_empresa_2.php";
+    $url = $dirRoot."MVC_TOCAR\VISTA\CONVENIOS\convenios_empresa_2.php";
     header("Location: ".$url);
   }elseif($id_empresa_conv == 3 ){
-    $url = "MVC_TOCAR\VISTA\CONVENIOS\convenios_empresa_3.php";
+    $url = $dirRoot."MVC_TOCAR\VISTA\CONVENIOS\convenios_empresa_3.php";
     header("Location: ".$url);
   }
 
@@ -50,7 +56,7 @@ if(isset($_SESSION['afiliado_sesion']) == 'afiliado_sesion') {
 
 
     <header class="cabecera">
-      <?php include "MVC_TOCAR\VISTA\INCLUDES\cabecera.php" ?>
+      <?php include $incRoot."MVC_TOCAR\VISTA\INCLUDES\cabecera.php" ?>
     </header>
 
     <nav class="navega">
@@ -66,7 +72,7 @@ if(isset($_SESSION['afiliado_sesion']) == 'afiliado_sesion') {
 
 
     </article>
-    <footer class="pie"><?php include "MVC_TOCAR\VISTA\INCLUDES\pie.php" ?></footer>
+    <footer class="pie"><?php include $incRoot."MVC_TOCAR\VISTA\INCLUDES\pie.php" ?></footer>
     
 
 </body>
