@@ -12,7 +12,7 @@ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <title>App Personal</title>
- <link rel="stylesheet" href="<?php echo $dirRoot; ?>MVC_TOCAR\VISTA\ESTILOS\estilos.css">
+    <link rel="stylesheet" href="..\ESTILOS\estilos.css">
 </head>
 <?php
 
@@ -23,25 +23,22 @@ include $incRoot.'MVC_TOCAR/MODELO/datos.php';
 session_start();
 
 //Comprobamos que la sesión es correcta y si es correcta se queda en la página se queda en la página y si no, nos redirige a index.php 
-if(isset($_SESSION['personal_sesion']) == 'personal_sesion') {
-    $url1 =$dirRoot.'MVC_TOCAR/VISTA/appSuperAdminAdministradores.php';
+if(isset($_SESSION['superadmin_session']) == 'superadmin_session') {
+    //$url1 ="appPersonal.php";
     //header('Location: '.$url1);
   } else {
-    $url2 =$dirRoot.'MVC_TOCAR/VISTA/index.php';
+    $url2 ="index.php";
     header('Location: '.$url2);
   }
 
   //Recogemos las variables cuando insertamos nuevos registros, modificamos o eliminamos
   $id =  isset($_POST['id']) ? $_POST['id'] : '';
-  $nif =  isset($_POST['nif']) ? $_POST['nif'] : '';
-  $password =  isset($_POST['password']) ? $_POST['password'] : '';
+  $cif =  isset($_POST['cif']) ? $_POST['cif'] : '';
   $nombre =  isset($_POST['nombre']) ? $_POST['nombre'] : '';
-  $ape1 =  isset($_POST['ape1']) ? $_POST['ape1'] : '';
-  $ape2 =  isset($_POST['ape2']) ? $_POST['ape2'] : '';
   $telefono =  isset($_POST['telefono']) ? $_POST['telefono'] : '';
   $email =  isset($_POST['email']) ? $_POST['email'] : '';
   $direccion =  isset($_POST['direccion']) ? $_POST['direccion'] : '';
-  $id_empresa =  isset($_POST['empresa']) ? $_POST['empresa'] : '';
+ 
   
   //Recogemos variables para la acción que va a hacer el botón en el onclick
   $swinsertar =  isset($_POST['swinsertar']) ? $_POST['swinsertar'] : '';
@@ -51,52 +48,51 @@ if(isset($_SESSION['personal_sesion']) == 'personal_sesion') {
 
   //Recogemos el valor de las variables para realizar las operaciones de base de datos
   $datos['id'] = $id;
-  $datos['nif'] = $nif;
-  $datos['password'] = $password;
+  $datos['cif'] = $cif;
   $datos['nombre'] = $nombre;
-  $datos['apellido1'] = $ape1;
-  $datos['apellido2'] = $ape2;
   $datos['telefono'] = $telefono;
   $datos['email'] = $email;
   $datos['direccion'] = $direccion;
-  $datos['id_empresa_fk'] = $id_empresa;
 
-  //Se comprueba el tipo de acción para dar de alta modificar o eliminar el afiliado
+  //Se comprueba el tipo de acción para dar de alta modificar o eliminar la empresa
   if($swinsertar == 'S') {
-    altaAfiliado($datos);
+    altaEmpresa($datos);
   } else if($swmodificarapply == 'S') {
-    modAfiliado($datos);
+    modEmpresa($datos);
   } else if($sweliminar == 'S') {
-    eliminarAfiliado($id);
+    eliminarEmpresa($id);
   }
 
   //Recogemos todos los afiliados y empresas para mostarlos por pantalla
   $afiliados = getAfiliados();
   $empresas = getEmpresas();
 
-  //Si vamos a modificar el afiliado se recoge el afiliado por ID para su modificación
-  $afil_modi = $swmodificar == 'S' ? getAfiliado($id) : '';
+  //Si vamos a modificar la empresa se recoge la empresa por ID para su modificación
+  $empr_modi = $swmodificar == 'S' ? getEmpresa($id) : '';
 ?>
 
 <body class="cuerpo_contenedor" >
 
-<header class="cabecera">
+
+  <!––Incluimos la cabecera ––>
+    <header class="cabecera">
         <?php include $incRoot."MVC_TOCAR/VISTA/VI_INCLUDES/cabecera.php" ?>
     </header>
 
-    <!––En la parte izquierda seleccionamos las empresas de una lista en HTML ––>
-    <nav class="navega"><p style="font-size:large;">Empresas del sector</p>
+          <!––En la parte izquierda seleccionamos las empresas de una lista en HTML ––>
+        <nav class="navega"><p style="font-size:large;">Empresas del sector</p>
 
-                     <?php include $incRoot."MVC_TOCAR\VISTA\INCLUDES\nav.php" ?>
+                   <?php include $incRoot."MVC_TOCAR\VISTA\INCLUDES\nav.php" ?>
 
-     </nav>
+      </nav>
 
-     <aside class="barra"><p style="font-size:large;">Contactos</p>
 
-            <!––En la parte derecha ponemos los contactos de la web con una lista en HTML ––>
-            <?php include $incRoot."MVC_TOCAR\VISTA\INCLUDES\nav.php" ?>
+              <aside class="barra"><p style="font-size:large;">Contactos</p>
 
-        </aside>
+              <!––En la parte derecha ponemos los contactos de la web con una lista en HTML ––>
+                          <?php include $incRoot."MVC_TOCAR\VISTA\INCLUDES\nav.php" ?>
+
+              </aside>
 
 
     <article class="skynet">
@@ -108,34 +104,29 @@ if(isset($_SESSION['personal_sesion']) == 'personal_sesion') {
   
   <table class="estilo_tabla" width="50%" align="center" >
     <tr class="estilo_cab_tabla">
-      <th class="subtitulo" colspan="12"><h1><span >Gestión de afiliados</span></h1></th>
+      <th class="subtitulo" colspan="12"><h1><span >Gestión de empresas</span></h1></th>
     </tr>
     <tr class="estilo_subcab_tabla" >
       <td class="primera_fila">Id</td>
-      <td class="primera_fila">NIF</td>
-      <td class="primera_fila">Password</td>
+      <td class="primera_fila">CIF</td>
       <td class="primera_fila">Nombre</td>
-      <td class="primera_fila">Apellido 1</td>
-      <td class="primera_fila">Apellido 2</td>
       <td class="primera_fila">Teléfono</td>
       <td class="primera_fila">Email</td>
       <td class="primera_fila">Dirección</td>
-      <td class="primera_fila">Empresa</td>
       <td class="primera_fila">Modificar</td>
       <td class="primera_fila">Eliminar</td>
     </tr> 
    
     <?php
       //Comprobamos si hay registros
-        if (mysqli_num_rows($afiliados) == 0) {
+        if (mysqli_num_rows($empresas) == 0) {
           echo '<tr>\n
-              <td colspan="11">No se han encontrado afiliados</td>
+              <td colspan="11">No se han encontrado empresas</td>
              </tr>';
         } else {
           $num = 0;
           //Si hay registros se recorren para mostar las filas
-          foreach($afiliados as $fila){
-            $empresa = getEmpresa($fila['id_empresa_fk']);
+          foreach($empresas as $fila){
             //Con este operador ternario damos estilo a cada de las lineas del formulario
             $color_fila = $num%2 == 1 ? 'estilo_fila1_tabla':'estilo_fila2_tabla';
             $num++;
@@ -143,15 +134,11 @@ if(isset($_SESSION['personal_sesion']) == 'personal_sesion') {
 		  <!––Mostramos los registros de base de datos ––>
         <tr class="<?php echo $color_fila;?>" >
           <td><?php echo $fila['id'] ?></td>
-          <td><?php echo $fila['nif'] ?></td>
-          <td><?php echo $fila['password'] ?></td>
+          <td><?php echo $fila['cif'] ?></td>
           <td><?php echo $fila['nombre'] ?></td>
-          <td><?php echo $fila['apellido1'] ?></td>
-          <td><?php echo $fila['apellido2'] ?></td>
           <td><?php echo $fila['telefono'] ?></td>
           <td><?php echo $fila['email'] ?></td>
           <td><?php echo $fila['direccion'] ?></td>
-          <td><?php echo $empresa['nombre'] ?></td>
           <!––Botones con las operaciones a seleccionar en javascript de modificar o borrar un registro existente ––>
           <td class="bot"><input onclick="document.getElementById('swmodificar').value = 'S';document.getElementById('id').value = <?php echo $fila['id'] ?>;" type='submit' name='up' id='up' value='Actualizar'></td>
           <td class='bot'><input onclick="document.getElementById('sweliminar').value = 'S';document.getElementById('id').value = <?php echo $fila['id'] ?>;" type='submit' name='del' id='del' value='Borrar'></td>
@@ -162,38 +149,12 @@ if(isset($_SESSION['personal_sesion']) == 'personal_sesion') {
     ?>
     <!––Mostramos los campos para insertar o modificar registros ––>
     <tr class="estilo_bottom_tabla" >
-	    <td><?php echo $swmodificar != 'S' ? '' : $afil_modi['id']; ?></td>
-      <td><input value="<?php echo $swmodificar != 'S' ? '' :$afil_modi['nif']; ?>" type='text' name='nif' size='10' class='centrado'></td>
-      <td><input value="<?php echo $swmodificar != 'S' ? '' :$afil_modi['password']; ?>" type='text' name='password' size='10' class='centrado'></td>
-      <td><input value="<?php echo $swmodificar != 'S' ? '' :$afil_modi['nombre']; ?>" type='text' name='nombre' size='10' class='centrado'></td>
-      <td><input value="<?php echo $swmodificar != 'S' ? '' :$afil_modi['apellido1']; ?>" type='text' name='ape1' size='10' class='centrado'></td>
-      <td><input value="<?php echo $swmodificar != 'S' ? '' :$afil_modi['apellido2']; ?>" type='text' name='ape2' size='10' class='centrado'></td>
-      <td><input value="<?php echo $swmodificar != 'S' ? '' :$afil_modi['telefono']; ?>" type='text' name='telefono' size='10' class='centrado'></td>
-      <td><input value="<?php echo $swmodificar != 'S' ? '' :$afil_modi['email']; ?>" type='text' name='email' size='10' class='centrado'></td>
-      <td><input value="<?php echo $swmodificar != 'S' ? '' :$afil_modi['direccion']; ?>" type='text' name='direccion' size='10' class='centrado'></td>
-      <td>
-      <!––En este select recogemos las empresa de base de datos para selecionarlas si insertamos o modificamos ––>
-        <select name='empresa' class='centrado'>
-          <option value="">Seleccionar</option>
-          <?php
-              if (mysqli_num_rows($empresas) == 0) {
-              } else {
-                foreach($empresas as $fila_option){
-
-            ?>
-            <option 
-            <?php 
-
-              if($swmodificar == 'S' && $fila_option['id'] == $afil_modi['id_empresa_fk']) {
-                echo "selected='selected'";
-              } 
-            ?> value="<?php echo $fila_option['id'] ?>"><?php echo $fila_option['nombre'] ?></option>
-            <?php
-              }
-            }
-            ?>
-        </select>
-      </td>
+	    <td><?php echo $swmodificar != 'S' ? '' : $empr_modi['id']; ?></td>
+      <td><input value="<?php echo $swmodificar != 'S' ? '' :$empr_modi['cif']; ?>" type='text' name='cif' size='10' class='centrado'></td>
+      <td><input value="<?php echo $swmodificar != 'S' ? '' :$empr_modi['nombre']; ?>" type='text' name='nombre' size='10' class='centrado'></td>
+      <td><input value="<?php echo $swmodificar != 'S' ? '' :$empr_modi['telefono']; ?>" type='text' name='telefono' size='10' class='centrado'></td>
+      <td><input value="<?php echo $swmodificar != 'S' ? '' :$empr_modi['email']; ?>" type='text' name='email' size='10' class='centrado'></td>
+      <td><input value="<?php echo $swmodificar != 'S' ? '' :$empr_modi['direccion']; ?>" type='text' name='direccion' size='10' class='centrado'></td>
       <td class='bot' colspan="2">
         <?php
           if ($swmodificar) {
@@ -214,7 +175,7 @@ if(isset($_SESSION['personal_sesion']) == 'personal_sesion') {
   </table>
 
   <!––Camos ocultos (HIDDEN) para mandar las acciones a realizar ––>
-  <input value="<?php echo $swmodificar != 'S' ? '' : $afil_modi['id']; ?>" name="id" id="id" type="hidden" />
+  <input value="<?php echo $swmodificar != 'S' ? '' : $empr_modi['id']; ?>" name="id" id="id" type="hidden" />
   <input value="" name="swinsertar" id="swinsertar" type="hidden" />
   <input value="" name="swmodificar" id="swmodificar" type="hidden" />
   <input value="" name="swmodificarapply" id="swmodificarapply" type="hidden" />
@@ -222,10 +183,9 @@ if(isset($_SESSION['personal_sesion']) == 'personal_sesion') {
   <p>&nbsp;</p>
 </form>
     </article>
-    <footer class="pie"> <?php include $incRoot."MVC_TOCAR\VISTA\INCLUDES\pie.php" ?></footer>
+    <footer class="pie"> <?php include $incRoot."MVC_TOCAR\VISTA\VI_INCLUDES\pie.php" ?></footer>
     
 
 </body>
 </html>
-
 

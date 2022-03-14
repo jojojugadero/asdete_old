@@ -23,8 +23,8 @@ include $incRoot.'MVC_TOCAR/MODELO/datos.php';
 session_start();
 
 //Comprobamos que la sesión es correcta y si es correcta se queda en la página se queda en la página y si no, nos redirige a index.php 
-if(isset($_SESSION['personal_sesion']) == 'personal_sesion') {
-    $url1 ="appPersonal.php";
+if(isset($_SESSION['superadmin_session']) == 'superadmin_session') {
+    //$url1 ="appPersonal.php";
     //header('Location: '.$url1);
   } else {
     $url2 ="index.php";
@@ -100,7 +100,7 @@ if(isset($_SESSION['personal_sesion']) == 'personal_sesion') {
     <a href="<?php echo $dirRoot; ?>MVC_TOCAR\VISTA\index.php">Indice</a> > <a href="<?php echo $dirRoot; ?>MVC_TOCAR\VISTA\VI_ADMINISTRADORES\superAdminLogin.php">Login</a>
     
     <!––Formulario para realizar todas las operaciones de base de datos––>
-<form name="formTabla" id="formTabla" href="appPersonal.php" method="post">
+<form name="formTabla" id="formTabla" href="<?php echo $dirRoot; ?>MVC_TOCAR\VISTA\VI_ADMINISTRADORES\appSuperAdminAdministradores.php" method="post">
   
   <table class="estilo_tabla" width="50%" align="center" >
     <tr class="estilo_cab_tabla">
