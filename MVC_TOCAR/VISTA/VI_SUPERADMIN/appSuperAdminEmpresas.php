@@ -100,7 +100,7 @@ if(isset($_SESSION['superadmin_session']) == 'superadmin_session') {
     <a href="<?php echo $dirRoot; ?>MVC_TOCAR\VISTA\index.php">Indice</a> > <a href="<?php echo $dirRoot; ?>MVC_TOCAR\VISTA\VI_ADMINISTRADORES\superAdminLogin.php">Login</a>
     
     <!––Formulario para realizar todas las operaciones de base de datos––>
-<form name="formTabla" id="formTabla" href="<?php echo $dirRoot; ?>MVC_TOCAR\VISTA\VI_ADMINISTRADORES\appSuperAdminAdministradores.php" method="post">
+<form name="formTabla" id="formTabla" href="<?php echo $dirRoot; ?>MVC_TOCAR\VISTA\VI_ADMINISTRADORES\appSuperAdminEmpresas.php" method="post">
   
   <table class="estilo_tabla" width="50%" align="center" >
     <tr class="estilo_cab_tabla">

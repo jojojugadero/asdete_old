@@ -56,19 +56,19 @@ if(isset($_SESSION['superadmin_session']) == 'superadmin_session') {
 
   //Se comprueba el tipo de acción para dar de alta modificar o eliminar la empresa
   if($swinsertar == 'S') {
-    altaEmpresa($datos);
+    altaAdmin($datos);
   } else if($swmodificarapply == 'S') {
-    modEmpresa($datos);
+    modAdmin($datos);
   } else if($sweliminar == 'S') {
-    eliminarEmpresa($id);
+    eliminarAdmin($id);
   }
 
   //Recogemos todos los administradores para mostarlos por pantalla
-  $afiliados = getAfiliados();
-  $empresas = getAdministradores($id);
+  $afiliados = getAdministradores();
+  $administradores = getAdministradores($id);
 
   //Si vamos a modificar la empresa se recoge la empresa por ID para su modificación
-  $empr_modi = $swmodificar == 'S' ? getAdministradorId($id) : '';
+  $admin_modi = $swmodificar == 'S' ? getAdministradorId($id) : '';
 ?>
 
 <body class="cuerpo_contenedor" >
@@ -80,7 +80,7 @@ if(isset($_SESSION['superadmin_session']) == 'superadmin_session') {
     </header>
 
           <!––En la parte izquierda seleccionamos las empresas de una lista en HTML ––>
-        <nav class="navega"><p style="font-size:large;">Empresas del sector</p>
+        <nav class="navega"><p style="font-size:large;">Administradores</p>
 
                    <?php include $incRoot."MVC_TOCAR\VISTA\INCLUDES\nav.php" ?>
 
@@ -119,14 +119,14 @@ if(isset($_SESSION['superadmin_session']) == 'superadmin_session') {
    
     <?php
       //Comprobamos si hay registros
-        if (mysqli_num_rows($empresas) == 0) {
+        if (mysqli_num_rows($administradores) == 0) {
           echo '<tr>\n
               <td colspan="11">No se han encontrado empresas</td>
              </tr>';
         } else {
           $num = 0;
           //Si hay registros se recorren para mostar las filas
-          foreach($empresas as $fila){
+          foreach($administradores as $fila){
             //Con este operador ternario damos estilo a cada de las lineas del formulario
             $color_fila = $num%2 == 1 ? 'estilo_fila1_tabla':'estilo_fila2_tabla';
             $num++;
@@ -149,12 +149,12 @@ if(isset($_SESSION['superadmin_session']) == 'superadmin_session') {
     ?>
     <!––Mostramos los campos para insertar o modificar registros ––>
     <tr class="estilo_bottom_tabla" >
-	    <td><?php echo $swmodificar != 'S' ? '' : $empr_modi['id']; ?></td>
-      <td><input value="<?php echo $swmodificar != 'S' ? '' :$empr_modi['cif']; ?>" type='text' name='cif' size='10' class='centrado'></td>
-      <td><input value="<?php echo $swmodificar != 'S' ? '' :$empr_modi['nombre']; ?>" type='text' name='nombre' size='10' class='centrado'></td>
-      <td><input value="<?php echo $swmodificar != 'S' ? '' :$empr_modi['telefono']; ?>" type='text' name='telefono' size='10' class='centrado'></td>
-      <td><input value="<?php echo $swmodificar != 'S' ? '' :$empr_modi['email']; ?>" type='text' name='email' size='10' class='centrado'></td>
-      <td><input value="<?php echo $swmodificar != 'S' ? '' :$empr_modi['direccion']; ?>" type='text' name='direccion' size='10' class='centrado'></td>
+	    <td><?php echo $swmodificar != 'S' ? '' : $admin_modi['id']; ?></td>
+      <td><input value="<?php echo $swmodificar != 'S' ? '' :$admin_modi['cif']; ?>" type='text' name='cif' size='10' class='centrado'></td>
+      <td><input value="<?php echo $swmodificar != 'S' ? '' :$admin_modi['nombre']; ?>" type='text' name='nombre' size='10' class='centrado'></td>
+      <td><input value="<?php echo $swmodificar != 'S' ? '' :$admin_modi['telefono']; ?>" type='text' name='telefono' size='10' class='centrado'></td>
+      <td><input value="<?php echo $swmodificar != 'S' ? '' :$admin_modi['email']; ?>" type='text' name='email' size='10' class='centrado'></td>
+      <td><input value="<?php echo $swmodificar != 'S' ? '' :$admin_modi['direccion']; ?>" type='text' name='direccion' size='10' class='centrado'></td>
       <td class='bot' colspan="2">
         <?php
           if ($swmodificar) {
@@ -175,7 +175,7 @@ if(isset($_SESSION['superadmin_session']) == 'superadmin_session') {
   </table>
 
   <!––Camos ocultos (HIDDEN) para mandar las acciones a realizar ––>
-  <input value="<?php echo $swmodificar != 'S' ? '' : $empr_modi['id']; ?>" name="id" id="id" type="hidden" />
+  <input value="<?php echo $swmodificar != 'S' ? '' : $admin_modi['id']; ?>" name="id" id="id" type="hidden" />
   <input value="" name="swinsertar" id="swinsertar" type="hidden" />
   <input value="" name="swmodificar" id="swmodificar" type="hidden" />
   <input value="" name="swmodificarapply" id="swmodificarapply" type="hidden" />
