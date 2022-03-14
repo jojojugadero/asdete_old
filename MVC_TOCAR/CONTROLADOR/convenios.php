@@ -36,7 +36,7 @@ if(isset($_SESSION['afiliado_sesion']) == 'afiliado_sesion') {
   $_SESSION['id_empresa'] = $id_empresa_conv;
   $empresa_conv = getEmpresa($id_empresa_conv);
 
-
+  
   //Elegimos el convenio de  empresas desde la pantalla de afiliados en un select
   if($id_empresa_conv == 1) {
     $url = $dirRoot."MVC_TOCAR/VISTA/VI_CONVENIOS/convenios_empresa_1.php";
