@@ -15,7 +15,7 @@ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <title>App Personal</title>
-    <link rel="stylesheet" href="<?php echo $dirRoot; ?>MVC_TOCAR\VISTA\ESTILOS\estilos.css">
+ <link rel="stylesheet" href="<?php echo $dirRoot; ?>MVC_TOCAR/VISTA/ESTILOS/estilos.css">
 </head>
 <?php
 
@@ -61,13 +61,13 @@ if(isset($_SESSION['afiliado_sesion']) == 'afiliado_sesion') {
 
 
     <header class="cabecera">
-    <?php include $incRoot."MVC_TOCAR\VISTA\INCLUDES\cabecera.php" ?>
+    <?php include $incRoot."MVC_TOCAR/VISTA/VI_INCLUDES/cabecera.php" ?>
     </header>
 
               <!––En la parte izquierda seleccionamos las empresas de una lista en HTML ––>
               <nav class="navega"><p style="font-size:large;">Empresas del sector</p>
 
-                     <?php include $incRoot."MVC_TOCAR\VISTA\INCLUDES\nav.php" ?>
+              <?php include $incRoot."MVC_TOCAR/VISTA/VI_INCLUDES/nav.php" ?>
 
           </nav>
 
@@ -76,7 +76,7 @@ if(isset($_SESSION['afiliado_sesion']) == 'afiliado_sesion') {
           <aside class="barra"><p style="font-size:large;">Contactos</p>
 
                  <!––En la parte derecha ponemos los contactos de la web con una lista en HTML ––>
-                 <?php include $incRoot."MVC_TOCAR\VISTA\INCLUDES\nav.php" ?>
+                 <?php include $incRoot."MVC_TOCAR/VISTA/VI_INCLUDES/aside.php" ?>
 
           </aside>
 
