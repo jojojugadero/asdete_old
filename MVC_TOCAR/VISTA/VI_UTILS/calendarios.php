@@ -20,9 +20,10 @@ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
 <body class="cuerpo_contenedor">
 
     <!––Incluimos la cabecera ––>
-        <header class="cabecera">
-            <?php include "cabecera.php" ?>
-        </header>
+    <header class="cabecera">
+    <?php include $incRoot."MVC_TOCAR\VISTA\INCLUDES\cabecera.php" ?>
+    </header>
+
 
         <!––En la parte izquierda seleccionamos las empresas de una lista en HTML ––>
             <nav class="navega">

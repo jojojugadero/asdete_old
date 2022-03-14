@@ -108,7 +108,7 @@ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
 
 
             </article>
-            <footer class="pie"><?php include "pie.php" ?></footer>
+            <footer class="pie"> <?php include $incRoot."MVC_TOCAR\VISTA\INCLUDES\pie.php" ?></footer>
 
 </body>
 

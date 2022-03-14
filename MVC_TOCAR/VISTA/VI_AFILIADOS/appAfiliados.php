@@ -26,7 +26,7 @@ session_start();
 
 //Comprobamos si se ha iniciado la sesión de afiliado
 
-if(isset($_SESSION['afiliado_sesion']) == 'afiliado_sesion') {
+if(isset($<['afiliado_sesion']) == 'afiliado_sesion') {
     
     //Si no se ha inicado la sesión de afiliado lo redireccionamos al indice
   } else {
@@ -150,7 +150,7 @@ if(isset($_SESSION['afiliado_sesion']) == 'afiliado_sesion') {
   <p>&nbsp;</p>
 </form>
     </article>
-    <?php include $incRoot."MVC_TOCAR\VISTA\INCLUDES\pie.php" ?>
+    <footer class="pie"> <?php include $incRoot."MVC_TOCAR\VISTA\INCLUDES\pie.php" ?></footer>
     
 
 </body>
