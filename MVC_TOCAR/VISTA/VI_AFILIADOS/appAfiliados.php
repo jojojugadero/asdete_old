@@ -90,7 +90,7 @@ if(isset($_SESSION['afiliado_sesion']) == 'afiliado_sesion') {
 
 
     <!––Mandamos los datos de la empresa selecionada atraves de este select y en la página concino.php nos redirige al convenio de la empresa seleccionada ––>
-<form name="saludoAfiliado" id="saludoAfiliado" action="<?php echo $dirRoot ?>MVC_TOCAR/VISTA/VI_AFILIADOS/appAfiliados.php" method="post">
+<form name="saludoAfiliado" id="saludoAfiliado" action="<?php echo $dirRoot ?>MVC_TOCAR/CONTROLADOR/convenios.php" method="post">
   
 <div align="center" style="margin-top:100px;">
     <div class="afidiv" >
