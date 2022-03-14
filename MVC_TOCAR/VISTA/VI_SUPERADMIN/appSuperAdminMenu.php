@@ -14,7 +14,8 @@ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Asdete</title>
    <!––Linkamos hoja de estilos ––>
-    <link rel="stylesheet" href="..\ESTILOS\estilos.css">
+   <link rel="stylesheet" href="<?php echo $dirRoot; ?>MVC_TOCAR\VISTA\ESTILOS\estilos.css">
+
 </head>
 
 

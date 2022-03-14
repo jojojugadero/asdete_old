@@ -47,12 +47,12 @@ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
 		} else {
 			//Si no mostramos un mensaje de no encontrado y un link a index
 			echo "Clave o usuario no validos";
-			echo "<a href='MVC_TOCAR\VISTA\index.php'>Volver indice</a>";
+			echo "<a href=$dirRoot.'MVC_TOCAR/VISTA/index.php'>Volver indice</a>";
 		}
 	} else {
 		//Si no mostramos un mensaje de no encontrado y un link a index
 		echo "Usuario no encontrado;";
-		echo "<a href='<?php echo $dirRoot; ?>MVC_TOCAR\VISTA\index.php'>Volver indice</a>";
+		echo "<a href=$dirRoot.'MVC_TOCAR\VISTA\index.php'>Volver indice</a>";
 	}
 
 	?>

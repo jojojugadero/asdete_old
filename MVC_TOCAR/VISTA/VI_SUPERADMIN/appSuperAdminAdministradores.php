@@ -1,4 +1,9 @@
-
+<?php
+$pagina = $_SERVER['PHP_SELF'];
+$arrayDir = preg_split('/\//',$pagina);
+$dirRoot = '/'.$arrayDir[1].'/';
+$incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -6,7 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <title>App Personal</title>
-    <link rel="stylesheet" href="..\ESTILOS\estilos.css">
+ <link rel="stylesheet" href="<?php echo $dirRoot; ?>MVC_TOCAR\VISTA\ESTILOS\estilos.css">
 </head>
 <?php
 
@@ -18,10 +23,10 @@ session_start();
 
 //Comprobamos que la sesión es correcta y si es correcta se queda en la página se queda en la página y si no, nos redirige a index.php 
 if(isset($_SESSION['personal_sesion']) == 'personal_sesion') {
-    $url1 ="appPersonal.php";
+    $url1 =$dirRoot.'MVC_TOCAR/VISTA/appSuperAdminAdministradores.php';
     //header('Location: '.$url1);
   } else {
-    $url2 ="index.php";
+    $url2 =$dirRoot.'MVC_TOCAR/VISTA/index.php';
     header('Location: '.$url2);
   }
 
@@ -112,7 +117,7 @@ if(isset($_SESSION['personal_sesion']) == 'personal_sesion') {
 
     <article class="skynet">
     <!––Migas de pan (breadcrumbs) ––>
-    <a href="index.php">Indice</a> > <a href="personalLogin.php">Login</a>
+    <a href="<?php echo $dirRoot; ?>MVC_TOCAR\VISTA\index.php">Indice</a> > <a href="<?php echo $dirRoot; ?>MVC_TOCAR\VISTA\VI_ADMINISTRADORES\superAdminLogin.php">Login</a>
     
     <!––Formulario para realizar todas las operaciones de base de datos––>
 <form name="formTabla" id="formTabla" href="appPersonal.php" method="post">
@@ -233,7 +238,7 @@ if(isset($_SESSION['personal_sesion']) == 'personal_sesion') {
   <p>&nbsp;</p>
 </form>
     </article>
-    <footer class="pie"><?php include "pie.php" ?></footer>
+    <footer class="pie"> <?php include $incRoot."MVC_TOCAR\VISTA\INCLUDES\pie.php" ?></footer>
     
 
 </body>

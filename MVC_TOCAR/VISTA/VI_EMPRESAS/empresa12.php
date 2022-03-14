@@ -1,4 +1,3 @@
-
 <?php
 $pagina = $_SERVER['PHP_SELF'];
 $arrayDir = preg_split('/\//',$pagina);
@@ -14,7 +13,7 @@ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Asdete</title>
-    <link rel="stylesheet" href="MVC_TOCAR\VISTA\ESTILOS\estilos.css">
+    <link rel="stylesheet" href="<?php echo $dirRoot; ?>MVC_TOCAR\VISTA\ESTILOS\estilos.css">
 </head>
 
 
@@ -22,45 +21,23 @@ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
 
     <!––Incluimos la cabecera ––>
         <header class="cabecera">
-            <?php include "cabecera.php" ?>
+            <?php include $incRoot.'MVC_TOCAR\VISTA\VI_INCLUDES\cabecera.php'?> 
         </header>
 
         <!––En la parte izquierda seleccionamos las empresas de una lista en HTML ––>
             <nav class="navega">
-                <p style="font-size:large;">Empresas del sector</p>
-
-                <ul>
-                    <li class="li_sidebar"><a href="empresa1.php" class="enlace_sidebar">Empresa 1</a></li>
-                    <li class="li_sidebar"><a href="empresa2.php" class="enlace_sidebar">Empresa 2</a></li>
-                    <li class="li_sidebar"><a href="empresa3.php" class="enlace_sidebar">Empresa 3</a></li>
-                    <li class="li_sidebar"><a href="empresa4.php" class="enlace_sidebar">Empresa 4</a></li>
-                    <li class="li_sidebar"><a href="empresa5.php" class="enlace_sidebar">Empresa 5</a></li>
-                    <li class="li_sidebar"><a href="empresa6.php" class="enlace_sidebar">Empresa 6</a></li>
-                    <li class="li_sidebar"><a href="empresa7.php" class="enlace_sidebar">Empresa 7</a></li>
-                    <li class="li_sidebar"><a href="empresa8.php" class="enlace_sidebar">Empresa 8</a></li>
-                    <li class="li_sidebar"><a href="empresa9.php" class="enlace_sidebar">Empresa 9</a></li>
-                    <li class="li_sidebar"><a href="empresa10.php" class="enlace_sidebar">Empresa 10</a></li>
-                    <li class="li_sidebar"><a href="empresa11.php" class="enlace_sidebar">Empresa 11</a></li>
-                    <li class="li_sidebar"><a href="empresa12.php" class="enlace_sidebar">Empresa 12</a></li>
-                </ul>
+            <?php include $incRoot.'MVC_TOCAR\VISTA\VI_INCLUDES\nav.php'?> 
             </nav>
             <aside class="barra">
                 <p style="font-size:large;">Contactos</p>
                 <!––En la parte derecha ponemos los contactos de la web con una lista en HTML ––>
-                    <ul>
-                        <li class="li_nav1">Teléfono</li>
-                        <li class="li_nav2">912345678</li>
-                        <li class="li_nav1">Email</li>
-                        <li class="li_nav2">admin@asdete.com</li>
-                        <li class="li_nav1">Dirección</li>
-                        <li class="li_nav2">C\ Asdete 123</li>
-                    </ul>
+                <?php include $incRoot.'MVC_TOCAR\VISTA\VI_INCLUDES\aside.php'?> 
             </aside>
 
 
             <article class="skynet">
 
-                <h2>EMPRESA 12</h2>
+                <h2>EMPRESA 1</h2>
                 <section>
                     <h3>Introducción</h3>
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est repellat harum voluptatibus error accusamus quisquam, ipsa ullam nostrum exercitationem dolorem necessitatibus asperiores distinctio sint tenetur! Exercitationem atque earum obcaecati veritatis. eran superestrellas de la editorial.</p>
@@ -109,7 +86,7 @@ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
 
 
             </article>
-            <footer class="pie"><?php include "pie.php" ?></footer>
+            <footer class="pie"> <?php include $incRoot."MVC_TOCAR\VISTA\VI_INCLUDES\pie.php" ?></footer>
 
 </body>
 
