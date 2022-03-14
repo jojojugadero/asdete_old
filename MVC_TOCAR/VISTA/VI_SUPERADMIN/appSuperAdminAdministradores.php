@@ -63,12 +63,12 @@ if(isset($_SESSION['superadmin_session']) == 'superadmin_session') {
     eliminarEmpresa($id);
   }
 
-  //Recogemos todos los afiliados y empresas para mostarlos por pantalla
+  //Recogemos todos los administradores para mostarlos por pantalla
   $afiliados = getAfiliados();
-  $empresas = getEmpresas();
+  $empresas = getAdministradores($id);
 
   //Si vamos a modificar la empresa se recoge la empresa por ID para su modificación
-  $empr_modi = $swmodificar == 'S' ? getEmpresa($id) : '';
+  $empr_modi = $swmodificar == 'S' ? getAdministradorId($id) : '';
 ?>
 
 <body class="cuerpo_contenedor" >

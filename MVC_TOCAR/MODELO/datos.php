@@ -291,7 +291,7 @@
 
 
 	//Nos devuelve todos los administradores de la base de datos
-	function getAdministradores() {
+	function getAdministradores($id) {
 
 		$conexion = crearConexion("asdete");
 
