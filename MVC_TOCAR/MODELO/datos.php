@@ -397,69 +397,7 @@
 	
 
 
-	//Da de alta una empresa con los datos introducidos por pantalla
-	function altaAdmin($datos) {
-		$conexion = crearConexion("asdete");
-
-		$consulta = "INSERT INTO `administradores`(`cif`,  `nombre`, `telefono`, `email`, `direccion`) VALUES ('".
-		$datos['cif']."','".
-		$datos['nombre']."','".
-		$datos['telefono']."','".
-		$datos['email']."','".
-		$datos['direccion']."')";
-
-		echo $consulta;
-
-		$resultado = mysqli_query($conexion, $consulta);
-		var_dump($resultado);
-
-		mysqli_close($conexion);
-	}
-
-	//Modifica la empresa con los datos introducidos por pantalla
-
-	function modAdmin($datos) {
-		$conexion = crearConexion("asdete");
-
-		$consulta = "UPDATE `administradores` SET 
-		`cif`='".$datos['cif']."',
-		`nombre`='".$datos['nombre']."',
-		`telefono`='".$datos['telefono']."',
-		`email`='".$datos['email']."',
-		`direccion`='".$datos['direccion']."' WHERE id = ".$datos['id'];
-
-
-		$resultado = mysqli_query($conexion, $consulta);
-
-		mysqli_close($conexion);
-	}
-
-	//Elimina una empresa por su ID
-
-	function eliminarAdmin($id) {
-
-		$conexion = crearConexion("asdete");
-
-		$consulta = "DELETE FROM administradores WHERE id = ".$id;
-
-		$resultado = mysqli_query($conexion, $consulta);
-
-		mysqli_close($conexion);
-	}
-
-
-	//Nos devuelve todos los afiliados de la base de datos
-	function getAdministradores() {
-		$conexion = crearConexion("asdete");
-
-		$consulta = "SELECT * FROM administradores ORDER BY ID ASC";
-
-		$resultado = mysqli_query($conexion, $consulta);
-
-		return $resultado;
-
-		mysqli_close($conexion);
-	}
+	
 	
 
 ?>

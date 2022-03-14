@@ -26,7 +26,7 @@ session_start();
 
 //Comprobamos si se ha iniciado la sesión de afiliado
 
-if(isset($<['afiliado_sesion']) == 'afiliado_sesion') {
+if(isset($_SESSION['afiliado_sesion']) == 'afiliado_sesion') {
     
     //Si no se ha inicado la sesión de afiliado lo redireccionamos al indice
   } else {
@@ -84,13 +84,13 @@ if(isset($<['afiliado_sesion']) == 'afiliado_sesion') {
     <article class="skynet">
     <!––Migas de pan (breadcrumbs) ––>
    
-    <a href="<?php echo $dirRoot; ?>MVC_TOCAR\VISTA\index.php">Indice</a> > <a href="<?php echo $dirRoot; ?>MVC_TOCAR\VISTA\AFILIADOS\afiliadosLogin.php">Login</a>
+    <a href="<?php echo $dirRoot; ?>MVC_TOCAR/VISTA/index.php">Indice</a> > <a href="<?php echo $dirRoot; ?>MVC_TOCAR/VISTA/VI_AFILIADOS/afiliadosLogin.php">Login</a>
     
     <!––Mostramos el nombre del afiliado con un saludo y con sus datos y si no son correctos le dejamos un link para escriba a administración y modifique sus datos ––>
 
 
     <!––Mandamos los datos de la empresa selecionada atraves de este select y en la página concino.php nos redirige al convenio de la empresa seleccionada ––>
-<form name="saludoAfiliado" id="saludoAfiliado" action="convenios.php" method="post">
+<form name="saludoAfiliado" id="saludoAfiliado" action="<?php echo $dirRoot ?>MVC_TOCAR/VISTA/VI_AFILIADOS/appAfiliados.php" method="post">
   
 <div align="center" style="margin-top:100px;">
     <div class="afidiv" >
@@ -136,7 +136,7 @@ if(isset($<['afiliado_sesion']) == 'afiliado_sesion') {
   <p>&nbsp;</p>
 </form>
     </article>
-    <footer class="pie"> <?php include $incRoot."MVC_TOCAR\VISTA\INCLUDES\pie.php" ?></footer>
+    <footer class="pie"> <?php include $incRoot."MVC_TOCAR/VISTA/INCLUDES/pie.php" ?></footer>
     
 
 </body>

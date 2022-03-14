@@ -14,7 +14,7 @@ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Asdete</title>
    <!––Linkamos hoja de estilos ––>
-   <link rel="stylesheet" href="ESTILOS\estilos.css">
+   <link rel="stylesheet" href="<?php echo $dirRoot; ?>MVC_TOCAR/VISTA/ESTILOS/estilos.css">
 </head>
 
 
@@ -56,7 +56,7 @@ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
 
    </article>
    <!––Pie de la página con un include en PHP ––>
-   <footer class="pie"><?php include "VI_INCLUDES\pie.php" ?></footer>
+   <footer class="pie"><?php include $incRoot."MVC_TOCAR/VISTA/VI_INCLUDES/pie.php" ?></footer>
 
 </body>
 

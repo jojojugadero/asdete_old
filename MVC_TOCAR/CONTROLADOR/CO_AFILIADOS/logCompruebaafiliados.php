@@ -22,7 +22,7 @@ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
 
 	//Incluimos la clase para gestión de la base de datos
 
-	include $incRoot.'MVC_TOCAR/MODELO/datos.php';
+	include $incRoot."MVC_TOCAR/MODELO/datos.php";
 
 	//Recogemos el nombre y el password del formulario 
 	$nombre = $_POST['nombre'];
@@ -42,7 +42,7 @@ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
 			// Creamos una cookie con su nombre.
 			setcookie("afiliado_cookie", $nombre, 1);
 			//Despues de crear la sesión y la cookie redirimos al usuario (si es correcto) a appAfiliados.php 
-			$url = $dirRoot."MVC_TOCAR\VISTA\AFILIADOS\appAfiliados.php";
+			$url = $dirRoot."MVC_TOCAR/VISTA/VI_AFILIADOS/appAfiliados.php";
 			header('Location: ' . $url);
 		} else {
 			//Si no mostramos un mensaje de no encontrado y un link a index
@@ -52,7 +52,7 @@ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
 	} else {
 		//Si no mostramos un mensaje de no encontrado y un link a index
 		echo "Usuario no encontrado;";
-		echo "<a href=$dirRoot.'MVC_TOCAR\VISTA\index.php'>Volver indice</a>";
+		echo "<a href=$dirRoot.'MVC_TOCAR/VISTA/index.php'>Volver indice</a>";
 	}
 
 	?>
