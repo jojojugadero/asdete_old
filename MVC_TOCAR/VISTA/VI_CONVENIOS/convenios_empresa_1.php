@@ -40,8 +40,8 @@ if(isset($_SESSION['afiliado_sesion']) == 'afiliado_sesion') {
 <body class="cuerpo_contenedor" >
 
 
-    <header class="cabecera">
-      <?php include "cabecera.php" ?>
+<header class="cabecera">
+        <?php include $incRoot."MVC_TOCAR/VISTA/VI_INCLUDES/cabecera.php" ?>
     </header>
 
     <!––En la parte izquierda seleccionamos las empresas de una lista en HTML ––>
