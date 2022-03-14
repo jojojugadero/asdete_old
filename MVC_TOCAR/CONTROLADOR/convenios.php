@@ -55,6 +55,8 @@ if(isset($_SESSION['afiliado_sesion']) == 'afiliado_sesion') {
 <body class="cuerpo_contenedor" >
 
 
+
+
     <header class="cabecera">
       <?php include $incRoot."MVC_TOCAR\VISTA\INCLUDES\cabecera.php" ?>
     </header>
