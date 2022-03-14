@@ -27,7 +27,7 @@ if(isset($_SESSION['superadmin_session']) == 'superadmin_session') {
     //$url1 ="appPersonal.php";
     //header('Location: '.$url1);
   } else {
-    $url2 ="index.php";
+    $url2 = $dirRoot.'MVC_TOCAR/VISTA/index.php';
     header('Location: '.$url2);
   }
 
