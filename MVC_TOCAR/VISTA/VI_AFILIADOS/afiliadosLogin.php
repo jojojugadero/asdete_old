@@ -85,7 +85,7 @@ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
         </form>
 
     </article>
-    <footer class="pie"> <?php include $incRoot."MVC_TOCAR\VISTA\VI_INCLUDES\pie.php" ?></footer>
+    <footer class="pie"> <?php include $incRoot."MVC_TOCAR/VISTA/VI_INCLUDES/pie.php" ?></footer>
 
 </body>
 
