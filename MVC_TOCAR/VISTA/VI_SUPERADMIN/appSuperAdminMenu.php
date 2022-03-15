@@ -29,14 +29,14 @@ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
     <!––En la parte izquierda seleccionamos las empresas de una lista en HTML ––>
                   <nav class="navega"><p style="font-size:large;">Empresas del sector</p>
 
-                            <?php include $incRoot."MVC_TOCAR\VISTA\INCLUDES\nav.php" ?>
+                            <?php include $incRoot."MVC_TOCAR/VISTA/INCLUDES/nav.php" ?>
 
                </nav>
 
      <aside class="barra"><p style="font-size:large;">Contactos</p>
 
             <!––En la parte derecha ponemos los contactos de la web con una lista en HTML ––>
-            <?php include $incRoot."MVC_TOCAR\VISTA\INCLUDES\nav.php" ?>
+            <?php include $incRoot."MVC_TOCAR/VISTA/INCLUDES/nav.php" ?>
 
         </aside>
 

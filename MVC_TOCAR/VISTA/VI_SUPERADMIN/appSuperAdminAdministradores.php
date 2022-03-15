@@ -82,7 +82,7 @@ if(isset($_SESSION['superadmin_session']) == 'superadmin_session') {
           <!––En la parte izquierda seleccionamos las empresas de una lista en HTML ––>
         <nav class="navega"><p style="font-size:large;">Administradores</p>
 
-                   <?php include $incRoot."MVC_TOCAR\VISTA\INCLUDES\nav.php" ?>
+                   <?php include $incRoot."MVC_TOCAR/VISTA/VI_INCLUDES/nav.php" ?>
 
       </nav>
 
@@ -90,17 +90,17 @@ if(isset($_SESSION['superadmin_session']) == 'superadmin_session') {
               <aside class="barra"><p style="font-size:large;">Contactos</p>
 
               <!––En la parte derecha ponemos los contactos de la web con una lista en HTML ––>
-                          <?php include $incRoot."MVC_TOCAR\VISTA\INCLUDES\nav.php" ?>
+                          <?php include $incRoot."MVC_TOCAR/VISTA/VI_INCLUDES/nav.php" ?>
 
               </aside>
 
 
     <article class="skynet">
     <!––Migas de pan (breadcrumbs) ––>
-    <a href="<?php echo $dirRoot; ?>MVC_TOCAR\VISTA\index.php">Indice</a> > <a href="<?php echo $dirRoot; ?>MVC_TOCAR\VISTA\VI_ADMINISTRADORES\superAdminLogin.php">Login</a>
+    <a href="<?php echo $dirRoot; ?>MVC_TOCAR/VISTA/index.php">Indice</a> > <a href="<?php echo $dirRoot; ?>MVC_TOCAR/VISTA/VI_ADMINISTRADORES/superAdminLogin.php">Login</a>
     
     <!––Formulario para realizar todas las operaciones de base de datos––>
-<form name="formTabla" id="formTabla" href="<?php echo $dirRoot; ?>MVC_TOCAR\VISTA\VI_ADMINISTRADORES\appSuperAdminAdministradores.php" method="post">
+<form name="formTabla" id="formTabla" href="<?php echo $dirRoot; ?>MVC_TOCAR/VISTA/VI_ADMINISTRADORES/appSuperAdminAdministradores.php" method="post">
   
   <table class="estilo_tabla" width="50%" align="center" >
     <tr class="estilo_cab_tabla">
