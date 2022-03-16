@@ -18,6 +18,8 @@ session_start();
 $dat = new Datos();
 $appAd = new AppAdministra();
 
+
+
 //Comprobamos que la sesión es correcta y si es correcta se queda en la página se queda en la página y si no, nos redirige a index.php 
 
     $appAd->compruebaSession();
@@ -33,13 +35,13 @@ $appAd = new AppAdministra();
  
 
   //Si vamos a modificar el afiliado se recoge el afiliado por ID para su modificación
-  $afil_modi = $swmodificar == 'S' ? $datos->getAfiliado($id) : $datos;
+  $afil_modi = $swmodificar == 'S' ? $dat->getAfiliado($id) : $datos;
 
   //Se comprueba el tipo de acción para dar de alta modificar o eliminar el afiliado
  
   //Recogemos todos los afiliados y empresas para mostarlos por pantalla
-  $afiliados = $datos->getAfiliados();
-  $empresas = $datos->getEmpresas();
+  $afiliados = $dat->getAfiliados();
+  $empresas = $dat->getEmpresas();
 
 ?>
 
