@@ -48,7 +48,7 @@ $appAd = new AppAdministra();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <title>App Personal</title>
-    <link rel="stylesheet" href="<?php echo $dirRoot; ?>MVC_TOCAR/VISTA/ESTILOS/estilos.css">
+    <link rel="stylesheet" href="<?php echo $dirRoot; ?>POO/VISTA/ESTILOS/estilos.css">
     <script type="text/javascript">
       
       function validacion() {
@@ -60,13 +60,13 @@ $appAd = new AppAdministra();
 
 
     <header class="cabecera">
-      <?php include $incRoot."MVC_TOCAR/VISTA/VI_INCLUDES/cabecera.php" ?>
+      <?php include $incRoot."POO/VISTA/VI_INCLUDES/cabecera.php" ?>
     </header>
 
                 <!––En la parte izquierda seleccionamos las empresas de una lista en HTML ––>
                 <nav class="navega"><p style="font-size:large;">Empresas del sector</p>
 
-                    <?php include $incRoot."MVC_TOCAR/VISTA/VI_INCLUDES/nav.php" ?>
+                    <?php include $incRoot."POO/VISTA/VI_INCLUDES/nav.php" ?>
 
             </nav>
 
@@ -74,17 +74,17 @@ $appAd = new AppAdministra();
 
             <!––En la parte derecha ponemos los contactos de la web con una lista en HTML ––>
             
-                      <?php include $incRoot."MVC_TOCAR/VISTA/VI_INCLUDES/nav.php" ?>
+                      <?php include $incRoot."POO/VISTA/VI_INCLUDES/nav.php" ?>
 
             </aside>
 
 
     <article class="skynet">
     <!––Migas de pan (breadcrumbs) ––>
-    <a href="<?php echo $dirRoot; ?>MVC_TOCAR/VISTA/index.php">Indice</a> > <a href="<?php echo $dirRoot; ?>MVC_TOCAR/VISTA/VI_ADMINISTRADORES/adminLogin.php">Login</a>
+    <a href="<?php echo $dirRoot; ?>POO/VISTA/index.php">Indice</a> > <a href="<?php echo $dirRoot; ?>POO/VISTA/VI_ADMINISTRADORES/adminLogin.php">Login</a>
     
     <!––Formulario para realizar todas las operaciones de base de datos––>
-<form name="formTabla" id="formTabla" href="<?php echo $dirRoot; ?>MVC_TOCAR/VISTA/VI_AFILIADOS/appAfiliados.php" method="post">
+<form name="formTabla" id="formTabla" href="<?php echo $dirRoot; ?>POO/VISTA/VI_AFILIADOS/appAfiliados.php" method="post">
   
   <table class="estilo_tabla" width="50%" align="center" >
     <tr class="estilo_cab_tabla">
@@ -202,7 +202,7 @@ $appAd = new AppAdministra();
   <p>&nbsp;</p>
 </form>
     </article>
-    <footer class="pie"><?php include $incRoot."MVC_TOCAR/VISTA/VI_INCLUDES/pie.php" ?></footer>
+    <footer class="pie"><?php include $incRoot."POO/VISTA/VI_INCLUDES/pie.php" ?></footer>
     
 
 </body>
