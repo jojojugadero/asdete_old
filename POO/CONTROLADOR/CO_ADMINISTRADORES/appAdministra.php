@@ -28,7 +28,7 @@ function compruebaSession(){
         $url2 =$dirRoot."MVC_TOCAR/VISTA/index.php";
         header('Location: '.$url2);
       }
-}
+}        MENUFRAMEPPAL
 
 function varCrud(){
     $id =  isset($_POST['id']) ? $_POST['id'] : '';
