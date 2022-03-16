@@ -1,26 +1,15 @@
 <?php
- public class Datos {
-
-		// Datos de conexión
-	var	$host = "localhost";
-	var	$user = "root";
-	var	$password = "";
-	//Nombre BBDD
-	var $baseDatos = "asdete";
-
-
-
-
-	public function __construct(){
-
-	}
 
 	//Función para crear la conexión a base de datos
 	function crearConexion($database) {
 
-	
+		// Datos de conexión
+		$host = "localhost";
+		$user = "root";
+		$password = "";
+
 		// Establecemos la conexión con la base de datos
-		$conexion = mysqli_connect($this->$host,$this->$user, $this->$pass, $database);
+		$conexion = mysqli_connect($host, $user, $password, $database);
 
 		return $conexion;
 	}
@@ -28,7 +17,7 @@
 	//Verificamos el nombre del afiliado en base de datos
 
 	function existeUsuario($nombre){
-		$conexion = crearConexion($this->$baseDatos);
+		$conexion = crearConexion("asdete");
 
 		$consulta = "SELECT * FROM afiliados WHERE nombre = '" . $nombre . "'";
 		
@@ -47,7 +36,7 @@
 
 	//Verificamos el password de un afiliado en base de datos
 	function verificaPass($nombre,$pass){
-		$conexion = crearConexion($this->$baseDatos);
+		$conexion = crearConexion("asdete");
 
 		$consulta = "SELECT * FROM afiliados WHERE nombre = '" . $nombre . "' and password = '" . $pass . "'";
 		
@@ -66,7 +55,7 @@
 
 	//Nos devuelve los datos de un afiliado a través de su nombre y contraseña
 	function getAfiliadoLogin($nombre,$pass){
-		$conexion = crearConexion($this->$baseDatos);
+		$conexion = crearConexion("asdete");
 
 		$consulta = "SELECT * FROM afiliados WHERE nombre = '" . $nombre . "' and password = '" . $pass . "'";
 		
@@ -79,7 +68,7 @@
 
 	//Comprobamos que el nombre del personal del sindicato sea correcto
 	function existeAdmin($nombre){
-		$conexion = crearConexion($this->$baseDatos);
+		$conexion = crearConexion("asdete");
 
 		$consulta = "SELECT * FROM administradores WHERE nickname = '" . $nombre . "'";
 		
@@ -99,7 +88,7 @@
 	//Comprobamos que el nombre del SUPERADMIN sea correcto
 
 	function existeSuperAdmin($nombre){
-		$conexion = crearConexion($this->$baseDatos);
+		$conexion = crearConexion("asdete");
 
 		$consulta = "SELECT * FROM superadmin WHERE nickname = '" . $nombre . "'";
 		
@@ -118,7 +107,7 @@
 
 	//Verificamos que el password del personal del sindicato sea correcto en base de datos
 	function verificaPassAdmin($nombre,$pass){
-		$conexion = crearConexion($this->$baseDatos);
+		$conexion = crearConexion("asdete");
 
 		$consulta = "SELECT * FROM administradores WHERE nickname = '" . $nombre . "' and password = '" . $pass . "'";
 		
@@ -137,7 +126,7 @@
 
 	//Verificamos que el password del SUPERADMIN del sindicato sea correcto en base de datos
 	function verificaPassSuperAdmin($nombre,$pass){
-		$conexion = crearConexion($this->$baseDatos);
+		$conexion = crearConexion("asdete");
 
 		$consulta = "SELECT * FROM superadmin WHERE nickname = '" . $nombre . "' and password = '" . $pass . "'";
 		
@@ -156,7 +145,7 @@
 
 	//Da de alta un afiliado con los datos introducidos por pantalla
 	function altaAfiliado($datos) {
-		$conexion = crearConexion($this->$baseDatos);
+		$conexion = crearConexion("asdete");
 
 		$consulta = "INSERT INTO `afiliados`(`nif`, `password`, `nombre`, `apellido1`, `apellido2`, `telefono`, `email`, `direccion`, `id_empresa_fk`) VALUES ('".
 		$datos['nif']."','".
@@ -177,7 +166,7 @@
 	//Modifica al afiliado con los datos introducidos por pantalla
 
 	function modAfiliado($datos) {
-		$conexion = crearConexion($this->$baseDatos);
+		$conexion = crearConexion("asdete");
 
 		$consulta = "UPDATE `afiliados` SET 
 		`nif`='".$datos['nif']."',
@@ -199,7 +188,7 @@
 	//Elimina un afiliado por su ID
 
 	function eliminarAfiliado($id) {
-		$conexion = crearConexion($this->$baseDatos);
+		$conexion = crearConexion("asdete");
 
 		$consulta = "DELETE FROM afiliados WHERE id = ".$id;
 
@@ -211,7 +200,7 @@
 	//Nos devuelve todas las empresas de la base de datos
 
 	function getEmpresas() {
-		$conexion = crearConexion($this->$baseDatos);
+		$conexion = crearConexion("asdete");
 
 		$consulta = "SELECT * FROM empresa";
 
@@ -224,7 +213,7 @@
 
 	//Nos devuelve todos los afiliados de la base de datos
 	function getAfiliados() {
-		$conexion = crearConexion($this->$baseDatos);
+		$conexion = crearConexion("asdete");
 
 		$consulta = "SELECT * FROM afiliados ORDER BY ID ASC";
 
@@ -239,7 +228,7 @@
 
 	//Nos devuelve todos los datos del afiliado a través de su ID
 	function getAfiliado($id) {
-		$conexion = crearConexion($this->$baseDatos);
+		$conexion = crearConexion("asdete");
 
 		$consulta = "SELECT * FROM afiliados WHERE id = ".$id;
 
@@ -261,7 +250,7 @@
 	}
 	//Nos devuelve todos los datos del afiliado a través de su NIF
 	function getAfiliadoNIF($nif) {
-		$conexion = crearConexion($this->$baseDatos);
+		$conexion = crearConexion("asdete");
 
 		$consulta = "SELECT * FROM afiliados WHERE nif = '".$nif."'";
 
@@ -278,7 +267,7 @@
 
 	//Nos devuelve todos los datos de una empresa a través de su ID
 	function getEmpresa($id) {
-		$conexion = crearConexion($this->$baseDatos);
+		$conexion = crearConexion("asdete");
 
 		$consulta = "SELECT * FROM empresa WHERE id = '" . $id . "'";
 
@@ -304,7 +293,7 @@
 	//Nos devuelve todos los administradores de la base de datos
 	function getAdministradores($id) {
 
-		$conexion = crearConexion($this->$baseDatos);
+		$conexion = crearConexion("asdete");
 
 		$consulta = "SELECT * FROM administradores ORDER BY ID ASC";
 
@@ -317,7 +306,7 @@
 
 	//Nos devuelve todos los datos del administrador a través de su NICK
 	function getAdministradorNick($nick) {
-		$conexion = crearConexion($this->$baseDatos);
+		$conexion = crearConexion("asdete");
 
 		$consulta = "SELECT * FROM administradores WHERE nickname = '".$nick."'";
 
@@ -335,7 +324,7 @@
 	
 	//Nos devuelve todos los datos de un adminstrador a través de su ID
 	function getAdministradorId($id) {
-		$conexion = crearConexion($this->$baseDatos);
+		$conexion = crearConexion("asdete");
 
 		$consulta = "SELECT * FROM administradores WHERE id = '" . $id . "'";
 
@@ -358,7 +347,7 @@
 
 	//Da de alta una empresa con los datos introducidos por pantalla
 	function altaEmpresa($datos) {
-		$conexion = crearConexion($this->$baseDatos);
+		$conexion = crearConexion("asdete");
 
 		$consulta = "INSERT INTO `empresa`(`cif`,  `nombre`, `telefono`, `email`, `direccion`) VALUES ('".
 		$datos['cif']."','".
@@ -378,7 +367,7 @@
 	//Modifica la empresa con los datos introducidos por pantalla
 
 	function modEmpresa($datos) {
-		$conexion = crearConexion($this->$baseDatos);
+		$conexion = crearConexion("asdete");
 
 		$consulta = "UPDATE `empresa` SET 
 		`cif`='".$datos['cif']."',
@@ -397,7 +386,7 @@
 
 	function eliminarEmpresa($id) {
 
-		$conexion = crearConexion($this->$baseDatos);
+		$conexion = crearConexion("asdete");
 
 		$consulta = "DELETE FROM empresa WHERE id = ".$id;
 
@@ -405,12 +394,6 @@
 
 		mysqli_close($conexion);
 	}
-	
-
-
-
-
-}
 	
 
 
