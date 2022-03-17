@@ -3,32 +3,35 @@
 
 <?php
 
+ $pagina = $_SERVER['PHP_SELF'];
+ $arrayDir = preg_split('/\//',$pagina);
+ $dirRoot = '/'.$arrayDir[1].'/';
+ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
+
+include $incRoot."POO/MODELO/datos.php";
+
+ class AppAdministra{
 
 
-
-public class AppAdministra{
 
     public function __construct(){
 
 	}
     
-$pagina = $_SERVER['PHP_SELF'];
-$arrayDir = preg_split('/\//',$pagina);
-$dirRoot = '/'.$arrayDir[1].'/';
-$incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
 
-include $incRoot.'POO/MODELO/datos.php';
+
+
 
 function compruebaSession(){
 
     if(isset($_SESSION['personal_sesion']) == 'personal_sesion') {
-        //$url1 = $dirRoot."MVC_TOCAR\VISTA\ADMINISTRADORES\appAdmin.php";
+        //$url1 = $dirRoot."POO\VISTA\ADMINISTRADORES\appAdmin.php";
         //header('Location: '.$url1);
       } else {
-        $url2 =$dirRoot."MVC_TOCAR/VISTA/index.php";
+        $url2 =$dirRoot."POO/VISTA/index.php";
         header('Location: '.$url2);
       }
-}        MENUFRAMEPPAL
+}        
 
 function varCrud(){
     $id =  isset($_POST['id']) ? $_POST['id'] : '';

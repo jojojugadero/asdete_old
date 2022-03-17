@@ -22,7 +22,7 @@ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
 
 
 
-		include $incRoot.'MVC_TOCAR/MODELO/datos.php';
+		include $incRoot.'POO/MODELO/datos.php';
 
 		$dat = new Datos();
 		$nombre=$_POST['nombre'];
@@ -35,7 +35,7 @@ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
 				session_start();
                 $_SESSION['personal_sesion'] ="personal_sesion";
 				setcookie("personal_cookie", $nombre, 1);
-				$url = $dirRoot.'MVC_TOCAR/VISTA/VI_ADMINISTRADORES/appAdmin.php';
+				$url = $dirRoot.'POO/VISTA/VI_ADMINISTRADORES/appAdmin.php';
 				header('Location: '.$url);
 			/*	$host  = $_SERVER['HTTP_HOST'];
 				$uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');

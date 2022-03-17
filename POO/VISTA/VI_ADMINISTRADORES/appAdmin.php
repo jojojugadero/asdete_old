@@ -32,13 +32,13 @@ $appAd = new AppAdministra();
      $appAd->varOnClick();
 
   //Recogemos el valor de las variables para realizar las operaciones de base de datos
- 
+  $appAd->recogeDatosBBDD();
 
   //Si vamos a modificar el afiliado se recoge el afiliado por ID para su modificación
   $afil_modi = $swmodificar == 'S' ? $dat->getAfiliado($id) : $datos;
 
   //Se comprueba el tipo de acción para dar de alta modificar o eliminar el afiliado
- 
+  $appAd->validaciones();
   //Recogemos todos los afiliados y empresas para mostarlos por pantalla
   $afiliados = $dat->getAfiliados();
   $empresas = $dat->getEmpresas();
@@ -117,7 +117,7 @@ $appAd = new AppAdministra();
           $num = 0;
           //Si hay registros se recorren para mostar las filas
           foreach($afiliados as $fila){
-            $empresa = getEmpresa($fila['id_empresa_fk']);
+            $empresa =  $appAd->getEmpresa($fila['id_empresa_fk']);
             //Con este operador ternario damos estilo a cada de las lineas del formulario
             $color_fila = $num%2 == 1 ? 'estilo_fila1_tabla':'estilo_fila2_tabla';
             $num++;
