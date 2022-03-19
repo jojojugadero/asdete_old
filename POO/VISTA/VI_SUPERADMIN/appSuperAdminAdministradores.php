@@ -16,20 +16,15 @@ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
 </head>
 <?php
 
-include $incRoot.'MVC_TOCAR/MODELO/datos.php';
+include $incRoot.'POO/MODELO/datos.php';
+include $incRoot.'POO/MODELO/afiliados.php';
+include $incRoot.'POO/MODELO/empresa.php';
 
 
 //Iniciamos sesión
 session_start();
 
-//Comprobamos que la sesión es correcta y si es correcta se queda en la página se queda en la página y si no, nos redirige a index.php 
-if(isset($_SESSION['superadmin_session']) == 'superadmin_session') {
-    //$url1 ="appPersonal.php";
-    //header('Location: '.$url1);
-  } else {
-    $url2 = $dirRoot.'MVC_TOCAR/VISTA/index.php';
-    header('Location: '.$url2);
-  }
+include $incRoot.'POO/CONTROLADOR/CO_SUPERADMIN/appSuperAdmin.php';
 
   //Recogemos las variables cuando insertamos nuevos registros, modificamos o eliminamos
   $id =  isset($_POST['id']) ? $_POST['id'] : '';
@@ -76,31 +71,30 @@ if(isset($_SESSION['superadmin_session']) == 'superadmin_session') {
 
   <!––Incluimos la cabecera ––>
     <header class="cabecera">
-        <?php include $incRoot."MVC_TOCAR/VISTA/VI_INCLUDES/cabecera.php" ?>
+        <?php include $incRoot."POO/VISTA/VI_INCLUDES/cabecera.php" ?>
     </header>
 
           <!––En la parte izquierda seleccionamos las empresas de una lista en HTML ––>
-        <nav class="navega"><p style="font-size:large;">Administradores</p>
+    <nav class="navega"><p style="font-size:large;">Empresas del sector</p>
 
-                   <?php include $incRoot."MVC_TOCAR/VISTA/VI_INCLUDES/nav.php" ?>
+                     <?php include $incRoot."POO/VISTA/VI_INCLUDES/nav.php" ?>
 
-      </nav>
+     </nav>
 
+        <aside class="barra"><p style="font-size:large;">Contactos</p>
 
-              <aside class="barra"><p style="font-size:large;">Contactos</p>
+            <!––En la parte derecha ponemos los contactos de la web con una lista en HTML ––>
+            <?php include $incRoot."POO/VISTA/VI_INCLUDES/aside.php" ?>
 
-              <!––En la parte derecha ponemos los contactos de la web con una lista en HTML ––>
-                          <?php include $incRoot."MVC_TOCAR/VISTA/VI_INCLUDES/nav.php" ?>
-
-              </aside>
+        </aside>
 
 
     <article class="skynet">
     <!––Migas de pan (breadcrumbs) ––>
-    <a href="<?php echo $dirRoot; ?>MVC_TOCAR/VISTA/index.php">Indice</a> > <a href="<?php echo $dirRoot; ?>MVC_TOCAR/VISTA/VI_ADMINISTRADORES/superAdminLogin.php">Login</a>
+    <a href="<?php echo $dirRoot; ?>POO/VISTA/index.php">Indice</a> > <a href="<?php echo $dirRoot; ?>POO/VISTA/VI_SUPERADMIN/superAdminLogin.php">Login</a>
     
     <!––Formulario para realizar todas las operaciones de base de datos––>
-<form name="formTabla" id="formTabla" href="<?php echo $dirRoot; ?>MVC_TOCAR/VISTA/VI_ADMINISTRADORES/appSuperAdminAdministradores.php" method="post">
+<form name="formTabla" id="formTabla" href="<?php echo $dirRoot; ?>POO/VISTA/VI_SUPERADMIN/appSuperAdminAdministradores.php" method="post">
   
   <table class="estilo_tabla" width="50%" align="center" >
     <tr class="estilo_cab_tabla">
@@ -183,7 +177,7 @@ if(isset($_SESSION['superadmin_session']) == 'superadmin_session') {
   <p>&nbsp;</p>
 </form>
     </article>
-    <footer class="pie"> <?php include $incRoot."MVC_TOCAR\VISTA\VI_INCLUDES\pie.php" ?></footer>
+    <footer class="pie"> <?php include $incRoot."POO\VISTA\VI_INCLUDES\pie.php" ?></footer>
     
 
 </body>
