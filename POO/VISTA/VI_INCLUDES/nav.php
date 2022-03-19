@@ -10,7 +10,7 @@ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
 
 echo "<p style='font-size:large;'><h4>Empresas del sector</h4></p>
 
-<ul>
+<ul style='list-style-type:none;'>
   
 <li class='li_sidebar'><a href='".$dirRoot."MVC_TOCAR/VISTA/VI_EMPRESAS/empresa1.php' class='enlace_sidebar'>Empresa 1</a></li>
 <li class='li_sidebar'><a href='".$dirRoot."MVC_TOCAR/VISTA/VI_EMPRESAS/empresa2.php' class='enlace_sidebar'>Empresa 2</a></li>
@@ -26,7 +26,7 @@ echo "<div style='margin-top:40px;'></div>";
 
 echo "<p style='font-size:large;'><h4>Somos Asdete</h4></p>
 
-<ul>
+<ul style='list-style-type:none;'>
 
 <li class='li_sidebar'><a href='".$dirRoot."MVC_TOCAR/VISTA/VI_UTILS/calendarios.php' class='enlace_sidebar'>Calendarios laborales</a></li>
 <li class='li_sidebar'><a href='".$dirRoot."MVC_TOCAR/VISTA/VI_UTILS/empleo.php' class='enlace_sidebar'>Tu empleo</a></li>

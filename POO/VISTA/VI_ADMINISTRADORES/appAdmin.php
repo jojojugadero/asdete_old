@@ -9,36 +9,58 @@ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
 <?php
 
 include $incRoot.'POO/MODELO/datos.php';
-include $incRoot.'POO/CONTROLADOR/CO_ADMINISTRADORES/appAdministra.php';
+include $incRoot.'POO/MODELO/afiliados.php';
 
 
 //Iniciamos sesión
 session_start();
 
+include $incRoot.'POO/CONTROLADOR/CO_ADMINISTRADORES/appAdministra.php';
+
+
 $dat = new Datos();
-$appAd = new AppAdministra();
+$afil = new Afiliados();
+
+$afil->loadPost();
 
 
+$swinsertar =  isset($_POST['swinsertar']) ? $_POST['swinsertar'] : '';
+$swmodificar =  isset($_POST['swmodificar']) ? $_POST['swmodificar'] : '';
+$swmodificarapply =  isset($_POST['swmodificarapply']) ? $_POST['swmodificarapply'] : '';
+$sweliminar =  isset($_POST['sweliminar']) ? $_POST['sweliminar'] : '';
+
+$datos = $afil->getDatos();
+
+$afil_modi = $swmodificar == 'S' ? $dat->getAfiliado($datos['id']) : $datos;
+
+$msgValidacion = $swinsertar == 'S' || $swmodificarapply == 'S' ? $afil->validar() : '';
+
+
+
+if(trim($msgValidacion) != "") {
+  $afil_modi = $datos;
+}
+if(trim($msgValidacion) == "" && $swmodificarapply == 'S') {
+  $swmodificar = "N";
+}
+if(trim($msgValidacion) == "") {
+  if($swinsertar == 'S') {
+    $dat->altaAfiliado($datos);
+  } else if($swmodificarapply == 'S') {
+    $dat->modAfiliado($datos);
+  } else if($sweliminar == 'S') {
+    $dat->eliminarAfiliado($datos['id']);
+  }
+}
+
+$mostrarDatos = $swmodificar == 'S' || trim($msgValidacion) != "" ? 'S':'N';
 
 //Comprobamos que la sesión es correcta y si es correcta se queda en la página se queda en la página y si no, nos redirige a index.php 
 
-    $appAd->compruebaSession();
 
-
-  //Recogemos las variables cuando insertamos nuevos registros, modificamos o eliminamos
-      $appAd->varCrud();
   
-  //Recogemos variables para la acción que va a hacer el botón en el onclick
-     $appAd->varOnClick();
+include $incRoot.'POO/CONTROLADOR/CO_ADMINISTRADORES/appAdministra.php';
 
-  //Recogemos el valor de las variables para realizar las operaciones de base de datos
-  $appAd->recogeDatosBBDD();
-
-  //Si vamos a modificar el afiliado se recoge el afiliado por ID para su modificación
-  $afil_modi = $swmodificar == 'S' ? $dat->getAfiliado($id) : $datos;
-
-  //Se comprueba el tipo de acción para dar de alta modificar o eliminar el afiliado
-  $appAd->validaciones();
   //Recogemos todos los afiliados y empresas para mostarlos por pantalla
   $afiliados = $dat->getAfiliados();
   $empresas = $dat->getEmpresas();
@@ -76,7 +98,7 @@ $appAd = new AppAdministra();
 
             <!––En la parte derecha ponemos los contactos de la web con una lista en HTML ––>
             
-                      <?php include $incRoot."POO/VISTA/VI_INCLUDES/nav.php" ?>
+                      <?php include $incRoot."POO/VISTA/VI_INCLUDES/aside.php" ?>
 
             </aside>
 
@@ -117,7 +139,7 @@ $appAd = new AppAdministra();
           $num = 0;
           //Si hay registros se recorren para mostar las filas
           foreach($afiliados as $fila){
-            $empresa =  $appAd->getEmpresa($fila['id_empresa_fk']);
+            $empresa =  $dat->getEmpresa($fila['id_empresa_fk']);
             //Con este operador ternario damos estilo a cada de las lineas del formulario
             $color_fila = $num%2 == 1 ? 'estilo_fila1_tabla':'estilo_fila2_tabla';
             $num++;
@@ -144,15 +166,15 @@ $appAd = new AppAdministra();
     ?>
     <!––Mostramos los campos para insertar o modificar registros ––>
     <tr class="estilo_bottom_tabla" >
-	    <td><?php echo $swmodificar == 'S' || trim($msgValidacion) != "" ? $afil_modi['id']:''; ?></td>
-      <td><input value="<?php echo $swmodificar == 'S' || trim($msgValidacion) != "" ? $afil_modi['nif']:''; ?>" type='text' name='nif' size='10' class='centrado'></td>
-      <td><input value="<?php echo $swmodificar == 'S' || trim($msgValidacion) != "" ? $afil_modi['password']:''; ?>" type='text' name='password' size='10' class='centrado'></td>
-      <td><input value="<?php echo $swmodificar == 'S' || trim($msgValidacion) != "" ? $afil_modi['nombre']:''; ?>" type='text' name='nombre' size='10' class='centrado'></td>
-      <td><input value="<?php echo $swmodificar == 'S' || trim($msgValidacion) != "" ? $afil_modi['apellido1']:''; ?>" type='text' name='ape1' size='10' class='centrado'></td>
-      <td><input value="<?php echo $swmodificar == 'S' || trim($msgValidacion) != "" ? $afil_modi['apellido2']:''; ?>" type='text' name='ape2' size='10' class='centrado'></td>
-      <td><input value="<?php echo $swmodificar == 'S' || trim($msgValidacion) != "" ? $afil_modi['telefono']:''; ?>" type='text' name='telefono' size='10' class='centrado'></td>
-      <td><input value="<?php echo $swmodificar == 'S' || trim($msgValidacion) != "" ? $afil_modi['email']:''; ?>" type='text' name='email' size='10' class='centrado'></td>
-      <td><input value="<?php echo $swmodificar == 'S' || trim($msgValidacion) != "" ? $afil_modi['direccion']:''; ?>" type='text' name='direccion' size='10' class='centrado'></td>
+	    <td><?php echo $mostrarDatos == 'S' ? $afil_modi['id']:''; ?></td>
+      <td><input value="<?php echo $mostrarDatos == 'S' ? $afil_modi['nif']:''; ?>" type='text' name='nif' size='10' class='centrado'></td>
+      <td><input value="<?php echo $mostrarDatos == 'S' ? $afil_modi['password']:''; ?>" type='text' name='password' size='10' class='centrado'></td>
+      <td><input value="<?php echo $mostrarDatos == 'S' ? $afil_modi['nombre']:''; ?>" type='text' name='nombre' size='10' class='centrado'></td>
+      <td><input value="<?php echo $mostrarDatos == 'S' ? $afil_modi['apellido1']:''; ?>" type='text' name='ape1' size='10' class='centrado'></td>
+      <td><input value="<?php echo $mostrarDatos == 'S' ? $afil_modi['apellido2']:''; ?>" type='text' name='ape2' size='10' class='centrado'></td>
+      <td><input value="<?php echo $mostrarDatos == 'S' ? $afil_modi['telefono']:''; ?>" type='text' name='telefono' size='10' class='centrado'></td>
+      <td><input value="<?php echo $mostrarDatos == 'S' ? $afil_modi['email']:''; ?>" type='text' name='email' size='10' class='centrado'></td>
+      <td><input value="<?php echo $mostrarDatos == 'S' ? $afil_modi['direccion']:''; ?>" type='text' name='direccion' size='10' class='centrado'></td>
       <td>
       <!––En este select recogemos las empresa de base de datos para selecionarlas si insertamos o modificamos ––>
         <select name='empresa' class='centrado'>
@@ -166,7 +188,7 @@ $appAd = new AppAdministra();
             <option 
             <?php 
 
-              if(($swmodificar == 'S' || trim($msgValidacion) != "") && $fila_option['id'] == $afil_modi['id_empresa_fk']) {
+              if(($mostrarDatos == 'S') && $fila_option['id'] == $afil_modi['id_empresa_fk']) {
                 echo "selected='selected'";
               } 
             ?> value="<?php echo $fila_option['id'] ?>"><?php echo $fila_option['nombre'] ?></option>
@@ -178,7 +200,7 @@ $appAd = new AppAdministra();
       </td>
       <td class='bot' colspan="2">
         <?php
-          if ($swmodificar) {
+          if ($swmodificar == 'S') {
         ?>
          <!––Botones con las operaciones para confirmar la modificacion o crear un registro nuevo en javascript ––>
           <input type='submit' onclick="document.getElementById('swmodificarapply').value = 'S';document.getElementById('swmodificar').value = 'S';" name='cr' id='cr' value='Modificar'>

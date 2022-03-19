@@ -12,13 +12,15 @@ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <title>App Personal</title>
- <link rel="stylesheet" href="<?php echo $dirRoot; ?>MVC_TOCAR/VISTA/ESTILOS/estilos.css">
+ <link rel="stylesheet" href="<?php echo $dirRoot; ?>POO/VISTA/ESTILOS/estilos.css">
 </head>
 <?php
 
-include $incRoot.'MVC_TOCAR/MODELO/datos.php';
+include $incRoot.'POO/MODELO/datos.php';
 
 session_start();
+
+$dat = new Datos();
 
 if(isset($_SESSION['afiliado_sesion']) == 'afiliado_sesion') {
     $url1 ="appAfiliados.php";
@@ -28,24 +30,24 @@ if(isset($_SESSION['afiliado_sesion']) == 'afiliado_sesion') {
     header('Location: '.$url2);
   }
   $id_afil =  $_SESSION['id_afiliado'];
-  $afiliado = getAfiliado($id_afil);
+  $afiliado = $dat->getAfiliado($id_afil);
   $id_empresa_conv = $_SESSION['id_empresa'];
-  $empresa_conv = getEmpresa($id_empresa_conv);
+  $empresa_conv = $dat->getEmpresa($id_empresa_conv);
 
-  $empresas = getEmpresas();
+  $empresas = $dat->getEmpresas();
 ?>
 
 <body class="cuerpo_contenedor" >
 
 
 <header class="cabecera">
-        <?php include $incRoot."MVC_TOCAR/VISTA/VI_INCLUDES/cabecera.php" ?>
+        <?php include $incRoot."POO/VISTA/VI_INCLUDES/cabecera.php" ?>
     </header>
 
                 <!––En la parte izquierda seleccionamos las empresas de una lista en HTML ––>
                 <nav class="navega"><p style="font-size:large;">Empresas del sector</p>
 
-                         <?php include $incRoot."MVC_TOCAR\VISTA\INCLUDES\nav.php" ?>
+                         <?php include $incRoot."POO/VISTA/VI_INCLUDES\nav.php" ?>
 
             </nav>
 
@@ -53,14 +55,14 @@ if(isset($_SESSION['afiliado_sesion']) == 'afiliado_sesion') {
                 <aside class="barra"><p style="font-size:large;">Contactos</p>
 
                     <!––En la parte derecha ponemos los contactos de la web con una lista en HTML ––>
-                    <?php include $incRoot."MVC_TOCAR\VISTA\INCLUDES\nav.php" ?>
+                    <?php include $incRoot."POO/VISTA/VI_INCLUDES\nav.php" ?>
 
                 </aside>
 
 
     <article class="skynet">
 
-    <a href="index.php">Indice</a> > <a href="afiliadosLogin.php">Login</a> > <a href="appAfiliados.php">Afiliados</a>
+    <a href="<?php echo $dirRoot?>POO/VISTA/index.php">Indice</a> > <a href="<?php echo $dirRoot?>POO/VISTA/VI_AFILIADOS/afiliadosLogin.php">Login</a> > <a href="<?php echo $dirRoot?>POO/VISTA/VI_AFILIADOS/appAfiliados.php">Afiliados</a>
 
     <h2>CONVENIO 2</h2>
                 <section>
@@ -139,7 +141,7 @@ Comunidad de Madrid.</p>
                 </section>
     
     </article>
-    <footer class="pie"><?php include "pie.php" ?></footer>
+    <footer class="pie"><?php include $incRoot."POO/VISTA/VI_INCLUDES/pie.php" ?></footer>
     
 
 </body>

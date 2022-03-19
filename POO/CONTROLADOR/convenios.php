@@ -12,44 +12,47 @@ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <title>App Personal</title>
- <link rel="stylesheet" href="<?php echo $dirRoot; ?>MVC_TOCAR/VISTA/ESTILOS/estilos.css">
+ <link rel="stylesheet" href="<?php echo $dirRoot; ?>POO/VISTA/ESTILOS/estilos.css">
 </head>
 <?php
 
-include $incRoot.'MVC_TOCAR/MODELO/datos.php';
+include $incRoot.'POO/MODELO/datos.php';
 
 session_start();
 
+$dat = new Datos();
+
 $id_empresa_conv = $_POST['empresa'];
-$empresa_conv = getEmpresa($id_empresa_conv);
+$empresa_conv = $dat->getEmpresa($id_empresa_conv);
+
 
 if(isset($_SESSION['afiliado_sesion']) == 'afiliado_sesion') {
-    $url1 =$dirRoot."MVC_TOCAR/VISTA/VI_AFILIADOS/appAfiliados.php";
+    $url1 =$dirRoot."POO/VISTA/VI_AFILIADOS/appAfiliados.php";
     //header('Location: '.$url1);
   } else {
-    $url2 =$dirRoot."MVC_TOCAR/VISTA/index.php";
+    $url2 =$dirRoot."POO/VISTA/index.php";
     header('Location: '.$url2);
   }
   $id_afil =  $_SESSION['id_afiliado'];
-  $afiliado = getAfiliado($id_afil);
+  $afiliado = $dat->getAfiliado($id_afil);
   $id_empresa_conv = $_POST['empresa'];
   $_SESSION['id_empresa'] = $id_empresa_conv;
-  $empresa_conv = getEmpresa($id_empresa_conv);
+  $empresa_conv = $dat->getEmpresa($id_empresa_conv);
 
   
   //Elegimos el convenio de  empresas desde la pantalla de afiliados en un select
   if($id_empresa_conv == 1) {
-    $url = $dirRoot."MVC_TOCAR/VISTA/VI_CONVENIOS/convenios_empresa_1.php";
+    $url = $dirRoot."POO/VISTA/VI_CONVENIOS/convenios_empresa_1.php";
     header("Location: ".$url);
   }elseif($id_empresa_conv == 2 ){
-    $url = $dirRoot."MVC_TOCAR/VISTA/VI_CONVENIOS/convenios_empresa_2.php";
+    $url = $dirRoot."POO/VISTA/VI_CONVENIOS/convenios_empresa_2.php";
     header("Location: ".$url);
   }elseif($id_empresa_conv == 3 ){
-    $url = $dirRoot."MVC_TOCAR/VISTA/VI_CONVENIOS/convenios_empresa_3.php";
+    $url = $dirRoot."POO/VISTA/VI_CONVENIOS/convenios_empresa_3.php";
     header("Location: ".$url);
   }
 
-  $empresas = getEmpresas();
+  $empresas = $dat->getEmpresas();
 ?>
 
 <body class="cuerpo_contenedor" >
@@ -58,7 +61,7 @@ if(isset($_SESSION['afiliado_sesion']) == 'afiliado_sesion') {
 
 
     <header class="cabecera">
-      <?php include $incRoot."MVC_TOCAR/VISTA/VI_INCLUDES/cabecera.php" ?>
+      <?php include $incRoot."POO/VISTA/VI_INCLUDES/cabecera.php" ?>
     </header>
 
     <nav class="navega">
@@ -74,7 +77,7 @@ if(isset($_SESSION['afiliado_sesion']) == 'afiliado_sesion') {
 
 
     </article>
-    <footer class="pie"><?php include $incRoot."MVC_TOCAR/VISTAVI_INCLUDES/pie.php" ?></footer>
+    <footer class="pie"><?php include $incRoot."POO/VISTAVI_INCLUDES/pie.php" ?></footer>
     
 
 </body>

@@ -15,29 +15,26 @@ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <title>App Personal</title>
- <link rel="stylesheet" href="<?php echo $dirRoot; ?>MVC_TOCAR/VISTA/ESTILOS/estilos.css">
+ <link rel="stylesheet" href="<?php echo $dirRoot; ?>POO/VISTA/ESTILOS/estilos.css">
 </head>
 <?php
 
-include $incRoot.'MVC_TOCAR/MODELO/datos.php';
+include $incRoot.'POO/MODELO/datos.php';
 
 session_start();
 
 
+
 //Comprobamos si se ha iniciado la sesión de afiliado
 
-if(isset($_SESSION['afiliado_sesion']) == 'afiliado_sesion') {
-    
-    //Si no se ha inicado la sesión de afiliado lo redireccionamos al indice
-  } else {
-    $url2 = $dirRoot.'MVC_TOCAR/VISTA/index.php';
-    header('Location: '.$url2);
-  }
+include $incRoot.'POO/CONTROLADOR/CO_AFILIADOS/appAfiliado.php';
+
+$dat = new Datos();
 
   //Recogemos el id del afiliado
   $id_afil =  $_SESSION['id_afiliado'];
   //Con este metodo de la clase datos sacamos el nombre del afiliado con su ID
-  $afiliado = getAfiliado($id_afil);
+  $afiliado = $dat->getAfiliado($id_afil);
 
   //Recogemos los datos del afiliado 
   $nombre =  $afiliado['nombre'];
@@ -49,25 +46,25 @@ if(isset($_SESSION['afiliado_sesion']) == 'afiliado_sesion') {
   $id_empresa =  $afiliado['id_empresa_fk'];
  
   //Con el id de la empresa sacamos los datos de la misma a traves del metodo getEmpresa() de la clase datos
-  $empresa = getEmpresa($id_empresa);
+  $empresa = $dat->getEmpresa($id_empresa);
   //Guardamos dicho nombre de la empresa en una variable
   $nom_empresa =  $empresa['nombre'];
 
   //Obtenemos las empresas para mostrarlas con el select
-  $empresas = getEmpresas();
+  $empresas = $dat->getEmpresas();
 ?>
 
 <body class="cuerpo_contenedor" >
 
 
     <header class="cabecera">
-    <?php include $incRoot."MVC_TOCAR/VISTA/VI_INCLUDES/cabecera.php" ?>
+    <?php include $incRoot."POO/VISTA/VI_INCLUDES/cabecera.php" ?>
     </header>
 
               <!––En la parte izquierda seleccionamos las empresas de una lista en HTML ––>
               <nav class="navega"><p style="font-size:large;">Empresas del sector</p>
 
-              <?php include $incRoot."MVC_TOCAR/VISTA/VI_INCLUDES/nav.php" ?>
+              <?php include $incRoot."POO/VISTA/VI_INCLUDES/nav.php" ?>
 
           </nav>
 
@@ -76,7 +73,7 @@ if(isset($_SESSION['afiliado_sesion']) == 'afiliado_sesion') {
           <aside class="barra"><p style="font-size:large;">Contactos</p>
 
                  <!––En la parte derecha ponemos los contactos de la web con una lista en HTML ––>
-                 <?php include $incRoot."MVC_TOCAR/VISTA/VI_INCLUDES/aside.php" ?>
+                 <?php include $incRoot."POO/VISTA/VI_INCLUDES/aside.php" ?>
 
           </aside>
 
@@ -84,13 +81,13 @@ if(isset($_SESSION['afiliado_sesion']) == 'afiliado_sesion') {
     <article class="skynet">
     <!––Migas de pan (breadcrumbs) ––>
    
-    <a href="<?php echo $dirRoot; ?>MVC_TOCAR/VISTA/index.php">Indice</a> > <a href="<?php echo $dirRoot; ?>MVC_TOCAR/VISTA/VI_AFILIADOS/afiliadosLogin.php">Login</a>
+    <a href="<?php echo $dirRoot; ?>POO/VISTA/index.php">Indice</a> > <a href="<?php echo $dirRoot; ?>POO/VISTA/VI_AFILIADOS/afiliadosLogin.php">Login</a>
     
     <!––Mostramos el nombre del afiliado con un saludo y con sus datos y si no son correctos le dejamos un link para escriba a administración y modifique sus datos ––>
 
 
     <!––Mandamos los datos de la empresa selecionada atraves de este select y en la página concino.php nos redirige al convenio de la empresa seleccionada ––>
-<form name="saludoAfiliado" id="saludoAfiliado" action="<?php echo $dirRoot ?>MVC_TOCAR/CONTROLADOR/convenios.php" method="post">
+<form name="saludoAfiliado" id="saludoAfiliado" action="<?php echo $dirRoot ?>POO/CONTROLADOR/convenios.php" method="post">
   
 <div align="center" style="margin-top:100px;">
     <div class="afidiv" >
@@ -136,7 +133,7 @@ if(isset($_SESSION['afiliado_sesion']) == 'afiliado_sesion') {
   <p>&nbsp;</p>
 </form>
     </article>
-    <footer class="pie"> <?php include $incRoot."MVC_TOCAR/VISTA/INCLUDES/pie.php" ?></footer>
+    <footer class="pie"><?php include $incRoot."POO/VISTA/VI_INCLUDES/pie.php" ?></footer>
     
 
 </body>

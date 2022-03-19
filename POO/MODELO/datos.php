@@ -262,7 +262,7 @@
 			$resultado = mysqli_query($conexion, $consulta);
 	
 			if (isset($resultado)) {
-				if(mysqli_num_rows($resultado) > 0) {
+				if(!empty($resultado) AND mysqli_num_rows($resultado) > 0) {
 					return mysqli_fetch_assoc($resultado);
 				} else {
 					$vacio = [];
@@ -283,7 +283,7 @@
 			$consulta = "SELECT * FROM afiliados WHERE nif = '".$nif."'";
 	
 			$resultado = mysqli_query($conexion, $consulta);
-			if (mysqli_num_rows($resultado) > 0) {
+			if (!empty($resultado) AND mysqli_num_rows($resultado) > 0) {
 				return mysqli_fetch_assoc($resultado);
 			} else {
 				$vacio = [];

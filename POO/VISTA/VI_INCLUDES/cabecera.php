@@ -5,9 +5,9 @@ $dirRoot = '/'.$arrayDir[1].'/';
 
 echo "<h1>ASDETE, la unión hace la fuerza...</h1>";
 
-echo "<p><a href ='".$dirRoot."MVC_TOCAR/VISTA/index.php'>Volver</a></p>";
+echo "<p><a href ='".$dirRoot."POO/VISTA/index.php'>Volver</a></p>";
 
-echo "<p><a href ='".$dirRoot."MVC_TOCAR/VISTA/VI_SUPERADMIN/superAdminLogin.php'>SUPER ADMIN</a></p>";
+echo "<p><a href ='".$dirRoot."POO/VISTA/VI_SUPERADMIN/superAdminLogin.php'>SUPER ADMIN</a></p>";
 
 
 
