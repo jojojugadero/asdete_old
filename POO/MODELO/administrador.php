@@ -25,8 +25,8 @@
 
 	public static function getAdministradorId($id){
 		$dat = new Datos();
-		$instance = new Afiliados();
-		$instance->loadBBDD($dat->getAdministrador($id));
+		$instance = new Administrador();
+		$instance->loadBBDD($dat->getAdministradorId($id));
 		return $instance;
 	}
 

@@ -389,8 +389,6 @@
 			$datos['email']."','".
 			$datos['direccion']."')";
 	
-			echo $consulta;
-	
 			$resultado = mysqli_query($conexion, $consulta);
 			var_dump($resultado);
 	
@@ -429,6 +427,48 @@
 			mysqli_close($conexion);
 		}
 		
+		public function altaAdmin($datos) {
+			$dat = new Datos();
+			$conexion = $dat->crearConexion("asdete");
+	
+			$consulta = "INSERT INTO `administradores`(`nickname`,  `password`,  `email`) VALUES ('".
+			$datos['nickname']."','".
+			$datos['password']."','".
+			$datos['email']."')";
+	
+			$resultado = mysqli_query($conexion, $consulta);
+	
+			mysqli_close($conexion);
+		}
+
+
+		public function modAdmin($datos) {
+			$dat = new Datos();
+			$conexion = $dat->crearConexion("asdete");
+			$consulta = "UPDATE `administradores` SET 
+			`nickname`='".$datos['nickname']."',
+			`password`='".$datos['password']."',
+			`email`='".$datos['email']."' WHERE id = ".$datos['id'];
+	
+	
+			$resultado = mysqli_query($conexion, $consulta);
+	
+			mysqli_close($conexion);
+		}
+	
+		//Elimina una empresa por su ID
+	
+		public function eliminarAdmin($id) {
+	
+			$dat = new Datos();
+			$conexion = $dat->crearConexion("asdete");
+	
+			$consulta = "DELETE FROM administradores WHERE id = ".$id;
+	
+			$resultado = mysqli_query($conexion, $consulta);
+	
+			mysqli_close($conexion);
+		}
 	
 
 

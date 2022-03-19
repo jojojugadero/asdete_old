@@ -93,14 +93,14 @@ $mostrarDatos = $swmodificar == 'S' || trim($msgValidacion) != "" ? 'S':'N';
 
     <article class="skynet">
     <!––Migas de pan (breadcrumbs) ––>
-    <a href="<?php echo $dirRoot; ?>POO/VISTA/index.php">Indice</a> > <a href="<?php echo $dirRoot; ?>POO/VISTA/VI_SUPERADMIN/superAdminLogin.php">Login</a>
+    <a href="<?php echo $dirRoot; ?>POO/VISTA/index.php">Indice</a> > <a href="<?php echo $dirRoot; ?>POO/VISTA/VI_SUPERADMIN/superAdminLogin.php">Login</a> > <a href="<?php echo $dirRoot; ?>POO/VISTA/VI_SUPERADMIN/appSuperAdminMenu.php">Menú</a>
     
     <!––Formulario para realizar todas las operaciones de base de datos––>
 <form name="formTabla" id="formTabla" href="<?php echo $dirRoot; ?>POO/VISTA/VI_SUPERADMIN/appSuperAdminAdministradores.php" method="post">
   
   <table class="estilo_tabla" width="50%" align="center" >
     <tr class="estilo_cab_tabla">
-      <th class="subtitulo" colspan="12"><h1><span >Gestión de empresas</span></h1></th>
+      <th class="subtitulo" colspan="12"><h1><span >Gestión de administradores</span></h1></th>
     </tr>
     <tr class="estilo_subcab_tabla" >
       <td class="primera_fila">Id</td>
