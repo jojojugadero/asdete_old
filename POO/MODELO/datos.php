@@ -320,7 +320,7 @@
 	
 	
 		//Nos devuelve todos los administradores de la base de datos
-		public function getAdministradores($id) {
+		public function getAdministradores() {
 	
 			$dat = new Datos();
 			$conexion = $dat->crearConexion("asdete");

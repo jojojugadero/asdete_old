@@ -170,7 +170,7 @@ $mostrarDatos = $swmodificar == 'S' || trim($msgValidacion) != "" ? 'S':'N';
   </table>
 
   <!––Camos ocultos (HIDDEN) para mandar las acciones a realizar ––>
-  <input value="<?php echo $swmodificar != 'S' ? '' : $empr_modi->getId(); ?>" name="id" id="id" type="hidden" />
+  <input value="<?php echo $mostrarDatos == 'S' ? $empr_modi->getId():'' ?>" name="id" id="id" type="hidden" />
   <input value="" name="swinsertar" id="swinsertar" type="hidden" />
   <input value="" name="swmodificar" id="swmodificar" type="hidden" />
   <input value="" name="swmodificarapply" id="swmodificarapply" type="hidden" />

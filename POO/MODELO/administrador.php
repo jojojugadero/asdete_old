@@ -36,6 +36,17 @@
 		$instance->loadBBDD($dat->getAdministradorNif($nif));
 		return $instance;
 	}
+	public static function getAdministradores(){
+		$dat = new Datos();
+		$result = $dat->getAdministradores();
+		$instances = [];
+		foreach ($result as $fila) {
+			$instance = new Administrador();
+			$instance->loadBBDD($fila);
+			array_push($instances, $instance);
+		}
+		return $instances;
+	}
 
 	public function loadPost() {
 		$this->datos[Administrador::id] =  isset($_POST['id']) ? $_POST['id'] : '';
@@ -60,8 +71,8 @@
 	public function getPassword() {
 		return $this->datos[Administrador::password];
 	}
-	public function getNombre() {
-		return $this->datos[Administrador::nombre];
+	public function getNickname() {
+		return $this->datos[Administrador::nickname];
 	}
 	public function getEmail() {
 		return $this->datos[Administrador::email];
