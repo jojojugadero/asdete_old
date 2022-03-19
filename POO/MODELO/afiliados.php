@@ -41,6 +41,32 @@
 		];
 	}
 
+	public static function getAfiliadoId($id){
+		$dat = new Datos();
+		$instance = new Afiliados();
+		$instance->loadBBDD($dat->getAfiliado($id));
+		return $instance;
+	}
+
+	public static function getAfiliadoNif($nif){
+		$dat = new Datos();
+		$instance = new Afiliados();
+		$instance->loadBBDD($dat->getAfiliadoNif($nif));
+		return $instance;
+	}
+	public static function getAfiliados(){
+		$dat = new Datos();
+		$result = $dat->getAfiliados();
+		$instances = [];
+		foreach ($result as $fila) {
+			$instance = new Afiliados();
+			$instance->loadBBDD($fila);
+			array_push($instances, $instance);
+		}
+		return $instances;
+	}
+
+
 	public function loadPost() {
 		$this->datos[Afiliados::id] =  isset($_POST['id']) ? $_POST['id'] : '';
 		$this->datos[Afiliados::nif] =  isset($_POST['nif']) ? $_POST['nif'] : '';
@@ -59,8 +85,8 @@
 		$this->datos[Afiliados::nif] =  isset($result['nif']) ? $result['nif'] : '';
 		$this->datos[Afiliados::password] =  isset($result['password']) ? $result['password'] : '';
 		$this->datos[Afiliados::nombre] =  isset($result['nombre']) ? $result['nombre'] : '';
-		$this->datos[Afiliados::apellido1] =  isset($result['ape1']) ? $result['ape1'] : '';
-		$this->datos[Afiliados::apellido2] =  isset($result['ape2']) ? $result['ape2'] : '';
+		$this->datos[Afiliados::apellido1] =  isset($result['apellido1']) ? $result['apellido1'] : '';
+		$this->datos[Afiliados::apellido2] =  isset($result['apellido2']) ? $result['apellido2'] : '';
 		$this->datos[Afiliados::telefono]=  isset($result['telefono']) ? $result['telefono'] : '';
 		$this->datos[Afiliados::email] =  isset($result['email']) ? $result['email'] : '';
 		$this->datos[Afiliados::direccion] =  isset($result['direccion']) ? $result['direccion'] : '';
@@ -69,6 +95,37 @@
 
 	public function getDatos() {
 		return $this->datos;
+	}
+
+	public function getId() {
+		return $this->datos[Afiliados::id];
+	}
+	public function getNif() {
+		return $this->datos[Afiliados::nif];
+	}
+	public function getPassword() {
+		return $this->datos[Afiliados::password];
+	}
+	public function getNombre() {
+		return $this->datos[Afiliados::nombre];
+	}
+	public function getApellido1() {
+		return $this->datos[Afiliados::apellido1];
+	}
+	public function getApellido2() {
+		return $this->datos[Afiliados::apellido2];
+	}
+	public function getTelefono() {
+		return $this->datos[Afiliados::telefono];
+	}
+	public function getEmail() {
+		return $this->datos[Afiliados::email];
+	}
+	public function getDireccion() {
+		return $this->datos[Afiliados::direccion];
+	}
+	public function getIdEmpresa() {
+		return $this->datos[Afiliados::id_empresa_fk];
 	}
 
 	public function validar() {

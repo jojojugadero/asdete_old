@@ -23,6 +23,20 @@
 		];
 	}
 
+	public static function getAdministradorId($id){
+		$dat = new Datos();
+		$instance = new Afiliados();
+		$instance->loadBBDD($dat->getAdministrador($id));
+		return $instance;
+	}
+
+	public static function getAdministradorNif($nif){
+		$dat = new Datos();
+		$instance = new Administrador();
+		$instance->loadBBDD($dat->getAdministradorNif($nif));
+		return $instance;
+	}
+
 	public function loadPost() {
 		$this->datos[Administrador::id] =  isset($_POST['id']) ? $_POST['id'] : '';
 		$this->datos[Administrador::nickname] =  isset($_POST['nickname']) ? $_POST['nickname'] : '';
@@ -39,6 +53,18 @@
 
 	public function getDatos() {
 		return $this->datos;
+	}
+	public function getId() {
+		return $this->datos[Administrador::id];
+	}
+	public function getPassword() {
+		return $this->datos[Administrador::password];
+	}
+	public function getNombre() {
+		return $this->datos[Administrador::nombre];
+	}
+	public function getEmail() {
+		return $this->datos[Administrador::email];
 	}
 
 	public function validar() {

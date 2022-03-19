@@ -20,6 +20,8 @@ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
 <?php
 
 include $incRoot.'POO/MODELO/datos.php';
+include $incRoot.'POO/MODELO/afiliados.php';
+include $incRoot.'POO/MODELO/empresa.php';
 
 session_start();
 
@@ -34,24 +36,15 @@ $dat = new Datos();
   //Recogemos el id del afiliado
   $id_afil =  $_SESSION['id_afiliado'];
   //Con este metodo de la clase datos sacamos el nombre del afiliado con su ID
-  $afiliado = $dat->getAfiliado($id_afil);
+  $afiliado = Afiliados::getAfiliadoId($id_afil);
 
-  //Recogemos los datos del afiliado 
-  $nombre =  $afiliado['nombre'];
-  $ape1 =  $afiliado['apellido1'];
-  $ape2 =  $afiliado['apellido2'];
-  $direccion =  $afiliado['direccion'];
-
-   //Sacamos el id de la empresa a traves del afiliado
-  $id_empresa =  $afiliado['id_empresa_fk'];
- 
   //Con el id de la empresa sacamos los datos de la misma a traves del metodo getEmpresa() de la clase datos
-  $empresa = $dat->getEmpresa($id_empresa);
+  $empresa = Empresa::getEmpresaId($afiliado->getIdEmpresa());
   //Guardamos dicho nombre de la empresa en una variable
-  $nom_empresa =  $empresa['nombre'];
+  $nom_empresa =  $empresa->getNombre();
 
   //Obtenemos las empresas para mostrarlas con el select
-  $empresas = $dat->getEmpresas();
+  $empresas = Empresa::getEmpresas();
 ?>
 
 <body class="cuerpo_contenedor" >
@@ -93,10 +86,10 @@ $dat = new Datos();
     <div class="afidiv" >
         <table >
             <tr>
-                <td align="center" colspan="2"><?php echo "Hola ".$nombre ?></td>
+                <td align="center" colspan="2"><?php echo "Hola ".$afiliado->getNombre() ?></td>
             </tr>
             <tr>
-                <td colspan="2" style="padding-top:20px;">Si ya no vive en la <?php echo $direccion?>,<br> o ya no trabaja en la empresa <?php echo $nom_empresa?><br>contacte con: <br>  <a href="administracion@asdete.com"> administración. administracion@asdete.com</a> </td>
+                <td colspan="2" style="padding-top:20px;">Si ya no vive en la <?php echo $afiliado->getDireccion()?>,<br> o ya no trabaja en la empresa <?php echo $nom_empresa?><br>contacte con: <br>  <a href="administracion@asdete.com"> administración. administracion@asdete.com</a> </td>
             </tr>
             
         </table>
@@ -112,11 +105,11 @@ $dat = new Datos();
                   <option value="">Seleccionar</option>
                   <?php
                   //En este select mostramos las empresas con el método anterior getEmpresas()
-                      if (mysqli_num_rows($empresas) == 0) {
+                      if (count($empresas) == 0) {
                       } else {
                         foreach($empresas as $fila_option){
                     ?>
-                    <option  value="<?php echo $fila_option['id'] ?>"><?php echo $fila_option['nombre'] ?></option>
+                    <option  value="<?php echo $fila_option->getId() ?>"><?php echo $fila_option->getNombre() ?></option>
                     <?php
                       }
                     }

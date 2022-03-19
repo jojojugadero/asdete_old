@@ -14,12 +14,12 @@ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Asdete</title>
-    <link rel="stylesheet" href="<?php echo $dirRoot; ?>MVC_TOCAR/VISTA/ESTILOS/estilos.css">
+    <link rel="stylesheet" href="<?php echo $dirRoot; ?>POO/VISTA/ESTILOS/estilos.css">
 
     <!––Función en javascript, para ponerla en el "onclick()" para volver al indice ––>
         <script>
             function volver() {
-                document.location.href = <?php echo $dirRoot; ?>"MVC_TOCAR/VISTA/index.php";
+                document.location.href = <?php echo $dirRoot; ?>"POO/VISTA/index.php";
             }
         </script>
 </head>
@@ -30,29 +30,30 @@ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
 
     <!––Incluimos la cabecera ––>
     <header class="cabecera">
-        <?php include $incRoot."MVC_TOCAR/VISTA/VI_INCLUDES/cabecera.php" ?>
+        <?php include $incRoot."POO/VISTA/VI_INCLUDES/cabecera.php" ?>
     </header>
 
 
     <!––En la parte izquierda seleccionamos las empresas de una lista en HTML ––>
-            <nav class="navega"><p style="font-size:large;">Empresas del sector</p>
+    <nav class="navega"><p style="font-size:large;">Empresas del sector</p>
 
-                     <?php include $incRoot."MVC_TOCAR\VISTA\VI_INCLUDES\nav.php" ?>
+                     <?php include $incRoot."POO/VISTA/VI_INCLUDES/nav.php" ?>
 
-        </nav>
-            <aside class="barra"><p style="font-size:large;">Contactos</p>
+     </nav>
 
-                        <!––En la parte derecha ponemos los contactos de la web con una lista en HTML ––>
-                        <?php include $incRoot."MVC_TOCAR\VISTA\VI_INCLUDES\nav.php" ?>
+        <aside class="barra"><p style="font-size:large;">Contactos</p>
 
-            </aside>
+            <!––En la parte derecha ponemos los contactos de la web con una lista en HTML ––>
+            <?php include $incRoot."POO/VISTA/VI_INCLUDES/aside.php" ?>
+
+        </aside>
 
 
     <article class="skynet">
-        <a href="<?php echo $dirRoot; ?>MVC_TOCAR\VISTA\index.php">Indice</a>
+        <a href="<?php echo $dirRoot; ?>POO\VISTA\index.php">Indice</a>
 
         <!––Formulario con los datos de los administradores ––>
-        <form action="<?php echo $dirRoot; ?>MVC_TOCAR/CONTROLADOR/CO_SUPERADMIN/logCompruebaSuperAdmin.php" method="POST" id="creacion">
+        <form action="<?php echo $dirRoot; ?>POO/CONTROLADOR/CO_SUPERADMIN/logCompruebaSuperAdmin.php" method="POST" id="creacion">
 
             <div align="center" style="margin-top:100px;">
                 <div class="saddiv">
@@ -81,7 +82,7 @@ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
         </form>
 
     </article>
-    <footer class="pie"> <?php include $incRoot."MVC_TOCAR\VISTA\VI_INCLUDES\pie.php" ?></footer>
+    <footer class="pie"> <?php include $incRoot."POO\VISTA\VI_INCLUDES\pie.php" ?></footer>
 
     
 </body>

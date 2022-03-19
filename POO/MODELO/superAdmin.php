@@ -40,6 +40,18 @@
 	public function getDatos() {
 		return $this->datos;
 	}
+	public function getId() {
+		return $this->datos[SuperAdmin::id];
+	}
+	public function getPassword() {
+		return $this->datos[SuperAdmin::password];
+	}
+	public function getNombre() {
+		return $this->datos[SuperAdmin::nombre];
+	}
+	public function getEmail() {
+		return $this->datos[SuperAdmin::email];
+	}
 
 	public function validar() {
 		$msgValidacion = "";
