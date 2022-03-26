@@ -36,7 +36,7 @@ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
 				session_start();
                 $_SESSION['superadmin_session'] ="superadmin_session";
 				setcookie("superadmin_cookie", $nombre, 1);
-				$url = $dirRoot.'POO/VISTA/VI_SUPERADMIN/appSuperAdminMenu.php';
+				$url = $dirRoot.'POO/VISTA/VI_SUPERADMIN/vistaSuperAdminMenu.php';
 				header('Location: '.$url);
 			/*	$host  = $_SERVER['HTTP_HOST'];
 				$uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');

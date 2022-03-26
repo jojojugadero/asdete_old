@@ -19,32 +19,10 @@ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
 </head>
 <?php
 
-include $incRoot.'POO/MODELO/datos.php';
-include $incRoot.'POO/MODELO/afiliados.php';
-include $incRoot.'POO/MODELO/empresa.php';
-
-session_start();
-
-
-
-//Comprobamos si se ha iniciado la sesión de afiliado
+include $incRoot.'POO/MODELO/MO_AFILIADOS/includesAfiliados.php';
 
 include $incRoot.'POO/CONTROLADOR/CO_AFILIADOS/appAfiliado.php';
 
-$dat = new Datos();
-
-  //Recogemos el id del afiliado
-  $id_afil =  $_SESSION['id_afiliado'];
-  //Con este metodo de la clase datos sacamos el nombre del afiliado con su ID
-  $afiliado = Afiliados::getAfiliadoId($id_afil);
-
-  //Con el id de la empresa sacamos los datos de la misma a traves del metodo getEmpresa() de la clase datos
-  $empresa = Empresa::getEmpresaId($afiliado->getIdEmpresa());
-  //Guardamos dicho nombre de la empresa en una variable
-  $nom_empresa =  $empresa->getNombre();
-
-  //Obtenemos las empresas para mostrarlas con el select
-  $empresas = Empresa::getEmpresas();
 ?>
 
 <body class="cuerpo_contenedor" >

@@ -7,57 +7,9 @@ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
 <!DOCTYPE html>
 <html lang="es">
 <?php
-
-include $incRoot.'POO/MODELO/datos.php';
-include $incRoot.'POO/MODELO/afiliados.php';
-include $incRoot.'POO/MODELO/empresa.php';
-
-
-//Iniciamos sesión
-session_start();
+include $incRoot.'POO/MODELO/MO_ADMINISTRADORES/includesAdmin.php';
 
 include $incRoot.'POO/CONTROLADOR/CO_ADMINISTRADORES/appAdministra.php';
-
-
-$dat = new Datos();
-$afil = new Afiliados();
-
-$afil->loadPost();
-
-
-$swinsertar =  isset($_POST['swinsertar']) ? $_POST['swinsertar'] : '';
-$swmodificar =  isset($_POST['swmodificar']) ? $_POST['swmodificar'] : '';
-$swmodificarapply =  isset($_POST['swmodificarapply']) ? $_POST['swmodificarapply'] : '';
-$sweliminar =  isset($_POST['sweliminar']) ? $_POST['sweliminar'] : '';
-
-
-$afil_modi = $swmodificar == 'S' ? Afiliados::getAfiliadoId($afil->getId()) : $afil;
-
-$msgValidacion = $swinsertar == 'S' || $swmodificarapply == 'S' ? $afil->validar() : '';
-
-
-
-if(trim($msgValidacion) != "") {
-  $afil_modi = $afil;
-}
-if(trim($msgValidacion) == "" && $swmodificarapply == 'S') {
-  $swmodificar = "N";
-}
-if(trim($msgValidacion) == "") {
-  if($swinsertar == 'S') {
-    $dat->altaAfiliado($afil->getDatos());
-  } else if($swmodificarapply == 'S') {
-    $dat->modAfiliado($afil->getDatos());
-  } else if($sweliminar == 'S') {
-    $dat->eliminarAfiliado($afil->getId());
-  }
-}
-
-$mostrarDatos = $swmodificar == 'S' || trim($msgValidacion) != "" ? 'S':'N';
-
-  //Recogemos todos los afiliados y empresas para mostarlos por pantalla
-  $afiliados = Afiliados::getAfiliados();
-  $empresas = Empresa::getEmpresas();
 
 ?>
 

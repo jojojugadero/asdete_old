@@ -45,7 +45,7 @@ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
 			// Creamos una cookie con su nombre.
 			setcookie("afiliado_cookie", $nombre, 1);
 			//Despues de crear la sesión y la cookie redirimos al usuario (si es correcto) a appAfiliados.php 
-			$url = $dirRoot."POO/VISTA/VI_AFILIADOS/appAfiliados.php";
+			$url = $dirRoot."POO/VISTA/VI_AFILIADOS/vistaAfiliados.php";
 			header('Location: ' . $url);
 		} else {
 			//Si no mostramos un mensaje de no encontrado y un link a index

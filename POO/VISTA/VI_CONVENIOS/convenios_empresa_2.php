@@ -62,7 +62,7 @@ if(isset($_SESSION['afiliado_sesion']) == 'afiliado_sesion') {
 
     <article class="skynet">
 
-    <a href="<?php echo $dirRoot?>POO/VISTA/index.php">Indice</a> > <a href="<?php echo $dirRoot?>POO/VISTA/VI_AFILIADOS/afiliadosLogin.php">Login</a> > <a href="<?php echo $dirRoot?>POO/VISTA/VI_AFILIADOS/appAfiliados.php">Afiliados</a>
+    <a href="<?php echo $dirRoot?>POO/VISTA/index.php">Indice</a> > <a href="<?php echo $dirRoot?>POO/VISTA/VI_AFILIADOS/afiliadosLogin.php">Login</a> > <a href="<?php echo $dirRoot?>POO/VISTA/VI_AFILIADOS/vistaAfiliados.php">Afiliados</a>
 
     <h2>CONVENIO 2</h2>
                 <section>

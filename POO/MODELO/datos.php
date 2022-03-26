@@ -390,7 +390,6 @@
 			$datos['direccion']."')";
 	
 			$resultado = mysqli_query($conexion, $consulta);
-			var_dump($resultado);
 	
 			mysqli_close($conexion);
 		}

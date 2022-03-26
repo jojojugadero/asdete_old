@@ -107,7 +107,7 @@
 		} else if(trim($this->datos[Empresa::direccion]) == '') {
 		$msgValidacion = "La dirección es obligatorio";
 		}
-		if(trim($this->datos['nif']) != '') {
+		if(trim($this->datos[Empresa::cif]) != '') {
 			$dat = new Datos();
 			
 			/*
