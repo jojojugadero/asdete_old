@@ -340,3 +340,15 @@ body {
     .user-login-cell {
       padding:2px;
     }
+    .bg-personas {/*100% 50% no-repeat top center*/
+      background-image: url('../IMAGENES/personas.jpg');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: 100% 70%;
+    }
+    .link-afiliados {
+      background-color:burlywood;
+      border-radius:25px;
+      padding:5px;
+      float:right;
+    }

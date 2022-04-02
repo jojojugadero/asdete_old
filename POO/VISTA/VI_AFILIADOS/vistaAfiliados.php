@@ -49,30 +49,35 @@ include $incRoot.'POO/CONTROLADOR/CO_AFILIADOS/appAfiliado.php';
           </aside>
 
 
-    <article class="skynet">
+    <article class="skynet bg-personas">
     <!––Migas de pan (breadcrumbs) ––>
-   
-    <a href="<?php echo $dirRoot; ?>POO/VISTA/index.php?tipologin=afil">Indice</a>
     
+    <span class="link-afiliados">
+    <a href="<?php echo $dirRoot; ?>POO/VISTA/index.php?tipologin=afil">Indice</a>
+    </span>
     <!––Mostramos el nombre del afiliado con un saludo y con sus datos y si no son correctos le dejamos un link para escriba a administración y modifique sus datos ––>
 
 
     <!––Mandamos los datos de la empresa selecionada atraves de este select y en la página concino.php nos redirige al convenio de la empresa seleccionada ––>
 <form name="saludoAfiliado" id="saludoAfiliado" action="<?php echo $dirRoot ?>POO/CONTROLADOR/convenios.php" method="post">
-  
-<div align="center" style="margin-top:100px;">
-    <div class="afidiv" >
-        <table >
-            <tr>
-                <td align="center" colspan="2"><?php echo "Hola ".$afiliado->getNombre() ?></td>
-            </tr>
-            <tr>
-                <td colspan="2" style="padding-top:20px;">Si ya no vive en la <?php echo $afiliado->getDireccion()?>,<br> o ya no trabaja en la empresa <?php echo $nom_empresa?><br>contacte con: <br>  <a href="administracion@asdete.com"> administración. administracion@asdete.com</a> </td>
-            </tr>
-            
-        </table>
-    </div>
-        <table  style="padding-top:20px;">
+<table  width="100%">
+  <tr>
+    <td width="50%">
+      <div align="center">
+          <div class="afidiv" >
+              <table >
+                  <tr>
+                      <td align="center" colspan="2"><?php echo "Hola ".$afiliado->getNombre() ?></td>
+                  </tr>
+                  <tr>
+                      <td colspan="2" style="padding-top:20px;">Si ya no vive en la <?php echo $afiliado->getDireccion()?>,<br> o ya no trabaja en la empresa <?php echo $nom_empresa?><br>contacte con: <br>  <a href="administracion@asdete.com"> administración. administracion@asdete.com</a> </td>
+                  </tr>
+                  
+              </table>
+          </div>
+    </td>
+    <td align="center">
+      <table  style="padding-top:20px;">
             <tr>
               <td colspan="2">Seleccione su empresa: </td>
             </tr>
@@ -98,11 +103,14 @@ include $incRoot.'POO/CONTROLADOR/CO_AFILIADOS/appAfiliado.php';
             </tr>
             
         </table>
-</div>
-
+    </td>
+  </tr>
+</table>
+        
 
   <p>&nbsp;</p>
 </form>
+</div>
     </article>
     <footer class="pie"><?php include $incRoot."POO/VISTA/VI_INCLUDES/pie.php" ?></footer>
     
