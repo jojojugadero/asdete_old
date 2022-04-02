@@ -40,8 +40,9 @@ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
 			$afiliado = $dat->getAfiliadoLogin($nombre, $pass);
 
 			//Datos de la sesión
-			$_SESSION['afiliado_sesion'] = "afiliado_sesion";
+			$_SESSION['user_session'] = "afiliado_session";
 			$_SESSION['id_afiliado'] = $afiliado['id'];
+			$_SESSION['user_name'] =$nombre;
 			// Creamos una cookie con su nombre.
 			setcookie("afiliado_cookie", $nombre, 1);
 			//Despues de crear la sesión y la cookie redirimos al usuario (si es correcto) a appAfiliados.php 
@@ -50,12 +51,12 @@ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
 		} else {
 			//Si no mostramos un mensaje de no encontrado y un link a index
 			echo "Clave o usuario no validos";
-			echo "<a href=$dirRoot.'POO/VISTA/index.php'>Volver indice</a>";
+			echo "<a href='".$dirRoot."POO/VISTA/index.php?tipologin=afil'>Volver indice</a>";
 		}
 	} else {
 		//Si no mostramos un mensaje de no encontrado y un link a index
 		echo "Usuario no encontrado;";
-		echo "<a href=$dirRoot.'POO/VISTA/index.php'>Volver indice</a>";
+		echo "<a href='".$dirRoot."POO/VISTA/index.php?tipologin=afil'>Volver indice</a>";
 	}
 
 	?>

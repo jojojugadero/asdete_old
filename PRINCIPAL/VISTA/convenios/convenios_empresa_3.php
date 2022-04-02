@@ -69,7 +69,7 @@ if(isset($_SESSION['afiliado_sesion']) == 'afiliado_sesion') {
 
     <article class="skynet">
 
-    <a href="index.php">Indice</a> > <a href="afiliadosLogin.php">Login</a> > <a href="appAfiliados.php">Afiliados</a>
+    <a href="index.php?tipologin=afil">Indice</a> > <a href="appAfiliados.php">Afiliados</a>
 
     <h2>CONVENIO 3</h2>
                 <section>

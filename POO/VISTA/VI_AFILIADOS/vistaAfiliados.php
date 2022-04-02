@@ -52,7 +52,7 @@ include $incRoot.'POO/CONTROLADOR/CO_AFILIADOS/appAfiliado.php';
     <article class="skynet">
     <!––Migas de pan (breadcrumbs) ––>
    
-    <a href="<?php echo $dirRoot; ?>POO/VISTA/index.php">Indice</a> > <a href="<?php echo $dirRoot; ?>POO/VISTA/VI_AFILIADOS/afiliadosLogin.php">Login</a>
+    <a href="<?php echo $dirRoot; ?>POO/VISTA/index.php?tipologin=afil">Indice</a>
     
     <!––Mostramos el nombre del afiliado con un saludo y con sus datos y si no son correctos le dejamos un link para escriba a administración y modifique sus datos ––>
 

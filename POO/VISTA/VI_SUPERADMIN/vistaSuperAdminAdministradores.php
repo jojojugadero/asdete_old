@@ -47,7 +47,7 @@ include $incRoot.'POO/CONTROLADOR/CO_SUPERADMIN/appSuperAdminAdministradores.php
 
     <article class="skynet">
     <!––Migas de pan (breadcrumbs) ––>
-    <a href="<?php echo $dirRoot; ?>POO/VISTA/index.php">Indice</a> > <a href="<?php echo $dirRoot; ?>POO/VISTA/VI_SUPERADMIN/superAdminLogin.php">Login</a> > <a href="<?php echo $dirRoot; ?>POO/VISTA/VI_SUPERADMIN/vistaSuperAdminMenu.php">Menú</a>
+    <a href="<?php echo $dirRoot; ?>POO/VISTA/index.php?tipologin=sadmin">Indice</a> > <a href="<?php echo $dirRoot; ?>POO/VISTA/VI_SUPERADMIN/vistaSuperAdminMenu.php">Menú</a>
     
     <!––Formulario para realizar todas las operaciones de base de datos––>
 <form name="formTabla" id="formTabla" href="<?php echo $dirRoot; ?>POO/VISTA/VI_SUPERADMIN/vistaSuperAdminAdministradores.php" method="post">

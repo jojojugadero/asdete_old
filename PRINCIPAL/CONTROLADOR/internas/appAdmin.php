@@ -113,7 +113,7 @@ if(isset($_SESSION['personal_sesion']) == 'personal_sesion') {
 
     <article class="skynet">
     <!––Migas de pan (breadcrumbs) ––>
-    <a href="index.php">Indice</a> > <a href="personalLogin.php">Login</a>
+    <a href="index.php?tipologin=admin">Indice</a>
     
     <!––Formulario para realizar todas las operaciones de base de datos––>
 <form name="formTabla" id="formTabla" href="appPersonal.php" method="post">

@@ -6,7 +6,7 @@
 
       //Comprobamos si se ha iniciado la sesión de afiliado
 
-      if(isset($_SESSION['afiliado_sesion']) == 'afiliado_sesion') {
+      if(isset($_SESSION['user_session']) == 'afiliado_session') {
     
         //Si no se ha inicado la sesión de afiliado lo redireccionamos al indice
       } else {

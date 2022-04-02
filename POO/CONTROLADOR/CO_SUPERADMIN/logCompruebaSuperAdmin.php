@@ -34,7 +34,8 @@ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
 			if ($dat->existeSuperAdmin($nombre) && $dat->verificaPassSuperAdmin($nombre,$pass)) {
 				// Creo una cookie con su nombre, para poderla comprobar más adelante.
 				session_start();
-                $_SESSION['superadmin_session'] ="superadmin_session";
+                $_SESSION['user_session'] ="superadmin_session";
+                $_SESSION['user_name'] =$nombre;
 				setcookie("superadmin_cookie", $nombre, 1);
 				$url = $dirRoot.'POO/VISTA/VI_SUPERADMIN/vistaSuperAdminMenu.php';
 				header('Location: '.$url);
@@ -42,12 +43,16 @@ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
 				$uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
 				$extra = '../VISTA/VI_ADMINISTRADORES/appAdmin.php';
 				header("Location: http://$host$uri/$extra");*/
-		}else{
-				echo "Clave o usuario no validos";
-			}
-		}else{
-			echo "Usuario no encontrado;";
+		} else {
+			//Si no mostramos un mensaje de no encontrado y un link a index
+			echo "Clave o usuario no validos";
+			echo "<a href='".$dirRoot."POO/VISTA/index.php?tipologin=sadmin'>Volver indice</a>";
 		}
+	} else {
+		//Si no mostramos un mensaje de no encontrado y un link a index
+		echo "Usuario no encontrado;";
+		echo "<a href='".$dirRoot."POO/VISTA/index.php?tipologin=sadmin'>Volver indice</a>";
+	}
 
 
 	?>

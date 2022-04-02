@@ -53,7 +53,7 @@ include $incRoot.'POO/CONTROLADOR/CO_ADMINISTRADORES/appAdministra.php';
 
     <article class="skynet">
     <!––Migas de pan (breadcrumbs) ––>
-    <a href="<?php echo $dirRoot; ?>POO/VISTA/index.php">Indice</a> > <a href="<?php echo $dirRoot; ?>POO/VISTA/VI_ADMINISTRADORES/adminLogin.php">Login</a>
+    <a href="<?php echo $dirRoot; ?>POO/VISTA/index.php?tipologin=admin">Indice</a>
     
     <!––Formulario para realizar todas las operaciones de base de datos––>
 <form name="formTabla" id="formTabla" href="<?php echo $dirRoot; ?>POO/VISTA/VI_AFILIADOS/appAfiliados.php" method="post">
