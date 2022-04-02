@@ -26,7 +26,7 @@ $id_empresa_conv = $_POST['empresa'];
 $empresa_conv = $dat->getEmpresa($id_empresa_conv);
 
 
-if(isset($_SESSION['afiliado_sesion']) == 'afiliado_sesion') {
+if(isset($_SESSION['user_session']) == 'afiliado_session') {
     $url1 =$dirRoot."POO/VISTA/VI_AFILIADOS/appAfiliados.php";
     //header('Location: '.$url1);
   } else {

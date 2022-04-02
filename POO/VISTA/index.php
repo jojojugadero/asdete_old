@@ -13,10 +13,10 @@ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
         $tipologin = 'afil';
     }
     $swlogout =  isset($_GET['swlogout']) ? $_GET['swlogout'] : '';
-    if($swlogout == 'S') {
+    //if($swlogout == 'S') {
         session_destroy();
         $_SESSION = null;
-    }
+    //}
 ?>
 <!DOCTYPE html>
 <html lang="es">
