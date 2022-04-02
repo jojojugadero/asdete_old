@@ -22,11 +22,11 @@ session_start();
 
 $dat = new Datos();
 
-if(isset($_SESSION['afiliado_sesion']) == 'afiliado_sesion') {
+if(isset($_SESSION['user_session']) == 'afiliado_session') {
     $url1 ="appAfiliados.php";
     //header('Location: '.$url1);
   } else {
-    $url2 ="index.php";
+    $url2 =$dirRoot."POO/VISTA/index.php";
     header('Location: '.$url2);
   }
   $id_afil =  $_SESSION['id_afiliado'];
@@ -44,25 +44,26 @@ if(isset($_SESSION['afiliado_sesion']) == 'afiliado_sesion') {
         <?php include $incRoot."POO/VISTA/VI_INCLUDES/cabecera.php" ?>
     </header>
 
-                <!––En la parte izquierda seleccionamos las empresas de una lista en HTML ––>
-                <nav class="navega"><p style="font-size:large;">Empresas del sector</p>
+    <!––En la parte izquierda seleccionamos las empresas de una lista en HTML ––>
+              <nav class="navega"><p style="font-size:large;">Empresas del sector</p>
 
-                         <?php include $incRoot."POO/VISTA/VI_INCLUDES\nav.php" ?>
+              <?php include $incRoot."POO/VISTA/VI_INCLUDES/nav.php" ?>
 
-            </nav>
+          </nav>
 
 
-                <aside class="barra"><p style="font-size:large;">Contactos</p>
 
-                    <!––En la parte derecha ponemos los contactos de la web con una lista en HTML ––>
-                    <?php include $incRoot."POO/VISTA/VI_INCLUDES\nav.php" ?>
+          <aside class="barra"><p style="font-size:large;">Contactos</p>
 
-                </aside>
+                 <!––En la parte derecha ponemos los contactos de la web con una lista en HTML ––>
+                 <?php include $incRoot."POO/VISTA/VI_INCLUDES/aside.php" ?>
+
+          </aside>
 
 
     <article class="skynet">
 
-    <a href="<?php echo $dirRoot?>POO/VISTA/index.php?tipologin=admin">Indice</a> > <a href="<?php echo $dirRoot?>POO/VISTA/VI_AFILIADOS/vistaAfiliados.php">Afiliados</a>
+    <a href="<?php echo $dirRoot; ?>POO/VISTA/index.php?tipologin=afil">Indice</a> > <a href="<?php echo $dirRoot?>POO/VISTA/VI_AFILIADOS/vistaAfiliados.php">Afiliados</a>
 
     <h2>CONVENIO 2</h2>
                 <section>
