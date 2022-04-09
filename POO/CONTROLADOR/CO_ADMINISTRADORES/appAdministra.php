@@ -4,7 +4,7 @@
     //Iniciamos sesión
     session_start();
     
-    if(isset($_SESSION['user_session']) == 'personal_session') {
+    if(isset($_SESSION['user_session']) == 'administrador_session') {
         //$url1 = $dirRoot."POO\VISTA\ADMINISTRADORES\appAdmin.php";
         //header('Location: '.$url1);
       } else {

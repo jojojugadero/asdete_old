@@ -33,7 +33,7 @@ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
 			if ($dat->existeAdmin($nombre) && $dat->verificaPassAdmin($nombre,$pass)) {
 				// Creo una cookie con su nombre, para poderla comprobar más adelante.
 				session_start();
-                $_SESSION['user_session'] ="personal_session";
+                $_SESSION['user_session'] ="administrador_session";
 				$_SESSION['user_name'] =$nombre;
 				setcookie("personal_cookie", $nombre, 1);
 				$url = $dirRoot.'POO/VISTA/VI_ADMINISTRADORES/vistaAdmin.php';
