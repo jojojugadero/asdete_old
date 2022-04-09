@@ -33,7 +33,7 @@ include $incRoot.'POO/CONTROLADOR/ControlCabecera.php';
                             </svg>
                             </button>
                         </a>
-                        <?php } else if($sesion == 'personal_session'){ ?>
+                        <?php } else if($sesion == 'administrador_session'){ ?>
                         <a title='Haz click para deslogearte' href ='<?php echo $url_desconectar; ?>'>
                             <button class="btn btn-primary btn-sm btn-logout">
                             <svg id="i-signout" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">

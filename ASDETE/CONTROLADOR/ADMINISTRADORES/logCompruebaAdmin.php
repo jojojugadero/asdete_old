@@ -20,7 +20,7 @@
 			if (existeAdmin($nombre) && verificaPassAdmin($nombre,$pass)) {
 				// Creo una cookie con su nombre, para poderla comprobar más adelante.
 				session_start();
-                $_SESSION['personal_sesion'] ="personal_sesion";
+                $_SESSION['administrador_session'] ="administrador_session";
 				setcookie("personal_cookie", $nombre, 1);
 				$url ="ASDETE\VISTA\ADMINISTRADORES\appAdmin.php";
 				header('Location: '.$url);

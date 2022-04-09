@@ -17,7 +17,7 @@ include 'datos.php';
 session_start();
 
 //Comprobamos que la sesión es correcta y si es correcta se queda en la página se queda en la página y si no, nos redirige a index.php 
-if(isset($_SESSION['personal_sesion']) == 'personal_sesion') {
+if(isset($_SESSION['administrador_session']) == 'administrador_session') {
     $url1 ="appPersonal.php";
     //header('Location: '.$url1);
   } else {

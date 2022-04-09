@@ -50,6 +50,9 @@ if(isset($_SESSION['user_session']) == 'afiliado_session') {
   }elseif($id_empresa_conv == 3 ){
     $url = $dirRoot."POO/VISTA/VI_CONVENIOS/convenios_empresa_3.php";
     header("Location: ".$url);
+  }else {
+    $url = $dirRoot."POO/VISTA/VI_CONVENIOS/convenios_empresa_noexiste.php";
+    header("Location: ".$url);
   }
 
   $empresas = $dat->getEmpresas();
