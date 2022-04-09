@@ -30,6 +30,9 @@ include $incRoot.'POO/CONTROLADOR/CO_AFILIADOS/appAfiliado.php';
 
     <header class="cabecera">
     <?php include $incRoot."POO/VISTA/VI_INCLUDES/cabecera.php" ?>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    
     </header>
 
               <!––En la parte izquierda seleccionamos las empresas de una lista en HTML ––>
@@ -60,53 +63,54 @@ include $incRoot.'POO/CONTROLADOR/CO_AFILIADOS/appAfiliado.php';
 
     <!––Mandamos los datos de la empresa selecionada atraves de este select y en la página concino.php nos redirige al convenio de la empresa seleccionada ––>
 <form name="saludoAfiliado" id="saludoAfiliado" action="<?php echo $dirRoot ?>POO/CONTROLADOR/convenios.php" method="post">
-<table  width="100%">
-  <tr>
-    <td width="50%">
-      <div align="center">
-          <div class="afidiv" >
-              <table >
-                  <tr>
-                      <td align="center" colspan="2"><?php echo "Hola ".$afiliado->getNombre() ?></td>
-                  </tr>
-                  <tr>
-                      <td colspan="2" style="padding-top:20px;">Si ya no vive en la <?php echo $afiliado->getDireccion()?>,<br> o ya no trabaja en la empresa <?php echo $nom_empresa?><br>contacte con: <br>  <a href="administracion@asdete.com"> administración. administracion@asdete.com</a> </td>
-                  </tr>
-                  
-              </table>
-          </div>
-    </td>
-    <td align="center">
-      <table  style="padding-top:20px;">
-            <tr>
-              <td colspan="2">Seleccione su empresa: </td>
-            </tr>
-            <tr>
-              <td>
-              <!––Con este option mostramos las empresas desde base de datos para seleccionar el convenio que el afiliado quiera consultar, con el action del form de  más arriba nos llevara a convenios.php donde se nos redirigira a la página del convenio seleccionado  ––>
-                <select name='empresa' class='centrado'>
-                  <option value="">Seleccionar</option>
-                  <?php
-                  //En este select mostramos las empresas con el método anterior getEmpresas()
-                      if (count($empresas) == 0) {
-                      } else {
-                        foreach($empresas as $fila_option){
-                    ?>
-                    <option  value="<?php echo $fila_option->getId() ?>"><?php echo $fila_option->getNombre() ?></option>
-                    <?php
-                      }
-                    }
-                    ?>
-                </select>
-              </td>
-              <td ><input value="Seleccionar convenio" name="selconv" type="submit" /></td>
-            </tr>
-            
-        </table>
-    </td>
-  </tr>
-</table>
-        
+<div>
+  
+  <div class="afil-container">
+    <div class="row">
+        <div class="afil-center">
+
+            <div class="col-md-5 afil-form-1">
+                <h3><?php echo "Hola ".$afiliado->getNombre() ?></h3>
+                <table >
+                    <tr>
+                        <td colspan="2" style="padding-top:20px;" align="left">Si ya no vive en la <?php echo $afiliado->getDireccion()?>,<br> o ya no trabaja en la empresa <?php echo $nom_empresa?><br>contacte con: <br>  <a href="administracion@asdete.com"> administración. administracion@asdete.com</a> </td>
+                    </tr>
+                    
+                </table>
+            </div>
+
+          <div class="col-md-5  afil-form-2">
+                
+              <table  style="padding-top:20px;">
+                    <tr>
+                      <td colspan="2" align="left">Seleccione su empresa: </td>
+                    </tr>
+                    <tr>
+                      <td>
+                      <!––Con este option mostramos las empresas desde base de datos para seleccionar el convenio que el afiliado quiera consultar, con el action del form de  más arriba nos llevara a convenios.php donde se nos redirigira a la página del convenio seleccionado  ––>
+                        <select name='empresa' class='centrado'>
+                          <option value="">Seleccionar</option>
+                          <?php
+                          //En este select mostramos las empresas con el método anterior getEmpresas()
+                              if (count($empresas) == 0) {
+                              } else {
+                                foreach($empresas as $fila_option){
+                            ?>
+                            <option  value="<?php echo $fila_option->getId() ?>"><?php echo $fila_option->getNombre() ?></option>
+                            <?php
+                              }
+                            }
+                            ?>
+                        </select>
+                      </td>
+                      <td ><input value="Seleccionar convenio" name="selconv" type="submit" /></td>
+                    </tr>
+                    
+                </table>
+              </div>
+            </div>
+        </div>
+</div>
 
   <p>&nbsp;</p>
 </form>

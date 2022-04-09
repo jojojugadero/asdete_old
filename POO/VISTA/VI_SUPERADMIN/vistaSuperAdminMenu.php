@@ -27,6 +27,8 @@ if(isset($_SESSION['user_session']) == 'superadmin_session') {
    <title>Asdete</title>
    <!––Linkamos hoja de estilos ––>
    <link rel="stylesheet" href="<?php echo $dirRoot; ?>POO/VISTA/ESTILOS/estilos.css">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 
 </head>
 

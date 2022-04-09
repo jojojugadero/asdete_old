@@ -4,6 +4,13 @@ $arrayDir = preg_split('/\//',$pagina);
 $dirRoot = '/'.$arrayDir[1].'/';
 $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
 ?>
+<?php
+
+include $incRoot.'POO/MODELO/MO_SUPERADMIN/includesSuperAdmin.php';
+
+
+include $incRoot.'POO/CONTROLADOR/CO_SUPERADMIN/appSuperAdminEmpresas.php';
+?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -13,14 +20,12 @@ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <title>App Personal</title>
  <link rel="stylesheet" href="<?php echo $dirRoot; ?>POO/VISTA/ESTILOS/estilos.css">
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+
+
 </head>
-<?php
 
-include $incRoot.'POO/MODELO/MO_SUPERADMIN/includesSuperAdmin.php';
-
-
-include $incRoot.'POO/CONTROLADOR/CO_SUPERADMIN/appSuperAdminEmpresas.php';
-?>
 
 <body class="cuerpo_contenedor" >
 
@@ -29,6 +34,7 @@ include $incRoot.'POO/CONTROLADOR/CO_SUPERADMIN/appSuperAdminEmpresas.php';
     <header class="cabecera">
         <?php include $incRoot."POO/VISTA/VI_INCLUDES/cabecera.php" ?>
     </header>
+
 
           <!––En la parte izquierda seleccionamos las empresas de una lista en HTML ––>
     <nav class="navega"><p style="font-size:large;">Empresas del sector</p>
@@ -42,21 +48,24 @@ include $incRoot.'POO/CONTROLADOR/CO_SUPERADMIN/appSuperAdminEmpresas.php';
             <!––En la parte derecha ponemos los contactos de la web con una lista en HTML ––>
             <?php include $incRoot."POO/VISTA/VI_INCLUDES/aside.php" ?>
 
+          
+
         </aside>
 
 
     <article class="skynet">
+
     <!––Migas de pan (breadcrumbs) ––>
     <a href="<?php echo $dirRoot; ?>POO/VISTA/index.php?tipologin=sadmin">Indice</a> > <a href="<?php echo $dirRoot; ?>POO/VISTA/VI_SUPERADMIN/vistaSuperAdminMenu.php">Menú</a>
     
     <!––Formulario para realizar todas las operaciones de base de datos––>
 <form name="formTabla" id="formTabla" href="<?php echo $dirRoot; ?>POO/VISTA/VI_SUPERADMIN/vistaSuperAdminEmpresas.php" method="post">
   
-  <table class="estilo_tabla" width="50%" align="center" >
-    <tr class="estilo_cab_tabla">
+  <table class="estilo_tabla" width="80%" align="center" >
+    <tr class="estilo_cab_tabla_2">
       <th class="subtitulo" colspan="12"><h1><span >Gestión de empresas</span></h1></th>
     </tr>
-    <tr class="estilo_subcab_tabla" >
+    <tr class="estilo_subcab_tabla_2" >
       <td class="primera_fila">Id</td>
       <td class="primera_fila">CIF</td>
       <td class="primera_fila">Nombre</td>
@@ -90,8 +99,8 @@ include $incRoot.'POO/CONTROLADOR/CO_SUPERADMIN/appSuperAdminEmpresas.php';
           <td><?php echo $fila->getEmail() ?></td>
           <td><?php echo $fila->getDireccion() ?></td>
           <!––Botones con las operaciones a seleccionar en javascript de modificar o borrar un registro existente ––>
-          <td class="bot"><input onclick="document.getElementById('swmodificar').value = 'S';document.getElementById('id').value = <?php echo $fila->getId() ?>;" type='submit' name='up' id='up' value='Actualizar'></td>
-          <td class='bot'><input onclick="document.getElementById('sweliminar').value = 'S';document.getElementById('id').value = <?php echo $fila->getId() ?>;" type='submit' name='del' id='del' value='Borrar'></td>
+          <td class="bot"><input class="btn btn-primary btn-sm" onclick="document.getElementById('swmodificar').value = 'S';document.getElementById('id').value = <?php echo $fila->getId() ?>;" type='submit' name='up' id='up' value='Actualizar'></td>
+          <td class='bot'><input class="btn btn-danger btn-sm" onclick="document.getElementById('sweliminar').value = 'S';document.getElementById('id').value = <?php echo $fila->getId() ?>;" type='submit' name='del' id='del' value='Borrar'></td>
         </tr>   
     <?php
           }
@@ -99,24 +108,24 @@ include $incRoot.'POO/CONTROLADOR/CO_SUPERADMIN/appSuperAdminEmpresas.php';
     ?>
     <!––Mostramos los campos para insertar o modificar registros ––>
     <tr class="estilo_bottom_tabla" >
-	    <td><?php echo $mostrarDatos == 'S' ?$empr_modi->getId():''; ?></td>
-      <td><input value="<?php echo $mostrarDatos == 'S' ?$empr_modi->getCif():''; ?>" type='text' name='cif' size='10' class='centrado'></td>
-      <td><input value="<?php echo $mostrarDatos == 'S' ?$empr_modi->getNombre():''; ?>" type='text' name='nombre' size='10' class='centrado'></td>
-      <td><input value="<?php echo $mostrarDatos == 'S' ?$empr_modi->getTelefono():''; ?>" type='text' name='telefono' size='10' class='centrado'></td>
-      <td><input value="<?php echo $mostrarDatos == 'S' ?$empr_modi->getEmail():''; ?>" type='text' name='email' size='10' class='centrado'></td>
-      <td><input value="<?php echo $mostrarDatos == 'S' ?$empr_modi->getDireccion():''; ?>" type='text' name='direccion' size='10' class='centrado'></td>
+	    <td class="bot ultima_fila"><?php echo $mostrarDatos == 'S' ?$empr_modi->getId():''; ?></td>
+      <td class="bot ultima_fila"><input value="<?php echo $mostrarDatos == 'S' ?$empr_modi->getCif():''; ?>" type='text' name='cif' size='10' class='centrado'></td>
+      <td class="bot ultima_fila"><input value="<?php echo $mostrarDatos == 'S' ?$empr_modi->getNombre():''; ?>" type='text' name='nombre' size='10' class='centrado'></td>
+      <td class="bot ultima_fila"><input value="<?php echo $mostrarDatos == 'S' ?$empr_modi->getTelefono():''; ?>" type='text' name='telefono' size='10' class='centrado'></td>
+      <td class="bot ultima_fila"><input value="<?php echo $mostrarDatos == 'S' ?$empr_modi->getEmail():''; ?>" type='text' name='email' size='10' class='centrado'></td>
+      <td class="bot ultima_fila"><input value="<?php echo $mostrarDatos == 'S' ?$empr_modi->getDireccion():''; ?>" type='text' name='direccion' size='10' class='centrado'></td>
       <td class='bot' colspan="2">
         <?php
-          if ($swmodificar) {
+          if ($swmodificar == 'S') {
         ?>
          <!––Botones con las operaciones para confirmar la modificacion o crear un registro nuevo en javascript ––>
-          <input type='submit' onclick="document.getElementById('swmodificarapply').value = 'S'" name='cr' id='cr' value='Modificar'>
-          <input type='submit' onclick="" name='cr' id='cr' value='Nuevo'>
+          <input class="btn btn-success btn-sm" type='submit' onclick="document.getElementById('swmodificarapply').value = 'S';document.getElementById('swmodificar').value = 'S';" name='cr' id='cr' value='Modificar'>
+          <input class="btn btn-warning btn-sm" type='submit' onclick="" name='cr' id='cr' value='Nuevo'>
         <?php
           } else {
         ?>
          <!––Botones con las operación de crear un nuevo registo en javascript ––>
-          <input type='submit' onclick="document.getElementById('swinsertar').value = 'S'" name='cr' id='cr' value='Insertar'>
+          <input class="btn btn-success btn-sm" type='submit' onclick="document.getElementById('swinsertar').value = 'S'" name='cr' id='cr' value='Insertar'>
         <?php
           }
         ?>

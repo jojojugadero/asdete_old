@@ -111,7 +111,7 @@ body {
   background-color: #4682b4;
   border: none;
   border-radius: 15px;
-  box-shadow: 0 9px #999;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.4), 0 9px 26px 0 rgba(0, 0, 0, 0.38);
 }
 .botafil {
   display: inline-block;
@@ -125,7 +125,7 @@ body {
   background-color: #2e8b57;
   border: none;
   border-radius: 15px;
-  box-shadow: 0 9px #999;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.4), 0 9px 26px 0 rgba(0, 0, 0, 0.38);
 }
 
 .botpers:hover {
@@ -178,28 +178,65 @@ body {
   border: black solid;
 }
 
+.bot {
+  padding:5px;
+}
+
+.ultima_fila input {
+  width:100%;
+}
+.ultima_fila select {
+  width:100%;
+}
+.primera_fila {
+  border:solid thin;
+}
+
 .estilo_tabla {
+  margin-left:auto;
+  margin-right:auto;
   margin-top: 100px;
   font-size: medium;
   background-color: #000000;
   box-shadow: 0px 10px 10px black;
+  border:solid thin;
 
+}
+.estilo_cab_tabla_2 {
+  background-color: #FB8C00;
+  border:solid thin;
+ 
+}
+.estilo_subcab_tabla_2 {
+  background-color: #FFB74D;
+  border:solid thin;
 }
 .estilo_cab_tabla {
   background-color: #87CEFA;
+  border:solid thin;
  
 }
 .estilo_subcab_tabla {
   background-color: #ADD8E6;
+  border:solid thin;
 }
 .estilo_fila1_tabla {
   background-color: #c0c0c0;
+  border:solid thin;
 }
 .estilo_fila2_tabla {
   background-color: #f8f8ff;
+  border:solid thin;
+}
+.estilo_fila1_tabla td {
+  padding:3px;
+}
+.estilo_fila2_tabla td {
+  padding:3px;
 }
 .estilo_bottom_tabla {
   background-color: #708090;
+  border:solid thin;
 }
 
 .enlace_sidebar {
@@ -236,8 +273,9 @@ body {
     }
     .login-form-1{
       border-radius: 25px;
-        padding: 5%;
-        box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+      padding: 5%;
+      box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+      background-color: #fff;
     }
     .login-form-1 h3{
         text-align: center;
@@ -248,6 +286,7 @@ body {
       border-radius: 25px;
         padding: 5%;
         box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+        background-color: #fff;
     }
     .login-form-3 h3{
         text-align: center;
@@ -258,6 +297,7 @@ body {
       border-radius: 25px;
         padding: 5%;
         box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+        background-color: #fff;
     }
     .login-form-2 h3{
         text-align: center;
@@ -316,6 +356,40 @@ body {
       width: 20px;
       height: 20px;
     }
+    .afil-center {
+      margin:auto;
+      width:90%;
+    }
+    .afil-container{
+      margin-top: 23%;
+      width:100%;
+  }
+  .afil-form-1{
+    float:left;
+    margin:10px;
+    border-radius: 25px;
+    padding: 5%;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.4), 0 9px 26px 0 rgba(0, 0, 0, 0.38);
+    background-color: #66BB6A;
+  }
+  .afil-form-2{
+    margin-top:50px;
+    float:right;
+    border-radius: 25px;
+    padding: 5%;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.4), 0 9px 26px 0 rgba(0, 0, 0, 0.38);
+    background-color: #66BB6A;
+  }
+  .btn-logout{
+    padding: 0.15rem 0.3rem !important;
+    line-height:0.5 !important;
+  }
+  .btn-logout-sadmin{
+    padding: 0.15rem 0.3rem !important;
+    line-height:0.5 !important;
+    background-color:#F57C00 !important;
+    border-color:#F57C00 !important;
+  }
 
     @media (max-width: 1255px) {
     .user-login-block {
@@ -325,6 +399,7 @@ body {
       border:solid thin;
       padding:4px;
       box-shadow: 4px 3px #aaa;
+      display:block;
     }
     }
     @media (min-width: 1256px) {
@@ -335,6 +410,7 @@ body {
       border:solid thin;
       padding:4px;
       box-shadow: 4px 3px #aaa;
+      display:block;
     }
     }
     .user-login-cell {
