@@ -16,6 +16,8 @@ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <title>App Personal</title>
  <link rel="stylesheet" href="<?php echo $dirRoot; ?>POO/VISTA/ESTILOS/estilos.css">
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 </head>
 <?php
 
@@ -30,8 +32,6 @@ include $incRoot.'POO/CONTROLADOR/CO_AFILIADOS/appAfiliado.php';
 
     <header class="cabecera">
     <?php include $incRoot."POO/VISTA/VI_INCLUDES/cabecera.php" ?>
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     
     </header>
 
