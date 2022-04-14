@@ -36,7 +36,7 @@ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
                 $_SESSION['user_session'] ="administrador_session";
 				$_SESSION['user_name'] =$nombre;
 				setcookie("personal_cookie", $nombre, 1);
-				$url = $dirRoot.'POO/VISTA/VI_ADMINISTRADORES/vistaAdmin.php';
+				$url = $dirRoot.'POO/VISTA/VI_ADMINISTRADORES/vistaAdminMenu.php';
 				header('Location: '.$url);
 			/*	$host  = $_SERVER['HTTP_HOST'];
 				$uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');

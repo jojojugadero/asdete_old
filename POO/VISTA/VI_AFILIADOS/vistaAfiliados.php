@@ -5,6 +5,7 @@ $pagina = $_SERVER['PHP_SELF'];
 $arrayDir = preg_split('/\//',$pagina);
 $dirRoot = '/'.$arrayDir[1].'/';
 $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
+
 ?>
 
 
@@ -24,19 +25,20 @@ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
 include $incRoot.'POO/MODELO/MO_AFILIADOS/includesAfiliados.php';
 
 include $incRoot.'POO/CONTROLADOR/CO_AFILIADOS/appAfiliado.php';
+include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
 
 ?>
 
-<body class="cuerpo_contenedor" >
+<body class="cuerpo_contenedor<?php echo $sufijo_estilo; ?>" >
 
 
-    <header class="cabecera">
+    <header class="cabecera<?php echo $sufijo_estilo; ?>">
     <?php include $incRoot."POO/VISTA/VI_INCLUDES/cabecera.php" ?>
     
     </header>
 
               <!––En la parte izquierda seleccionamos las empresas de una lista en HTML ––>
-              <nav class="navega"><p style="font-size:large;">Empresas del sector</p>
+              <nav class="navega<?php echo $sufijo_estilo; ?>"><p style="font-size:large;">Empresas del sector</p>
 
               <?php include $incRoot."POO/VISTA/VI_INCLUDES/nav.php" ?>
 
@@ -44,7 +46,7 @@ include $incRoot.'POO/CONTROLADOR/CO_AFILIADOS/appAfiliado.php';
 
 
 
-          <aside class="barra"><p style="font-size:large;">Contactos</p>
+          <aside class="barra<?php echo $sufijo_estilo; ?>"><p style="font-size:large;">Contactos</p>
 
                  <!––En la parte derecha ponemos los contactos de la web con una lista en HTML ––>
                  <?php include $incRoot."POO/VISTA/VI_INCLUDES/aside.php" ?>
@@ -52,7 +54,7 @@ include $incRoot.'POO/CONTROLADOR/CO_AFILIADOS/appAfiliado.php';
           </aside>
 
 
-    <article class="skynet bg-personas">
+    <article class="skynet<?php echo $sufijo_estilo; ?> bg-personas">
     <!––Migas de pan (breadcrumbs) ––>
     
     <span class="link-afiliados">
@@ -73,7 +75,10 @@ include $incRoot.'POO/CONTROLADOR/CO_AFILIADOS/appAfiliado.php';
                 <h3><?php echo "Hola ".$afiliado->getNombre() ?></h3>
                 <table >
                     <tr>
-                        <td colspan="2" style="padding-top:20px;" align="left">Si ya no vive en la <?php echo $afiliado->getDireccion()?>,<br> o ya no trabaja en la empresa <?php echo $nom_empresa?><br>contacte con: <br>  <a href="administracion@asdete.com"> administración. administracion@asdete.com</a> </td>
+                        <td colspan="2" style="padding-top:20px;" align="left">Si ya no vive en la <?php echo $afiliado->getDireccion()?>,<br> o ya no trabaja en la empresa <?php echo $nom_empresa?><br>contacte con: <br>  <a href="administracion@asdete.com"> administración. administracion@asdete.com</a> o realiza la solicitud a traves de este formulario.</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="padding-top:20px;" align="center"><input class="btn btn-primary btn-sm" type='button' onclick="document.location.href='vistaAfiliadosMod.php';" value='Realizar solicitud'></td>
                     </tr>
                     
                 </table>
@@ -116,7 +121,7 @@ include $incRoot.'POO/CONTROLADOR/CO_AFILIADOS/appAfiliado.php';
 </form>
 </div>
     </article>
-    <footer class="pie"><?php include $incRoot."POO/VISTA/VI_INCLUDES/pie.php" ?></footer>
+    <footer class="pie<?php echo $sufijo_estilo; ?>"><?php include $incRoot."POO/VISTA/VI_INCLUDES/pie.php" ?></footer>
     
 
 </body>

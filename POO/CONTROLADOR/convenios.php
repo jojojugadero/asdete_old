@@ -3,6 +3,9 @@ $pagina = $_SERVER['PHP_SELF'];
 $arrayDir = preg_split('/\//',$pagina);
 $dirRoot = '/'.$arrayDir[1].'/';
 $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
+
+session_start();
+include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
 ?>
 
 <!DOCTYPE html>
@@ -17,8 +20,6 @@ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
 <?php
 
 include $incRoot.'POO/MODELO/datos.php';
-
-session_start();
 
 $dat = new Datos();
 
@@ -58,29 +59,29 @@ if(isset($_SESSION['user_session']) == 'afiliado_session') {
   $empresas = $dat->getEmpresas();
 ?>
 
-<body class="cuerpo_contenedor" >
+<body class="cuerpo_contenedor<?php echo $sufijo_estilo; ?>" >
 
 
 
 
-    <header class="cabecera">
+    <header class="cabecera<?php echo $sufijo_estilo; ?>">
       <?php include $incRoot."POO/VISTA/VI_INCLUDES/cabecera.php" ?>
     </header>
 
-    <nav class="navega">
+    <nav class="navega<?php echo $sufijo_estilo; ?>">
 
         
     </nav>
-    <aside class="barra"></aside>
+    <aside class="barra<?php echo $sufijo_estilo; ?>"></aside>
 
 
-    <article class="skynet">
+    <article class="skynet<?php echo $sufijo_estilo; ?>">
 
     
 
 
     </article>
-    <footer class="pie"><?php include $incRoot."POO/VISTAVI_INCLUDES/pie.php" ?></footer>
+    <footer class="pie<?php echo $sufijo_estilo; ?>"><?php include $incRoot."POO/VISTAVI_INCLUDES/pie.php" ?></footer>
     
 
 </body>

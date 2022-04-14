@@ -3,6 +3,9 @@ $pagina = $_SERVER['PHP_SELF'];
 $arrayDir = preg_split('/\//',$pagina);
 $dirRoot = '/'.$arrayDir[1].'/';
 $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
+
+session_start();
+include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
 ?>
 
 <!DOCTYPE html>
@@ -17,25 +20,25 @@ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
 </head>
 
 
-<body class="cuerpo_contenedor">
+<body class="cuerpo_contenedor<?php echo $sufijo_estilo; ?>">
 
     <!––Incluimos la cabecera ––>
-        <header class="cabecera">
+        <header class="cabecera<?php echo $sufijo_estilo; ?>">
             <?php include $incRoot.'MVC_TOCAR\VISTA\VI_INCLUDES\cabecera.php'?> 
         </header>
 
         <!––En la parte izquierda seleccionamos las empresas de una lista en HTML ––>
-            <nav class="navega">
+            <nav class="navega<?php echo $sufijo_estilo; ?>">
             <?php include $incRoot.'MVC_TOCAR\VISTA\VI_INCLUDES\nav.php'?> 
             </nav>
-            <aside class="barra">
+            <aside class="barra<?php echo $sufijo_estilo; ?>">
                 <p style="font-size:large;">Contactos</p>
                 <!––En la parte derecha ponemos los contactos de la web con una lista en HTML ––>
                 <?php include $incRoot.'MVC_TOCAR\VISTA\VI_INCLUDES\aside.php'?> 
             </aside>
 
 
-            <article class="skynet">
+            <article class="skynet<?php echo $sufijo_estilo; ?>">
 
                 <h2>EMPRESA 1</h2>
                 <section>
@@ -86,7 +89,7 @@ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
 
 
             </article>
-            <footer class="pie"> <?php include $incRoot."MVC_TOCAR\VISTA\VI_INCLUDES\pie.php" ?></footer>
+            <footer class="pie<?php echo $sufijo_estilo; ?>"> <?php include $incRoot."MVC_TOCAR\VISTA\VI_INCLUDES\pie.php" ?></footer>
 
 </body>
 

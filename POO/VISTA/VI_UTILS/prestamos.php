@@ -5,7 +5,7 @@ $dirRoot = '/'.$arrayDir[1].'/';
 $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
 
 session_start();
-
+include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
 ?>
 
 <!DOCTYPE html>
@@ -25,27 +25,27 @@ session_start();
 </head>
 
 
-<body class="cuerpo_contenedor">
+<body class="cuerpo_contenedor<?php echo $sufijo_estilo; ?>">
 
     <!––Incluimos la cabecera ––>
-    <header class="cabecera">
+    <header class="cabecera<?php echo $sufijo_estilo; ?>">
         <?php include $incRoot."POO/VISTA/VI_INCLUDES/cabecera.php" ?>
     </header>
 
 
     <!––En la parte izquierda seleccionamos las empresas de una lista en HTML ––>
-       <nav class="navega"><p style="font-size:large;">Empresas del sector</p>
+       <nav class="navega<?php echo $sufijo_estilo; ?>"><p style="font-size:large;">Empresas del sector</p>
 
                      <?php include $incRoot."POO/VISTA/VI_INCLUDES/nav.php" ?>
 </nav>
-        <aside class="barra"><p style="font-size:large;">Contactos</p>
+        <aside class="barra<?php echo $sufijo_estilo; ?>"><p style="font-size:large;">Contactos</p>
 
             <!––En la parte derecha ponemos los contactos de la web con una lista en HTML ––>
             <?php include $incRoot."POO/VISTA/VI_INCLUDES/aside.php" ?>
 
         </aside>
 
-            <article class="skynet">
+            <article class="skynet<?php echo $sufijo_estilo; ?>">
                 <a href="<?php echo $dirRoot; ?>POO/VISTA/index.php">Indice</a> > <a href="<?php echo $_SERVER['HTTP_REFERER']; ?>">Volver</a>
 
                 <div class="container">
@@ -88,7 +88,7 @@ session_start();
 
 
             </article>
-            <footer class="pie"> <?php include $incRoot."POO/VISTA/VI_INCLUDES/pie.php" ?></footer>
+            <footer class="pie<?php echo $sufijo_estilo; ?>"> <?php include $incRoot."POO/VISTA/VI_INCLUDES/pie.php" ?></footer>
 
 </body>
 

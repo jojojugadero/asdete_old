@@ -3,6 +3,9 @@ $pagina = $_SERVER['PHP_SELF'];
 $arrayDir = preg_split('/\//',$pagina);
 $dirRoot = '/'.$arrayDir[1].'/';
 $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
+
+session_start();
+include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
 ?>
 
 <!DOCTYPE html>
@@ -13,31 +16,35 @@ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Asdete</title>
-    <link rel="stylesheet" href="<?php echo $dirRoot; ?>MVC_TOCAR\VISTA\ESTILOS\estilos.css">
+    <link rel="stylesheet" href="<?php echo $dirRoot; ?>POO\VISTA\ESTILOS\estilos.css">
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 </head>
 
 
-<body class="cuerpo_contenedor">
+<body class="cuerpo_contenedor<?php echo $sufijo_estilo; ?>">
 
     <!––Incluimos la cabecera ––>
-        <header class="cabecera">
-            <?php include $incRoot.'MVC_TOCAR\VISTA\VI_INCLUDES\cabecera.php'?> 
+        <header class="cabecera<?php echo $sufijo_estilo; ?>">
+            <?php include $incRoot.'POO\VISTA\VI_INCLUDES\cabecera.php'?> 
         </header>
 
         <!––En la parte izquierda seleccionamos las empresas de una lista en HTML ––>
-            <nav class="navega">
-            <?php include $incRoot.'MVC_TOCAR\VISTA\VI_INCLUDES\nav.php'?> 
+            <nav class="navega<?php echo $sufijo_estilo; ?>">
+            <?php include $incRoot.'POO\VISTA\VI_INCLUDES\nav.php'?> 
             </nav>
-            <aside class="barra">
+            <aside class="barra<?php echo $sufijo_estilo; ?>">
                 <p style="font-size:large;">Contactos</p>
                 <!––En la parte derecha ponemos los contactos de la web con una lista en HTML ––>
-                <?php include $incRoot.'MVC_TOCAR\VISTA\VI_INCLUDES\aside.php'?> 
+                <?php include $incRoot.'POO\VISTA\VI_INCLUDES\aside.php'?> 
             </aside>
 
 
-            <article class="skynet">
+            <article class="skynet<?php echo $sufijo_estilo; ?>">
 
-                <h2>EMPRESA 1</h2>
+            <a href="<?php echo $dirRoot; ?>POO/VISTA/index.php">Indice</a> > <a href="<?php echo $_SERVER['HTTP_REFERER']; ?>">Volver</a>
+            <br/><br/>
+                <h2>EMPRESA 7</h2>
                 <section>
                     <h3>Introducción</h3>
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est repellat harum voluptatibus error accusamus quisquam, ipsa ullam nostrum exercitationem dolorem necessitatibus asperiores distinctio sint tenetur! Exercitationem atque earum obcaecati veritatis. eran superestrellas de la editorial.</p>
@@ -86,7 +93,7 @@ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
 
 
             </article>
-            <footer class="pie"> <?php include $incRoot."MVC_TOCAR\VISTA\VI_INCLUDES\pie.php" ?></footer>
+            <footer class="pie<?php echo $sufijo_estilo; ?>"> <?php include $incRoot."POO\VISTA\VI_INCLUDES\pie.php" ?></footer>
 
 </body>
 
