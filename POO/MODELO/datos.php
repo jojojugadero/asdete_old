@@ -186,6 +186,40 @@
 			mysqli_close($conexion);
 		}
 	
+		//Da de alta un afiliado con los datos introducidos por pantalla
+		public function altaSolAfiliado($datos) {
+			$dat = new Datos();
+			$conexion = $dat->crearConexion("asdete");
+			$consulta = "INSERT INTO `sol_afiliados`(`id_afiliados_fk`, `nif`, `password`, `nombre`, `apellido1`, `apellido2`, `telefono`, `email`, `direccion`, `id_empresa_fk`) VALUES ('".
+			$datos['id']."','".
+			$datos['nif']."','".
+			$datos['password']."','".
+			$datos['nombre']."','".
+			$datos['apellido1']."','".
+			$datos['apellido2']."','".
+			$datos['telefono']."','".
+			$datos['email']."','".
+			$datos['direccion']."','".
+			$datos['id_empresa_fk']."')";
+	
+			$resultado = mysqli_query($conexion, $consulta);
+	
+			mysqli_close($conexion);
+		}
+	
+		//Elimina un afiliado por su ID
+	
+		public function eliminarSolAfiliado($id) {
+			$dat = new Datos();
+			$conexion = $dat->crearConexion("asdete");
+	
+			$consulta = "DELETE FROM sol_afiliados WHERE id = ".$id;
+	
+			$resultado = mysqli_query($conexion, $consulta);
+	
+			mysqli_close($conexion);
+		}
+	
 		//Modifica al afiliado con los datos introducidos por pantalla
 	
 		public function modAfiliado($datos) {
@@ -243,6 +277,20 @@
 			$conexion = $dat->crearConexion("asdete");
 	
 			$consulta = "SELECT * FROM afiliados ORDER BY ID ASC";
+	
+			$resultado = mysqli_query($conexion, $consulta);
+	
+			return $resultado;
+	
+			mysqli_close($conexion);
+		}
+	
+		//Nos devuelve todos los afiliados de la base de datos
+		public function getSolAfiliados() {
+			$dat = new Datos();
+			$conexion = $dat->crearConexion("asdete");
+	
+			$consulta = "SELECT * FROM sol_afiliados ORDER BY ID ASC";
 	
 			$resultado = mysqli_query($conexion, $consulta);
 	
