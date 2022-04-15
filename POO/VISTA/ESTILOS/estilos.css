@@ -813,3 +813,20 @@ figure img{width:300px;}
 
 
 
+.clase {
+
+  padding-top: 0.5%;
+  -webkit-text-stroke: 2px black;
+  color: transparent; 
+
+  text-align: center;
+  font-size: 2rem;
+  
+
+
+  font-family: impact;
+
+text-shadow: -1px -1px 1px #000, 1px 1px 1px #000, -1px 1px 1px #000, 1px -1px 1px #000;
+-webkit-text-fill-color: #FCDB00;
+-webkit-text-stroke: 2px black;
+}

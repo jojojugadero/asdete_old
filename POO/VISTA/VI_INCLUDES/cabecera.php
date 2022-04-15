@@ -11,8 +11,7 @@ include $incRoot.'POO/CONTROLADOR/ControlCabecera.php';
         <td width="20%"></td>
 
  
-<td width="60%" align="center" valign="top"><h1>ASDETE, la unión hace la fuerza...</h1></td>
-
+<td class="clase" width="60%" align="center" valign="top"><h1>ASDETE, la unión hace la fuerza...</h1></td>
 
 
 
