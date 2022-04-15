@@ -58,17 +58,17 @@ body {
 
 .cabecera_afil {
   grid-area: cabecera_afil;
-  background-color: #DCEDC8;
+  background-color: #dcedc8;
 }
 
 .navega_afil {
   grid-area: navega_afil;
-  background-color: #DCEDC8;
+  background-color: #dcedc8;
 }
 
 .barra_afil {
   grid-area: barra_afil;
-  background-color: #DCEDC8;
+  background-color: #dcedc8;
 }
 
 .skynet_afil {
@@ -78,7 +78,7 @@ body {
 
 .pie_afil {
   grid-area: pie_afil;
-  background-color: #9CCC65;
+  background-color: #9ccc65;
 }
 
 .cuerpo_contenedor_admin > * {
@@ -90,17 +90,17 @@ body {
 
 .cabecera_admin {
   grid-area: cabecera_admin;
-  background-color: #B3E5FC;
+  background-color: #b3e5fc;
 }
 
 .navega_admin {
   grid-area: navega_admin;
-  background-color: #B3E5FC;
+  background-color: #b3e5fc;
 }
 
 .barra_admin {
   grid-area: barra_admin;
-  background-color: #B3E5FC;
+  background-color: #b3e5fc;
 }
 
 .skynet_admin {
@@ -110,7 +110,7 @@ body {
 
 .pie_admin {
   grid-area: pie_admin;
-  background-color: #29B6F6;
+  background-color: #29b6f6;
 }
 
 .cuerpo_contenedor_sadmin > * {
@@ -122,17 +122,17 @@ body {
 
 .cabecera_sadmin {
   grid-area: cabecera_sadmin;
-  background-color: #FFE0B2;
+  background-color: #ffe0b2;
 }
 
 .navega_sadmin {
   grid-area: navega_sadmin;
-  background-color: #FFE0B2;
+  background-color: #ffe0b2;
 }
 
 .barra_sadmin {
   grid-area: barra_sadmin;
-  background-color: #FFE0B2;
+  background-color: #ffe0b2;
 }
 
 .skynet_sadmin {
@@ -142,9 +142,8 @@ body {
 
 .pie_sadmin {
   grid-area: pie_sadmin;
-  background-color: #FFB74D;
+  background-color: #ffb74d;
 }
-
 
 /*Diseño responsive para telefonos*/
 .cuerpo_contenedor {
@@ -158,7 +157,7 @@ body {
     "navega" 50px
     "skynet" auto
     "barra" 100px
-    "pie" 100px
+    "pie" 100px;
 }
 .cuerpo_contenedor_afil {
   display: grid;
@@ -171,7 +170,7 @@ body {
     "navega_afil" 50px
     "skynet_afil" auto
     "barra_afil" 100px
-    "pie_afil" 100px
+    "pie_afil" 100px;
 }
 .cuerpo_contenedor_admin {
   display: grid;
@@ -184,7 +183,7 @@ body {
     "navega_admin" 50px
     "skynet_admin" auto
     "barra_admin" 100px
-    "pie_admin" 100px
+    "pie_admin" 100px;
 }
 .cuerpo_contenedor_sadmin {
   display: grid;
@@ -209,7 +208,7 @@ body {
       "navega  navega" 50px
       "barra skynet" auto
       "pie  pie" 100px /
-      200px auto
+      200px auto;
   }
   .cuerpo_contenedor_afil {
     grid-template:
@@ -217,7 +216,7 @@ body {
       "navega_afil  navega_afil" 50px
       "barra_afil skynet_afil" auto
       "pie_afil  pie_afil" 100px /
-      200px auto
+      200px auto;
   }
   .cuerpo_contenedor_admin {
     grid-template:
@@ -225,7 +224,7 @@ body {
       "navega_admin  navega_admin" 50px
       "barra_admin skynet_admin" auto
       "pie_admin  pie_admin" 100px /
-      200px auto
+      200px auto;
   }
   .cuerpo_contenedor_sadmin {
     grid-template:
@@ -243,21 +242,21 @@ body {
       "cabecera  cabecera cabecera" 100px
       "navega  skynet barra" auto
       "pie  pie pie" 100px /
-      200px auto 200px
+      200px auto 200px;
   }
   .cuerpo_contenedor_afil {
     grid-template:
       "cabecera_afil  cabecera_afil cabecera_afil" 100px
       "navega_afil  skynet_afil barra_afil" auto
       "pie_afil  pie_afil pie_afil" 100px /
-      200px auto 200px
+      200px auto 200px;
   }
   .cuerpo_contenedor_admin {
     grid-template:
       "cabecera_admin  cabecera_admin cabecera_admin" 100px
       "navega_admin  skynet_admin barra_admin" auto
       "pie_admin  pie_admin pie_admin" 100px /
-      200px auto 200px
+      200px auto 200px;
   }
   .cuerpo_contenedor_sadmin {
     grid-template:
@@ -409,7 +408,7 @@ body {
 .estilo_noresultados_tabla {
   background-color: #f8f8ff;
   border: solid thin;
-  padding:10px;
+  padding: 10px;
 }
 .estilo_fila1_tabla td {
   padding: 3px;
@@ -665,18 +664,24 @@ nav > div a.nav-item.nav-link:focus {
   padding-left: 8%;
   padding-top: 7%;
 }
-.col-md-4{
-    padding-bottom:20px;
+.col-md-4 {
+  padding-bottom: 20px;
 }
 
 .white {
   color: #fff !important;
 }
-.mt{float: left;margin-top: -20px;padding-top: 20px;}
+.mt {
+  float: left;
+  margin-top: -20px;
+  padding-top: 20px;
+}
 .bg-blue-ui {
   background-color: #708198 !important;
 }
-figure img{width:300px;}
+figure img {
+  width: 300px;
+}
 
 #blogCarousel {
   padding-bottom: 100px;
@@ -687,7 +692,6 @@ figure img{width:300px;}
   top: -50px;
   height: 50%;
 }
-
 
 /* The colour of the indicators */
 
@@ -701,9 +705,6 @@ figure img{width:300px;}
 .blog .carousel-indicators .active {
   background: #0fc9af;
 }
-
-
-
 
 .item-carousel-blog-block {
   outline: medium none;
@@ -757,12 +758,12 @@ figure img{width:300px;}
 .item-heading-blog a h5 {
   margin: 0;
   line-height: 1;
-  text-decoration:none;
+  text-decoration: none;
   transition: color 0.3s;
 }
 
 .item-box-blog-heading a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .item-box-blog-data p {
@@ -795,38 +796,16 @@ figure img{width:300px;}
   box-shadow: 0px 5px 15px inset #4d5f77;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .clase {
-
   padding-top: 0.5%;
-  -webkit-text-stroke: 2px black;
-  color: transparent; 
+  -webkit-text-stroke: 2px rgb(0, 0, 0);
 
   text-align: center;
-  font-size: 2rem;
-  
 
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 
-  font-family: impact;
-
-text-shadow: -1px -1px 1px #000, 1px 1px 1px #000, -1px 1px 1px #000, 1px -1px 1px #000;
--webkit-text-fill-color: #FCDB00;
--webkit-text-stroke: 2px black;
+  text-shadow: -2px -2px 2px #000, 2px 2px 2px #000, -2px 2px 2px #000,
+    2px -2px 2px #000;
+  -webkit-text-fill-color: #d5ec09;
+  -webkit-text-stroke: 2px black;
 }
