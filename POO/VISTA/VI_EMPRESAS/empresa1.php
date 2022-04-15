@@ -46,6 +46,8 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
 
                 
                 <embed src="<?php echo $dirRoot; ?>POO/VISTA/FICHEROS/empresa1.pdf" type="application/pdf" width="100%" height="600px" />
+
+                <h1>TECNOTRONICS</h1>
                 
 
 

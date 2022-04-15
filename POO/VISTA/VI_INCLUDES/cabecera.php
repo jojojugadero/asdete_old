@@ -9,7 +9,19 @@ include $incRoot.'POO/CONTROLADOR/ControlCabecera.php';
 <table width="100%">
     <tr>
         <td width="20%"></td>
-        <td width="60%" align="center" valign="top"><h1>ASDETE, la unión hace la fuerza...</h1></td>
+
+ 
+<td width="60%" align="center" valign="top"><h1>ASDETE, la unión hace la fuerza...</h1></td>
+
+
+
+
+
+
+
+
+
+       
         <td width="20%">
             <?php if($ind_sesion == 'S') { ?>
             <table align="right" class="user-login-block">
