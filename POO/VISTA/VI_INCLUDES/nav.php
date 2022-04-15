@@ -31,7 +31,6 @@ echo "<p style='font-size:large;'><h4>Somos Asdete</h4></p>
 <li class='li_sidebar'><a href='".$dirRoot."POO/VISTA/VI_UTILS/calendarios.php' class='enlace_sidebar'>Calendarios laborales</a></li>
 <li class='li_sidebar'><a href='".$dirRoot."POO/VISTA/VI_UTILS/empleo.php' class='enlace_sidebar'>Tu empleo</a></li>
 <li class='li_sidebar'><a href='".$dirRoot."POO/VISTA/VI_UTILS/formacion.php' class='enlace_sidebar'>Forma T</a></li>
-<li class='li_sidebar'><a href='".$dirRoot."POO/VISTA/VI_UTILS/afiliacion.php' class='enlace_sidebar'>Afiliacion</a></li>
 <li class='li_sidebar'><a href='".$dirRoot."POO/VISTA/VI_UTILS/prestamos.php' class='enlace_sidebar'>Prestamos</a></li>
 
 </ul>";

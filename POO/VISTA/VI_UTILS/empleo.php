@@ -68,7 +68,7 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
                                     <!--Date-->
                                     <div class="item-box-blog-date bg-blue-ui white"> <span class="mon">Augu 01</span> </div>
                                     <!--Image-->
-                                    <figure> <img alt="" src="https://cdn.pixabay.com/photo/2017/02/08/14/25/computer-2048983_960_720.jpg"> </figure>
+                                    <figure> <embed src="<?php echo $dirRoot; ?>POO/VISTA/FICHEROS/empresa1.pdf#toolbar=0&navpanes=0&scrollbar=0"" type="application/pdf" width="100%" height="600px" /> </figure>
                                 </div>
                                 <div class="item-box-blog-body">
                                     <!--Heading-->

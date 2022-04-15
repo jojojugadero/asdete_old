@@ -106,7 +106,6 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
                       if (count($empresas) == 0) {
                       } else {
                         foreach($empresas as $fila_option){
-
                     ?>
                     <option 
                     <?php 

@@ -16,12 +16,7 @@ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
 </head>
 <body>
 
-
 <?php 
-
-
-
-
 		include $incRoot.'POO/MODELO/datos.php';
 
 		$dat = new Datos();
@@ -44,18 +39,14 @@ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
 				header("Location: http://$host$uri/$extra");*/
 		} else {
 			//Si no mostramos un mensaje de no encontrado y un link a index
-			echo "Clave o usuario no validos";
-			echo "<a href='".$dirRoot."POO/VISTA/index.php?tipologin=admin'>Volver indice</a>";
+			$url = $dirRoot.'POO/VISTA/user_pass_error.php?tipologin=admin';
+			header('Location: '.$url);
 		}
 	} else {
 		//Si no mostramos un mensaje de no encontrado y un link a index
-		echo "Usuario no encontrado;";
-		echo "<a href='".$dirRoot."POO/VISTA/index.php?tipologin=admin'>Volver indice</a>";
+		$url = $dirRoot.'POO/VISTA/user_noencontrado_error.php?tipologin=admin';
+		header('Location: '.$url);
 	}
-
-
 	?>
-
-    
 </body>
 </html>

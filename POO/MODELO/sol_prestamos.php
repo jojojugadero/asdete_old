@@ -28,7 +28,7 @@
 
 	public static function getSolPrestamoId($id){
 		$dat = new Datos();
-		$instance = new getSolPrestamo();
+		$instance = new SolPrestamo();
 		$instance->loadBBDD($dat->getSolPrestamo($id));
 		return $instance;
 	}

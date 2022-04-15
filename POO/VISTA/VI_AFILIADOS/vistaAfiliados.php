@@ -75,7 +75,7 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
                 <h3><?php echo "Hola ".$afiliado->getNombre() ?></h3>
                 <table >
                     <tr>
-                        <td colspan="2" style="padding-top:20px;" align="left">Si ya no vive en la <?php echo $afiliado->getDireccion()?>,<br> o ya no trabaja en la empresa <?php echo $nom_empresa?><br>contacte con: <br>  <a href="administracion@asdete.com"> administración. administracion@asdete.com</a> o realiza la solicitud a traves de este formulario.</td>
+                        <td colspan="2" style="padding-top:20px;" align="left">Si ya no vive en la <?php echo $afiliado->getDireccion()?>,<br> o ya no trabaja en la empresa <?php echo $nom_empresa?><br>contacte con: <br>  <a href="mailto:administracion@asdete.com?Subject=Solicitud%20de%20modificación%20de%20datos%20personales">administracion@asdete.com</a> o realiza la solicitud a traves de este formulario.</td>
                     </tr>
                     <tr>
                         <td colspan="2" style="padding-top:20px;" align="center"><input class="btn btn-primary btn-sm" type='button' onclick="document.location.href='vistaAfiliadosMod.php';" value='Realizar solicitud'></td>

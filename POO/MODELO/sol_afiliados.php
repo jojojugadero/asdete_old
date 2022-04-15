@@ -36,13 +36,13 @@
 
 	public static function getSolAfiliadoId($id){
 		$dat = new Datos();
-		$instance = new getSolAfiliados();
+		$instance = new SolAfiliados();
 		$instance->loadBBDD($dat->getSolAfiliado($id));
 		return $instance;
 	}
 	public static function getSolAfiliados(){
 		$dat = new Datos();
-		$result = $dat->getAfiliados();
+		$result = $dat->getSolAfiliados();
 		$instances = [];
 		foreach ($result as $fila) {
 			$instance = new SolAfiliados();

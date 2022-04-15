@@ -45,13 +45,13 @@ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
 				header("Location: http://$host$uri/$extra");*/
 		} else {
 			//Si no mostramos un mensaje de no encontrado y un link a index
-			echo "Clave o usuario no validos";
-			echo "<a href='".$dirRoot."POO/VISTA/index.php?tipologin=sadmin'>Volver indice</a>";
+			$url = $dirRoot.'POO/VISTA/user_pass_error.php?tipologin=sadmin';
+			header('Location: '.$url);
 		}
 	} else {
 		//Si no mostramos un mensaje de no encontrado y un link a index
-		echo "Usuario no encontrado;";
-		echo "<a href='".$dirRoot."POO/VISTA/index.php?tipologin=sadmin'>Volver indice</a>";
+		$url = $dirRoot.'POO/VISTA/user_noencontrado_error.php?tipologin=sadmin';
+		header('Location: '.$url);
 	}
 
 

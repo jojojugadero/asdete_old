@@ -27,36 +27,36 @@ include $incRoot.'POO/MODELO/MO_ADMINISTRADORES/includesAdmin.php';
 
       $dat = new Datos();
       
-      $id_solafil = 
+      $id = isset($_POST['id']) ? $_POST['id'] : '';
       
-      $swmodificar_solafil =  isset($_POST['swmodificar_solafil']) ? $_POST['swmodificar_solafil'] : '';
-      $swmodificar_solpres =  isset($_POST['swmodificar_solpres']) ? $_POST['swmodificar_solpres'] : '';
-      
-      /*
-      $afil_modi = $swmodificar == 'S' ? Afiliados::getAfiliadoId($afil->getId()) : $afil;
-      
-      $msgValidacion = $swinsertar == 'S' || $swmodificarapply == 'S' ? $afil->validar() : '';
+      $swaceptar_solafil =  isset($_POST['swaceptar_solafil']) ? $_POST['swaceptar_solafil'] : '';
+      $swrechazar_solafil =  isset($_POST['swrechazar_solafil']) ? $_POST['swrechazar_solafil'] : '';
+      $swaceptar_solpres =  isset($_POST['swaceptar_solpres']) ? $_POST['swaceptar_solpres'] : '';
+      $swrechazar_solpres =  isset($_POST['swrechazar_solpres']) ? $_POST['swrechazar_solpres'] : '';
       
       
       
-      if(trim($msgValidacion) != "") {
-        $afil_modi = $afil;
+      if($swaceptar_solafil == 'S') {
+        $solafil = SolAfiliados::getSolAfiliadoId($id);
+        $dat->eliminarSolAfiliado($solafil->getId());
+        $afil = Afiliados::getAfiliadoId($solafil->getId());
+        $afil->loadSolicitud($solafil->getDatos());
+        $dat->modAfiliado($afil->getDatos());
+      } else if($swrechazar_solafil == 'S') {
+        $solafil = SolAfiliados::getSolAfiliadoId($id);
+        $dat->eliminarSolAfiliado($solafil->getId());
+        $afil = Afiliados::getAfiliadoId($solafil->getId());
+        $afil->loadSolicitud($solafil->getDatos());
+        $dat->modAfiliado($afil->getDatos());
+      } else if($swaceptar_solpres == 'S') {
+        $solpres = SolPrestamo::getSolPrestamoId($id);
+        $solpres->setEstadoAceptado();
+        $dat->modSolPrestamos($solpres->getDatos());
+      } else if($swrechazar_solpres == 'S') {
+        $solpres = SolPrestamo::getSolPrestamoId($id);
+        $solpres->setEstadoRechazado();
+        $dat->modSolPrestamos($solpres->getDatos());
       }
-      if(trim($msgValidacion) == "" && $swmodificarapply == 'S') {
-        $swmodificar = "N";
-      }
-      if(trim($msgValidacion) == "") {
-        if($swinsertar == 'S') {
-          $dat->altaAfiliado($afil->getDatos());
-        } else if($swmodificarapply == 'S') {
-          $dat->modAfiliado($afil->getDatos());
-        } else if($sweliminar == 'S') {
-          $dat->eliminarAfiliado($afil->getId());
-        }
-      }
-      
-      $mostrarDatos = $swmodificar == 'S' || trim($msgValidacion) != "" ? 'S':'N';*/
-      
         //Recogemos todos los afiliados y empresas para mostarlos por 
         $sol_afil = SolAfiliados::getSolAfiliados();
         $sol_pres = SolPrestamo::getSolPrestamos();
@@ -115,9 +115,10 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
   
   <table class="estilo_tabla" width="90%" align="center" >
     <tr class="estilo_cab_tabla">
-      <th class="subtitulo" colspan="12"><h1><span >Solicitudes de modificación de datos de afiliados</span></h1></th>
+      <th class="subtitulo" colspan="13"><h1><span >Solicitudes de modificación de datos de afiliados</span></h1></th>
     </tr>
     <tr class="estilo_subcab_tabla" >
+      <td class="primera_fila"></td>
       <td class="primera_fila">Id</td>
       <td class="primera_fila">NIF</td>
       <td class="primera_fila">Password</td>
@@ -128,29 +129,46 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
       <td class="primera_fila">Email</td>
       <td class="primera_fila">Dirección</td>
       <td class="primera_fila">Empresa</td>
-      <td class="primera_fila">Modificar</td>
-      <td class="primera_fila">Eliminar</td>
+      <td class="primera_fila">Aceptar</td>
+      <td class="primera_fila">Rechazar</td>
     </tr> 
    
     <?php
       //Comprobamos si hay registros
         if (count($sol_afil) == 0) {
-          echo '<tr>\n
-              <td colspan="11">No se han encontrado solicitudes</td>
+          echo '<tr>
+              <td class="estilo_noresultados_tabla" colspan="13">No se han encontrado solicitudes</td>
              </tr>';
         } else {
           $num = 0;
           //Si hay registros se recorren para mostar las filas
           foreach($sol_afil as $fila){
             $empresa = Empresa::getEmpresaId($fila->getIdEmpresa());
-            $afiliado = Afiliado::getAfiliadoId($fila->getIdAfiliado());
+            $afiliado = Afiliados::getAfiliadoId($fila->getIdAfiliado());
             //Con este operador ternario damos estilo a cada de las lineas del formulario
             $color_fila = $num%2 == 1 ? 'estilo_fila1_tabla':'estilo_fila2_tabla';
             $num++;
       ?>
 		  <!––Mostramos los registros de base de datos ––>
         <tr class="<?php echo $color_fila;?>" >
-          <td><?php echo $fila->getId() ?></td>
+          <td>Datos antigüos</td>
+          <td><?php echo $afiliado->getId() ?></td>
+          <td><?php echo $afiliado->getNif() ?></td>
+          <td><?php echo $afiliado->getPassword() ?></td>
+          <td><?php echo $afiliado->getNombre() ?></td>
+          <td><?php echo $afiliado->getApellido1() ?></td>
+          <td><?php echo $afiliado->getApellido2() ?></td>
+          <td><?php echo $afiliado->getTelefono() ?></td>
+          <td><?php echo $afiliado->getEmail() ?></td>
+          <td><?php echo $afiliado->getDireccion() ?></td>
+          <td><?php echo $empresa->getNombre() ?></td>
+          <!––Botones con las operaciones a seleccionar en javascript de modificar o borrar un registro existente ––>
+          <td class="bot"></td>
+          <td class='bot'></td>
+        </tr>   
+        <tr class="<?php echo $color_fila;?>" >
+          <td>Datos nuevos</td>
+          <td><?php echo $fila->getIdAfiliado() ?></td>
           <td><?php echo $fila->getNif() ?></td>
           <td><?php echo $fila->getPassword() ?></td>
           <td><?php echo $fila->getNombre() ?></td>
@@ -161,72 +179,72 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
           <td><?php echo $fila->getDireccion() ?></td>
           <td><?php echo $empresa->getNombre() ?></td>
           <!––Botones con las operaciones a seleccionar en javascript de modificar o borrar un registro existente ––>
-          <td class="bot"><input class="btn btn-primary btn-sm" onclick="document.getElementById('swmodificar').value = 'S';document.getElementById('id').value = <?php echo $fila->getId() ?>;" type='submit' name='up' id='up' value='Actualizar'></td>
-          <td class='bot'><input class="btn btn-danger btn-sm" onclick="document.getElementById('sweliminar').value = 'S';document.getElementById('id').value = <?php echo $fila->getId() ?>;" type='submit' name='del' id='del' value='Borrar'></td>
+          <td class="bot"><input class="btn btn-primary btn-sm" onclick="document.getElementById('swaceptar_solafil').value = 'S';document.getElementById('id').value = <?php echo $fila->getId() ?>;" type='submit' name='up' id='up' value='Aceptar'></td>
+          <td class='bot'><input class="btn btn-danger btn-sm" onclick="document.getElementById('swrechazar_solafil').value = 'S';document.getElementById('id').value = <?php echo $fila->getId() ?>;" type='submit' name='del' id='del' value='Rechazar'></td>
         </tr>   
     <?php
           }
       }
     ?>
-    <!––Mostramos los campos para insertar o modificar registros ––>
-    <tr class="estilo_bottom_tabla" >
-	    <td class="bot ultima_fila"><?php echo $mostrarDatos == 'S' ? $afil_modi->getId():''; ?></td>
-      <td class="bot ultima_fila"><input value="<?php echo $mostrarDatos == 'S' ? $afil_modi->getNif():''; ?>" type='text' name='nif' size='10' class='centrado'></td>
-      <td class="bot ultima_fila"><input value="<?php echo $mostrarDatos == 'S' ? $afil_modi->getPassword():''; ?>" type='text' name='password' size='10' class='centrado'></td>
-      <td class="bot ultima_fila"><input value="<?php echo $mostrarDatos == 'S' ? $afil_modi->getNombre():''; ?>" type='text' name='nombre' size='10' class='centrado'></td>
-      <td class="bot ultima_fila"><input value="<?php echo $mostrarDatos == 'S' ? $afil_modi->getApellido1():''; ?>" type='text' name='ape1' size='10' class='centrado'></td>
-      <td class="bot ultima_fila"><input value="<?php echo $mostrarDatos == 'S' ? $afil_modi->getApellido2():''; ?>" type='text' name='ape2' size='10' class='centrado'></td>
-      <td class="bot ultima_fila"><input value="<?php echo $mostrarDatos == 'S' ? $afil_modi->getTelefono():''; ?>" type='text' name='telefono' size='10' class='centrado'></td>
-      <td class="bot ultima_fila"><input value="<?php echo $mostrarDatos == 'S' ? $afil_modi->getEmail():''; ?>" type='text' name='email' size='10' class='centrado'></td>
-      <td class="bot ultima_fila"><input value="<?php echo $mostrarDatos == 'S' ? $afil_modi->getDireccion():''; ?>" type='text' name='direccion' size='10' class='centrado'></td>
-      <td>
-      <!––En este select recogemos las empresa de base de datos para selecionarlas si insertamos o modificamos ––>
-        <select name='empresa' class='centrado'>
-          <option value="">Seleccionar</option>
-          <?php
-              if (count($empresas) == 0) {
-              } else {
-                foreach($empresas as $fila_option){
+  </table>
 
-            ?>
-            <option 
-            <?php 
-
-              if(($mostrarDatos == 'S') && $fila_option->getId() == $afil_modi->getIdEmpresa()) {
-                echo "selected='selected'";
-              } 
-            ?> value="<?php echo $fila_option->getId() ?>"><?php echo $fila_option->getNombre() ?></option>
-            <?php
-              }
-            }
-            ?>
-        </select>
-      </td>
-      <td class='bot' colspan="2">
-        <?php
-          if ($swmodificar == 'S') {
-        ?>
-         <!––Botones con las operaciones para confirmar la modificacion o crear un registro nuevo en javascript ––>
-          <input class="btn btn-success btn-sm" type='submit' onclick="document.getElementById('swmodificarapply').value = 'S';document.getElementById('swmodificar').value = 'S';" name='cr' id='cr' value='Modificar'>
-          <input class="btn btn-warning btn-sm" type='submit' onclick="" name='cr' id='cr' value='Nuevo'>
-        <?php
-          } else {
-        ?>
-         <!––Botones con las operación de crear un nuevo registo en javascript ––>
-          <input class="btn btn-success btn-sm" type='submit' onclick="document.getElementById('swinsertar').value = 'S'" name='cr' id='cr' value='Insertar'>
-        <?php
+  <table class="estilo_tabla" width="90%" align="center" >
+    <tr class="estilo_cab_tabla">
+      <th class="subtitulo" colspan="7"><h1><span >Solicitudes de prestamos</span></h1></th>
+    </tr>
+    <tr class="estilo_subcab_tabla" >
+      <td class="primera_fila">Id</td>
+      <td class="primera_fila">Afiliado</td>
+      <td class="primera_fila">Motivo</td>
+      <td class="primera_fila">Cantidad</td>
+      <td class="primera_fila">Estado</td>
+      <td class="primera_fila">Aceptar</td>
+      <td class="primera_fila">Rechazar</td>
+    </tr> 
+   
+    <?php
+      //Comprobamos si hay registros
+        if (count($sol_pres) == 0) {
+          echo '<tr>
+              <td class="estilo_noresultados_tabla" colspan="7">No se han encontrado solicitudes</td>
+             </tr>';
+        } else {
+          $num = 0;
+          //Si hay registros se recorren para mostar las filas
+          foreach($sol_pres as $fila){
+            $afiliado = Afiliados::getAfiliadoId($fila->getIdAfiliado());
+            //Con este operador ternario damos estilo a cada de las lineas del formulario
+            $color_fila = $num%2 == 1 ? 'estilo_fila1_tabla':'estilo_fila2_tabla';
+            $num++;
+      ?>
+		  <!––Mostramos los registros de base de datos ––>
+        <tr class="<?php echo $color_fila;?>" >
+          <td><?php echo $fila->getId() ?></td>
+          <td><?php echo $afiliado->getNif() ?> - <?php echo $afiliado->getNombre() ?></td>
+          <td><?php echo $fila->getMotivo() ?></td>
+          <td><?php echo $fila->getCantidad() ?></td>
+          <td><?php echo $fila->getEstado() ?></td>
+          <!––Botones con las operaciones a seleccionar en javascript de modificar o borrar un registro existente ––>
+          <?php if ($fila->getEstado() == 'Pendiente') { ?>
+            <td class="bot"><input class="btn btn-primary btn-sm" onclick="document.getElementById('swaceptar_solpres').value = 'S';document.getElementById('id').value = <?php echo $fila->getId() ?>;" type='submit' name='up' id='up' value='Aceptar'></td>
+            <td class='bot'><input class="btn btn-danger btn-sm" onclick="document.getElementById('swrechazar_solpres').value = 'S';document.getElementById('id').value = <?php echo $fila->getId() ?>;" type='submit' name='del' id='del' value='Rechazar'></td>
+          <?php } else { ?>
+            <td class="bot"></td>
+            <td class='bot'></td>
+          <?php } ?>
+        </tr>   
+    <?php
           }
-        ?>
-      </td>
-    </tr>    
+      }
+    ?>
   </table>
 
   <!––Camos ocultos (HIDDEN) para mandar las acciones a realizar ––>
-  <input value="<?php echo $swmodificar != 'S' ? '' : $afil_modi->getId(); ?>" name="id" id="id" type="hidden" />
-  <input value="" name="swinsertar" id="swinsertar" type="hidden" />
-  <input value="" name="swmodificar" id="swmodificar" type="hidden" />
-  <input value="" name="swmodificarapply" id="swmodificarapply" type="hidden" />
-  <input value="" name="sweliminar" id="sweliminar" type="hidden" />
+  <input value="" name="id" id="id" type="hidden" />
+  <input value="" name="swaceptar_solafil" id="swaceptar_solafil" type="hidden" />
+  <input value="" name="swrechazar_solafil" id="swrechazar_solafil" type="hidden" />
+  <input value="" name="swaceptar_solpres" id="swaceptar_solpres" type="hidden" />
+  <input value="" name="swrechazar_solpres" id="swrechazar_solpres" type="hidden" />
   <p>&nbsp;</p>
 </form>
     </article>

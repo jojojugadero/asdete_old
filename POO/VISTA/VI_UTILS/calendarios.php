@@ -69,6 +69,7 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php"
     <header class="cabecera<?php echo $sufijo_estilo; ?>">
         <?php include $incRoot."POO/VISTA/VI_INCLUDES/cabecera.php" ?>
     </header>
+   
 
 
     <!––En la parte izquierda seleccionamos las empresas de una lista en HTML ––>

@@ -72,8 +72,8 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
     <?php
       //Comprobamos si hay registros
         if (count($administradores) == 0) {
-          echo '<tr>\n
-              <td colspan="11">No se han encontrado empresas</td>
+          echo '<tr>
+              <td class="estilo_noresultados_tabla" colspan="11">No se han encontrado empresas</td>
              </tr>';
         } else {
           $num = 0;
