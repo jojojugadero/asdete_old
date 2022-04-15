@@ -166,6 +166,38 @@
 			mysqli_close($conexion);
 		}
 	
+		//Da de alta un prestamo
+		public function altaSolPrestamos($datos) {
+			$dat = new Datos();
+			$conexion = $dat->crearConexion("asdete");
+			$consulta = "INSERT INTO `sol_prestamos`(`id_afiliados_fk`, `motivo`, `cantidad`, `estado`) VALUES ('".
+			$datos['id_afiliados_fk']."','".
+			$datos['motivo']."','".
+			$datos['cantidad']."','".
+			$datos['estado']."')";
+	
+			$resultado = mysqli_query($conexion, $consulta);
+	
+			mysqli_close($conexion);
+		}
+		//Modifica al afiliado con los datos introducidos por pantalla
+	
+		public function modSolPrestamos($datos) {
+			$dat = new Datos();
+			$conexion = $dat->crearConexion("asdete");
+	
+			$consulta = "UPDATE `sol_prestamos` SET 
+			`id_afiliados_fk`='".$datos['id_afiliados_fk']."',
+			`motivo`='".$datos['motivo']."',
+			`cantidad`='".$datos['cantidad']."',
+			`estado`='".$datos['estado']."' WHERE id = ".$datos['id'];
+	
+	
+			$resultado = mysqli_query($conexion, $consulta);
+	
+			mysqli_close($conexion);
+		}
+	
 		//Da de alta un afiliado con los datos introducidos por pantalla
 		public function altaAfiliado($datos) {
 			$dat = new Datos();
@@ -226,6 +258,18 @@
 			$conexion = $dat->crearConexion("asdete");
 	
 			$consulta = "DELETE FROM sol_afiliados WHERE id_afiliados_fk = ".$id_afil;
+	
+			$resultado = mysqli_query($conexion, $consulta);
+	
+			mysqli_close($conexion);
+		}
+		
+		//Elimina un afiliado por su ID afil
+		public function eliminarPrestamosIdAfil($id_afil) {
+			$dat = new Datos();
+			$conexion = $dat->crearConexion("asdete");
+	
+			$consulta = "DELETE FROM sol_prestamos WHERE id_afiliados_fk = ".$id_afil;
 	
 			$resultado = mysqli_query($conexion, $consulta);
 	
@@ -307,6 +351,43 @@
 			$resultado = mysqli_query($conexion, $consulta);
 	
 			return $resultado;
+	
+			mysqli_close($conexion);
+		}
+	
+		//Nos devuelve todos los afiliados de la base de datos
+		public function getSolPrestamos() {
+			$dat = new Datos();
+			$conexion = $dat->crearConexion("asdete");
+	
+			$consulta = "SELECT * FROM sol_prestamos ORDER BY ID ASC";
+	
+			$resultado = mysqli_query($conexion, $consulta);
+	
+			return $resultado;
+	
+			mysqli_close($conexion);
+		}
+		
+		//Nos devuelve todos los datos del afiliado a través de su ID
+		public function getSolPrestamo($id) {
+			$dat = new Datos();
+			$conexion = $dat->crearConexion("asdete");
+			$consulta = "SELECT * FROM sol_prestamos WHERE id = ".$id;
+	
+			$resultado = mysqli_query($conexion, $consulta);
+	
+			if (isset($resultado)) {
+				if(!empty($resultado) AND mysqli_num_rows($resultado) > 0) {
+					return mysqli_fetch_assoc($resultado);
+				} else {
+					$vacio = [];
+					return $vacio;
+				}
+			} else {
+				$vacio = [];
+				return $vacio;
+			}
 	
 			mysqli_close($conexion);
 		}

@@ -11,7 +11,58 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
 <?php
 include $incRoot.'POO/MODELO/MO_ADMINISTRADORES/includesAdmin.php';
 
-include $incRoot.'POO/CONTROLADOR/CO_ADMINISTRADORES/appAdministra.php';
+//include $incRoot.'POO/CONTROLADOR/CO_ADMINISTRADORES/appAdministra.php';
+
+    //Iniciamos sesión
+    session_start();
+    
+    if(isset($_SESSION['user_session']) == 'administrador_session') {
+        //$url1 = $dirRoot."POO\VISTA\ADMINISTRADORES\appAdmin.php";
+        //header('Location: '.$url1);
+      } else {
+        $url2 =$dirRoot."POO/VISTA/index.php";
+        header('Location: '.$url2);
+      }
+
+
+      $dat = new Datos();
+      
+      $id_solafil = 
+      
+      $swmodificar_solafil =  isset($_POST['swmodificar_solafil']) ? $_POST['swmodificar_solafil'] : '';
+      $swmodificar_solpres =  isset($_POST['swmodificar_solpres']) ? $_POST['swmodificar_solpres'] : '';
+      
+      /*
+      $afil_modi = $swmodificar == 'S' ? Afiliados::getAfiliadoId($afil->getId()) : $afil;
+      
+      $msgValidacion = $swinsertar == 'S' || $swmodificarapply == 'S' ? $afil->validar() : '';
+      
+      
+      
+      if(trim($msgValidacion) != "") {
+        $afil_modi = $afil;
+      }
+      if(trim($msgValidacion) == "" && $swmodificarapply == 'S') {
+        $swmodificar = "N";
+      }
+      if(trim($msgValidacion) == "") {
+        if($swinsertar == 'S') {
+          $dat->altaAfiliado($afil->getDatos());
+        } else if($swmodificarapply == 'S') {
+          $dat->modAfiliado($afil->getDatos());
+        } else if($sweliminar == 'S') {
+          $dat->eliminarAfiliado($afil->getId());
+        }
+      }
+      
+      $mostrarDatos = $swmodificar == 'S' || trim($msgValidacion) != "" ? 'S':'N';*/
+      
+        //Recogemos todos los afiliados y empresas para mostarlos por 
+        $sol_afil = SolAfiliados::getSolAfiliados();
+        $sol_pres = SolPrestamo::getSolPrestamos();
+        $empresas = Empresa::getEmpresas();
+
+
 include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
 
 ?>
@@ -64,7 +115,7 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
   
   <table class="estilo_tabla" width="90%" align="center" >
     <tr class="estilo_cab_tabla">
-      <th class="subtitulo" colspan="12"><h1><span >Gestión de afiliados</span></h1></th>
+      <th class="subtitulo" colspan="12"><h1><span >Solicitudes de modificación de datos de afiliados</span></h1></th>
     </tr>
     <tr class="estilo_subcab_tabla" >
       <td class="primera_fila">Id</td>
@@ -83,15 +134,16 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
    
     <?php
       //Comprobamos si hay registros
-        if (count($afiliados) == 0) {
+        if (count($sol_afil) == 0) {
           echo '<tr>\n
-              <td colspan="11">No se han encontrado afiliados</td>
+              <td colspan="11">No se han encontrado solicitudes</td>
              </tr>';
         } else {
           $num = 0;
           //Si hay registros se recorren para mostar las filas
-          foreach($afiliados as $fila){
+          foreach($sol_afil as $fila){
             $empresa = Empresa::getEmpresaId($fila->getIdEmpresa());
+            $afiliado = Afiliado::getAfiliadoId($fila->getIdAfiliado());
             //Con este operador ternario damos estilo a cada de las lineas del formulario
             $color_fila = $num%2 == 1 ? 'estilo_fila1_tabla':'estilo_fila2_tabla';
             $num++;

@@ -34,20 +34,13 @@
 		];
 	}
 
-	public static function getAfiliadoId($id){
+	public static function getSolAfiliadoId($id){
 		$dat = new Datos();
-		$instance = new SolAfiliados();
-		$instance->loadBBDD($dat->getAfiliado($id));
+		$instance = new getSolAfiliados();
+		$instance->loadBBDD($dat->getSolAfiliado($id));
 		return $instance;
 	}
-
-	public static function getAfiliadoNif($nif){
-		$dat = new Datos();
-		$instance = new SolAfiliados();
-		$instance->loadBBDD($dat->getAfiliadoNif($nif));
-		return $instance;
-	}
-	public static function getAfiliados(){
+	public static function getSolAfiliados(){
 		$dat = new Datos();
 		$result = $dat->getAfiliados();
 		$instances = [];
