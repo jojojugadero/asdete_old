@@ -51,8 +51,7 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
 
             <!––En la parte derecha ponemos los contactos de la web con una lista en HTML ––>
             
-                      <?php include $incRoot."POO/VISTA/VI_INCLUDES/aside.php" ?>
-
+                <?php include $incRoot."POO/VISTA/VI_INCLUDES/aside.php" ?>
             </aside>
 
 

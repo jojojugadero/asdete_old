@@ -93,6 +93,19 @@
 		$this->datos[Afiliados::id_empresa_fk] =  isset($result['id_empresa_fk']) ? $result['id_empresa_fk'] : '';
 	}
 
+	public function loadSolicitud($solicitud) {
+		$this->datos[Afiliados::id] =  isset($solicitud['id_afiliados_fk']) ? $solicitud['id_afiliados_fk'] : '';
+		$this->datos[Afiliados::nif] =  isset($solicitud['nif']) ? $solicitud['nif'] : '';
+		$this->datos[Afiliados::password] =  isset($solicitud['password']) ? $solicitud['password'] : '';
+		$this->datos[Afiliados::nombre] =  isset($solicitud['nombre']) ? $solicitud['nombre'] : '';
+		$this->datos[Afiliados::apellido1] =  isset($solicitud['apellido1']) ? $solicitud['apellido1'] : '';
+		$this->datos[Afiliados::apellido2] =  isset($solicitud['apellido2']) ? $solicitud['apellido2'] : '';
+		$this->datos[Afiliados::telefono]=  isset($solicitud['telefono']) ? $solicitud['telefono'] : '';
+		$this->datos[Afiliados::email] =  isset($solicitud['email']) ? $solicitud['email'] : '';
+		$this->datos[Afiliados::direccion] =  isset($solicitud['direccion']) ? $solicitud['direccion'] : '';
+		$this->datos[Afiliados::id_empresa_fk] =  isset($solicitud['id_empresa_fk']) ? $solicitud['id_empresa_fk'] : '';
+	}
+
 	public function getDatos() {
 		return $this->datos;
 	}

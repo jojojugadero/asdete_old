@@ -47,7 +47,7 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
 
             <article class="skynet<?php echo $sufijo_estilo; ?>">
 
-            <a href="<?php echo $dirRoot; ?>POO/VISTA/index.php">Indice</a> > <a href="<?php echo $_SERVER['HTTP_REFERER']; ?>">Volver</a> 
+            <a href="<?php echo $dirRoot; ?>POO/VISTA/index.php">Indice</a> > <a href="<?php echo $url_volver; ?>">Volver</a> 
 
             <div class="container contenedorCarrusel ">
                 <div class="container">

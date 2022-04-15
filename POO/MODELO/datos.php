@@ -191,7 +191,7 @@
 			$dat = new Datos();
 			$conexion = $dat->crearConexion("asdete");
 			$consulta = "INSERT INTO `sol_afiliados`(`id_afiliados_fk`, `nif`, `password`, `nombre`, `apellido1`, `apellido2`, `telefono`, `email`, `direccion`, `id_empresa_fk`) VALUES ('".
-			$datos['id']."','".
+			$datos['id_afiliados_fk']."','".
 			$datos['nif']."','".
 			$datos['password']."','".
 			$datos['nombre']."','".
@@ -214,6 +214,18 @@
 			$conexion = $dat->crearConexion("asdete");
 	
 			$consulta = "DELETE FROM sol_afiliados WHERE id = ".$id;
+	
+			$resultado = mysqli_query($conexion, $consulta);
+	
+			mysqli_close($conexion);
+		}
+		
+		//Elimina un afiliado por su ID afil
+		public function eliminarSolAfiliadoIdAfil($id_afil) {
+			$dat = new Datos();
+			$conexion = $dat->crearConexion("asdete");
+	
+			$consulta = "DELETE FROM sol_afiliados WHERE id_afiliados_fk = ".$id_afil;
 	
 			$resultado = mysqli_query($conexion, $consulta);
 	
@@ -299,13 +311,34 @@
 			mysqli_close($conexion);
 		}
 	
-		
-	
 		//Nos devuelve todos los datos del afiliado a través de su ID
 		public function getAfiliado($id) {
 			$dat = new Datos();
 			$conexion = $dat->crearConexion("asdete");
 			$consulta = "SELECT * FROM afiliados WHERE id = ".$id;
+	
+			$resultado = mysqli_query($conexion, $consulta);
+	
+			if (isset($resultado)) {
+				if(!empty($resultado) AND mysqli_num_rows($resultado) > 0) {
+					return mysqli_fetch_assoc($resultado);
+				} else {
+					$vacio = [];
+					return $vacio;
+				}
+			} else {
+				$vacio = [];
+				return $vacio;
+			}
+	
+			mysqli_close($conexion);
+		}
+		
+		//Nos devuelve todos los datos del afiliado a través de su ID
+		public function getSolAfiliado($id) {
+			$dat = new Datos();
+			$conexion = $dat->crearConexion("asdete");
+			$consulta = "SELECT * FROM sol_afiliados WHERE id = ".$id;
 	
 			$resultado = mysqli_query($conexion, $consulta);
 	

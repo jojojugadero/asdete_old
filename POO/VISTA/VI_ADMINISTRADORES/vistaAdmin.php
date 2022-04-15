@@ -61,7 +61,7 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
     <a href="<?php echo $dirRoot; ?>POO/VISTA/index.php?tipologin=admin">Indice</a> > <a href="<?php echo $dirRoot; ?>POO/VISTA/VI_ADMINISTRADORES/vistaAdminMenu.php">Menú</a>
     
     <!––Formulario para realizar todas las operaciones de base de datos––>
-<form name="formTabla" id="formTabla" href="<?php echo $dirRoot; ?>POO/VISTA/VI_AFILIADOS/appAfiliados.php" method="post">
+<form name="formTabla" id="formTabla" action="<?php echo $dirRoot; ?>POO/VISTA/VI_ADMINISTRADORES/vistaAdmin.php" method="post">
   
   <table class="estilo_tabla" width="90%" align="center" >
     <tr class="estilo_cab_tabla">
