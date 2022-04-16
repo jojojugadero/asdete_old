@@ -110,7 +110,7 @@
 							mysqli_close($conexion);
 						}
 
-							//Modifica al afiliado con los datos introducidos por pantalla
+					//Modifica al afiliado con los datos introducidos por pantalla
 				
 					public function modAfiliado($datos) {
 						$dat = new Datos();
@@ -147,78 +147,67 @@
 						mysqli_close($conexion);
 					}
 
+				          //Nos devuelve todos los afiliados de la base de datos
+							public function getAfiliados() {
+								$dat = new Datos();
+								$conexion = $dat->crearConexion("asdete");
+						
+								$consulta = "SELECT * FROM afiliados ORDER BY ID ASC";
+						
+								$resultado = mysqli_query($conexion, $consulta);
+						
+								return $resultado;
+						
+								mysqli_close($conexion);
+							}
 
 
+							//Nos devuelve todos los datos del afiliado a través de su ID
+							public function getAfiliado($id) {
+								$dat = new Datos();
+								$conexion = $dat->crearConexion("asdete");
+								$consulta = "SELECT * FROM afiliados WHERE id = ".$id;
+						
+								$resultado = mysqli_query($conexion, $consulta);
+						
+								if (isset($resultado)) {
+									if(!empty($resultado) AND mysqli_num_rows($resultado) > 0) {
+										return mysqli_fetch_assoc($resultado);
+									} else {
+										$vacio = [];
+										return $vacio;
+									}
+								} else {
+									$vacio = [];
+									return $vacio;
+								}
+						
+								mysqli_close($conexion);
+							}
 
 
-				
-	
-		
-		
-	
-
-
-		//Nos devuelve todos los afiliados de la base de datos
-		public function getAfiliados() {
-			$dat = new Datos();
-			$conexion = $dat->crearConexion("asdete");
-	
-			$consulta = "SELECT * FROM afiliados ORDER BY ID ASC";
-	
-			$resultado = mysqli_query($conexion, $consulta);
-	
-			return $resultado;
-	
-			mysqli_close($conexion);
-		}
-
-
-		//Nos devuelve todos los datos del afiliado a través de su ID
-		public function getAfiliado($id) {
-			$dat = new Datos();
-			$conexion = $dat->crearConexion("asdete");
-			$consulta = "SELECT * FROM afiliados WHERE id = ".$id;
-	
-			$resultado = mysqli_query($conexion, $consulta);
-	
-			if (isset($resultado)) {
-				if(!empty($resultado) AND mysqli_num_rows($resultado) > 0) {
-					return mysqli_fetch_assoc($resultado);
-				} else {
-					$vacio = [];
-					return $vacio;
-				}
-			} else {
-				$vacio = [];
-				return $vacio;
-			}
-	
-			mysqli_close($conexion);
-		}
-
-
-		//Nos devuelve todos los datos del afiliado a través de su NIF
-		public function getAfiliadoNIF($nif) {
-			$dat = new Datos();
-			$conexion = $dat->crearConexion("asdete");
-	
-			$consulta = "SELECT * FROM afiliados WHERE nif = '".$nif."'";
-	
-			$resultado = mysqli_query($conexion, $consulta);
-			if (!empty($resultado) AND mysqli_num_rows($resultado) > 0) {
-				return mysqli_fetch_assoc($resultado);
-			} else {
-				$vacio = [];
-				return $vacio;
-			}
-	
-			mysqli_close($conexion);
-		}
+							//Nos devuelve todos los datos del afiliado a través de su NIF
+							public function getAfiliadoNIF($nif) {
+								$dat = new Datos();
+								$conexion = $dat->crearConexion("asdete");
+						
+								$consulta = "SELECT * FROM afiliados WHERE nif = '".$nif."'";
+						
+								$resultado = mysqli_query($conexion, $consulta);
+								if (!empty($resultado) AND mysqli_num_rows($resultado) > 0) {
+									return mysqli_fetch_assoc($resultado);
+								} else {
+									$vacio = [];
+									return $vacio;
+								}
+						
+								mysqli_close($conexion);
+							}
 
 
 			//------------------------------------------PRESTAMOS AFILIADOS-----------------------------------------------------------------//
 	
-					//Da de alta un prestamo
+					//Da de alta la solicitud de un prestamo
 					public function altaSolPrestamos($datos) {
 						$dat = new Datos();
 						$conexion = $dat->crearConexion("asdete");
@@ -303,6 +292,8 @@
 			
 					mysqli_close($conexion);
 				}
+
+
 
 			//------------------------------------------SOLICITUD CAMBIO DATOS EMPLEADOS-----------------------------------------------------------------//
 	
@@ -440,6 +431,8 @@
 				
 						mysqli_close($conexion);
 					}
+
+					//Damos de alta a un administrador
 					public function altaAdmin($datos) {
 						$dat = new Datos();
 						$conexion = $dat->crearConexion("asdete");
@@ -454,7 +447,7 @@
 						mysqli_close($conexion);
 					}
 
-
+					//Modificamos los datos de un administrador
 					public function modAdmin($datos) {
 						$dat = new Datos();
 						$conexion = $dat->crearConexion("asdete");
@@ -519,7 +512,7 @@
 					}
 					
 					
-					//Nos devuelve todos los datos de un adminstrador a través de su ID
+					//Nos devuelve todos los datos de un administrador a través de su ID
 					public function getAdministradorId($id) {
 						$dat = new Datos();
 						$conexion = $dat->crearConexion("asdete");
