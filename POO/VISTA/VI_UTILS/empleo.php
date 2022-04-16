@@ -49,6 +49,8 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
 
             <a href="<?php echo $dirRoot; ?>POO/VISTA/index.php">Indice</a> > <a href="<?php echo $url_volver; ?>">Volver</a> 
 
+            <h1>TU EMPLEO</h1>
+
             <div class="container contenedorCarrusel ">
                 <div class="container">
                 <div class="row blog">
@@ -68,7 +70,7 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
                                     <!--Date-->
                                     <div class="item-box-blog-date bg-blue-ui white"> <span class="mon">Augu 01</span> </div>
                                     <!--Image-->
-                                    <figure> <embed src="<?php echo $dirRoot; ?>POO/VISTA/FICHEROS/empresa1.pdf#toolbar=0&navpanes=0&scrollbar=0"" type="application/pdf" width="100%" height="600px" /> </figure>
+                                    <figure> <embed src="<?php echo $dirRoot; ?>POO/VISTA/FICHEROS/prueba1.pdf" type="application/pdf" width="100%" height="600px" /> </figure>
                                 </div>
                                 <div class="item-box-blog-body">
                                     <!--Heading-->
