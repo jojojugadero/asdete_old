@@ -15,7 +15,7 @@ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>App Personal</title>
+ <title>Vista Afiliados</title>
  <link rel="stylesheet" href="<?php echo $dirRoot; ?>POO/VISTA/ESTILOS/estilos.css">
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
@@ -23,7 +23,6 @@ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
 <?php
 
 include $incRoot.'POO/MODELO/MO_AFILIADOS/includesAfiliados.php';
-
 include $incRoot.'POO/CONTROLADOR/CO_AFILIADOS/appAfiliado.php';
 include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
 
