@@ -1,6 +1,8 @@
 
 
 <?php
+
+//Redireccionamos las rutas de nuestra aplicación
 $pagina = $_SERVER['PHP_SELF'];
 $arrayDir = preg_split('/\//',$pagina);
 $dirRoot = '/'.$arrayDir[1].'/';
@@ -21,6 +23,8 @@ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
 
 include $incRoot.'MVC_TOCAR/MODELO/datos.php';
 
+
+//Iniciamos sesión
 session_start();
 
 
@@ -34,8 +38,11 @@ if(isset($_SESSION['afiliado_sesion']) == 'afiliado_sesion') {
     header('Location: '.$url2);
   }
 
-  //Recogemos el id del afiliado
+  //Una vez iniciada SESIÓN...
+
+  //Recogemos el id del afiliado 
   $id_afil =  $_SESSION['id_afiliado'];
+  
   //Con este metodo de la clase datos sacamos el nombre del afiliado con su ID
   $afiliado = getAfiliado($id_afil);
 
