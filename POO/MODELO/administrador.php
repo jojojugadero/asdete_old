@@ -2,11 +2,13 @@
  
   class Administrador {
 
+	//Constantes de la clase Administrador
 	const id ='id';
 	const nickname ='nickname';
 	const password ='password';
 	const email ='email';
 
+	//Array de datos con las constantes de Administrador
 	private $datos = [
 		Administrador::id=>'',
 		Administrador::nickname=>'',
@@ -14,6 +16,7 @@
 		Administrador::email=>''
 	];
 
+	//Constructor de la clase
 	 public function __construct(){
 		$this->datos = [
 			Administrador::id=>'',
@@ -23,6 +26,7 @@
 		];
 	}
 
+	//Método que nos devuelve el administrador por su ID
 	public static function getAdministradorId($id){
 		$dat = new Datos();
 		$instance = new Administrador();
@@ -30,12 +34,14 @@
 		return $instance;
 	}
 
+	//Método que nos devuelve el administrador por su NIF
 	public static function getAdministradorNif($nif){
 		$dat = new Datos();
 		$instance = new Administrador();
 		$instance->loadBBDD($dat->getAdministradorNif($nif));
 		return $instance;
 	}
+	//Método que nos devuelve todos los administradores
 	public static function getAdministradores(){
 		$dat = new Datos();
 		$result = $dat->getAdministradores();
@@ -48,6 +54,7 @@
 		return $instances;
 	}
 
+	//Recogemos los datos que nos llegan por POST
 	public function loadPost() {
 		$this->datos[Administrador::id] =  isset($_POST['id']) ? $_POST['id'] : '';
 		$this->datos[Administrador::nickname] =  isset($_POST['nickname']) ? $_POST['nickname'] : '';
@@ -55,6 +62,7 @@
 		$this->datos[Administrador::email] =  isset($_POST['email']) ? $_POST['email'] : '';
 	}
 
+	//Cargamos los datos que nos llegan por base de datos
 	public function loadBBDD($result) {
 		$this->datos[Administrador::id] =  isset($result['id']) ? $result['id'] : '';
 		$this->datos[Administrador::nickname] =  isset($result['nickname']) ? $result['nickname'] : '';
@@ -62,6 +70,7 @@
 		$this->datos[Administrador::email] =  isset($result['email']) ? $result['email'] : '';
 	}
 
+	//Métodos que nos devuelven los distintos datos uno por uno del Admin (GETTERS)
 	public function getDatos() {
 		return $this->datos;
 	}
@@ -78,6 +87,7 @@
 		return $this->datos[Administrador::email];
 	}
 
+	//Validamos que hay datos en todos los siguientes campos y sino mostramos un mensaje al usuario
 	public function validar() {
 		$msgValidacion = "";
 		if(trim($this->datos[Administrador::nickname]) == '') {

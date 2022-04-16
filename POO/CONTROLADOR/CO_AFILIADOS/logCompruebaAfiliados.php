@@ -1,4 +1,5 @@
 <?php
+//Redirigimos las rutas de nuestra aplicación
 $pagina = $_SERVER['PHP_SELF'];
 $arrayDir = preg_split('/\//',$pagina);
 $dirRoot = '/'.$arrayDir[1].'/';
@@ -13,7 +14,7 @@ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Comprueba Afiliados</title>
+	<title>Log Comprueba Afiliados</title>
 </head>
 
 <body>
@@ -24,15 +25,16 @@ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
 
 	include $incRoot."POO/MODELO/datos.php";
 
+	//Instanciamos las clase Datos
 	$dat = new Datos();
 
 
 	//Recogemos el nombre y el password del formulario 
 	$nombre = $_POST['nombre'];
 	$pass = $_POST['password'];
-	// Comprobamos que si se ha enviado un nombre por el formulario y un password, con los métodos [existeUsuario($nombre)] y [verificaPass($nombre, $pass] que estos datos sean correctos
+	// Comprobamos que si se ha enviado un nombre por el formulario y un password, con los métodos [existeUsuario($nombre)] y [verificaPass($nombre, $pass] y que estos datos sean correctos
 	if (isset($nombre)) {
-		// Si existe verificamos a traves de los metodos 
+		// Si existe el nombre verificamos a traves de los metodos aquí abajo
 		if ($dat->existeUsuario($nombre) && $dat->verificaPass($nombre, $pass)) {
 			//Creamos una sesión para comprobar que está en la página correcta
 			session_start();
@@ -45,16 +47,16 @@ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
 			$_SESSION['user_name'] =$nombre;
 			// Creamos una cookie con su nombre.
 			setcookie("afiliado_cookie", $nombre, 1);
-			//Despues de crear la sesión y la cookie redirimos al usuario (si es correcto) a appAfiliados.php 
+			//Despues de crear la sesión y la cookie redirigimos al usuario a vistaAfiliados.php 
 			$url = $dirRoot."POO/VISTA/VI_AFILIADOS/vistaAfiliados.php";
 			header('Location: ' . $url);
 		} else {
-			//Si no mostramos un mensaje de no encontrado y un link a index
+			//Si no redirigimos al afiliado al inicio del login otra vez
 			$url = $dirRoot.'POO/VISTA/user_pass_error.php?tipologin=afil';
 			header('Location: '.$url);
 		}
 	} else {
-		//Si no mostramos un mensaje de no encontrado y un link a index
+		//Si no redirigimos al afiliado al inicio del login otra vez
 		$url = $dirRoot.'POO/VISTA/user_noencontrado_error.php?tipologin=afil';
 		header('Location: '.$url);
 	}

@@ -11,18 +11,24 @@ if(isset($_SESSION['user_session']) == 'superadmin_session') {
   $url2 = $dirRoot.'POO/VISTA/index.php';
   header('Location: '.$url2);
 }
+
+//Instanciamos la clase Datos
 $dat = new Datos();
+//Instanciamos la clase Afiliados
 $empr = new Empresa();
 
+//Utilizamos el método loadPost de la clase Afiliados para cargar los datos que nos lleguen por POST
 $empr->loadPost();
 
 
+//Guardamos en variables los datos que nos legan por POST
 $swinsertar =  isset($_POST['swinsertar']) ? $_POST['swinsertar'] : '';
 $swmodificar =  isset($_POST['swmodificar']) ? $_POST['swmodificar'] : '';
 $swmodificarapply =  isset($_POST['swmodificarapply']) ? $_POST['swmodificarapply'] : '';
 $sweliminar =  isset($_POST['sweliminar']) ? $_POST['sweliminar'] : '';
 
 
+//Con este operador ternario mejor preguntar al crack PREGUNTAR A PARTIR DE AQUÍ BIEN
 $empr_modi = $swmodificar == 'S' ? Empresa::getEmpresaId($empr->getId()) : $empr;
 
 $msgValidacion = $swinsertar == 'S' || $swmodificarapply == 'S' ? $empr->validar() : '';

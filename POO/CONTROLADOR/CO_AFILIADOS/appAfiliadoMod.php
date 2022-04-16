@@ -1,8 +1,9 @@
 <?php
-//Comprobamos si se ha iniciado la sesión de afiliado
 
+//Iniciamos sesión
 session_start();
 
+//Comprobamos si se ha iniciado la sesión de afiliado
 if(isset($_SESSION['user_session']) == 'afiliado_session') {
 
   //Si no se ha inicado la sesión de afiliado lo redireccionamos al indice
@@ -11,17 +12,26 @@ if(isset($_SESSION['user_session']) == 'afiliado_session') {
   header('Location: '.$url2);
 }
 
+
+ //Instanciamos la clase Datos
 $dat = new Datos();
+//Instanciamos la clase SolAfiliados
 $sol_afil = new SolAfiliados();
 
+//Utilizamos el método loadPost de la clase SolAfiliados para cargar los datos que nos lleguen por POST
 $sol_afil->loadPost();
 
 //Recogemos el id del afiliado
 $swinsertar =  isset($_POST['swinsertar']) ? trim($_POST['swinsertar']) : '';
 $id_afil =  $_SESSION['id_afiliado'];
+
+
 //Con este metodo de la clase datos sacamos el nombre del afiliado con su ID
 $afiliado = Afiliados::getAfiliadoId($id_afil);
 
+
+
+ //Con este operador ternario mejor preguntar al crack PREGUNTAR A PARTIR DE AQUÍ BIEN
 $msgValidacion = $swinsertar == 'S' ? $sol_afil->validar() : '';
 
 if(trim($msgValidacion) != "") {

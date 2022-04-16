@@ -2,6 +2,7 @@
  
   class Afiliados {
 
+		//Constantes de la clase Afiliado
 	const id ='id';
 	const nif ='nif';
 	const password ='password';
@@ -13,6 +14,7 @@
 	const direccion ='direccion';
 	const id_empresa_fk ='id_empresa_fk';
 
+	//Creamos un array con todos los datos del Afiliado
 	private $datos = [
 		Afiliados::id=>'',
 		Afiliados::nif=>'',
@@ -26,6 +28,7 @@
 		Afiliados::id_empresa_fk=>'',
 	];
 
+	//Constructor de la clase
 	 public function __construct(){
 		$this->datos = [
 			Afiliados::id=>'',
@@ -106,6 +109,7 @@
 		$this->datos[Afiliados::id_empresa_fk] =  isset($solicitud['id_empresa_fk']) ? $solicitud['id_empresa_fk'] : '';
 	}
 
+	//Métodos que nos devuelven los distintos datos uno por uno del Afiliado (GETTERS)
 	public function getDatos() {
 		return $this->datos;
 	}
@@ -141,6 +145,7 @@
 		return $this->datos[Afiliados::id_empresa_fk];
 	}
 
+	//Validamos que hay datos en todos los siguientes campos y sino mostramos un mensaje al usuario
 	public function validar() {
 		$msgValidacion = "";
 		if(trim($this->datos[Afiliados::nif]) == '') {

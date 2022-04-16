@@ -14,6 +14,7 @@
         header('Location: '.$url2);
       }
     
+    //Instanciamos la clase Datos
     $dat = new Datos();
 
     //Recogemos el id del afiliado

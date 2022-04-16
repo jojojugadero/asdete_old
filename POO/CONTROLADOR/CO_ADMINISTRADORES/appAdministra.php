@@ -13,18 +13,22 @@
       }
 
 
+      //Instanciamos la clase Datos
       $dat = new Datos();
+      //Instanciamos la clase Afiliados
       $afil = new Afiliados();
       
+      //Utilizamos el método loadPost de la clase Afiliados para cargar los datos que nos lleguen por POST
       $afil->loadPost();
       
-      
+      //Guardamos en variables los datos que nos legan por POST
       $swinsertar =  isset($_POST['swinsertar']) ? $_POST['swinsertar'] : '';
       $swmodificar =  isset($_POST['swmodificar']) ? $_POST['swmodificar'] : '';
       $swmodificarapply =  isset($_POST['swmodificarapply']) ? $_POST['swmodificarapply'] : '';
       $sweliminar =  isset($_POST['sweliminar']) ? $_POST['sweliminar'] : '';
       
       
+      //Con este operador ternario mejor preguntar al crack PREGUNTAR A PARTIR DE AQUÍ BIEN
       $afil_modi = $swmodificar == 'S' ? Afiliados::getAfiliadoId($afil->getId()) : $afil;
       
       $msgValidacion = $swinsertar == 'S' || $swmodificarapply == 'S' ? $afil->validar() : '';

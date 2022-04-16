@@ -1,7 +1,8 @@
 <?php
-//Comprobamos si se ha iniciado la sesión de afiliado
+//Iniciamos sesión
 session_start();
 
+//Comprobamos que es una sesión de tipo "afiliado"
 if(isset($_SESSION['user_session']) == 'afiliado_session') {
 
   //Si no se ha inicado la sesión de afiliado lo redireccionamos al indice
@@ -10,9 +11,12 @@ if(isset($_SESSION['user_session']) == 'afiliado_session') {
   header('Location: '.$url2);
 }
 
+//Instanciamos la clase Datos
 $dat = new Datos();
+//Instanciamos la clase SolPrestamo
 $sol_pres = new SolPrestamo();
 
+//Utilizamos el método loadPost de la clase SolPrestamo para cargar los datos que nos llegan por POST
 $sol_pres->loadPost();
 
 //Recogemos el id del afiliado
@@ -22,6 +26,9 @@ $afiliado = Afiliados::getAfiliadoId($id_afil);
 //Con este metodo de la clase datos sacamos el nombre del afiliado con su ID
 //$afiliado = SolPrestamo::getAfiliadoId($id_afil);
 
+
+
+//Con este operador ternario mejor preguntar al crack PREGUNTAR A PARTIR DE AQUÍ BIEN
 $msgValidacion = $swinsertar == 'S' ? $sol_pres->validar() : '';
 
 if(trim($msgValidacion) == "") {
