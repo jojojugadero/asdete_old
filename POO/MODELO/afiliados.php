@@ -43,20 +43,22 @@
 			Afiliados::id_empresa_fk=>'',
 		];
 	}
-
+	
+   //Método que nos devuelve el afiliado por su ID
 	public static function getAfiliadoId($id){
 		$dat = new Datos();
 		$instance = new Afiliados();
 		$instance->loadBBDD($dat->getAfiliado($id));
 		return $instance;
 	}
-
+    //Método que nos devuelve el afiliado por su NIF
 	public static function getAfiliadoNif($nif){
 		$dat = new Datos();
 		$instance = new Afiliados();
 		$instance->loadBBDD($dat->getAfiliadoNif($nif));
 		return $instance;
 	}
+	//Método que nos devuelve todos los afiliados
 	public static function getAfiliados(){
 		$dat = new Datos();
 		$result = $dat->getAfiliados();
@@ -69,7 +71,7 @@
 		return $instances;
 	}
 
-
+//Recogemos los datos del Afiliado introducidos en formulario por el método POST
 	public function loadPost() {
 		$this->datos[Afiliados::id] =  isset($_POST['id']) ? $_POST['id'] : '';
 		$this->datos[Afiliados::nif] =  isset($_POST['nif']) ? $_POST['nif'] : '';
@@ -83,6 +85,7 @@
 		$this->datos[Afiliados::id_empresa_fk] =  isset($_POST['empresa']) ? $_POST['empresa'] : '';
 	}
 
+	//Cargamos los datos del Afiliado que se encuentran en base de datos
 	public function loadBBDD($result) {
 		$this->datos[Afiliados::id] =  isset($result['id']) ? $result['id'] : '';
 		$this->datos[Afiliados::nif] =  isset($result['nif']) ? $result['nif'] : '';
@@ -96,6 +99,7 @@
 		$this->datos[Afiliados::id_empresa_fk] =  isset($result['id_empresa_fk']) ? $result['id_empresa_fk'] : '';
 	}
 
+	//Cargamos los datos del Afiliado para realizar una solicitud de cambio de datos que se encuentran en base de datos
 	public function loadSolicitud($solicitud) {
 		$this->datos[Afiliados::id] =  isset($solicitud['id_afiliados_fk']) ? $solicitud['id_afiliados_fk'] : '';
 		$this->datos[Afiliados::nif] =  isset($solicitud['nif']) ? $solicitud['nif'] : '';

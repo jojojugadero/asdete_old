@@ -2,6 +2,7 @@
  
   class Empresa {
 
+	//Constantes de la clase Empresa
 	const id ='id';
 	const cif ='cif';
 	const nombre ='nombre';
@@ -9,6 +10,7 @@
 	const email ='email';
 	const direccion ='direccion';
 
+	//Creamos un array con todos los datos de la Empresa
 	private $datos = [
 		Empresa::id=>'',
 		Empresa::cif=>'',
@@ -18,6 +20,7 @@
 		Empresa::direccion=>''
 	];
 
+		//Constructor de la clase
 	 public function __construct(){
 		$this->datos = [
 			Empresa::id=>'',
@@ -29,6 +32,7 @@
 		];
 	}
 
+	//Método que nos devuelve la empresa por su ID
 	public static function getEmpresaId($id){
 		$dat = new Datos();
 		$instance = new Empresa();
@@ -36,12 +40,14 @@
 		return $instance;
 	}
 
+	//Método que nos devuelve la empresa por su CIF
 	public static function getEmpresaCif($nif){
 		$dat = new Datos();
 		$instance = new Empresa();
 		$instance->loadBBDD($dat->getEmpresaCif($nif));
 		return $instance;
 	}
+	//Método que nos devuelve todas las empresas en BBDD
 	public static function getEmpresas(){
 		$dat = new Datos();
 		$result = $dat->getEmpresas();
@@ -54,6 +60,10 @@
 		return $instances;
 	}
 
+
+
+	//Recogemos los datos de la empresa introducidos en formulario por el método POST
+
 	public function loadPost() {
 		$this->datos[Empresa::id] =  isset($_POST['id']) ? $_POST['id'] : '';
 		$this->datos[Empresa::cif] =  isset($_POST['cif']) ? $_POST['cif'] : '';
@@ -63,6 +73,7 @@
 		$this->datos[Empresa::direccion] =  isset($_POST['direccion']) ? $_POST['direccion'] : '';
 	}
 
+	//Cargamos los datos de la empresa que se encuentran en base de datos
 	public function loadBBDD($result) {
 		$this->datos[Empresa::id] =  isset($result['id']) ? $result['id'] : '';
 		$this->datos[Empresa::cif] =  isset($result['cif']) ? $result['cif'] : '';
@@ -72,6 +83,7 @@
 		$this->datos[Empresa::direccion] =  isset($result['direccion']) ? $result['direccion'] : '';
 	}
 
+	//Métodos que nos devuelven los distintos datos uno por uno de la empresa(GETTERS)
 	public function getDatos() {
 		return $this->datos;
 	}
@@ -94,6 +106,7 @@
 		return $this->datos[Empresa::direccion];
 	}
 
+	//Validamos que hay datos en todos los siguientes campos y sino mostramos un mensaje al usuario
 	public function validar() {
 		$msgValidacion = "";
 		if(trim($this->datos[Empresa::cif]) == '') {
