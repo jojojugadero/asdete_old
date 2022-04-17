@@ -1,8 +1,11 @@
 <?php
 //Redirigimos las rutas de nuestra aplicación
+//Redirigimos las rutas de nuestra aplicación
 $pagina = $_SERVER['PHP_SELF'];
 $arrayDir = preg_split('/\//',$pagina);
+//Ruta relativa usada en páginas
 $dirRoot = '/'.$arrayDir[1].'/';
+//Ruta completa usada en includes
 $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
 ?>
 
@@ -23,7 +26,7 @@ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
 
 	//Incluimos la clase para gestión de la base de datos
 
-	include $incRoot."POO/MODELO/datos.php";
+	include $incRoot."POO/MODELO/MO_UTILS/includesDatos.php";
 
 	//Instanciamos las clase Datos
 	$dat = new Datos();

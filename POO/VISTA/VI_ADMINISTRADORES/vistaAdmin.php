@@ -1,7 +1,10 @@
 <?php
+//Redirigimos las rutas de nuestra aplicación
 $pagina = $_SERVER['PHP_SELF'];
 $arrayDir = preg_split('/\//',$pagina);
+//Ruta relativa usada en páginas
 $dirRoot = '/'.$arrayDir[1].'/';
+//Ruta completa usada en includes
 $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
 
 include $incRoot."POO/CONTROLADOR/ControlEstilos.php";

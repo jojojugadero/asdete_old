@@ -1,7 +1,10 @@
 <?php
+//Redirigimos las rutas de nuestra aplicación
 $pagina = $_SERVER['PHP_SELF'];
 $arrayDir = preg_split('/\//',$pagina);
+//Ruta relativa usada en páginas
 $dirRoot = '/'.$arrayDir[1].'/';
+//Ruta completa usada en includes
 $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
 
 include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
@@ -11,56 +14,7 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
 <?php
 include $incRoot.'POO/MODELO/MO_ADMINISTRADORES/includesAdmin.php';
 
-//include $incRoot.'POO/CONTROLADOR/CO_ADMINISTRADORES/appAdministra.php';
-
-    //Iniciamos sesión
-    session_start();
-    
-    if(isset($_SESSION['user_session']) == 'administrador_session') {
-        //$url1 = $dirRoot."POO\VISTA\ADMINISTRADORES\appAdmin.php";
-        //header('Location: '.$url1);
-      } else {
-        $url2 =$dirRoot."POO/VISTA/index.php";
-        header('Location: '.$url2);
-      }
-
-
-      $dat = new Datos();
-      
-      $id = isset($_POST['id']) ? $_POST['id'] : '';
-      
-      $swaceptar_solafil =  isset($_POST['swaceptar_solafil']) ? $_POST['swaceptar_solafil'] : '';
-      $swrechazar_solafil =  isset($_POST['swrechazar_solafil']) ? $_POST['swrechazar_solafil'] : '';
-      $swaceptar_solpres =  isset($_POST['swaceptar_solpres']) ? $_POST['swaceptar_solpres'] : '';
-      $swrechazar_solpres =  isset($_POST['swrechazar_solpres']) ? $_POST['swrechazar_solpres'] : '';
-      
-      
-      
-      if($swaceptar_solafil == 'S') {
-        $solafil = SolAfiliados::getSolAfiliadoId($id);
-        $dat->eliminarSolAfiliado($solafil->getId());
-        $afil = Afiliados::getAfiliadoId($solafil->getId());
-        $afil->loadSolicitud($solafil->getDatos());
-        $dat->modAfiliado($afil->getDatos());
-      } else if($swrechazar_solafil == 'S') {
-        $solafil = SolAfiliados::getSolAfiliadoId($id);
-        $dat->eliminarSolAfiliado($solafil->getId());
-        $afil = Afiliados::getAfiliadoId($solafil->getId());
-        $afil->loadSolicitud($solafil->getDatos());
-        $dat->modAfiliado($afil->getDatos());
-      } else if($swaceptar_solpres == 'S') {
-        $solpres = SolPrestamo::getSolPrestamoId($id);
-        $solpres->setEstadoAceptado();
-        $dat->modSolPrestamos($solpres->getDatos());
-      } else if($swrechazar_solpres == 'S') {
-        $solpres = SolPrestamo::getSolPrestamoId($id);
-        $solpres->setEstadoRechazado();
-        $dat->modSolPrestamos($solpres->getDatos());
-      }
-        //Recogemos todos los afiliados y empresas para mostarlos por 
-        $sol_afil = SolAfiliados::getSolAfiliados();
-        $sol_pres = SolPrestamo::getSolPrestamos();
-        $empresas = Empresa::getEmpresas();
+include $incRoot.'POO/CONTROLADOR/CO_ADMINISTRADORES/appAdministraAgenda.php';
 
 
 include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
@@ -111,7 +65,7 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
     <a href="<?php echo $dirRoot; ?>POO/VISTA/index.php?tipologin=admin">Indice</a> > <a href="<?php echo $dirRoot; ?>POO/VISTA/VI_ADMINISTRADORES/vistaAdminMenu.php">Menú</a>
     
     <!––Formulario para realizar todas las operaciones de base de datos––>
-<form name="formTabla" id="formTabla" href="<?php echo $dirRoot; ?>POO/VISTA/VI_AFILIADOS/appAfiliados.php" method="post">
+<form name="formTabla" id="formTabla" href="<?php echo $dirRoot; ?>POO/VISTA/VI_AFILIADOS/appAfiliado.php" method="post">
   
   <table class="estilo_tabla" width="90%" align="center" >
     <tr class="estilo_cab_tabla">

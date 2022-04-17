@@ -1,8 +1,11 @@
 <?php
 //Redirigimos las rutas de nuestra aplicación
+//Redirigimos las rutas de nuestra aplicación
 $pagina = $_SERVER['PHP_SELF'];
 $arrayDir = preg_split('/\//',$pagina);
+//Ruta relativa usada en páginas
 $dirRoot = '/'.$arrayDir[1].'/';
+//Ruta completa usada en includes
 $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
 ?>
 
@@ -23,7 +26,7 @@ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
 
 
 	//Incluimos la clase Datos
-		include $incRoot.'POO/MODELO/datos.php';
+		include $incRoot.'POO/MODELO/MO_UTILS/includesDatos.php';
 
 	 //Instanciamos la clase Datos
 		$dat = new Datos();
@@ -42,10 +45,6 @@ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
 				setcookie("superadmin_cookie", $nombre, 1);
 				$url = $dirRoot.'POO/VISTA/VI_SUPERADMIN/vistaSuperAdminMenu.php';
 				header('Location: '.$url);
-			/*	$host  = $_SERVER['HTTP_HOST'];
-				$uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
-				$extra = '../VISTA/VI_ADMINISTRADORES/appAdmin.php';
-				header("Location: http://$host$uri/$extra");*/
 		} else {
 			//Si no mostramos un mensaje de no encontrado y un link a user_pass_error.php 
 			$url = $dirRoot.'POO/VISTA/user_pass_error.php?tipologin=sadmin';

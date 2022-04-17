@@ -1,7 +1,10 @@
 <?php
+//Redirigimos las rutas de nuestra aplicación
 $pagina = $_SERVER['PHP_SELF'];
 $arrayDir = preg_split('/\//',$pagina);
+//Ruta relativa usada en páginas
 $dirRoot = '/'.$arrayDir[1].'/';
+//Ruta completa usada en includes
 $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
 
 include $incRoot.'POO/MODELO/MO_SUPERADMIN/includesSuperAdmin.php';
@@ -107,8 +110,10 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
                             </select>
                         <?php } ?>
                         </td>
+                        <!––Atributos formulario motivo prestamos ––>
                         <td class="bot ultima_fila"><input value="" type='text' name='motivo' size='10' class='centrado'></td>
-                        <td class="bot ultima_fila"><input value="" type="number" min="0.00" max="5000.00" step="0.01" name='cantidad' size='10' class='centrado'></td>
+                        <!––Atributos formulario cantidad prestamos ––>
+                        <td class="bot ultima_fila"><input value="" type="number" min="0.00" max="5000.00" step="5.00" name='cantidad' size='10' class='centrado'></td>
                             
                         <td class='bot' colspan="2">
                         <!––Botones con las operación de crear un nuevo registo en javascript ––>

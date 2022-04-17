@@ -1,7 +1,10 @@
 <?php
+//Redirigimos las rutas de nuestra aplicación
 $pagina = $_SERVER['PHP_SELF'];
 $arrayDir = preg_split('/\//',$pagina);
+//Ruta relativa usada en páginas
 $dirRoot = '/'.$arrayDir[1].'/';
+//Ruta completa usada en includes
 $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
 
 session_start();
@@ -21,12 +24,11 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
 </head>
 <?php
 
-include $incRoot.'POO/MODELO/datos.php';
+include $incRoot.'POO/MODELO/MO_UTILS/includesDatos.php';
 $dat = new Datos();
 
 if(isset($_SESSION['user_session']) == 'afiliado_session') {
-    $url1 ="appAfiliados.php";
-    //header('Location: '.$url1);
+
   } else {
     $url2 =$dirRoot."POO/VISTA/index.php";
     header('Location: '.$url2);

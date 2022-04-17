@@ -1,7 +1,5 @@
 <?php
-  
- 
-  class Datos {
+  class Datos implements Conexion {
 
 		// Datos de conexión
 /*	var	$host = "localhost";
@@ -9,8 +7,6 @@
 	var	$password = "";
 	//Nombre BBDD
 	var $baseDatos = "asdete";*/
-
-
 
 				public function __construct(){
 
@@ -29,8 +25,6 @@
 				
 						return $conexion;
 					}
-
-
 
 					//------------------------------------------AFILIADO-----------------------------------------------------------------//
 					
