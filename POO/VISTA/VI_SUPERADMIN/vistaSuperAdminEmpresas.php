@@ -70,10 +70,10 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
 <form name="formTabla" id="formTabla" href="<?php echo $dirRoot; ?>POO/VISTA/VI_SUPERADMIN/vistaSuperAdminEmpresas.php" method="post">
   
   <table class="estilo_tabla" width="80%" align="center" >
-    <tr class="estilo_cab_tabla_2">
+    <tr class="estilo_cab_tabla<?php echo $sufijo_estilo; ?>">
       <th class="subtitulo" colspan="12"><h1><span >Gestión de empresas</span></h1></th>
     </tr>
-    <tr class="estilo_subcab_tabla_2" >
+    <tr class="estilo_subcab_tabla<?php echo $sufijo_estilo; ?>" >
       <td class="primera_fila">Id</td>
       <td class="primera_fila">CIF</td>
       <td class="primera_fila">Nombre</td>

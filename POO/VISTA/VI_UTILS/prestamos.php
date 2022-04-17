@@ -69,13 +69,13 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
                 <form name="formTabla" id="formTabla" action="<?php echo $dirRoot; ?>POO/VISTA/VI_UTILS/prestamos.php" method="post">
 
                     <table class="estilo_tabla" width="90%" align="center" >
-                    <tr class="estilo_cab_tabla">
+                    <tr class="estilo_cab_tabla<?php echo $sufijo_estilo; ?>">
                         <th class="subtitulo" colspan="12"><h1><span >Solicitud de prestamos</span></h1></th>
                     </tr>
-                    <tr class="estilo_subcab_tabla" >
+                    <tr class="estilo_subcab_tabla<?php echo $sufijo_estilo; ?>" >
                         <td class="primera_fila">Afiliado</td>
                         <td class="primera_fila">Motivo</td>
-                        <td class="primera_fila">Cantidad</td>
+                        <td class="primera_fila">Cantidad *</td>
                         <td class="primera_fila">Enviar solicitud</td>
                     </tr> 
 
@@ -123,9 +123,13 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
                     </table>
                     <input value="" name="swinsertar" id="swinsertar" type="hidden" />
 
+                    <table class="estilo_tabla_leyenda" width="90%" align="center" >
+                        <tr>
+                            <td align="left">* Cantidades de 0.00 a 5000.00 y de 5.00 en 5.00</td>
+                        </tr>
+                    </table>
                     <p>&nbsp;</p>
                     </form>
-
                 </div>  
             </article>
             <footer class="pie<?php echo $sufijo_estilo; ?>"> <?php include $incRoot."POO/VISTA/VI_INCLUDES/pie.php" ?></footer>

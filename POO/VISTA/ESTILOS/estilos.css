@@ -372,6 +372,12 @@ body {
   border: solid thin;
 }
 
+.estilo_tabla_leyenda {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  font-size: medium;
+}
 .estilo_tabla {
   margin-left: auto;
   margin-right: auto;
@@ -389,12 +395,28 @@ body {
   background-color: #ffb74d;
   border: solid thin;
 }
-.estilo_cab_tabla {
+.estilo_cab_tabla_afil {
+  background-color: #9ccc65;
+  border: solid thin;
+}
+.estilo_subcab_tabla_afil {
+  background-color: #dcedc8;
+  border: solid thin;
+}
+.estilo_cab_tabla_admin {
   background-color: #87cefa;
   border: solid thin;
 }
-.estilo_subcab_tabla {
+.estilo_subcab_tabla_admin {
   background-color: #add8e6;
+  border: solid thin;
+}
+.estilo_cab_tabla_sadmin {
+  background-color: #ffb74d;
+  border: solid thin;
+}
+.estilo_subcab_tabla_sadmin {
+  background-color: #ffe0b2;
   border: solid thin;
 }
 .estilo_fila1_tabla {

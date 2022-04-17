@@ -64,10 +64,10 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
 <form name="formTabla" id="formTabla" href="<?php echo $dirRoot; ?>POO/VISTA/VI_SUPERADMIN/vistaSuperAdminAdministradores.php" method="post">
   
   <table class="estilo_tabla" width="80%" align="center" >
-    <tr class="estilo_cab_tabla_2">
+    <tr class="estilo_cab_tabla<?php echo $sufijo_estilo; ?>">
       <th class="subtitulo" colspan="6"><h1><span >Gestión de administradores</span></h1></th>
     </tr>
-    <tr class="estilo_subcab_tabla_2" >
+    <tr class="estilo_subcab_tabla<?php echo $sufijo_estilo; ?>" >
       <td class="primera_fila">Id</td>
       <td class="primera_fila">Nick</td>
       <td class="primera_fila">Password</td>

@@ -7,7 +7,6 @@ $dirRoot = '/'.$arrayDir[1].'/';
 //Ruta completa usada en includes
 $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
 
-include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -67,10 +66,10 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
 <form name="formTabla" id="formTabla" action="<?php echo $dirRoot; ?>POO/VISTA/VI_ADMINISTRADORES/vistaAdmin.php" method="post">
   
   <table class="estilo_tabla" width="90%" align="center" >
-    <tr class="estilo_cab_tabla">
+    <tr class="estilo_cab_tabla<?php echo $sufijo_estilo; ?>">
       <th class="subtitulo" colspan="12"><h1><span >Gestión de afiliados</span></h1></th>
     </tr>
-    <tr class="estilo_subcab_tabla" >
+    <tr class="estilo_subcab_tabla<?php echo $sufijo_estilo; ?>" >
       <td class="primera_fila">Id</td>
       <td class="primera_fila">NIF</td>
       <td class="primera_fila">Password</td>

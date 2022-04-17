@@ -7,7 +7,6 @@ $dirRoot = '/'.$arrayDir[1].'/';
 //Ruta completa usada en includes
 $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
 
-include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -68,10 +67,10 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
 <form name="formTabla" id="formTabla" href="<?php echo $dirRoot; ?>POO/VISTA/VI_AFILIADOS/appAfiliado.php" method="post">
   
   <table class="estilo_tabla" width="90%" align="center" >
-    <tr class="estilo_cab_tabla">
+    <tr class="estilo_cab_tabla<?php echo $sufijo_estilo; ?>">
       <th class="subtitulo" colspan="13"><h1><span >Solicitudes de modificación de datos de afiliados</span></h1></th>
     </tr>
-    <tr class="estilo_subcab_tabla" >
+    <tr class="estilo_subcab_tabla<?php echo $sufijo_estilo; ?>" >
       <td class="primera_fila"></td>
       <td class="primera_fila">Id</td>
       <td class="primera_fila">NIF</td>
@@ -143,10 +142,10 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
   </table>
 
   <table class="estilo_tabla" width="90%" align="center" >
-    <tr class="estilo_cab_tabla">
+    <tr class="estilo_cab_tabla<?php echo $sufijo_estilo; ?>">
       <th class="subtitulo" colspan="7"><h1><span >Solicitudes de prestamos</span></h1></th>
     </tr>
-    <tr class="estilo_subcab_tabla" >
+    <tr class="estilo_subcab_tabla<?php echo $sufijo_estilo; ?>" >
       <td class="primera_fila">Id</td>
       <td class="primera_fila">Afiliado</td>
       <td class="primera_fila">Motivo</td>
