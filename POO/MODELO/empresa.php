@@ -122,14 +122,11 @@
 		}
 		if(trim($this->datos[Empresa::cif]) != '') {
 			$dat = new Datos();
-			
-			/*
-			hacer validación de mod. empresa
-			$afil_exist = $dat->getAfiliadoNIF($this->datos['nif']);
-			$id_exist = isset($afil_exist['id']) ? $afil_exist['id'] : '';
+			$empre_exist = $dat->getEmpresaCif($this->datos[Empresa::cif]);
+			$id_exist = isset($empre_exist['id']) ? $empre_exist['id'] : '';
 			if($id_exist > 0 && $this->datos['id'] != $id_exist) {
-				$msgValidacion = "Ya existe un afiliado con ese NIF.";
-			}*/
+				$msgValidacion = "Ya existe una empresa con ese CIF.";
+			}
 		}
 		return $msgValidacion;
 	}

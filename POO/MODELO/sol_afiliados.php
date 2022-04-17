@@ -140,10 +140,10 @@
 		} else if(trim($this->datos[SolAfiliados::id_empresa_fk]) == '') {
 		$msgValidacion = "La empresa es obligatorio";
 		}
-		if(trim($this->datos['nif']) != '') {
+		if(trim($this->datos[SolAfiliados::nif]) != '') {
 			$dat = new Datos();
-			$afil_exist = $dat->getAfiliadoNIF($this->datos['nif']);
-			$id_exist = isset($afil_exist[SolAfiliados::id_afiliados_fk]) ? $afil_exist[SolAfiliados::id_afiliados_fk] : '';
+			$afil_exist = $dat->getAfiliadoNIF($this->datos[SolAfiliados::nif]);
+			$id_exist = isset($afil_exist[Afiliados::id]) ? $afil_exist[Afiliados::id] : '';
 			if($id_exist > 0 && $this->datos[SolAfiliados::id_afiliados_fk] != $id_exist) {
 				$msgValidacion = "Ya existe un afiliado con ese NIF.";
 			}

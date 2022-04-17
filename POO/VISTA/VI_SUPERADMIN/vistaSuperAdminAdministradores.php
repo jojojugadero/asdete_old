@@ -4,6 +4,12 @@ $arrayDir = preg_split('/\//',$pagina);
 $dirRoot = '/'.$arrayDir[1].'/';
 $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
 
+
+include $incRoot.'POO/MODELO/MO_SUPERADMIN/includesSuperAdmin.php';
+
+include $incRoot.'POO/CONTROLADOR/CO_SUPERADMIN/appSuperAdminAdministradores.php';
+include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
+
 ?>
 
 <!DOCTYPE html>
@@ -16,17 +22,15 @@ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
  <link rel="stylesheet" href="<?php echo $dirRoot; ?>POO/VISTA/ESTILOS/estilos.css">
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+      
+      function validacion() {
+      <?php echo trim($msgValidacion) == "" ? "": "alert('".$msgValidacion."');"; ?>
+      }
+    </script>
 </head>
-<?php
 
-include $incRoot.'POO/MODELO/MO_SUPERADMIN/includesSuperAdmin.php';
-
-include $incRoot.'POO/CONTROLADOR/CO_SUPERADMIN/appSuperAdminAdministradores.php';
-include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
-
-?>
-
-<body class="cuerpo_contenedor<?php echo $sufijo_estilo; ?>" >
+<body class="cuerpo_contenedor<?php echo $sufijo_estilo; ?>" onload="validacion();" >
 
 
   <!––Incluimos la cabecera ––>
@@ -58,7 +62,7 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
   
   <table class="estilo_tabla" width="80%" align="center" >
     <tr class="estilo_cab_tabla_2">
-      <th class="subtitulo" colspan="12"><h1><span >Gestión de administradores</span></h1></th>
+      <th class="subtitulo" colspan="6"><h1><span >Gestión de administradores</span></h1></th>
     </tr>
     <tr class="estilo_subcab_tabla_2" >
       <td class="primera_fila">Id</td>
@@ -73,7 +77,7 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
       //Comprobamos si hay registros
         if (count($administradores) == 0) {
           echo '<tr>
-              <td class="estilo_noresultados_tabla" colspan="11">No se han encontrado empresas</td>
+              <td class="estilo_noresultados_tabla" colspan="6">No se han encontrado administradores</td>
              </tr>';
         } else {
           $num = 0;

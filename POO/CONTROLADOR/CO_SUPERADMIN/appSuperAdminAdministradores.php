@@ -29,19 +29,22 @@ $sweliminar =  isset($_POST['sweliminar']) ? $_POST['sweliminar'] : '';
 
 
 
- //Con este operador ternario mejor preguntar al crack PREGUNTAR A PARTIR DE AQUÍ BIEN
+ //Si se modifica se coge el administrador de base de datos y si no se coge el que llega por pantalla
 $admin_modi = $swmodificar == 'S' ? Administrador::getAdministradorId($admi->getId()) : $admi;
 
+//Si se confirma el alta nueva o modificación hace validación.
 $msgValidacion = $swinsertar == 'S' || $swmodificarapply == 'S' ? $admi->validar() : '';
 
 
-
+//Si da error de validación se pone los datos del administrador de pantalla para que los vuelva a poner en los campos
 if(trim($msgValidacion) != "") {
   $admin_modi = $admi;
 }
+//Si pasa la validación OK y se confirma modificación se quita el indicador de modificación
 if(trim($msgValidacion) == "" && $swmodificarapply == 'S') {
   $swmodificar = "N";
 }
+ //Si pasa la validación OK comprueba si es un alta/modificación/eliminación para realizar dicha operación
 if(trim($msgValidacion) == "") {
   if($swinsertar == 'S') {
     $dat->altaAdmin($admi->getDatos());
@@ -52,6 +55,7 @@ if(trim($msgValidacion) == "") {
   }
 }
 
+//Comprueba si es una modificación o no pasa la validación para saber si debe o no mostrar los datos por pantalla
 $mostrarDatos = $swmodificar == 'S' || trim($msgValidacion) != "" ? 'S':'N';
 
   //Recogemos todos los afiliados y empresas para mostarlos por pantalla

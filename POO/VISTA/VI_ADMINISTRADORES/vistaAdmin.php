@@ -86,7 +86,7 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
       //Comprobamos si hay registros
         if (count($afiliados) == 0) {
           echo '<tr>\n
-              <td colspan="11">No se han encontrado afiliados</td>
+              <td class="estilo_noresultados_tabla" colspan="12">No se han encontrado afiliados</td>
              </tr>';
         } else {
           $num = 0;

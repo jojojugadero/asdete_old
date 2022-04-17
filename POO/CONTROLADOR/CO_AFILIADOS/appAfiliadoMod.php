@@ -23,7 +23,7 @@ $sol_afil->loadPost();
 
 //Recogemos el id del afiliado
 $swinsertar =  isset($_POST['swinsertar']) ? trim($_POST['swinsertar']) : '';
-$id_afil =  $_SESSION['id_afiliado'];
+$id_afil =  isset($_SESSION['id_afiliado']) ? $_SESSION['id_afiliado'] : '';
 
 
 //Con este metodo de la clase datos sacamos el nombre del afiliado con su ID
@@ -31,15 +31,20 @@ $afiliado = Afiliados::getAfiliadoId($id_afil);
 
 
 
- //Con este operador ternario mejor preguntar al crack PREGUNTAR A PARTIR DE AQUÍ BIEN
+ //Si se confirma el alta nueva o modificación hace validación.
 $msgValidacion = $swinsertar == 'S' ? $sol_afil->validar() : '';
 
+
+ //Si da error de validación se pone los datos del afiliado de pantalla para que los vuelva a poner en los campos
 if(trim($msgValidacion) != "") {
-  $afil_modi = $afil;
+  $afiliado->loadSolicitud($sol_afil->getDatos());
 }
+//Si inserta los datos se pone los datos del afiliado de pantalla para que los vuelva a poner en los campos
 if($swinsertar == 'S') {
   $afiliado->loadSolicitud($sol_afil->getDatos());
 }
+
+//Si pasa la validación OK comprueba si es un alta de solicitud para realizar dicha operación
 if(trim($msgValidacion) == "") {
   if($swinsertar == 'S') {
     $dat->eliminarSolAfiliadoIdAfil($sol_afil->getIdAfiliado());

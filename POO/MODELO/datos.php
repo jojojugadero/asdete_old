@@ -629,6 +629,24 @@
 		}
 	
 	
+		//Nos devuelve todos los datos de la empresa a través de su CIF
+		public function getEmpresaCif($cif) {
+			$dat = new Datos();
+			$conexion = $dat->crearConexion("asdete");
+	
+			$consulta = "SELECT * FROM empresa WHERE cif = '".$cif."'";
+	
+			$resultado = mysqli_query($conexion, $consulta);
+			if (mysqli_num_rows($resultado) > 0) {
+				return mysqli_fetch_assoc($resultado);
+			} else {
+				$vacio = [];
+				return $vacio;
+			}
+	
+			mysqli_close($conexion);
+		}
+	
 	
 		
 	

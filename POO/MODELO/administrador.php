@@ -87,7 +87,7 @@
 		return $this->datos[Administrador::email];
 	}
 
-	//Validamos que hay datos en todos los siguientes campos y sino mostramos un mensaje al usuario
+	//Validamos que hay datos en todos los siguientes campos y sino mostramos un mensaje al usuario en la vista
 	public function validar() {
 		$msgValidacion = "";
 		if(trim($this->datos[Administrador::nickname]) == '') {
@@ -99,13 +99,12 @@
 		}
 		if(trim($this->datos['nickname']) != '') {
 			$dat = new Datos();
-			/*
-			hacer validación de modificación de admins
-			$afil_exist = $dat->getAfiliadoNIF($this->datos['nif']);
-			$id_exist = isset($afil_exist['id']) ? $afil_exist['id'] : '';
+			
+			$admin_exist = $dat->getAdministradorNick($this->datos[Administrador::nickname]);
+			$id_exist = isset($admin_exist['id']) ? $admin_exist['id'] : '';
 			if($id_exist > 0 && $this->datos['id'] != $id_exist) {
-				$msgValidacion = "Ya existe un afiliado con ese NIF.";
-			}*/
+				$msgValidacion = "Ya existe un administrador con ese nick.";
+			}
 		}
 		return $msgValidacion;
 	}

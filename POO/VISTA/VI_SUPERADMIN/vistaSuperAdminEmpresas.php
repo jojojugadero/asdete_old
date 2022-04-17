@@ -4,8 +4,6 @@ $arrayDir = preg_split('/\//',$pagina);
 $dirRoot = '/'.$arrayDir[1].'/';
 $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
 
-?>
-<?php
 
 include $incRoot.'POO/MODELO/MO_SUPERADMIN/includesSuperAdmin.php';
 
@@ -25,11 +23,16 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 
-
+  <script type="text/javascript">
+      
+      function validacion() {
+      <?php echo trim($msgValidacion) == "" ? "": "alert('".$msgValidacion."');"; ?>
+      }
+    </script>
 </head>
 
 
-<body class="cuerpo_contenedor<?php echo $sufijo_estilo; ?>" >
+<body class="cuerpo_contenedor<?php echo $sufijo_estilo; ?>" onload="validacion();" >
 
 
   <!––Incluimos la cabecera ––>
