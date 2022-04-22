@@ -5,6 +5,7 @@
   margin: 0;
   padding: 0;
 }
+/*Nuestro html ocupe el 100% de la página*/
 html {
   height: 100%;
 }
@@ -23,7 +24,7 @@ body {
   padding: 10px;
   text-align: center;
 }
-
+/*Creamos unos estilos para cada parte*/
 .cabecera {
   grid-area: cabecera;
   background-color: #d3d3d3;
@@ -145,7 +146,9 @@ body {
   background-color: #ffb74d;
 }
 
-/*Diseño responsive para telefonos*/
+/*-----------GRID---------------------*/
+
+/*Grid para la parte del login*/
 .cuerpo_contenedor {
   display: grid;
   /*separamos elementos 10 pixeles*/
@@ -159,6 +162,7 @@ body {
     "barra" 100px
     "pie" 100px;
 }
+/*Grid para la parte AFILIADOS*/
 .cuerpo_contenedor_afil {
   display: grid;
   /*separamos elementos 10 pixeles*/
@@ -172,6 +176,7 @@ body {
     "barra_afil" 100px
     "pie_afil" 100px;
 }
+/*Grid para la parte ADMIN*/
 .cuerpo_contenedor_admin {
   display: grid;
   /*separamos elementos 10 pixeles*/
@@ -185,6 +190,7 @@ body {
     "barra_admin" 100px
     "pie_admin" 100px;
 }
+/*Grid para la parte SUPERADMIN*/
 .cuerpo_contenedor_sadmin {
   display: grid;
   /*separamos elementos 10 pixeles*/
@@ -199,7 +205,7 @@ body {
     "pie_sadmin" 100px;
 }
 
-/*Hacemos una media query para el diseño responsive en vista de  tablet*/
+/*Hacemos una media query para el diseño responsive en vista de télefono*/
 
 @media (min-width: 600px) {
   .cuerpo_contenedor {
@@ -210,6 +216,8 @@ body {
       "pie  pie" 100px /
       200px auto;
   }
+  /*Hacemos una media query para el diseño responsive en vista de télefono*/
+
   .cuerpo_contenedor_afil {
     grid-template:
       "cabecera_afil  cabecera_afil" 100px
@@ -236,6 +244,7 @@ body {
   }
 }
 
+/*Hacemos una media query para el diseño responsive en vista de tablet*/
 @media (min-width: 900px) {
   .cuerpo_contenedor {
     grid-template:
@@ -618,7 +627,7 @@ body {
 }
 .bg-personas {
   /*100% 50% no-repeat top center*/
-  background-image: url("../IMAGENES/personas2.jpg");
+  background-image: url("../IMAGENES/personas.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100% 70%;
@@ -715,7 +724,7 @@ figure img {
   height: 50%;
 }
 
-/* The colour of the indicators */
+/* Color de indicaciones */
 
 .blog .carousel-indicators li {
   background: #708198;
