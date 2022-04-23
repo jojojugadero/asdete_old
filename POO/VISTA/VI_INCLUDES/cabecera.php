@@ -13,7 +13,7 @@ include $incRoot.'POO/CONTROLADOR/ControlCabecera.php';
 <table width="100%">
     <tr>
         <td width="20%">
-            <img src="<?php echo $dirRoot; ?>POO/VISTA/IMAGENES/logo.png" alt="Logo" width="400" height="80"/>
+            <a href="<?php echo $dirRoot; ?>POO/VISTA/index.php" title="Volver a inicio"><img src="<?php echo $dirRoot; ?>POO/VISTA/IMAGENES/banner.png" alt="Banner" width="400" height="80"/></a>
         </td>
 
  
@@ -37,7 +37,7 @@ include $incRoot.'POO/CONTROLADOR/ControlCabecera.php';
                         <?php if($sesion == 'afiliado_session'){ ?>
                         <a title='Haz click para deslogearte' href ='<?php echo $url_desconectar; ?>'>
                             <button class="btn btn-success btn-sm btn-logout">
-                            <svg id="i-signout" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+                            <svg id="i-signout"  viewBox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
                                 <path d="M28 16 L8 16 M20 8 L28 16 20 24 M11 28 L3 28 3 4 11 4" />
                             </svg>
                             </button>
@@ -45,7 +45,7 @@ include $incRoot.'POO/CONTROLADOR/ControlCabecera.php';
                         <?php } else if($sesion == 'administrador_session'){ ?>
                         <a title='Haz click para deslogearte' href ='<?php echo $url_desconectar; ?>'>
                             <button class="btn btn-primary btn-sm btn-logout">
-                            <svg id="i-signout" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+                            <svg id="i-signout" viewBox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
                                 <path d="M28 16 L8 16 M20 8 L28 16 20 24 M11 28 L3 28 3 4 11 4" />
                             </svg>
                             </button>
@@ -53,7 +53,7 @@ include $incRoot.'POO/CONTROLADOR/ControlCabecera.php';
                         <?php } else if($sesion == 'superadmin_session'){ ?>
                         <a title='Haz click para deslogearte' href ='<?php echo $url_desconectar; ?>'>
                             <button class="btn btn-primary btn-sm btn-logout-sadmin">
-                            <svg id="i-signout" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+                            <svg id="i-signout"   viewBox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
                                 <path d="M28 16 L8 16 M20 8 L28 16 20 24 M11 28 L3 28 3 4 11 4" />
                             </svg>
                             </button>

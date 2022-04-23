@@ -31,6 +31,37 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
       function validacion() {
       <?php echo trim($msgValidacion) == "" ? "": "alert('".$msgValidacion."');"; ?>
       }
+
+      function nuevoReg() {
+        return true;
+      }
+      function altaReg() {
+        document.getElementById('swinsertar').value = 'S';
+        return true;
+      }
+      function modReg(id) {
+        document.getElementById('swmodificar').value = 'S';
+        document.getElementById('id').value = id;
+        return true;
+      }
+      function applyModReg() {
+        var c = confirm("¿Estas seguro de querer modificar este registro?");
+        if(!c) {
+          return false;
+        }
+        document.getElementById('swmodificarapply').value = 'S';
+        document.getElementById('swmodificar').value = 'S';
+        return true;
+      }
+      function delReg(id) {
+        var c = confirm("¿Estas seguro de querer eliminar este registro?");
+        if(!c) {
+          return false;
+        }
+        document.getElementById('sweliminar').value = 'S';
+        document.getElementById('id').value = id;
+        return true;
+      }
     </script>
 </head>
 
@@ -107,8 +138,8 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
           <td><?php echo $fila->getEmail() ?></td>
           <td><?php echo $fila->getDireccion() ?></td>
           <!––Botones con las operaciones a seleccionar en javascript de modificar o borrar un registro existente ––>
-          <td class="bot"><input class="btn btn-primary btn-sm" onclick="document.getElementById('swmodificar').value = 'S';document.getElementById('id').value = <?php echo $fila->getId() ?>;" type='submit' name='up' id='up' value='Actualizar'></td>
-          <td class='bot'><input class="btn btn-danger btn-sm" onclick="document.getElementById('sweliminar').value = 'S';document.getElementById('id').value = <?php echo $fila->getId() ?>;" type='submit' name='del' id='del' value='Borrar'></td>
+          <td class="bot"><input class="btn btn-primary btn-sm" onclick="modReg('<?php echo $fila->getId() ?>');" type='submit' name='up' id='up' value='Actualizar'></td>
+          <td class='bot'><input class="btn btn-danger btn-sm" onclick="delReg('<?php echo $fila->getId() ?>');" type='submit' name='del' id='del' value='Borrar'></td>
         </tr>   
     <?php
           }
@@ -127,13 +158,13 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
           if ($swmodificar == 'S') {
         ?>
          <!––Botones con las operaciones para confirmar la modificacion o crear un registro nuevo en javascript ––>
-          <input class="btn btn-success btn-sm" type='submit' onclick="document.getElementById('swmodificarapply').value = 'S';document.getElementById('swmodificar').value = 'S';" name='cr' id='cr' value='Modificar'>
-          <input class="btn btn-warning btn-sm" type='submit' onclick="" name='cr' id='cr' value='Nuevo'>
+          <input class="btn btn-success btn-sm" type='submit' onclick="applyModReg();" name='cr' id='cr' value='Modificar'>
+          <input class="btn btn-warning btn-sm" type='submit' onclick="nuevoReg();" name='cr' id='cr' value='Nuevo'>
         <?php
           } else {
         ?>
          <!––Botones con las operación de crear un nuevo registo en javascript ––>
-          <input class="btn btn-success btn-sm" type='submit' onclick="document.getElementById('swinsertar').value = 'S'" name='cr' id='cr' value='Insertar'>
+          <input class="btn btn-success btn-sm" type='submit' onclick="altaReg();" name='cr' id='cr' value='Insertar'>
         <?php
           }
         ?>

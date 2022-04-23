@@ -25,7 +25,9 @@ echo "<p style='font-size:large;'><h4>Empresas del sector</h4></p>
 
 </ul>";
 
-echo "<div style='margin-top:40px;'></div>";
+echo "<img src='".$dirRoot."POO/VISTA/IMAGENES/logoAsdete.png' alt='Logo Asdete' height='100' width='150'  />";
+
+echo "<div style='margin-top:10px;'></div>";
 
 echo "<p style='font-size:large;'><h4>Somos Asdete</h4></p>
 

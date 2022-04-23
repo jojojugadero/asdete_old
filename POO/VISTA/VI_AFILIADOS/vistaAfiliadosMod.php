@@ -34,6 +34,14 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
       function validacion() {
       <?php echo trim($msgValidacion) == "" ? "": "alert('".$msgValidacion."');"; ?>
       }
+      function enviarSol() {
+        var c = confirm("¿Estas seguro de querer enviar la solicitud de modificación?");
+        if(!c) {
+          return false;
+        }
+        document.getElementById('swinsertar').value = 'S';
+        return true;
+      }
     </script>
 </head>
 <body class="cuerpo_contenedor<?php echo $sufijo_estilo; ?>" onload="validacion();" >
@@ -125,7 +133,7 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
               </td>
               <td class='bot' colspan="2">
                 <!––Botones con las operación de crear un nuevo registo en javascript ––>
-                  <input class="btn btn-success btn-sm" type='submit' onclick="document.getElementById('swinsertar').value = 'S'" name='cr' id='cr' value='Enviar solicitud'>
+                  <input class="btn btn-success btn-sm" type='submit' onclick="enviarSol();" name='cr' id='cr' value='Enviar solicitud'>
               </td>
             </tr>    
           </table>

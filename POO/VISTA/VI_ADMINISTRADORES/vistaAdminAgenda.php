@@ -31,12 +31,45 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script type="text/javascript">
       
-      function validacion() {
-      <?php echo trim($msgValidacion) == "" ? "": "alert('".$msgValidacion."');"; ?>
+      function aceptarAfil(id) {
+        var c = confirm("¿Estas seguro de querer aceptar la solicitud de modificación de este afiliado?");
+        if(!c) {
+          return false;
+        }
+        document.getElementById('swaceptar_solafil').value = 'S';
+        document.getElementById('id').value = id;
+        return true;
+      }
+      function rechazarAfil(id) {
+        var c = confirm("¿Estas seguro de querer rechazar la solicitud de modificación de este afiliado?");
+        if(!c) {
+          return false;
+        }
+        document.getElementById('swrechazar_solafil').value = 'S';
+        document.getElementById('id').value = id;
+        return true;
+      }
+      function aceptarPres(id) {
+        var c = confirm("¿Estas seguro de querer aceptar esta solicitud de prestamo?");
+        if(!c) {
+          return false;
+        }
+        document.getElementById('swaceptar_solpres').value = 'S';
+        document.getElementById('id').value = id;
+        return true;
+      }
+      function rechazarPres(id) {
+        var c = confirm("¿Estas seguro de querer rechazar esta solicitud de prestamo?");
+        if(!c) {
+          return false;
+        }
+        document.getElementById('swrechazar_solpres').value = 'S';
+        document.getElementById('id').value = id;
+        return true;
       }
     </script>
 </head>
-<body class="cuerpo_contenedor<?php echo $sufijo_estilo; ?>" onload="validacion();" >
+<body class="cuerpo_contenedor<?php echo $sufijo_estilo; ?>"  >
 
 
     <header class="cabecera<?php echo $sufijo_estilo; ?>">
@@ -132,8 +165,8 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
           <td><?php echo $fila->getDireccion() ?></td>
           <td><?php echo $empresa->getNombre() ?></td>
           <!––Botones con las operaciones a seleccionar en javascript de modificar o borrar un registro existente ––>
-          <td class="bot"><input class="btn btn-primary btn-sm" onclick="document.getElementById('swaceptar_solafil').value = 'S';document.getElementById('id').value = <?php echo $fila->getId() ?>;" type='submit' name='up' id='up' value='Aceptar'></td>
-          <td class='bot'><input class="btn btn-danger btn-sm" onclick="document.getElementById('swrechazar_solafil').value = 'S';document.getElementById('id').value = <?php echo $fila->getId() ?>;" type='submit' name='del' id='del' value='Rechazar'></td>
+          <td class="bot"><input class="btn btn-primary btn-sm" onclick="aceptarAfil('<?php echo $fila->getId() ?>');" type='submit' name='up' id='up' value='Aceptar'></td>
+          <td class='bot'><input class="btn btn-danger btn-sm" onclick="rechazarAfil('<?php echo $fila->getId() ?>');" type='submit' name='del' id='del' value='Rechazar'></td>
         </tr>   
     <?php
           }
@@ -179,8 +212,8 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
           <td><?php echo $fila->getEstado() ?></td>
           <!––Botones con las operaciones a seleccionar en javascript de modificar o borrar un registro existente ––>
           <?php if ($fila->getEstado() == 'Pendiente') { ?>
-            <td class="bot"><input class="btn btn-primary btn-sm" onclick="document.getElementById('swaceptar_solpres').value = 'S';document.getElementById('id').value = <?php echo $fila->getId() ?>;" type='submit' name='up' id='up' value='Aceptar'></td>
-            <td class='bot'><input class="btn btn-danger btn-sm" onclick="document.getElementById('swrechazar_solpres').value = 'S';document.getElementById('id').value = <?php echo $fila->getId() ?>;" type='submit' name='del' id='del' value='Rechazar'></td>
+            <td class="bot"><input class="btn btn-primary btn-sm" onclick="aceptarPres('<?php echo $fila->getId() ?>');" type='submit' name='up' id='up' value='Aceptar'></td>
+            <td class='bot'><input class="btn btn-danger btn-sm" onclick="rechazarPres('<?php echo $fila->getId() ?>');" type='submit' name='del' id='del' value='Rechazar'></td>
           <?php } else { ?>
             <td class="bot"></td>
             <td class='bot'></td>

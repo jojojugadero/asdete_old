@@ -27,6 +27,14 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script type="text/javascript">
+      function enviarSol() {
+        var c = confirm("¿Estas seguro de querer enviar la solicitud de prestamo?");
+        if(!c) {
+          return false;
+        }
+        document.getElementById('swinsertar').value = 'S';
+        return true;
+      }
         $(document).ready(function () {
             $(".loan-input").on("keyup", null, function () {
                 var $input = $(this),
@@ -117,7 +125,7 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
                             
                         <td class='bot' colspan="2">
                         <!––Botones con las operación de crear un nuevo registo en javascript ––>
-                            <input class="btn btn-success btn-sm" type='submit' onclick="document.getElementById('swinsertar').value = 'S'" name='cr' id='cr' value='Enviar solicitud'>
+                            <input class="btn btn-success btn-sm" type='submit' onclick="enviarSol();" name='cr' id='cr' value='Enviar solicitud'>
                         </td>
                     </tr>    
                     </table>

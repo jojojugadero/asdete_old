@@ -20,8 +20,6 @@
       $swaceptar_solpres =  isset($_POST['swaceptar_solpres']) ? $_POST['swaceptar_solpres'] : '';
       $swrechazar_solpres =  isset($_POST['swrechazar_solpres']) ? $_POST['swrechazar_solpres'] : '';
       
-      
-      
       //Comprobamos que acción se ha realizado el usuario para hacerla (Acetar/Rechazar datos) y (Aceptar/Rechazar prestamos)
       if($swaceptar_solafil == 'S') {
         $solafil = SolAfiliados::getSolAfiliadoId($id);
@@ -32,9 +30,6 @@
       } else if($swrechazar_solafil == 'S') {
         $solafil = SolAfiliados::getSolAfiliadoId($id);
         $dat->eliminarSolAfiliado($solafil->getId());
-        $afil = Afiliados::getAfiliadoId($solafil->getId());
-        $afil->loadSolicitud($solafil->getDatos());       
-        $dat->modAfiliado($afil->getDatos());
       } else if($swaceptar_solpres == 'S') {
         $solpres = SolPrestamo::getSolPrestamoId($id);
         $solpres->setEstadoAceptado();
