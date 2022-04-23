@@ -51,7 +51,7 @@ if(isset($_SESSION['user_session']) == 'afiliado_session') {
         <?php include $incRoot."POO/VISTA/VI_INCLUDES/cabecera.php" ?>
     </header>
 
-    <!––En la parte izquierda seleccionamos las empresas de una lista en HTML ––>
+    <!--En la parte izquierda seleccionamos las empresas de una lista en HTML -->
               <nav class="navega<?php echo $sufijo_estilo; ?>"><p style="font-size:large;">Empresas del sector</p>
 
               <?php include $incRoot."POO/VISTA/VI_INCLUDES/nav.php" ?>
@@ -62,7 +62,7 @@ if(isset($_SESSION['user_session']) == 'afiliado_session') {
 
           <aside class="barra<?php echo $sufijo_estilo; ?>"><p style="font-size:large;">Contactos</p>
 
-                 <!––En la parte derecha ponemos los contactos de la web con una lista en HTML ––>
+                 <!--En la parte derecha ponemos los contactos de la web con una lista en HTML -->
                  <?php include $incRoot."POO/VISTA/VI_INCLUDES/aside.php" ?>
 
           </aside>

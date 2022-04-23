@@ -39,7 +39,7 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
     
     </header>
 
-              <!––En la parte izquierda seleccionamos las empresas de una lista en HTML ––>
+              <!--En la parte izquierda seleccionamos las empresas de una lista en HTML -->
               <nav class="navega<?php echo $sufijo_estilo; ?>"><p style="font-size:large;">Empresas del sector</p>
 
               <?php include $incRoot."POO/VISTA/VI_INCLUDES/nav.php" ?>
@@ -50,28 +50,28 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
 
           <aside class="barra<?php echo $sufijo_estilo; ?>"><p style="font-size:large;">Contactos</p>
 
-                 <!––En la parte derecha ponemos los contactos de la web con una lista en HTML ––>
+                 <!--En la parte derecha ponemos los contactos de la web con una lista en HTML -->
                  <?php include $incRoot."POO/VISTA/VI_INCLUDES/aside.php" ?>
 
           </aside>
 
 
     <article class="skynet<?php echo $sufijo_estilo; ?> bg-personas">
-    <!––Migas de pan (breadcrumbs) ––>
+    <!--Migas de pan (breadcrumbs) -->
     
     <span class="link-afiliados">
     <a href="<?php echo $dirRoot; ?>POO/VISTA/index.php?tipologin=afil">Indice</a>
     </span>
-    <!––Mostramos el nombre del afiliado con un saludo y con sus datos y si no son correctos le dejamos un link para escriba a administración y modifique sus datos ––>
+    <!--Mostramos el nombre del afiliado con un saludo y con sus datos y si no son correctos le dejamos un link para escriba a administración y modifique sus datos -->
 
 
-    <!––Mandamos los datos de la empresa selecionada atraves de este select y en la página concino.php nos redirige al convenio de la empresa seleccionada ––>
+    <!--Mandamos los datos de la empresa selecionada atraves de este select y en la página concino.php nos redirige al convenio de la empresa seleccionada -->
 <form name="saludoAfiliado" id="saludoAfiliado" action="<?php echo $dirRoot ?>POO/CONTROLADOR/convenios.php" method="post">
 <div>
   
-  <div class="afil-container">
+  <div class="afil-contenedor">
     <div class="row">
-        <div class="afil-center">
+        <div class="afil-centrado">
 
             <div class="col-md-5 afil-form-1">
                 <h3><?php echo "Hola ".$afiliado->getNombre() ?></h3>
@@ -98,7 +98,7 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
                     </tr>
                     <tr>
                       <td>
-                      <!––Con este option mostramos las empresas desde base de datos para seleccionar el convenio que el afiliado quiera consultar, con el action del form de  más arriba nos llevara a convenios.php donde se nos redirigira a la página del convenio seleccionado  ––>
+                      <!--Con este option mostramos las empresas desde base de datos para seleccionar el convenio que el afiliado quiera consultar, con el action del form de  más arriba nos llevara a convenios.php donde se nos redirigira a la página del convenio seleccionado  -->
                         <select name='empresa' class='centrado'>
                           <option value="">Seleccionar</option>
                           <?php

@@ -77,7 +77,7 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
     </header>
 
       
-                <!––En la parte izquierda seleccionamos las empresas de una lista en HTML ––>
+                <!--En la parte izquierda seleccionamos las empresas de una lista en HTML -->
                 <nav class="navega<?php echo $sufijo_estilo; ?>"><p style="font-size:large;">Empresas del sector</p>
 
                     <?php include $incRoot."POO/VISTA/VI_INCLUDES/nav.php" ?>
@@ -86,17 +86,17 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
 
             <aside class="barra<?php echo $sufijo_estilo; ?>"><p style="font-size:large;">Contactos</p>
 
-            <!––En la parte derecha ponemos los contactos de la web con una lista en HTML ––>
+            <!--En la parte derecha ponemos los contactos de la web con una lista en HTML -->
             
                 <?php include $incRoot."POO/VISTA/VI_INCLUDES/aside.php" ?>
             </aside>
 
 
     <article class="skynet<?php echo $sufijo_estilo; ?>">
-    <!––Migas de pan (breadcrumbs) ––>
+    <!--Migas de pan (breadcrumbs) -->
     <a href="<?php echo $dirRoot; ?>POO/VISTA/index.php?tipologin=admin">Indice</a> > <a href="<?php echo $dirRoot; ?>POO/VISTA/VI_ADMINISTRADORES/vistaAdminMenu.php">Menú</a>
     
-    <!––Formulario para realizar todas las operaciones de base de datos––>
+    <!--Formulario para realizar todas las operaciones de base de datos-->
 <form name="formTabla" id="formTabla" href="<?php echo $dirRoot; ?>POO/VISTA/VI_AFILIADOS/appAfiliado.php" method="post">
   
   <table class="estilo_tabla" width="90%" align="center" >
@@ -135,7 +135,7 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
             $color_fila = $num%2 == 1 ? 'estilo_fila1_tabla':'estilo_fila2_tabla';
             $num++;
       ?>
-		  <!––Mostramos los registros de base de datos ––>
+		  <!--Mostramos los registros de base de datos -->
         <tr class="<?php echo $color_fila;?>" >
           <td>Datos antigüos</td>
           <td><?php echo $afiliado->getId() ?></td>
@@ -148,8 +148,8 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
           <td><?php echo $afiliado->getEmail() ?></td>
           <td><?php echo $afiliado->getDireccion() ?></td>
           <td><?php echo $empresa->getNombre() ?></td>
-          <!––Botones con las operaciones a seleccionar en javascript de modificar o borrar un registro existente ––>
-          <td class="bot"></td>
+          <!--Botones con las operaciones a seleccionar en javascript de modificar o borrar un registro existente -->
+          <td class="celda-campo"></td>
           <td class='bot'></td>
         </tr>   
         <tr class="<?php echo $color_fila;?>" >
@@ -164,8 +164,8 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
           <td><?php echo $fila->getEmail() ?></td>
           <td><?php echo $fila->getDireccion() ?></td>
           <td><?php echo $empresa->getNombre() ?></td>
-          <!––Botones con las operaciones a seleccionar en javascript de modificar o borrar un registro existente ––>
-          <td class="bot"><input class="btn btn-primary btn-sm" onclick="aceptarAfil('<?php echo $fila->getId() ?>');" type='submit' name='up' id='up' value='Aceptar'></td>
+          <!--Botones con las operaciones a seleccionar en javascript de modificar o borrar un registro existente -->
+          <td class="celda-campo"><input class="btn btn-primary btn-sm" onclick="aceptarAfil('<?php echo $fila->getId() ?>');" type='submit' name='up' id='up' value='Aceptar'></td>
           <td class='bot'><input class="btn btn-danger btn-sm" onclick="rechazarAfil('<?php echo $fila->getId() ?>');" type='submit' name='del' id='del' value='Rechazar'></td>
         </tr>   
     <?php
@@ -203,19 +203,19 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
             $color_fila = $num%2 == 1 ? 'estilo_fila1_tabla':'estilo_fila2_tabla';
             $num++;
       ?>
-		  <!––Mostramos los registros de base de datos ––>
+		  <!--Mostramos los registros de base de datos -->
         <tr class="<?php echo $color_fila;?>" >
           <td><?php echo $fila->getId() ?></td>
           <td><?php echo $afiliado->getNif() ?> - <?php echo $afiliado->getNombre() ?></td>
           <td><?php echo $fila->getMotivo() ?></td>
           <td><?php echo $fila->getCantidad() ?></td>
           <td><?php echo $fila->getEstado() ?></td>
-          <!––Botones con las operaciones a seleccionar en javascript de modificar o borrar un registro existente ––>
+          <!--Botones con las operaciones a seleccionar en javascript de modificar o borrar un registro existente -->
           <?php if ($fila->getEstado() == 'Pendiente') { ?>
-            <td class="bot"><input class="btn btn-primary btn-sm" onclick="aceptarPres('<?php echo $fila->getId() ?>');" type='submit' name='up' id='up' value='Aceptar'></td>
+            <td class="celda-campo"><input class="btn btn-primary btn-sm" onclick="aceptarPres('<?php echo $fila->getId() ?>');" type='submit' name='up' id='up' value='Aceptar'></td>
             <td class='bot'><input class="btn btn-danger btn-sm" onclick="rechazarPres('<?php echo $fila->getId() ?>');" type='submit' name='del' id='del' value='Rechazar'></td>
           <?php } else { ?>
-            <td class="bot"></td>
+            <td class="celda-campo"></td>
             <td class='bot'></td>
           <?php } ?>
         </tr>   
@@ -225,7 +225,7 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
     ?>
   </table>
 
-  <!––Camos ocultos (HIDDEN) para mandar las acciones a realizar ––>
+  <!--Camos ocultos (HIDDEN) para mandar las acciones a realizar -->
   <input value="" name="id" id="id" type="hidden" />
   <input value="" name="swaceptar_solafil" id="swaceptar_solafil" type="hidden" />
   <input value="" name="swrechazar_solafil" id="swrechazar_solafil" type="hidden" />

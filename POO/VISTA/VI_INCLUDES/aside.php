@@ -8,12 +8,12 @@ $dirRoot = '/'.$arrayDir[1].'/';
 $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
 
 echo "<ul>
-<li class='li_nav1'>Teléfono</li>
-<li class='li_nav2'>912345678</li>
-<li class='li_nav1'>Email</li>
-<li class='li_nav2'>admin@asdete.com</li>
-<li class='li_nav1'>Dirección</li>
-<li class='li_nav2'>C\ Asdete 123</li>
+<li class='li_contactos_titulo'>Teléfono</li>
+<li class='li_contactos_valores'>912345678</li>
+<li class='li_contactos_titulo'>Email</li>
+<li class='li_contactos_valores'>admin@asdete.com</li>
+<li class='li_contactos_titulo'>Dirección</li>
+<li class='li_contactos_valores'>C\ Asdete 123</li>
 </ul>";
 
 

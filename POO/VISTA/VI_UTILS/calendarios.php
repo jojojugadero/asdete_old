@@ -68,14 +68,14 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php"
 
 <body class="cuerpo_contenedor<?php echo $sufijo_estilo; ?>">
 
-    <!––Incluimos la cabecera ––>
+    <!--Incluimos la cabecera -->
     <header class="cabecera<?php echo $sufijo_estilo; ?>">
         <?php include $incRoot."POO/VISTA/VI_INCLUDES/cabecera.php" ?>
     </header>
    
 
 
-    <!––En la parte izquierda seleccionamos las empresas de una lista en HTML ––>
+    <!--En la parte izquierda seleccionamos las empresas de una lista en HTML -->
        <nav class="navega<?php echo $sufijo_estilo; ?>"><p style="font-size:large;">Empresas del sector</p>
 
                      <?php include $incRoot."POO/VISTA/VI_INCLUDES/nav.php" ?>
@@ -84,7 +84,7 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php"
 
         <aside class="barra<?php echo $sufijo_estilo; ?>"><p style="font-size:large;">Contactos</p>
 
-            <!––En la parte derecha ponemos los contactos de la web con una lista en HTML ––>
+            <!--En la parte derecha ponemos los contactos de la web con una lista en HTML -->
             <?php include $incRoot."POO/VISTA/VI_INCLUDES/aside.php" ?>
 
         </aside>
@@ -139,22 +139,22 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php"
                                 <div class="tab-pane fade show active" id="nav-a">
                                         <h2>Calendarios A</h2>
                                         <ul class="lista-normal">
-                                                <li class="li_sidebar"><a href="https://www.calendarioslaborales.com/calendario-laboral-alava-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Álava</a></li>
-                                                <li class="li_sidebar"><a href="https://www.calendarioslaborales.com/calendario-laboral-albacete-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Albacete</a></li>
-                                                <li class="li_sidebar"><a href="https://www.calendarioslaborales.com/calendario-laboral-alicante-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Alicante</a></li>
-                                                <li class="li_sidebar"><a href="https://www.calendarioslaborales.com/calendario-laboral-almeria-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Almeria</a></li>
-                                                <li class="li_sidebar"><a href="https://www.calendarioslaborales.com/calendario-laboral-asturias-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Asturias</a></li>
-                                                <li class="li_sidebar"><a href="https://www.calendarioslaborales.com/calendario-laboral-avila-2022-PDF.pdf" class="enlace_sidebar"target="_blank" >Ávila</a></li>
+                                                <li class="li_barra_lateral"><a href="https://www.calendarioslaborales.com/calendario-laboral-alava-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Álava</a></li>
+                                                <li class="li_barra_lateral"><a href="https://www.calendarioslaborales.com/calendario-laboral-albacete-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Albacete</a></li>
+                                                <li class="li_barra_lateral"><a href="https://www.calendarioslaborales.com/calendario-laboral-alicante-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Alicante</a></li>
+                                                <li class="li_barra_lateral"><a href="https://www.calendarioslaborales.com/calendario-laboral-almeria-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Almeria</a></li>
+                                                <li class="li_barra_lateral"><a href="https://www.calendarioslaborales.com/calendario-laboral-asturias-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Asturias</a></li>
+                                                <li class="li_barra_lateral"><a href="https://www.calendarioslaborales.com/calendario-laboral-avila-2022-PDF.pdf" class="enlace_sidebar"target="_blank" >Ávila</a></li>
                                         </ul>
                                 </div>
                                 <div class="tab-pane fade" id="nav-b">
                                 <h2>Calendarios B</h2>
                                 <ul class="lista-normal">
-                                        <li class="li_sidebar"><a href="https://www.calendarioslaborales.com/calendario-laboral-badajoz-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Badajoz</a></li>
-                                        <li class="li_sidebar"><a href="https://www.calendarioslaborales.com/calendario-laboral-baleares-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Baleares</a></li>
-                                        <li class="li_sidebar"><a href="https://www.calendarioslaborales.com/calendario-laboral-barcelona-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Barcelona</a></li>
-                                        <li class="li_sidebar"><a href="https://www.calendarioslaborales.com/calendario-laboral-bilbao-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Bilbao</a></li>
-                                        <li class="li_sidebar"><a href="https://www.calendarioslaborales.com/calendario-laboral-burgos-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Burgos</a></li>
+                                        <li class="li_barra_lateral"><a href="https://www.calendarioslaborales.com/calendario-laboral-badajoz-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Badajoz</a></li>
+                                        <li class="li_barra_lateral"><a href="https://www.calendarioslaborales.com/calendario-laboral-baleares-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Baleares</a></li>
+                                        <li class="li_barra_lateral"><a href="https://www.calendarioslaborales.com/calendario-laboral-barcelona-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Barcelona</a></li>
+                                        <li class="li_barra_lateral"><a href="https://www.calendarioslaborales.com/calendario-laboral-bilbao-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Bilbao</a></li>
+                                        <li class="li_barra_lateral"><a href="https://www.calendarioslaborales.com/calendario-laboral-burgos-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Burgos</a></li>
                                 </ul>
                                 </div>
 
@@ -162,26 +162,26 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php"
                                 <div class="tab-pane fade" id="nav-c">
                                 <h2>Calendarios C</h2>
                                 <ul class="lista-normal">
-                                        <li class="li_sidebar"><a href="https://www.calendarioslaborales.com/calendario-laboral-caceres-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Caceres</a></li>
-                                        <li class="li_sidebar"><a href="https://www.calendarioslaborales.com/calendario-laboral-cadiz-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Cadiz</a></li>
-                                        <li class="li_sidebar"><a href="https://www.calendarioslaborales.com/calendario-laboral-cantabria-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Cantabria</a></li>
-                                        <li class="li_sidebar"><a href="https://www.calendarioslaborales.com/calendario-laboral-castellon-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Castellon</a></li>
-                                        <li class="li_sidebar"><a href="https://www.calendarioslaborales.com/calendario-laboral-ceuta-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Ceuta</a></li>
-                                        <li class="li_sidebar"><a href="https://www.calendarioslaborales.com/calendario-laboral-ciudad-real-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Ciudad Real</a></li>
-                                        <li class="li_sidebar"><a href="https://www.calendarioslaborales.com/calendario-laboral-cordoba-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Cordoba</a></li>
-                                        <li class="li_sidebar"><a href="https://www.calendarioslaborales.com/calendario-laboral-la-coruna-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Coruña</a></li>
-                                        <li class="li_sidebar"><a href="https://www.calendarioslaborales.com/calendario-laboral-ceuta-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Cuenca</a></li>
+                                        <li class="li_barra_lateral"><a href="https://www.calendarioslaborales.com/calendario-laboral-caceres-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Caceres</a></li>
+                                        <li class="li_barra_lateral"><a href="https://www.calendarioslaborales.com/calendario-laboral-cadiz-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Cadiz</a></li>
+                                        <li class="li_barra_lateral"><a href="https://www.calendarioslaborales.com/calendario-laboral-cantabria-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Cantabria</a></li>
+                                        <li class="li_barra_lateral"><a href="https://www.calendarioslaborales.com/calendario-laboral-castellon-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Castellon</a></li>
+                                        <li class="li_barra_lateral"><a href="https://www.calendarioslaborales.com/calendario-laboral-ceuta-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Ceuta</a></li>
+                                        <li class="li_barra_lateral"><a href="https://www.calendarioslaborales.com/calendario-laboral-ciudad-real-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Ciudad Real</a></li>
+                                        <li class="li_barra_lateral"><a href="https://www.calendarioslaborales.com/calendario-laboral-cordoba-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Cordoba</a></li>
+                                        <li class="li_barra_lateral"><a href="https://www.calendarioslaborales.com/calendario-laboral-la-coruna-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Coruña</a></li>
+                                        <li class="li_barra_lateral"><a href="https://www.calendarioslaborales.com/calendario-laboral-ceuta-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Cuenca</a></li>
                                 </ul>
                                    </div>
 
                                    <div class="tab-pane fade" id="nav-g">
                                         <h2>Calendarios G</h2>
                                         <ul class="lista-normal">
-                                                <li class="li_sidebar"><a href="https://www.calendarioslaborales.com/calendario-laboral-gijon-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Gijón</a></li>
-                                                <li class="li_sidebar"><a href="https://www.calendarioslaborales.com/calendario-laboral-granada-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Granada</a></li>
-                                                <li class="li_sidebar"><a href="https://www.calendarioslaborales.com/calendario-laboral-guadalajara-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Cantabria</a></li>
-                                                <li class="li_sidebar"><a href="https://www.calendarioslaborales.com/calendario-laboral-castellon-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Guadalajara</a></li>
-                                                <li class="li_sidebar"><a href="https://www.calendarioslaborales.com/calendario-laboral-guipuzcoa-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Guipuzcoa</a></li>
+                                                <li class="li_barra_lateral"><a href="https://www.calendarioslaborales.com/calendario-laboral-gijon-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Gijón</a></li>
+                                                <li class="li_barra_lateral"><a href="https://www.calendarioslaborales.com/calendario-laboral-granada-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Granada</a></li>
+                                                <li class="li_barra_lateral"><a href="https://www.calendarioslaborales.com/calendario-laboral-guadalajara-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Cantabria</a></li>
+                                                <li class="li_barra_lateral"><a href="https://www.calendarioslaborales.com/calendario-laboral-castellon-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Guadalajara</a></li>
+                                                <li class="li_barra_lateral"><a href="https://www.calendarioslaborales.com/calendario-laboral-guipuzcoa-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Guipuzcoa</a></li>
                                         </ul>
                                 </div>
 
@@ -190,8 +190,8 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php"
                                 <div class="tab-pane fade" id="nav-h">
                                         <h2>Calendarios H</h2>
                                         <ul class="lista-normal">
-                                                <li class="li_sidebar"><a href="https://www.calendarioslaborales.com/calendario-laboral-huelva-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Huelva</a></li>
-                                                <li class="li_sidebar"><a href="https://www.calendarioslaborales.com/calendario-laboral-huesca-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Huesca</a></li>
+                                                <li class="li_barra_lateral"><a href="https://www.calendarioslaborales.com/calendario-laboral-huelva-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Huelva</a></li>
+                                                <li class="li_barra_lateral"><a href="https://www.calendarioslaborales.com/calendario-laboral-huesca-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Huesca</a></li>
                                                 
                                         </ul>
                                 </div>
@@ -203,7 +203,7 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php"
                                         <ul class="lista-normal">
                                                
                                         
-                                                <li class="li_sidebar"><a href="https://www.calendarioslaborales.com/calendario-laboral-jaen-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Jaen</a></li>
+                                                <li class="li_barra_lateral"><a href="https://www.calendarioslaborales.com/calendario-laboral-jaen-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Jaen</a></li>
                                         
                                         </ul>
                                 </div>
@@ -215,10 +215,10 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php"
                                         <ul class="lista-normal">
                                                
                                         
-                                                <li class="li_sidebar"><a href="https://www.calendarioslaborales.com/calendario-laboral-leon-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >León</a></li>
-                                                <li class="li_sidebar"><a href="https://www.calendarioslaborales.com/calendario-laboral-lleida-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Lleida</a></li>
-                                                <li class="li_sidebar"><a href="https://www.calendarioslaborales.com/calendario-laboral-logrono-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Logroño</a></li>
-                                                <li class="li_sidebar"><a href="https://www.calendarioslaborales.com/calendario-laboral-lugo-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Lugo</a></li>
+                                                <li class="li_barra_lateral"><a href="https://www.calendarioslaborales.com/calendario-laboral-leon-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >León</a></li>
+                                                <li class="li_barra_lateral"><a href="https://www.calendarioslaborales.com/calendario-laboral-lleida-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Lleida</a></li>
+                                                <li class="li_barra_lateral"><a href="https://www.calendarioslaborales.com/calendario-laboral-logrono-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Logroño</a></li>
+                                                <li class="li_barra_lateral"><a href="https://www.calendarioslaborales.com/calendario-laboral-lugo-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Lugo</a></li>
                                                 
                                         </ul>
                                 </div>
@@ -229,10 +229,10 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php"
                                         <ul class="lista-normal">
                                                
                                         
-                                        <li class="li_sidebar"><a href="https://www.calendarioslaborales.com/calendario-laboral-madrid-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Madrid</a></li>
-                                        <li class="li_sidebar"><a href="https://www.calendarioslaborales.com/calendario-laboral-malaga-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Malaga</a></li>
-                                        <li class="li_sidebar"><a href="https://www.calendarioslaborales.com/calendario-laboral-melilla-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Melilla</a></li>
-                                        <li class="li_sidebar"><a href="https://www.calendarioslaborales.com/calendario-laboral-murcia-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Murcia</a></li>
+                                        <li class="li_barra_lateral"><a href="https://www.calendarioslaborales.com/calendario-laboral-madrid-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Madrid</a></li>
+                                        <li class="li_barra_lateral"><a href="https://www.calendarioslaborales.com/calendario-laboral-malaga-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Malaga</a></li>
+                                        <li class="li_barra_lateral"><a href="https://www.calendarioslaborales.com/calendario-laboral-melilla-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Melilla</a></li>
+                                        <li class="li_barra_lateral"><a href="https://www.calendarioslaborales.com/calendario-laboral-murcia-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Murcia</a></li>
                             
                                      </ul>
                                 </div>
@@ -243,7 +243,7 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php"
                                         <ul class="lista-normal">
                                                
                                         
-                                                  <li class="li_sidebar"><a href="https://www.calendarioslaborales.com/calendario-laboral-navarra-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Navarra</a></li>
+                                                  <li class="li_barra_lateral"><a href="https://www.calendarioslaborales.com/calendario-laboral-navarra-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Navarra</a></li>
                            
                             
                                            </ul>
@@ -256,8 +256,8 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php"
                                         <ul class="lista-normal">
                                                
                                                                 
-                                                 <li class="li_sidebar"><a href="https://www.calendarioslaborales.com/calendario-laboral-ourense-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Ourense</a></li>
-                                                <li class="li_sidebar"><a href="https://www.calendarioslaborales.com/calendario-laboral-oviedo-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Oviedo</a></li>
+                                                 <li class="li_barra_lateral"><a href="https://www.calendarioslaborales.com/calendario-laboral-ourense-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Ourense</a></li>
+                                                <li class="li_barra_lateral"><a href="https://www.calendarioslaborales.com/calendario-laboral-oviedo-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Oviedo</a></li>
 
                             
                                      </ul>
@@ -269,11 +269,11 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php"
                                         <h2>Calendarios P</h2>
                                         <ul class="lista-normal">
                                                
-                                                <li class="li_sidebar"><a href="https://www.calendarioslaborales.com/calendario-laboral-palencia-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Palencia</a></li>
-                                                <li class="li_sidebar"><a href="https://www.calendarioslaborales.com/calendario-laboral-palma-de-mallorca-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Palma De Mallorca </a></li>
-                                                <li class="li_sidebar"><a href="https://www.calendarioslaborales.com/calendario-laboral-las-palmas-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Las Palmas</a></li>
-                                                <li class="li_sidebar"><a href="https://www.calendarioslaborales.com/calendario-laboral-pamplona-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Pamplona</a></li>
-                                                <li class="li_sidebar"><a href="https://www.calendarioslaborales.com/calendario-laboral-pontevedra-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Pontevedra</a></li>
+                                                <li class="li_barra_lateral"><a href="https://www.calendarioslaborales.com/calendario-laboral-palencia-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Palencia</a></li>
+                                                <li class="li_barra_lateral"><a href="https://www.calendarioslaborales.com/calendario-laboral-palma-de-mallorca-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Palma De Mallorca </a></li>
+                                                <li class="li_barra_lateral"><a href="https://www.calendarioslaborales.com/calendario-laboral-las-palmas-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Las Palmas</a></li>
+                                                <li class="li_barra_lateral"><a href="https://www.calendarioslaborales.com/calendario-laboral-pamplona-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Pamplona</a></li>
+                                                <li class="li_barra_lateral"><a href="https://www.calendarioslaborales.com/calendario-laboral-pontevedra-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Pontevedra</a></li>
                                                 
                                         </ul>
                                 </div>
@@ -286,7 +286,7 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php"
                                         <ul class="lista-normal">
                                                
                                                 
-                                             <li class="li_sidebar"><a href="https://www.calendarioslaborales.com/calendario-laboral-la-rioja-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >La Rioja</a></li>
+                                             <li class="li_barra_lateral"><a href="https://www.calendarioslaborales.com/calendario-laboral-la-rioja-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >La Rioja</a></li>
 
                             
                                       </ul>
@@ -299,12 +299,12 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php"
                                         <ul class="lista-normal">
                                                
                                                 
-                                                <li class="li_sidebar"><a href="https://www.calendarioslaborales.com/calendario-laboral-salamanca-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Salamanca</a></li>
-                                                <li class="li_sidebar"><a href="https://www.calendarioslaborales.com/calendario-laboral-san-sebastian-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >San Sebastian</a></li>
-                                                <li class="li_sidebar"><a href="https://www.calendarioslaborales.com/calendario-laboral-santander-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Santander</a></li>
-                                                <li class="li_sidebar"><a href="https://www.calendarioslaborales.com/calendario-laboral-segovia-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Segovia</a></li>
-                                                <li class="li_sidebar"><a href="https://www.calendarioslaborales.com/calendario-laboral-sevilla-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Sevilla</a></li>
-                                                <li class="li_sidebar"><a href="https://www.calendarioslaborales.com/calendario-laboral-soria-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Soria</a></li>
+                                                <li class="li_barra_lateral"><a href="https://www.calendarioslaborales.com/calendario-laboral-salamanca-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Salamanca</a></li>
+                                                <li class="li_barra_lateral"><a href="https://www.calendarioslaborales.com/calendario-laboral-san-sebastian-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >San Sebastian</a></li>
+                                                <li class="li_barra_lateral"><a href="https://www.calendarioslaborales.com/calendario-laboral-santander-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Santander</a></li>
+                                                <li class="li_barra_lateral"><a href="https://www.calendarioslaborales.com/calendario-laboral-segovia-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Segovia</a></li>
+                                                <li class="li_barra_lateral"><a href="https://www.calendarioslaborales.com/calendario-laboral-sevilla-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Sevilla</a></li>
+                                                <li class="li_barra_lateral"><a href="https://www.calendarioslaborales.com/calendario-laboral-soria-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Soria</a></li>
 
                                 
                                        </ul>
@@ -317,10 +317,10 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php"
                                         <ul class="lista-normal">
                                                
                                                 
-                                                <li class="li_sidebar"><a href="https://www.calendarioslaborales.com/calendario-laboral-tarragona-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Tarragona</a></li>
-                                                <li class="li_sidebar"><a href="https://www.calendarioslaborales.com/calendario-laboral-tenerife-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Tenerife</a></li>
-                                                <li class="li_sidebar"><a href="https://www.calendarioslaborales.com/calendario-laboral-teruel-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Teruel</a></li>
-                                                <li class="li_sidebar"><a href="https://www.calendarioslaborales.com/calendario-laboral-toledo-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Toledo</a></li>
+                                                <li class="li_barra_lateral"><a href="https://www.calendarioslaborales.com/calendario-laboral-tarragona-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Tarragona</a></li>
+                                                <li class="li_barra_lateral"><a href="https://www.calendarioslaborales.com/calendario-laboral-tenerife-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Tenerife</a></li>
+                                                <li class="li_barra_lateral"><a href="https://www.calendarioslaborales.com/calendario-laboral-teruel-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Teruel</a></li>
+                                                <li class="li_barra_lateral"><a href="https://www.calendarioslaborales.com/calendario-laboral-toledo-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Toledo</a></li>
                                                 
 
                                                 
@@ -334,8 +334,8 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php"
                                         <ul class="lista-normal">
                                                
                                                                 
-                                                <li class="li_sidebar"><a href="https://www.calendarioslaborales.com/calendario-laboral-zamora-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Zamora</a></li>
-                                                <li class="li_sidebar"><a href="https://www.calendarioslaborales.com/calendario-laboral-zaragoza-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Zaragoza</a></li>
+                                                <li class="li_barra_lateral"><a href="https://www.calendarioslaborales.com/calendario-laboral-zamora-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Zamora</a></li>
+                                                <li class="li_barra_lateral"><a href="https://www.calendarioslaborales.com/calendario-laboral-zaragoza-2022-PDF.pdf" class="enlace_sidebar" target="_blank" >Zaragoza</a></li>
 
                                                 
                                         </ul>

@@ -73,7 +73,7 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
     </header>
 
       
-                <!––En la parte izquierda seleccionamos las empresas de una lista en HTML ––>
+                <!--En la parte izquierda seleccionamos las empresas de una lista en HTML -->
                 <nav class="navega<?php echo $sufijo_estilo; ?>"><p style="font-size:large;">Empresas del sector</p>
 
                     <?php include $incRoot."POO/VISTA/VI_INCLUDES/nav.php" ?>
@@ -82,7 +82,7 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
 
             <aside class="barra<?php echo $sufijo_estilo; ?>"><p style="font-size:large;">Contactos</p>
 
-            <!––En la parte derecha ponemos los contactos de la web con una lista en HTML ––>
+            <!--En la parte derecha ponemos los contactos de la web con una lista en HTML -->
             
                       <?php include $incRoot."POO/VISTA/VI_INCLUDES/aside.php" ?>
 
@@ -90,10 +90,10 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
 
 
     <article class="skynet<?php echo $sufijo_estilo; ?>">
-    <!––Migas de pan (breadcrumbs) ––>
+    <!--Migas de pan (breadcrumbs) -->
     <a href="<?php echo $dirRoot; ?>POO/VISTA/index.php?tipologin=admin">Indice</a> > <a href="<?php echo $dirRoot; ?>POO/VISTA/VI_ADMINISTRADORES/vistaAdminMenu.php">Menú</a>
     
-    <!––Formulario para realizar todas las operaciones de base de datos––>
+    <!--Formulario para realizar todas las operaciones de base de datos-->
 <form name="formTabla" id="formTabla" action="<?php echo $dirRoot; ?>POO/VISTA/VI_ADMINISTRADORES/vistaAdmin.php" method="post">
   
   <table class="estilo_tabla" width="90%" align="center" >
@@ -130,7 +130,7 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
             $color_fila = $num%2 == 1 ? 'estilo_fila1_tabla':'estilo_fila2_tabla';
             $num++;
       ?>
-		  <!––Mostramos los registros de base de datos ––>
+		  <!--Mostramos los registros de base de datos -->
         <tr class="<?php echo $color_fila;?>" >
           <td><?php echo $fila->getId() ?></td>
           <td><?php echo $fila->getNif() ?></td>
@@ -142,27 +142,27 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
           <td><?php echo $fila->getEmail() ?></td>
           <td><?php echo $fila->getDireccion() ?></td>
           <td><?php echo $empresa->getNombre() ?></td>
-          <!––Botones con las operaciones a seleccionar en javascript de modificar o borrar un registro existente ––>
-          <td class="bot"><input class="btn btn-primary btn-sm" onclick="modReg('<?php echo $fila->getId() ?>');" type='submit' name='up' id='up' value='Actualizar'></td>
+          <!--Botones con las operaciones a seleccionar en javascript de modificar o borrar un registro existente -->
+          <td class="celda-campo"><input class="btn btn-primary btn-sm" onclick="modReg('<?php echo $fila->getId() ?>');" type='submit' name='up' id='up' value='Actualizar'></td>
           <td class='bot'><input class="btn btn-danger btn-sm" onclick="delReg('<?php echo $fila->getId() ?>');" type='submit' name='del' id='del' value='Borrar'></td>
         </tr>   
     <?php
           }
       }
     ?>
-    <!––Mostramos los campos para insertar o modificar registros ––>
+    <!--Mostramos los campos para insertar o modificar registros -->
     <tr class="estilo_bottom_tabla" >
-	    <td class="bot ultima_fila"><?php echo $mostrarDatos == 'S' ? $afil_modi->getId():''; ?></td>
-      <td class="bot ultima_fila"><input value="<?php echo $mostrarDatos == 'S' ? $afil_modi->getNif():''; ?>" type='text' name='nif' size='10' class='centrado'></td>
-      <td class="bot ultima_fila"><input value="<?php echo $mostrarDatos == 'S' ? $afil_modi->getPassword():''; ?>" type='text' name='password' size='10' class='centrado'></td>
-      <td class="bot ultima_fila"><input value="<?php echo $mostrarDatos == 'S' ? $afil_modi->getNombre():''; ?>" type='text' name='nombre' size='10' class='centrado'></td>
-      <td class="bot ultima_fila"><input value="<?php echo $mostrarDatos == 'S' ? $afil_modi->getApellido1():''; ?>" type='text' name='ape1' size='10' class='centrado'></td>
-      <td class="bot ultima_fila"><input value="<?php echo $mostrarDatos == 'S' ? $afil_modi->getApellido2():''; ?>" type='text' name='ape2' size='10' class='centrado'></td>
-      <td class="bot ultima_fila"><input value="<?php echo $mostrarDatos == 'S' ? $afil_modi->getTelefono():''; ?>" type='text' name='telefono' size='10' class='centrado'></td>
-      <td class="bot ultima_fila"><input value="<?php echo $mostrarDatos == 'S' ? $afil_modi->getEmail():''; ?>" type='text' name='email' size='10' class='centrado'></td>
-      <td class="bot ultima_fila"><input value="<?php echo $mostrarDatos == 'S' ? $afil_modi->getDireccion():''; ?>" type='text' name='direccion' size='10' class='centrado'></td>
+	    <td class="celda-campo ultima_fila"><?php echo $mostrarDatos == 'S' ? $afil_modi->getId():''; ?></td>
+      <td class="celda-campo ultima_fila"><input value="<?php echo $mostrarDatos == 'S' ? $afil_modi->getNif():''; ?>" type='text' name='nif' size='10' class='centrado'></td>
+      <td class="celda-campo ultima_fila"><input value="<?php echo $mostrarDatos == 'S' ? $afil_modi->getPassword():''; ?>" type='text' name='password' size='10' class='centrado'></td>
+      <td class="celda-campo ultima_fila"><input value="<?php echo $mostrarDatos == 'S' ? $afil_modi->getNombre():''; ?>" type='text' name='nombre' size='10' class='centrado'></td>
+      <td class="celda-campo ultima_fila"><input value="<?php echo $mostrarDatos == 'S' ? $afil_modi->getApellido1():''; ?>" type='text' name='ape1' size='10' class='centrado'></td>
+      <td class="celda-campo ultima_fila"><input value="<?php echo $mostrarDatos == 'S' ? $afil_modi->getApellido2():''; ?>" type='text' name='ape2' size='10' class='centrado'></td>
+      <td class="celda-campo ultima_fila"><input value="<?php echo $mostrarDatos == 'S' ? $afil_modi->getTelefono():''; ?>" type='text' name='telefono' size='10' class='centrado'></td>
+      <td class="celda-campo ultima_fila"><input value="<?php echo $mostrarDatos == 'S' ? $afil_modi->getEmail():''; ?>" type='text' name='email' size='10' class='centrado'></td>
+      <td class="celda-campo ultima_fila"><input value="<?php echo $mostrarDatos == 'S' ? $afil_modi->getDireccion():''; ?>" type='text' name='direccion' size='10' class='centrado'></td>
       <td>
-      <!––En este select recogemos las empresa de base de datos para selecionarlas si insertamos o modificamos ––>
+      <!--En este select recogemos las empresa de base de datos para selecionarlas si insertamos o modificamos -->
         <select name='empresa' class='centrado'>
           <option value="">Seleccionar</option>
           <?php
@@ -188,13 +188,13 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
         <?php
           if ($swmodificar == 'S') {
         ?>
-         <!––Botones con las operaciones para confirmar la modificacion o crear un registro nuevo en javascript ––>
+         <!--Botones con las operaciones para confirmar la modificacion o crear un registro nuevo en javascript -->
           <input class="btn btn-success btn-sm" type='submit' onclick="applyModReg();" name='cr' id='cr' value='Modificar'>
           <input class="btn btn-warning btn-sm" type='submit' onclick="nuevoReg();" name='cr' id='cr' value='Nuevo'>
         <?php
           } else {
         ?>
-         <!––Botones con las operación de crear un nuevo registo en javascript ––>
+         <!--Botones con las operación de crear un nuevo registo en javascript -->
           <input class="btn btn-success btn-sm" type='submit' onclick="altaReg();" name='cr' id='cr' value='Insertar'>
         <?php
           }
@@ -203,7 +203,7 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
     </tr>    
   </table>
 
-  <!––Camos ocultos (HIDDEN) para mandar las acciones a realizar ––>
+  <!--Camos ocultos (HIDDEN) para mandar las acciones a realizar -->
   <input value="<?php echo $swmodificar != 'S' ? '' : $afil_modi->getId(); ?>" name="id" id="id" type="hidden" />
   <input value="" name="swinsertar" id="swinsertar" type="hidden" />
   <input value="" name="swmodificar" id="swmodificar" type="hidden" />
