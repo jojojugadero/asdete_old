@@ -18,6 +18,7 @@ body {
 
 /*Creamos unos estilos para todos los hijos del body*/
 
+/*-----------ESTILOS BASE---------------------*/
 .cuerpo_contenedor > * {
   box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
   border-radius: 4px;
@@ -49,6 +50,7 @@ body {
   grid-area: pie;
   background-color: #8c96a0;
 }
+/*-----------ESTILOS AFILIADO---------------------*/
 
 .cuerpo_contenedor_afil > * {
   box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
@@ -81,6 +83,7 @@ body {
   grid-area: pie_afil;
   background-color: #9ccc65;
 }
+/*-----------ESTILOS ADMINISTRADOR---------------------*/
 
 .cuerpo_contenedor_admin > * {
   box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
@@ -113,6 +116,7 @@ body {
   grid-area: pie_admin;
   background-color: #29b6f6;
 }
+/*-----------ESTILOS SUPERADMIN---------------------*/
 
 .cuerpo_contenedor_sadmin > * {
   box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
@@ -276,7 +280,7 @@ body {
   }
 }
 
-.divbar {
+/*.divbar {
   margin-left: 15px;
   text-align: left;
 }
@@ -286,9 +290,9 @@ body {
   margin-right: auto;
   margin-top: 100px;
   margin-bottom: auto;
-}
-
-.botpers {
+}*/
+/* Botones administradores*/
+.botadmin {
   display: inline-block;
   padding: 15px 25px;
   font-size: 24px;
@@ -302,6 +306,18 @@ body {
   border-radius: 15px;
   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.4), 0 9px 26px 0 rgba(0, 0, 0, 0.38);
 }
+/* Botones administradores cuando esta el ratón encima*/
+.botadmin:hover {
+  background-color: #151616;
+}
+
+/* Botones administradores cuando pulsas*/
+.botadmin:active {
+  background-color: #fc0a0a;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+/* Botones afiliados*/
 .botafil {
   display: inline-block;
   padding: 15px 25px;
@@ -316,20 +332,12 @@ body {
   border-radius: 15px;
   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.4), 0 9px 26px 0 rgba(0, 0, 0, 0.38);
 }
-
-.botpers:hover {
-  background-color: #151616;
-}
-
-.botpers:active {
-  background-color: #fc0a0a;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
-}
+/* Botones afiliados cuando esta el ratón encima*/
 .botafil:hover {
   background-color: #101110;
 }
 
+/* Botones afiliados cuando pulsas*/
 .botafil:active {
   background-color: #fc0a0a;
   box-shadow: 0 5px #666;

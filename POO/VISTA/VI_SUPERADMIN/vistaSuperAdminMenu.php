@@ -72,7 +72,7 @@ if(isset($_SESSION['user_session']) == 'superadmin_session') {
             <button onclick="document.location.href='vistaSuperAdminAdministradores.php'" class="botafil" style="margin:5px;width:320px;padding:20px;font-size:28px;"><span>ADMINISTRADORES</span></button>
          </span>
          <span class="boton-margen boton-afiliado1">
-            <button onclick="document.location.href='vistaSuperAdminEmpresas.php'" class="botpers" style="margin:5px;width:210px;padding:20px;font-size:28px;"><span>EMPRESAS</span></button>
+            <button onclick="document.location.href='vistaSuperAdminEmpresas.php'" class="botadmin" style="margin:5px;width:210px;padding:20px;font-size:28px;"><span>EMPRESAS</span></button>
          </span>
       </div>
 
