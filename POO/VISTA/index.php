@@ -65,11 +65,11 @@ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
     <article class="skynet<?php echo $sufijo_estilo; ?>">
 
             
-            <div class="container login-container">
+            <div class="container login-contenedor">
                 <div class="row">
-                    <div class="col-md-6 login-center">
+                    <div class="login-center">
                     <?php if($tipologin == 'afil'){?>
-                        <div class="login-form-1">
+                        <div class="login-formulario1">
                             <h3>Login Afiliados</h3>
                             <!––Formulario que enviará datos para comprobar que el usuario y password estan correctos en base de datos ––>
                             <form action="<?php echo $dirRoot; ?>POO/CONTROLADOR/CO_AFILIADOS/logCompruebaAfiliados.php" method="POST" >
@@ -88,7 +88,7 @@ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
                             </form>
                         </div>
                     <?php } else if($tipologin == 'admin') {?>
-                        <div class="login-form-2">
+                        <div class="login-formulario2">
                             <h3>Login Administradores</h3>
                             <!––Formulario que enviará datos para comprobar que el usuario y password estan correctos en base de datos ––>
                             <form action="<?php echo $dirRoot; ?>POO/CONTROLADOR/CO_ADMINISTRADORES/logCompruebaAdmin.php" method="POST" >
@@ -108,7 +108,7 @@ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
                             </form>
                         </div>
                     <?php } else if($tipologin == 'sadmin') {?>
-                        <div class="login-form-3">
+                        <div class="login-formulario3">
                             <h3>Login SuperAdministradores</h3>
                             <!––Formulario que enviará datos para comprobar que el usuario y password estan correctos en base de datos ––>
                             <form action="<?php echo $dirRoot; ?>POO/CONTROLADOR/CO_SUPERADMIN/logCompruebaSuperAdmin.php" method="POST" >

@@ -58,10 +58,10 @@ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
     <article class="skynet<?php echo $sufijo_estilo; ?>">
 
             
-            <div class="container login-container">
+            <div class="container login-contenedor">
                 <div class="row">
                     <div class="col-md-6 login-center">
-                        <div class="login-form-1">
+                        <div class="login-formulario1">
                             <h3>Clave o usuario no validos</h3>
                             <!––Formulario que enviará datos para comprobar que el usuario y password estan correctos en base de datos ––>
                             <div class="form-group">

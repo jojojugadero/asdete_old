@@ -336,7 +336,7 @@ body {
   transform: translateY(4px);
 }
 
-.boton-padding {
+.boton-margen {
   padding: 8px 16px !important;
 }
 .boton-afiliado1 {
@@ -479,41 +479,41 @@ body {
 .login-center {
   margin: auto;
 }
-.login-container {
+.login-contenedor {
   margin-top: 5%;
   margin-bottom: 5%;
 }
-.login-form-1 {
+.login-formulario1 {
   border-radius: 25px;
   padding: 5%;
   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
   background-color: #fff;
 }
-.login-form-1 h3 {
+.login-formulario1 h3 {
   text-align: center;
   color: #333;
 }
-.login-form-3 {
+.login-formulario3 {
   border-radius: 25px;
   padding: 5%;
   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
   background-color: #fff;
 }
-.login-form-3 h3 {
+.login-formulario3 h3 {
   text-align: center;
   color: #333;
 }
-.login-form-2 {
+.login-formulario2 {
   border-radius: 25px;
   padding: 5%;
   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
   background-color: #fff;
 }
-.login-form-2 h3 {
+.login-formulario2 h3 {
   text-align: center;
   color: #333;
 }
-.login-container form {
+.login-contenedor form {
   /*padding: 10%;*/
 }
 .btnSubmit {
@@ -523,32 +523,32 @@ body {
   border: none;
   cursor: pointer;
 }
-.login-form-1 .btnSubmit {
+.login-formulario1 .btnSubmit {
   font-weight: 600;
   color: #fff;
   background-color: #27ae60;
 }
-.login-form-2 .btnSubmit {
+.login-formulario2 .btnSubmit {
   font-weight: 600;
   color: #fff;
   background-color: #5499c7;
 }
-.login-form-3 .btnSubmit {
+.login-formulario3 .btnSubmit {
   font-weight: 600;
   color: #fff;
   background-color: #dc7633;
 }
-.login-form-2 .ForgetPwd {
+.login-formulario2 .ForgetPwd {
   color: #5499c7;
   font-weight: 600;
   text-decoration: none;
 }
-.login-form-1 .ForgetPwd {
+.login-formulario1 .ForgetPwd {
   color: #27ae60;
   font-weight: 600;
   text-decoration: none;
 }
-.login-form-3 .ForgetPwd {
+.login-formulario3 .ForgetPwd {
   color: #dc7633;
   font-weight: 600;
   text-decoration: none;
@@ -589,11 +589,11 @@ body {
   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.4), 0 9px 26px 0 rgba(0, 0, 0, 0.38);
   background-color: #66bb6a;
 }
-.btn-logout {
+.boton-desconectar {
   padding: 0.15rem 0.3rem !important;
   line-height: 0.5 !important;
 }
-.btn-logout-sadmin {
+.boton-desconectar-sadmin {
   padding: 0.15rem 0.3rem !important;
   line-height: 0.5 !important;
   background-color: #f57c00 !important;
@@ -601,7 +601,7 @@ body {
 }
 
 @media (max-width: 1255px) {
-  .user-login-block {
+  .bloque-usuario {
     background-color: #abc;
     border-radius: 25px;
     font-size: x-small;
@@ -612,7 +612,7 @@ body {
   }
 }
 @media (min-width: 1256px) {
-  .user-login-block {
+  .bloque-usuario {
     background-color: #abc;
     border-radius: 25px;
     font-size: small;
@@ -622,7 +622,7 @@ body {
     display: block;
   }
 }
-.user-login-cell {
+.celda-login-usuario {
   padding: 2px;
 }
 .bg-personas {

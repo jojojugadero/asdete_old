@@ -68,10 +68,10 @@ if(isset($_SESSION['user_session']) == 'superadmin_session') {
    <!––Aqui están los botones de las secciones de afiliados y administradores con acción en javascript para ir a la página correspondiente ––>
       <div style="margin-top:200px;">
 
-         <span class="boton-padding boton-afiliado1">
+         <span class="boton-margen boton-afiliado1">
             <button onclick="document.location.href='vistaAdminAgenda.php'" class="botafil" style="margin:5px;width:320px;padding:20px;font-size:28px;"><span>AGENDA</span></button>
          </span>
-         <span class="boton-padding boton-afiliado1">
+         <span class="boton-margen boton-afiliado1">
             <button onclick="document.location.href='vistaAdmin.php'" class="botpers" style="margin:5px;width:210px;padding:20px;font-size:28px;"><span>AFILIADOS</span></button>
          </span>
       </div>
