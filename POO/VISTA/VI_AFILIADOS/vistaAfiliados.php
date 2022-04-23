@@ -72,6 +72,7 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
   <div class="afil-contenedor">
     <div class="row">
         <div class="afil-centrado">
+    <!--Div realizado con bootstrap -->
 
             <div class="col-md-5 afil-form-1">
                 <h3><?php echo "Hola ".$afiliado->getNombre() ?></h3>
