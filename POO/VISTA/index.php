@@ -47,8 +47,8 @@ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
     
     </header>
 
-    <!––En la parte izquierda seleccionamos las empresas de una lista en HTML ––>
-    <nav class="navega<?php echo $sufijo_estilo; ?>"><p style="font-size:large;"><!––Empresas del sector--></p>
+    <!--En la parte izquierda seleccionamos las empresas de una lista en HTML -->
+    <nav class="navega<?php echo $sufijo_estilo; ?>"><p style="font-size:large;"><!--Empresas del sector--></p>
 
         <?php //include $incRoot."POO/VISTA/VI_INCLUDES/nav.php" ?>
 
@@ -56,7 +56,7 @@ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
 
         <aside class="barra<?php echo $sufijo_estilo; ?>"><p style="font-size:large;">Contactos</p>
 
-            <!––En la parte derecha ponemos los contactos de la web con una lista en HTML ––>
+            <!--En la parte derecha ponemos los contactos de la web con una lista en HTML -->
             <?php include $incRoot."POO/VISTA/VI_INCLUDES/aside.php" ?>
 
         </aside>
@@ -65,13 +65,13 @@ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
     <article class="skynet<?php echo $sufijo_estilo; ?>">
 
             
-            <div class="container login-container">
+            <div class="container login-contenedor">
                 <div class="row">
-                    <div class="col-md-6 login-center">
+                    <div class="login-centrado">
                     <?php if($tipologin == 'afil'){?>
-                        <div class="login-form-1">
+                        <div class="login-formulario1">
                             <h3>Login Afiliados</h3>
-                            <!––Formulario que enviará datos para comprobar que el usuario y password estan correctos en base de datos ––>
+                            <!--Formulario que enviará datos para comprobar que el usuario y password estan correctos en base de datos -->
                             <form action="<?php echo $dirRoot; ?>POO/CONTROLADOR/CO_AFILIADOS/logCompruebaAfiliados.php" method="POST" >
                                 <div class="form-group">
                                     <input name="nombre" type="text" class="form-control" placeholder="Introduce nombre de afiliado *" value="" />
@@ -82,15 +82,15 @@ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
                                 <div class="form-group">
                                     <input type="submit" class="btnSubmit" value="Login" />
                                 </div>
-                                <div class="form-group">
+                                <!-- <div class="form-group">
                                     <a href="#" class="ForgetPwd">¿Ha olvidado su contraseña?</a>
-                                </div>
+                                </div>  -->
                             </form>
                         </div>
                     <?php } else if($tipologin == 'admin') {?>
-                        <div class="login-form-2">
+                        <div class="login-formulario2">
                             <h3>Login Administradores</h3>
-                            <!––Formulario que enviará datos para comprobar que el usuario y password estan correctos en base de datos ––>
+                            <!--Formulario que enviará datos para comprobar que el usuario y password estan correctos en base de datos -->
                             <form action="<?php echo $dirRoot; ?>POO/CONTROLADOR/CO_ADMINISTRADORES/logCompruebaAdmin.php" method="POST" >
                                 <div class="form-group">
                                     <input name="nombre" type="text" class="form-control" placeholder="Introduce nombre de administrador *" value="" />
@@ -101,16 +101,16 @@ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
                                 <div class="form-group">
                                     <input type="submit" class="btnSubmit" value="Login" />
                                 </div>
-                                <div class="form-group">
+                                <!--<div class="form-group">
 
                                 <a href="#" class="ForgetPwd">¿Ha olvidado su contraseña?</a>
-                                </div>
+                                </div>-->
                             </form>
                         </div>
                     <?php } else if($tipologin == 'sadmin') {?>
-                        <div class="login-form-3">
+                        <div class="login-formulario3">
                             <h3>Login SuperAdministradores</h3>
-                            <!––Formulario que enviará datos para comprobar que el usuario y password estan correctos en base de datos ––>
+                            <!--Formulario que enviará datos para comprobar que el usuario y password estan correctos en base de datos -->
                             <form action="<?php echo $dirRoot; ?>POO/CONTROLADOR/CO_SUPERADMIN/logCompruebaSuperAdmin.php" method="POST" >
                                 <div class="form-group">
                                     <input name="nombre" type="text" class="form-control" placeholder="Introduce nombre de superadministrador *" value="" />
@@ -121,14 +121,14 @@ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
                                 <div class="form-group">
                                     <input type="submit" class="btnSubmit" value="Login" />
                                 </div>
-                                <div class="form-group">
+                                <!--<div class="form-group">
 
                                 <a href="#" class="ForgetPwd">¿Ha olvidado su contraseña?</a>
-                                </div>
+                                </div>-->
                             </form>
                         </div>
                     <?php } ?>
-                        <div class="form-margin-top">
+                        <div class="formularioMargenSuperior">
                         <?php if($tipologin == 'afil'){?>
                             ¿No eres afiliado? 
                             <a href="index.php?tipologin=admin">Administrador</a>

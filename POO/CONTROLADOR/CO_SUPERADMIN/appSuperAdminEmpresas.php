@@ -43,19 +43,22 @@ if(trim($msgValidacion) != "") {
 if(trim($msgValidacion) == "" && $swmodificarapply == 'S') {
   $swmodificar = "N";
 }
+//Comprueba si es una modificación o no pasa la validación para saber si debe o no mostrar los datos por pantalla
+$mostrarDatos = $swmodificar == 'S' || trim($msgValidacion) != "" ? 'S':'N';
 //Si pasa la validación OK comprueba si es un alta/modificación/eliminación para realizar dicha operación
 if(trim($msgValidacion) == "") {
   if($swinsertar == 'S') {
     $dat->altaEmpresa($empr->getDatos());
+    $msgValidacion = "Se ha dado de alta la empresa correctamente.";
   } else if($swmodificarapply == 'S') {
     $dat->modEmpresa($empr->getDatos());
+    $msgValidacion = "Se ha modificado la empresa correctamente.";
   } else if($sweliminar == 'S') {
     $dat->eliminarEmpresa($empr->getId());
+    $msgValidacion = "Se ha eliminado la empresa correctamente.";
   }
 }
 
-//Comprueba si es una modificación o no pasa la validación para saber si debe o no mostrar los datos por pantalla
-$mostrarDatos = $swmodificar == 'S' || trim($msgValidacion) != "" ? 'S':'N';
 
   //Recogemos todos los afiliados y empresas para mostarlos por pantalla
   $afiliados = Afiliados::getAfiliados();

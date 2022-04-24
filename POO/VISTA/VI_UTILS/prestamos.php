@@ -27,6 +27,14 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script type="text/javascript">
+      function enviarSol() {
+        var c = confirm("¿Estas seguro de querer enviar la solicitud de prestamo?");
+        if(!c) {
+          return false;
+        }
+        document.getElementById('swinsertar').value = 'S';
+        return true;
+      }
         $(document).ready(function () {
             $(".loan-input").on("keyup", null, function () {
                 var $input = $(this),
@@ -43,20 +51,20 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
 
 <body class="cuerpo_contenedor<?php echo $sufijo_estilo; ?>">
 
-    <!––Incluimos la cabecera ––>
+    <!--Incluimos la cabecera -->
     <header class="cabecera<?php echo $sufijo_estilo; ?>">
         <?php include $incRoot."POO/VISTA/VI_INCLUDES/cabecera.php" ?>
     </header>
 
 
-    <!––En la parte izquierda seleccionamos las empresas de una lista en HTML ––>
+    <!--En la parte izquierda seleccionamos las empresas de una lista en HTML -->
        <nav class="navega<?php echo $sufijo_estilo; ?>"><p style="font-size:large;">Empresas del sector</p>
 
                      <?php include $incRoot."POO/VISTA/VI_INCLUDES/nav.php" ?>
 </nav>
         <aside class="barra<?php echo $sufijo_estilo; ?>"><p style="font-size:large;">Contactos</p>
 
-            <!––En la parte derecha ponemos los contactos de la web con una lista en HTML ––>
+            <!--En la parte derecha ponemos los contactos de la web con una lista en HTML -->
             <?php include $incRoot."POO/VISTA/VI_INCLUDES/aside.php" ?>
 
         </aside>
@@ -79,10 +87,10 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
                         <td class="primera_fila">Enviar solicitud</td>
                     </tr> 
 
-                    <!––Mostramos los campos para insertar o modificar registros ––>
+                    <!--Mostramos los campos para insertar o modificar registros -->
                     <tr class="estilo_bottom_tabla" >
-                        <td  class="bot ultima_fila">
-                        <!––En este select recogemos las empresa de base de datos para selecionarlas si insertamos o modificamos ––>
+                        <td  class="celda-campo ultima_fila">
+                        <!--En este select recogemos las empresa de base de datos para selecionarlas si insertamos o modificamos -->
                         
                         <?php if ($id_afil != '') {?>
                             <input value="<?php echo $afiliado->getNif() ?> - <?php echo $afiliado->getNombre() ?>" type='text' disabled="disabled">
@@ -110,14 +118,14 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
                             </select>
                         <?php } ?>
                         </td>
-                        <!––Atributos formulario motivo prestamos ––>
-                        <td class="bot ultima_fila"><input value="" type='text' name='motivo' size='10' class='centrado'></td>
-                        <!––Atributos formulario cantidad prestamos ––>
-                        <td class="bot ultima_fila"><input value="" type="number" min="0.00" max="5000.00" step="5.00" name='cantidad' size='10' class='centrado'></td>
+                        <!--Atributos formulario motivo prestamos -->
+                        <td class="celda-campo ultima_fila"><input value="" type='text' name='motivo' size='10' class='centrado'></td>
+                        <!--Atributos formulario cantidad prestamos -->
+                        <td class="celda-campo ultima_fila"><input value="" type="number" min="0.00" max="5000.00" step="5.00" name='cantidad' size='10' class='centrado'></td>
                             
                         <td class='bot' colspan="2">
-                        <!––Botones con las operación de crear un nuevo registo en javascript ––>
-                            <input class="btn btn-success btn-sm" type='submit' onclick="document.getElementById('swinsertar').value = 'S'" name='cr' id='cr' value='Enviar solicitud'>
+                        <!--Botones con las operación de crear un nuevo registo en javascript -->
+                            <input class="btn btn-success btn-sm" type='submit' onclick="enviarSol();" name='cr' id='cr' value='Enviar solicitud'>
                         </td>
                     </tr>    
                     </table>

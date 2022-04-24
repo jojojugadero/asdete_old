@@ -18,6 +18,7 @@ body {
 
 /*Creamos unos estilos para todos los hijos del body*/
 
+/*-----------ESTILOS BASE---------------------*/
 .cuerpo_contenedor > * {
   box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
   border-radius: 4px;
@@ -49,6 +50,7 @@ body {
   grid-area: pie;
   background-color: #8c96a0;
 }
+/*-----------ESTILOS AFILIADO---------------------*/
 
 .cuerpo_contenedor_afil > * {
   box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
@@ -81,6 +83,7 @@ body {
   grid-area: pie_afil;
   background-color: #9ccc65;
 }
+/*-----------ESTILOS ADMINISTRADOR---------------------*/
 
 .cuerpo_contenedor_admin > * {
   box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
@@ -113,6 +116,7 @@ body {
   grid-area: pie_admin;
   background-color: #29b6f6;
 }
+/*-----------ESTILOS SUPERADMIN---------------------*/
 
 .cuerpo_contenedor_sadmin > * {
   box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
@@ -276,7 +280,7 @@ body {
   }
 }
 
-.divbar {
+/*.divbar {
   margin-left: 15px;
   text-align: left;
 }
@@ -286,9 +290,9 @@ body {
   margin-right: auto;
   margin-top: 100px;
   margin-bottom: auto;
-}
-
-.botpers {
+}*/
+/* Botones administradores*/
+.botadmin {
   display: inline-block;
   padding: 15px 25px;
   font-size: 24px;
@@ -302,6 +306,18 @@ body {
   border-radius: 15px;
   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.4), 0 9px 26px 0 rgba(0, 0, 0, 0.38);
 }
+/* Botones administradores cuando esta el ratón encima*/
+.botadmin:hover {
+  background-color: #151616;
+}
+
+/* Botones administradores cuando pulsas*/
+.botadmin:active {
+  background-color: #fc0a0a;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+/* Botones afiliados*/
 .botafil {
   display: inline-block;
   padding: 15px 25px;
@@ -316,77 +332,48 @@ body {
   border-radius: 15px;
   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.4), 0 9px 26px 0 rgba(0, 0, 0, 0.38);
 }
-
-.botpers:hover {
-  background-color: #151616;
-}
-
-.botpers:active {
-  background-color: #fc0a0a;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
-}
+/* Botones afiliados cuando esta el ratón encima*/
 .botafil:hover {
   background-color: #101110;
 }
 
+/* Botones afiliados cuando pulsas*/
 .botafil:active {
   background-color: #fc0a0a;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
-
-.boton-padding {
+/* Controla el margen de los botones en el menu de administrador y superadministrador */
+.boton-margen {
   padding: 8px 16px !important;
 }
-.boton-afiliado1 {
-  color: #000 !important;
-}
-.boton-afiliado2 {
-  color: #fff !important;
-  background-color: #000 !important;
-}
 
-.saddiv {
-  background-color: #ff2929;
-  padding: 25px;
-  width: 500px;
-  border: black solid;
-}
-
-.perdiv {
-  background-color: #87cefa;
-  padding: 25px;
-  width: 500px;
-  border: black solid;
-}
-.afidiv {
-  background-color: #90ee90;
-  padding: 25px;
-  width: 500px;
-  border: black solid;
-}
-
-.bot {
+/* Controla el margen de los botones y campos dentro de las tablas */
+.celda-campo {
   padding: 5px;
 }
 
+/* Controla el ancho de los input en la tabla */
 .ultima_fila input {
   width: 100%;
 }
+/* Controla el ancho de los select en la tabla */
 .ultima_fila select {
   width: 100%;
 }
+/* Controla el borde de la primera fila */
 .primera_fila {
   border: solid thin;
 }
 
+/* Controla el margen y fuente de la leyenda de las tablas */
 .estilo_tabla_leyenda {
   margin-left: auto;
   margin-right: auto;
   margin-top: 20px;
   font-size: medium;
 }
+/* Controla los margenes y el estilo de las tabla */
 .estilo_tabla {
   margin-left: auto;
   margin-right: auto;
@@ -396,126 +383,143 @@ body {
   box-shadow: 0px 10px 10px black;
   border: solid thin;
 }
-.estilo_cab_tabla_2 {
-  background-color: #fb8c00;
-  border: solid thin;
-}
-.estilo_subcab_tabla_2 {
-  background-color: #ffb74d;
-  border: solid thin;
-}
+/* Controla el color y bordes de la cabecera de la tabla de afiliados */
 .estilo_cab_tabla_afil {
   background-color: #9ccc65;
   border: solid thin;
 }
+/* Controla el color y bordes de la subcabecera de la tabla de afiliados */
 .estilo_subcab_tabla_afil {
   background-color: #dcedc8;
   border: solid thin;
 }
+/* Controla el color y bordes de la cabecera de la tabla de administradores */
 .estilo_cab_tabla_admin {
   background-color: #87cefa;
   border: solid thin;
 }
+/* Controla el color y bordes de la subcabecera de la tabla de administradores */
 .estilo_subcab_tabla_admin {
   background-color: #add8e6;
   border: solid thin;
 }
+/* Controla el color y bordes de la cabecera de la tabla de superadministradores */
 .estilo_cab_tabla_sadmin {
   background-color: #ffb74d;
   border: solid thin;
 }
+/* Controla el color y bordes de la subcabecera de la tabla de superadministradores */
 .estilo_subcab_tabla_sadmin {
   background-color: #ffe0b2;
   border: solid thin;
 }
+/* Controla el color y bordes de las filas pares  */
 .estilo_fila1_tabla {
   background-color: #c0c0c0;
   border: solid thin;
 }
+/* Controla el color y bordes de las filas impares  */
 .estilo_fila2_tabla {
   background-color: #f8f8ff;
   border: solid thin;
 }
+/* Controla el color, borde y margenes cuando no hay resultados   */
 .estilo_noresultados_tabla {
   background-color: #f8f8ff;
   border: solid thin;
   padding: 10px;
 }
+/* Controla el margen de las celdas de las filas de datos  */
 .estilo_fila1_tabla td {
   padding: 3px;
 }
+/* Controla el margen de las celdas de las filas de datos  */
 .estilo_fila2_tabla td {
   padding: 3px;
 }
+/* Controla el color y borde de la última fila  */
 .estilo_bottom_tabla {
   background-color: #708090;
   border: solid thin;
 }
 
+/* Controla el color y tamaño de la fuente de los enlaces de la barra de navegación lateral  */
 .enlace_sidebar {
   color: black;
   font-size: 16px;
 }
+/* Controla el color  de los enlaces de la barra de navegación lateral cuando esta el ratón encima  */
 .enlace_sidebar:hover {
   color: #059862;
 }
-.li_sidebar {
+/* Controla el margen superior de la barra de navegación lateral  */
+.li_barra_lateral {
   padding-top: 10px;
 }
-.li_nav1 {
+/* Controla la fuente y margenes de la barra de contactos lateral  */
+.li_contactos_titulo {
   font-size: 16px;
   padding-top: 10px;
   list-style-type: none;
   text-align: left;
 }
-.li_nav2 {
+/* Controla la fuente y margenes de la barra de contactos lateral  */
+.li_contactos_valores {
   font-size: 16px;
   list-style-type: none;
   text-align: left;
 }
 
-/* Bootstrap login */
-
-.login-center {
+/* Controla que la caja de login este centrada */
+.login-centrado {
   margin: auto;
 }
-.login-container {
+/* Controla margenes superior/inferior de la caja de login */
+.login-contenedor {
   margin-top: 5%;
   margin-bottom: 5%;
 }
-.login-form-1 {
+/* Controla borde, redondeo, padding, sombra y color de caja de login de afiliados  */
+.login-formulario1 {
   border-radius: 25px;
   padding: 5%;
   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
   background-color: #fff;
 }
-.login-form-1 h3 {
+/* Controla texto y color de titulo de caja de login de afiliados  */
+.login-formulario1 h3 {
   text-align: center;
   color: #333;
 }
-.login-form-3 {
+/* Controla borde, redondeo, padding, sombra y color de caja de login de superadministrador  */
+.login-formulario3 {
   border-radius: 25px;
   padding: 5%;
   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
   background-color: #fff;
 }
-.login-form-3 h3 {
+/* Controla texto y color de titulo de caja de login de superadministrador  */
+.login-formulario3 h3 {
   text-align: center;
   color: #333;
 }
-.login-form-2 {
+/* Controla borde, redondeo, padding, sombra y color de caja de login de administradores  */
+.login-formulario2 {
   border-radius: 25px;
   padding: 5%;
   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
   background-color: #fff;
 }
-.login-form-2 h3 {
+/* Controla texto y color de titulo de caja de login de administradores  */
+.login-formulario2 h3 {
   text-align: center;
   color: #333;
 }
-.login-container form {
+/*.login-contenedor form {
   /*padding: 10%;*/
-}
+/*}*/
+
+/* Controla tamaño, redondeo, padding y bordes de botones de submit */
 .btnSubmit {
   width: 50%;
   border-radius: 1rem;
@@ -523,56 +527,66 @@ body {
   border: none;
   cursor: pointer;
 }
-.login-form-1 .btnSubmit {
+/* Controla fuente, color y color de fondo de botón de submit de caja de login de afiliados  */
+.login-formulario1 .btnSubmit {
   font-weight: 600;
   color: #fff;
   background-color: #27ae60;
 }
-.login-form-2 .btnSubmit {
+/* Controla fuente, color y color de fondo de botón de submit de caja de login de administrador  */
+.login-formulario2 .btnSubmit {
   font-weight: 600;
   color: #fff;
   background-color: #5499c7;
 }
-.login-form-3 .btnSubmit {
+/* Controla fuente, color y color de fondo de botón de submit de caja de login de superadministrador  */
+.login-formulario3 .btnSubmit {
   font-weight: 600;
   color: #fff;
   background-color: #dc7633;
 }
-.login-form-2 .ForgetPwd {
+/*.login-formulario2 .ForgetPwd {
   color: #5499c7;
   font-weight: 600;
   text-decoration: none;
 }
-.login-form-1 .ForgetPwd {
+.login-formulario1 .ForgetPwd {
   color: #27ae60;
   font-weight: 600;
   text-decoration: none;
 }
-.login-form-3 .ForgetPwd {
+.login-formulario3 .ForgetPwd {
   color: #dc7633;
   font-weight: 600;
   text-decoration: none;
-}
-.form-margin-top {
+}*/
+
+/* Controla el margen superior de los links para cambiar entre los diferentes logins */
+.formularioMargenSuperior {
   margin-top: 25px;
 }
 
-.user-login {
+/* Controla la alineación de los campos en la caja de información del usuario logeado */
+.loginUsuario {
   float: right;
 }
 
-.user-logout {
+/* Controla el tamaño del botón de logout de la caja de información del usuario logeado */
+.logoutUsuario {
   width: 20px;
   height: 20px;
 }
-.afil-center {
-  margin: auto;
-  width: 90%;
-}
-.afil-container {
+/* Controla el margen superior y ancho del contenedor de las cajas de la vista afiliados  */
+.afil-contenedor {
   margin-top: 22%;
   width: 100%;
 }
+/* Controla el centrado y ancho de las cajas de la vista afiliados */
+.afil-centrado {
+  margin: auto;
+  width: 90%;
+}
+/* Controla el margen, redondeado, padding, sombra y color de la caja de la izquierda de la vista afiliados */
 .afil-form-1 {
   float: left;
   margin: 10px;
@@ -581,6 +595,7 @@ body {
   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.4), 0 9px 26px 0 rgba(0, 0, 0, 0.38);
   background-color: #66bb6a;
 }
+/* Controla el margen, redondeado, padding, sombra y color de la caja de la derecha de la vista afiliados */
 .afil-form-2 {
   margin-top: 50px;
   float: right;
@@ -589,19 +604,22 @@ body {
   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.4), 0 9px 26px 0 rgba(0, 0, 0, 0.38);
   background-color: #66bb6a;
 }
-.btn-logout {
+/* Controla el padding y altura del botón de logout */
+.boton-desconectar {
   padding: 0.15rem 0.3rem !important;
   line-height: 0.5 !important;
 }
-.btn-logout-sadmin {
+/* Controla el padding, altura y color del botón de logout de superadministrador */
+.boton-desconectar-sadmin {
   padding: 0.15rem 0.3rem !important;
   line-height: 0.5 !important;
   background-color: #f57c00 !important;
   border-color: #f57c00 !important;
 }
 
+/* Controla el color, redondeo, tamaño de fuente, borde, padding, sombra de la caja de información del usuario */
 @media (max-width: 1255px) {
-  .user-login-block {
+  .bloque-usuario {
     background-color: #abc;
     border-radius: 25px;
     font-size: x-small;
@@ -612,7 +630,7 @@ body {
   }
 }
 @media (min-width: 1256px) {
-  .user-login-block {
+  .bloque-usuario {
     background-color: #abc;
     border-radius: 25px;
     font-size: small;
@@ -622,9 +640,11 @@ body {
     display: block;
   }
 }
-.user-login-cell {
+/* Controla el padding de las celdas de la tabla de la caja de información del usuario */
+.celda-login-usuario {
   padding: 2px;
 }
+/* Controla el fondo la pantalla de vista de afiliados  */
 .bg-personas {
   /*100% 50% no-repeat top center*/
   background-image: url("../IMAGENES/personas.jpg");
@@ -632,25 +652,29 @@ body {
   background-attachment: fixed;
   background-size: 100% 70%;
 }
+/* Controla el color, padding y redondeo del link de volver al indice de la vista afiliados  */
 .link-afiliados {
   background-color: burlywood;
   border-radius: 25px;
   padding: 5px;
   float: right;
 }
-/*Carrusel calendarios*/
+/************* ESTILOS CARRUSEL CALENDARIOS ***********/
 
+/* Controla el ancho, margen superior y alineado al centro del calendario  */
 .tabs {
   width: 87%;
   margin: 50px auto;
 }
 
+/* Controla el borde, color, color de fondo de la caja del calendario  */
 nav > .nav.nav-tabs {
   border: none;
   color: #fff;
   background: #272e38;
   border-radius: 0;
 }
+/* Controla el borde, padding, color, color de fondo de los links de la caja del calendario */
 nav > div a.nav-item.nav-link,
 nav > div a.nav-item.nav-link.active {
   border: none;
@@ -660,6 +684,7 @@ nav > div a.nav-item.nav-link.active {
   border-radius: 0;
 }
 
+/* Controla el borde, padding, color, color de fondo de los links de la caja del calendario despues de pulsarse */
 nav > div a.nav-item.nav-link.active:after {
   content: "";
   position: relative;
@@ -668,6 +693,7 @@ nav > div a.nav-item.nav-link.active:after {
   border: 15px solid transparent;
   border-top-color: #66bb6a;
 }
+/* Controla el borde, padding, color de fondo del contenedor de la caja del calendario  */
 .tab-content {
   background: #fdfdfd;
   line-height: 25px;
@@ -677,6 +703,7 @@ nav > div a.nav-item.nav-link.active:after {
   padding: 30px 25px;
 }
 
+/* Controla el borde, padding, color, color de fondo de los links de la caja del calendario cuando esta el ratón encima */
 nav > div a.nav-item.nav-link:hover,
 nav > div a.nav-item.nav-link:focus {
   border: none;
@@ -686,38 +713,47 @@ nav > div a.nav-item.nav-link:focus {
   transition: background 0.2s linear;
 }
 
+/* Controla el estilo de la lista de los elementos 
+   la barra de navegación y de la barra de contactos */
 .lista-normal {
   list-style-type: none;
 }
-
+/* Controla los margenes de la caja carrusel de las páginas de empleo y formación */
 .contenedorCarrusel {
   margin-top: 100px;
   padding-left: 8%;
   padding-top: 7%;
 }
+/* Controla el margen inferior de las cajas de las páginas de empleo y formación */
 .col-md-4 {
   padding-bottom: 20px;
 }
 
+/* Controla el color del titulo y botones de las páginas de empleo y formación */
 .white {
   color: #fff !important;
 }
+/* Controla la alineación y margenes superiores de los botones de las páginas de empleo y formación */
 .mt {
   float: left;
   margin-top: -20px;
   padding-top: 20px;
 }
+/* Controla el color de fondo de los botones de las páginas de empleo y formación */
 .bg-blue-ui {
   background-color: #708198 !important;
 }
+/* Controla el ancho de las imagenes  de las páginas de empleo y formación */
 figure img {
   width: 300px;
 }
 
+/* Controla el margen inferior de la caja del carrusel de las páginas de empleo y formación */
 #blogCarousel {
   padding-bottom: 100px;
 }
 
+/* Controla los margenes y posición los botones para moverse entre las diferentes paginas de las páginas del carrusel de empleo y formación */
 .blog .carousel-indicators {
   left: 0;
   top: -50px;
@@ -725,7 +761,6 @@ figure img {
 }
 
 /* Color de indicaciones */
-
 .blog .carousel-indicators li {
   background: #708198;
   border-radius: 50%;
@@ -733,6 +768,7 @@ figure img {
   height: 8px;
 }
 
+/* Controla el color de fondo los botones cuando estan activos para moverse entre las diferentes paginas de las páginas del carrusel de empleo y formación */
 .blog .carousel-indicators .active {
   background: #0fc9af;
 }
@@ -742,6 +778,7 @@ figure img {
   padding: 15px;
 }
 
+/* Controla el borde, fuente y margenes de las cajas del carrusel de empleo y formación */
 .item-box-blog {
   border: 1px solid #dadada;
   text-align: center;
@@ -749,15 +786,18 @@ figure img {
   padding: 20px;
 }
 
+/* Controla la posición de la imagen dentro de la caja del carrusel de empleo y formación */
 .item-box-blog-image {
   position: relative;
 }
 
+/* Controla el ancho y altura de la imagen dentro de la caja del carrusel de empleo y formación */
 .item-box-blog-image figure img {
   width: 100%;
   height: auto;
 }
 
+/* Controla posición y color de fondo de la fecha dentro de la caja del carrusel de empleo y formación */
 .item-box-blog-date {
   position: absolute;
   z-index: 5;
@@ -767,6 +807,7 @@ figure img {
   background-color: #41cb52;
 }
 
+/* Controla color, altura y alineación de la fecha dentro de la caja del carrusel de empleo y formación */
 .item-box-blog-date span {
   color: #fff;
   display: block;
@@ -774,48 +815,56 @@ figure img {
   line-height: 1.2;
 }
 
+/* Controla tamaño de la fuenta de la fecha dentro de la caja del carrusel de empleo y formación */
 .item-box-blog-date span.mon {
   font-size: 18px;
 }
 
+/* Controla tamaño de la fuenta de la fecha dentro de la caja del carrusel de empleo y formación */
 .item-box-blog-date span.day {
   font-size: 16px;
 }
 
+/* Controla padding del cuerpo de la caja del carrusel de empleo y formación */
 .item-box-blog-body {
   padding: 10px;
 }
-
+/*
 .item-heading-blog a h5 {
   margin: 0;
   line-height: 1;
   text-decoration: none;
   transition: color 0.3s;
-}
+}*/
 
+/* Controla elimina decorado de enlace de titulo de la caja del carrusel de empleo y formación */
 .item-box-blog-heading a {
   text-decoration: none;
 }
 
+/* Controla el tamaño de la fuente de la caja del carrusel de empleo y formación */
 .item-box-blog-data p {
   font-size: 13px;
 }
 
+/* Controla el tamaño de la fuente del subtitulo de la caja del carrusel de empleo y formación */
 .item-box-blog-data p i {
   font-size: 12px;
 }
 
+/* Controla la altura y scroll del texto de la caja del carrusel de empleo y formación */
 .item-box-blog-text {
   max-height: 100px;
   overflow: hidden;
 }
-
+/*
 .mt-10 {
   float: left;
   margin-top: -10px;
   padding-top: 10px;
-}
+}*/
 
+/* Controla el cursor, padding, alineación y margen superior de los botones de las cajas del carrusel de empleo y formación */
 .btn.bg-blue-ui.white.read {
   cursor: pointer;
   padding: 4px 20px;
@@ -823,10 +872,12 @@ figure img {
   margin-top: 10px;
 }
 
+/* Controla la sombra de los botones de las cajas del carrusel de empleo y formación cuando esta el ratón encima */
 .btn.bg-blue-ui.white.read:hover {
   box-shadow: 0px 5px 15px inset #4d5f77;
 }
 
+/* Controla el margen superior, alineación, fuente, sombra, color del titulo de arriba */
 .clase {
   padding-top: 0.5%;
   -webkit-text-stroke: 2px rgb(0, 0, 0);

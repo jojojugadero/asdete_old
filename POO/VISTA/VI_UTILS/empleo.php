@@ -28,13 +28,13 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
 
 <body class="cuerpo_contenedor<?php echo $sufijo_estilo; ?>">
 
-<!––Incluimos la cabecera ––>
+<!--Incluimos la cabecera -->
     <header class="cabecera<?php echo $sufijo_estilo; ?>">
         <?php include $incRoot."POO/VISTA/VI_INCLUDES/cabecera.php" ?>
     </header>
 
 
-    <!––En la parte izquierda seleccionamos las empresas de una lista en HTML ––>
+    <!--En la parte izquierda seleccionamos las empresas de una lista en HTML -->
        <nav class="navega<?php echo $sufijo_estilo; ?>"><p style="font-size:large;">Empresas del sector</p>
 
                      <?php include $incRoot."POO/VISTA/VI_INCLUDES/nav.php" ?>
@@ -43,7 +43,7 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
 
         <aside class="barra<?php echo $sufijo_estilo; ?>"><p style="font-size:large;">Contactos</p>
 
-            <!––En la parte derecha ponemos los contactos de la web con una lista en HTML ––>
+            <!--En la parte derecha ponemos los contactos de la web con una lista en HTML -->
             <?php include $incRoot."POO/VISTA/VI_INCLUDES/aside.php" ?>
 
         </aside>

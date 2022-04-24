@@ -40,8 +40,8 @@ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
     
     </header>
 
-    <!––En la parte izquierda seleccionamos las empresas de una lista en HTML ––>
-    <nav class="navega<?php echo $sufijo_estilo; ?>"><p style="font-size:large;"><!––Empresas del sector--></p>
+    <!--En la parte izquierda seleccionamos las empresas de una lista en HTML -->
+    <nav class="navega<?php echo $sufijo_estilo; ?>"><p style="font-size:large;"><!--Empresas del sector--></p>
 
         <?php //include $incRoot."POO/VISTA/VI_INCLUDES/nav.php" ?>
 
@@ -49,7 +49,7 @@ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
 
         <aside class="barra<?php echo $sufijo_estilo; ?>"><p style="font-size:large;">Contactos</p>
 
-            <!––En la parte derecha ponemos los contactos de la web con una lista en HTML ––>
+            <!--En la parte derecha ponemos los contactos de la web con una lista en HTML -->
             <?php include $incRoot."POO/VISTA/VI_INCLUDES/aside.php" ?>
 
         </aside>
@@ -58,12 +58,12 @@ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
     <article class="skynet<?php echo $sufijo_estilo; ?>">
 
             
-            <div class="container login-container">
+            <div class="container login-contenedor">
                 <div class="row">
-                    <div class="col-md-6 login-center">
-                        <div class="login-form-1">
+                    <div class="col-md-6 login-centrado">
+                        <div class="login-formulario1">
                             <h3>Usuario no encontrado</h3>
-                            <!––Formulario que enviará datos para comprobar que el usuario y password estan correctos en base de datos ––>
+                            <!--Formulario que enviará datos para comprobar que el usuario y password estan correctos en base de datos -->
                             <div class="form-group">
                                 <a href="<?php echo $dirRoot; ?>POO/VISTA/index.php?tipologin=<?php echo $tipologin;?>" >Volver al indice</a>
                             </div>

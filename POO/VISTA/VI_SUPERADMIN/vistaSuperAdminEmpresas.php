@@ -31,6 +31,37 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
       function validacion() {
       <?php echo trim($msgValidacion) == "" ? "": "alert('".$msgValidacion."');"; ?>
       }
+
+      function nuevoReg() {
+        return true;
+      }
+      function altaReg() {
+        document.getElementById('swinsertar').value = 'S';
+        return true;
+      }
+      function modReg(id) {
+        document.getElementById('swmodificar').value = 'S';
+        document.getElementById('id').value = id;
+        return true;
+      }
+      function applyModReg() {
+        var c = confirm("¿Estas seguro de querer modificar este registro?");
+        if(!c) {
+          return false;
+        }
+        document.getElementById('swmodificarapply').value = 'S';
+        document.getElementById('swmodificar').value = 'S';
+        return true;
+      }
+      function delReg(id) {
+        var c = confirm("¿Estas seguro de querer eliminar este registro?");
+        if(!c) {
+          return false;
+        }
+        document.getElementById('sweliminar').value = 'S';
+        document.getElementById('id').value = id;
+        return true;
+      }
     </script>
 </head>
 
@@ -38,13 +69,13 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
 <body class="cuerpo_contenedor<?php echo $sufijo_estilo; ?>" onload="validacion();" >
 
 
-  <!––Incluimos la cabecera ––>
+  <!--Incluimos la cabecera -->
     <header class="cabecera<?php echo $sufijo_estilo; ?>">
         <?php include $incRoot."POO/VISTA/VI_INCLUDES/cabecera.php" ?>
     </header>
 
 
-          <!––En la parte izquierda seleccionamos las empresas de una lista en HTML ––>
+          <!--En la parte izquierda seleccionamos las empresas de una lista en HTML -->
     <nav class="navega<?php echo $sufijo_estilo; ?>"><p style="font-size:large;">Empresas del sector</p>
 
                      <?php include $incRoot."POO/VISTA/VI_INCLUDES/nav.php" ?>
@@ -53,7 +84,7 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
 
         <aside class="barra<?php echo $sufijo_estilo; ?>"><p style="font-size:large;">Contactos</p>
 
-            <!––En la parte derecha ponemos los contactos de la web con una lista en HTML ––>
+            <!--En la parte derecha ponemos los contactos de la web con una lista en HTML -->
             <?php include $incRoot."POO/VISTA/VI_INCLUDES/aside.php" ?>
 
           
@@ -63,10 +94,10 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
 
     <article class="skynet<?php echo $sufijo_estilo; ?>">
 
-    <!––Migas de pan (breadcrumbs) ––>
+    <!--Migas de pan (breadcrumbs) -->
     <a href="<?php echo $dirRoot; ?>POO/VISTA/index.php?tipologin=sadmin">Indice</a> > <a href="<?php echo $dirRoot; ?>POO/VISTA/VI_SUPERADMIN/vistaSuperAdminMenu.php">Menú</a>
     
-    <!––Formulario para realizar todas las operaciones de base de datos––>
+    <!--Formulario para realizar todas las operaciones de base de datos-->
 <form name="formTabla" id="formTabla" href="<?php echo $dirRoot; ?>POO/VISTA/VI_SUPERADMIN/vistaSuperAdminEmpresas.php" method="post">
   
   <table class="estilo_tabla" width="80%" align="center" >
@@ -98,7 +129,7 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
             $color_fila = $num%2 == 1 ? 'estilo_fila1_tabla':'estilo_fila2_tabla';
             $num++;
       ?>
-		  <!––Mostramos los registros de base de datos ––>
+		  <!--Mostramos los registros de base de datos -->
         <tr class="<?php echo $color_fila;?>" >
           <td><?php echo $fila->getId() ?></td>
           <td><?php echo $fila->getCif() ?></td>
@@ -106,34 +137,34 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
           <td><?php echo $fila->getTelefono() ?></td>
           <td><?php echo $fila->getEmail() ?></td>
           <td><?php echo $fila->getDireccion() ?></td>
-          <!––Botones con las operaciones a seleccionar en javascript de modificar o borrar un registro existente ––>
-          <td class="bot"><input class="btn btn-primary btn-sm" onclick="document.getElementById('swmodificar').value = 'S';document.getElementById('id').value = <?php echo $fila->getId() ?>;" type='submit' name='up' id='up' value='Actualizar'></td>
-          <td class='bot'><input class="btn btn-danger btn-sm" onclick="document.getElementById('sweliminar').value = 'S';document.getElementById('id').value = <?php echo $fila->getId() ?>;" type='submit' name='del' id='del' value='Borrar'></td>
+          <!--Botones con las operaciones a seleccionar en javascript de modificar o borrar un registro existente -->
+          <td class="celda-campo"><input class="btn btn-primary btn-sm" onclick="modReg('<?php echo $fila->getId() ?>');" type='submit' name='up' id='up' value='Actualizar'></td>
+          <td class='bot'><input class="btn btn-danger btn-sm" onclick="delReg('<?php echo $fila->getId() ?>');" type='submit' name='del' id='del' value='Borrar'></td>
         </tr>   
     <?php
           }
       }
     ?>
-    <!––Mostramos los campos para insertar o modificar registros ––>
+    <!--Mostramos los campos para insertar o modificar registros -->
     <tr class="estilo_bottom_tabla" >
-	    <td class="bot ultima_fila"><?php echo $mostrarDatos == 'S' ?$empr_modi->getId():''; ?></td>
-      <td class="bot ultima_fila"><input value="<?php echo $mostrarDatos == 'S' ?$empr_modi->getCif():''; ?>" type='text' name='cif' size='10' class='centrado'></td>
-      <td class="bot ultima_fila"><input value="<?php echo $mostrarDatos == 'S' ?$empr_modi->getNombre():''; ?>" type='text' name='nombre' size='10' class='centrado'></td>
-      <td class="bot ultima_fila"><input value="<?php echo $mostrarDatos == 'S' ?$empr_modi->getTelefono():''; ?>" type='text' name='telefono' size='10' class='centrado'></td>
-      <td class="bot ultima_fila"><input value="<?php echo $mostrarDatos == 'S' ?$empr_modi->getEmail():''; ?>" type='text' name='email' size='10' class='centrado'></td>
-      <td class="bot ultima_fila"><input value="<?php echo $mostrarDatos == 'S' ?$empr_modi->getDireccion():''; ?>" type='text' name='direccion' size='10' class='centrado'></td>
+	    <td class="celda-campo ultima_fila"><?php echo $mostrarDatos == 'S' ?$empr_modi->getId():''; ?></td>
+      <td class="celda-campo ultima_fila"><input value="<?php echo $mostrarDatos == 'S' ?$empr_modi->getCif():''; ?>" type='text' name='cif' size='10' class='centrado'></td>
+      <td class="celda-campo ultima_fila"><input value="<?php echo $mostrarDatos == 'S' ?$empr_modi->getNombre():''; ?>" type='text' name='nombre' size='10' class='centrado'></td>
+      <td class="celda-campo ultima_fila"><input value="<?php echo $mostrarDatos == 'S' ?$empr_modi->getTelefono():''; ?>" type='text' name='telefono' size='10' class='centrado'></td>
+      <td class="celda-campo ultima_fila"><input value="<?php echo $mostrarDatos == 'S' ?$empr_modi->getEmail():''; ?>" type='text' name='email' size='10' class='centrado'></td>
+      <td class="celda-campo ultima_fila"><input value="<?php echo $mostrarDatos == 'S' ?$empr_modi->getDireccion():''; ?>" type='text' name='direccion' size='10' class='centrado'></td>
       <td class='bot' colspan="2">
         <?php
           if ($swmodificar == 'S') {
         ?>
-         <!––Botones con las operaciones para confirmar la modificacion o crear un registro nuevo en javascript ––>
-          <input class="btn btn-success btn-sm" type='submit' onclick="document.getElementById('swmodificarapply').value = 'S';document.getElementById('swmodificar').value = 'S';" name='cr' id='cr' value='Modificar'>
-          <input class="btn btn-warning btn-sm" type='submit' onclick="" name='cr' id='cr' value='Nuevo'>
+         <!--Botones con las operaciones para confirmar la modificacion o crear un registro nuevo en javascript -->
+          <input class="btn btn-success btn-sm" type='submit' onclick="applyModReg();" name='cr' id='cr' value='Modificar'>
+          <input class="btn btn-warning btn-sm" type='submit' onclick="nuevoReg();" name='cr' id='cr' value='Nuevo'>
         <?php
           } else {
         ?>
-         <!––Botones con las operación de crear un nuevo registo en javascript ––>
-          <input class="btn btn-success btn-sm" type='submit' onclick="document.getElementById('swinsertar').value = 'S'" name='cr' id='cr' value='Insertar'>
+         <!--Botones con las operación de crear un nuevo registo en javascript -->
+          <input class="btn btn-success btn-sm" type='submit' onclick="altaReg();" name='cr' id='cr' value='Insertar'>
         <?php
           }
         ?>
@@ -141,7 +172,7 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
     </tr>    
   </table>
 
-  <!––Camos ocultos (HIDDEN) para mandar las acciones a realizar ––>
+  <!--Camos ocultos (HIDDEN) para mandar las acciones a realizar -->
   <input value="<?php echo $mostrarDatos == 'S' ? $empr_modi->getId():'' ?>" name="id" id="id" type="hidden" />
   <input value="" name="swinsertar" id="swinsertar" type="hidden" />
   <input value="" name="swmodificar" id="swmodificar" type="hidden" />
