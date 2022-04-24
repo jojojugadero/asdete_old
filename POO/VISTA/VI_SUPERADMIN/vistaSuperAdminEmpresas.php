@@ -9,8 +9,6 @@ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
 
 
 include $incRoot.'POO/MODELO/MO_SUPERADMIN/includesSuperAdmin.php';
-
-
 include $incRoot.'POO/CONTROLADOR/CO_SUPERADMIN/appSuperAdminEmpresas.php';
 include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
 ?>
@@ -28,22 +26,27 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
 
   <script type="text/javascript">
       
+      /*Validaciones para nuestro "CRUD" de superAdministradores en JAVASCRIPT*/
       function validacion() {
       <?php echo trim($msgValidacion) == "" ? "": "alert('".$msgValidacion."');"; ?>
       }
 
+      /*Validaciones para nuestro "CRUD" de superAdministradores en JAVASCRIPT nuevo registro*/
       function nuevoReg() {
         return true;
       }
+      /*Validaciones para nuestro "CRUD" de superAdministradores en JAVASCRIPT alta registro*/
       function altaReg() {
         document.getElementById('swinsertar').value = 'S';
         return true;
       }
+      /*Validaciones para nuestro "CRUD" de superAdministradores en JAVASCRIPT para modificar registro*/
       function modReg(id) {
         document.getElementById('swmodificar').value = 'S';
         document.getElementById('id').value = id;
         return true;
       }
+      /*Validaciones para nuestro "CRUD" de superAdministradores en JAVASCRIPT para aplicar la modificación del registro*/
       function applyModReg() {
         var c = confirm("¿Estas seguro de querer modificar este registro?");
         if(!c) {
@@ -53,6 +56,7 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
         document.getElementById('swmodificar').value = 'S';
         return true;
       }
+      /*Validaciones para nuestro "CRUD" de superAdministradores en JAVASCRIPT para aplicar eliminación del registro*/
       function delReg(id) {
         var c = confirm("¿Estas seguro de querer eliminar este registro?");
         if(!c) {
@@ -75,7 +79,7 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
     </header>
 
 
-          <!--En la parte izquierda seleccionamos las empresas de una lista en HTML -->
+          <!--En la parte izquierda (NAV) seleccionamos las empresas de una lista en HTML dentro del "INCLUDE" -->
     <nav class="navega<?php echo $sufijo_estilo; ?>"><p style="font-size:large;">Empresas del sector</p>
 
                      <?php include $incRoot."POO/VISTA/VI_INCLUDES/nav.php" ?>
@@ -84,14 +88,14 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
 
         <aside class="barra<?php echo $sufijo_estilo; ?>"><p style="font-size:large;">Contactos</p>
 
-            <!--En la parte derecha ponemos los contactos de la web con una lista en HTML -->
+            <!--En la parte derecha (ASIDE) ponemos los contactos de la web con una lista en HTML dentro del "INCLUDE" -->
             <?php include $incRoot."POO/VISTA/VI_INCLUDES/aside.php" ?>
 
           
 
         </aside>
 
-
+<!--En la parte central mostraremos los registros -->
     <article class="skynet<?php echo $sufijo_estilo; ?>">
 
     <!--Migas de pan (breadcrumbs) -->
@@ -100,6 +104,7 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
     <!--Formulario para realizar todas las operaciones de base de datos-->
 <form name="formTabla" id="formTabla" href="<?php echo $dirRoot; ?>POO/VISTA/VI_SUPERADMIN/vistaSuperAdminEmpresas.php" method="post">
   
+<!--Cabecera de nuestra tabla-->
   <table class="estilo_tabla" width="80%" align="center" >
     <tr class="estilo_cab_tabla<?php echo $sufijo_estilo; ?>">
       <th class="subtitulo" colspan="12"><h1><span >Gestión de empresas</span></h1></th>
@@ -116,7 +121,7 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
     </tr> 
    
     <?php
-      //Comprobamos si hay registros
+      //Comprobamos si hay registros y de no haber mostramos el estilo "estilo_noresultados_tabla"
         if (count($empresas) == 0) {
           echo '<tr>
               <td class="estilo_noresultados_tabla" colspan="11">No se han encontrado empresas</td>

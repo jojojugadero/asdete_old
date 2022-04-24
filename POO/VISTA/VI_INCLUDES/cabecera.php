@@ -20,6 +20,7 @@ include $incRoot.'POO/CONTROLADOR/ControlCabecera.php';
 <td class="clase" width="60%" align="center" valign="top"><h1>ASDETE, la unión hace la fuerza...</h1></td>
 
         <td width="20%">
+        <!--En este bloque tendremos los datos de sesión del usuario que se mostrarán en la parte superior derecha de la aplicación-->
             <?php if($ind_sesion == 'S') { ?>
             <table align="right" class="bloque-usuario">
                 <tr>
@@ -33,7 +34,7 @@ include $incRoot.'POO/CONTROLADOR/ControlCabecera.php';
                 <tr>
                     <td align="left" valign="top" class="celda-login-usuario"><strong>Desconectar:</strong></td>
                     <td align="left" valign="top" class="celda-login-usuario">
-                        
+        <!--Según la sesión (afiliado, administrador o superadmin, tendremnos unso estilos determinados-->
                         <?php if($sesion == 'afiliado_session'){ ?>
                         <a title='Haz click para deslogearte' href ='<?php echo $url_desconectar; ?>'>
                             <button class="btn btn-success btn-sm boton-desconectar">
