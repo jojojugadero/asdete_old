@@ -2,8 +2,10 @@
  
   class SolAfiliados extends Afiliados {
 
+		//Constante de la clase SolAfiliados
 	const id_afiliados_fk ='id_afiliados_fk';
 
+	//Creamos un array con todos los datos de SolAfiliados
 	private $datos = [
 		SolAfiliados::id=>'',
 		SolAfiliados::id_afiliados_fk=>'',
@@ -18,6 +20,7 @@
 		SolAfiliados::id_empresa_fk=>'',
 	];
 
+	//Constructor de la clase
 	 public function __construct(){
 		$this->datos = [
 			SolAfiliados::id=>'',
@@ -34,12 +37,14 @@
 		];
 	}
 
+	//Método que nos devuelve la solicitud del afiliado a través de su ID
 	public static function getSolAfiliadoId($id){
 		$dat = new Datos();
 		$instance = new SolAfiliados();
 		$instance->loadBBDD($dat->getSolAfiliado($id));
 		return $instance;
 	}
+	//Método que nos devuelve la solicitud del afiliado
 	public static function getSolAfiliados(){
 		$dat = new Datos();
 		$result = $dat->getSolAfiliados();
@@ -53,6 +58,7 @@
 	}
 
 
+	//Recogemos los datos de las solicitudes introducidas en formulario por el método POST
 	public function loadPost() {
 		//$this->datos[SolAfiliados::id] =  isset($_POST['id']) ? $_POST['id'] : '';
 		$this->datos[SolAfiliados::id_afiliados_fk] =  isset($_POST['id_afiliados_fk']) ? $_POST['id_afiliados_fk'] : '';
@@ -67,6 +73,7 @@
 		$this->datos[SolAfiliados::id_empresa_fk] =  isset($_POST['empresa']) ? $_POST['empresa'] : '';
 	}
 
+	//Cargamos los datos de las solicitudes que se encuentran en base de datos
 	public function loadBBDD($result) {
 		$this->datos[SolAfiliados::id] =  isset($result['id']) ? $result['id'] : '';
 		$this->datos[SolAfiliados::id_afiliados_fk] =  isset($result['id_afiliados_fk']) ? $result['id_afiliados_fk'] : '';
@@ -81,6 +88,7 @@
 		$this->datos[SolAfiliados::id_empresa_fk] =  isset($result['id_empresa_fk']) ? $result['id_empresa_fk'] : '';
 	}
 
+	//Métodos que nos devuelven los distintos datos uno por uno de la empresa(GETTERS)
 	public function getDatos() {
 		return $this->datos;
 	}
@@ -119,6 +127,7 @@
 		return $this->datos[SolAfiliados::id_empresa_fk];
 	}
 
+	//Validamos que hay datos en todos los siguientes campos y sino mostramos un mensaje al usuario
 	public function validar() {
 		$msgValidacion = "";
 		if(trim($this->datos[SolAfiliados::nif]) == '') {

@@ -88,6 +88,7 @@
 	}
 
 	//Validamos que hay datos en todos los siguientes campos y sino mostramos un mensaje al usuario en la vista
+	//En el login
 	public function validar() {
 		$msgValidacion = "";
 		if(trim($this->datos[Administrador::nickname]) == '') {
