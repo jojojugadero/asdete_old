@@ -11,9 +11,7 @@ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
 <?php
 
 include $incRoot.'POO/MODELO/MO_AFILIADOS/includesAfiliados.php';
-
 include $incRoot.'POO/CONTROLADOR/CO_AFILIADOS/appAfiliadoMod.php';
-
 include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
 
 ?>

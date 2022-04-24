@@ -12,10 +12,7 @@ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
 <html lang="es">
 <?php
 include $incRoot.'POO/MODELO/MO_ADMINISTRADORES/includesAdmin.php';
-
 include $incRoot.'POO/CONTROLADOR/CO_ADMINISTRADORES/appAdministraAgenda.php';
-
-
 include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
 
 ?>

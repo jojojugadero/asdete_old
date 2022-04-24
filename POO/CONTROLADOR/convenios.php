@@ -92,9 +92,6 @@ if(isset($_SESSION['user_session']) == 'afiliado_session') {
 
     <article class="skynet<?php echo $sufijo_estilo; ?>">
 
-    
-
-
     </article>
     <footer class="pie<?php echo $sufijo_estilo; ?>"><?php include $incRoot."POO/VISTAVI_INCLUDES/pie.php" ?></footer>
     
