@@ -73,7 +73,7 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
     <div class="row">
         <div class="afil-center">
 
-            <div class="col-md-5 afil-form-1">
+            <div class="afil-form-1">
                 <h3><?php echo "Hola ".$afiliado->getNombre() ?></h3>
                 <table >
                     <tr>
@@ -90,7 +90,7 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
                 </table>
             </div>
 
-          <div class="col-md-5  afil-form-2">
+          <div class="afil-form-2">
                 
               <table  style="padding-top:20px;">
                     <tr>
