@@ -35,13 +35,14 @@ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
 	//Recogemos el nombre y el password del formulario 
 	$nombre = $_POST['nombre'];
 	$pass = $_POST['password'];
-	// Comprobamos que si se ha enviado un nombre por el formulario y un password, con los métodos [existeUsuario($nombre)] y [verificaPass($nombre, $pass] y que estos datos sean correctos
+	// Comprobamos que si se ha enviado un nombre por el formulario y un password, 
+	//con los métodos [existeUsuario($nombre)] y [verificaPass($nombre, $pass] y que estos datos sean correctos
 	if (isset($nombre)) {
 		// Si existe el nombre verificamos a traves de los metodos aquí abajo
 		if ($dat->existeUsuario($nombre) && $dat->verificaPass($nombre, $pass)) {
 			//Creamos una sesión para comprobar que está en la página correcta
 			session_start();
-			//Recuperamos los datos del afiliado logueado con el método getAfiliadoLogin() de la clase datos
+			//Recuperamos el ID afiliado logueado con el método getAfiliadoLogin() de la clase datos
 			$afiliado = $dat->getAfiliadoLogin($nombre, $pass);
 
 			//Datos de la sesión
