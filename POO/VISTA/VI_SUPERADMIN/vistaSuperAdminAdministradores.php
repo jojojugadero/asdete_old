@@ -92,8 +92,8 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
 
  </aside>
 
-  <!--En la parte central mostraremos los registros -->
-<article class="skynet<?php echo $sufijo_estilo; ?>">
+    <!--En la parte central mostraremos los registros y segun la sesión mostraremos un estilo u otro-->
+    <article class="skynet<?php echo $sufijo_estilo; ?>">
     <!--Migas de pan (breadcrumbs) -->
     <a href="<?php echo $dirRoot; ?>POO/VISTA/index.php?tipologin=sadmin">Indice</a> > <a href="<?php echo $dirRoot; ?>POO/VISTA/VI_SUPERADMIN/vistaSuperAdminMenu.php">Menú</a>
     
@@ -130,7 +130,7 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
             $num++;
       ?>
 		  <!--Mostramos los registros de base de datos recorridos por el foreach -->
-      <!--dentro de la variable "$fila" utilizamos los metodos de tipo "administradores" -->
+      <!--Con la variable "$fila" utilizamos los metodos de tipo "administradores" -->
      
         <tr class="<?php echo $color_fila;?>" >
           <td><?php echo $fila->getId()?></td>

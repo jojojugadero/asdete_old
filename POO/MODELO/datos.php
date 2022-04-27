@@ -1,12 +1,7 @@
 <?php
   class Datos implements Conexion {
 
-		// Datos de conexión
-/*	var	$host = "localhost";
-	var	$user = "root";
-	var	$password = "";
-	//Nombre BBDD
-	var $baseDatos = "asdete";*/
+
 
 				public function __construct(){
 

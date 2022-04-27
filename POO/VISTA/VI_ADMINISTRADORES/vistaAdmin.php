@@ -28,22 +28,27 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script type="text/javascript">
       
+    /*Validaciones para nuestro "CRUD" de Administradores en JAVASCRIPT*/
+
       function validacion() {
       <?php echo trim($msgValidacion) == "" ? "": "alert('".$msgValidacion."');"; ?>
       }
-
+      /*Validaciones para nuestro "CRUD" de Administradores en JAVASCRIPT*/
       function nuevoReg() {
         return true;
       }
+      /*Validaciones para nuestro "CRUD" de Administradores en JAVASCRIPT*/
       function altaReg() {
         document.getElementById('swinsertar').value = 'S';
         return true;
       }
+      /*Validaciones para nuestro "CRUD" de Administradores en JAVASCRIPT*/
       function modReg(id) {
         document.getElementById('swmodificar').value = 'S';
         document.getElementById('id').value = id;
         return true;
       }
+      /*Validaciones para nuestro "CRUD" de Administradores en JAVASCRIPT*/
       function applyModReg() {
         var c = confirm("¿Estas seguro de querer modificar este registro?");
         if(!c) {
@@ -53,6 +58,7 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
         document.getElementById('swmodificar').value = 'S';
         return true;
       }
+      /*Validaciones para nuestro "CRUD" de Administradores en JAVASCRIPT*/
       function delReg(id) {
         var c = confirm("¿Estas seguro de querer eliminar este registro?");
         if(!c) {
@@ -66,14 +72,14 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
 </head>
 <body class="cuerpo_contenedor<?php echo $sufijo_estilo; ?>" onload="validacion();" >
 
-
+ <!--Incluimos la cabecera -->
     <header class="cabecera<?php echo $sufijo_estilo; ?>">
       <?php include $incRoot."POO/VISTA/VI_INCLUDES/cabecera.php" ?>
     </header>
 
       
-                <!--En la parte izquierda seleccionamos las empresas de una lista en HTML -->
-                <nav class="navega<?php echo $sufijo_estilo; ?>"><p style="font-size:large;">Empresas del sector</p>
+          <!--En la parte izquierda (NAV) seleccionamos las empresas de una lista en HTML dentro del "INCLUDE" -->
+          <nav class="navega<?php echo $sufijo_estilo; ?>"><p style="font-size:large;">Empresas del sector</p>
 
                     <?php include $incRoot."POO/VISTA/VI_INCLUDES/nav.php" ?>
 
@@ -81,18 +87,19 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
 
             <aside class="barra<?php echo $sufijo_estilo; ?>"><p style="font-size:large;">Contactos</p>
 
-            <!--En la parte derecha ponemos los contactos de la web con una lista en HTML -->
+             <!--En la parte derecha (ASIDE) ponemos los contactos de la web con una lista en HTML dentro del "INCLUDE" -->
             
                       <?php include $incRoot."POO/VISTA/VI_INCLUDES/aside.php" ?>
 
             </aside>
 
 
+    <!--En la parte central mostraremos los registros y segun la sesión mostraremos un estilo u otro-->
     <article class="skynet<?php echo $sufijo_estilo; ?>">
     <!--Migas de pan (breadcrumbs) -->
     <a href="<?php echo $dirRoot; ?>POO/VISTA/index.php?tipologin=admin">Indice</a> > <a href="<?php echo $dirRoot; ?>POO/VISTA/VI_ADMINISTRADORES/vistaAdminMenu.php">Menú</a>
     
-    <!--Formulario para realizar todas las operaciones de base de datos-->
+    <!--Formulario para realizar todas las operaciones de base de datos(Cabecera)-->
 <form name="formTabla" id="formTabla" action="<?php echo $dirRoot; ?>POO/VISTA/VI_ADMINISTRADORES/vistaAdmin.php" method="post">
   
   <table class="estilo_tabla" width="90%" align="center" >
@@ -129,7 +136,9 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
             $color_fila = $num%2 == 1 ? 'estilo_fila1_tabla':'estilo_fila2_tabla';
             $num++;
       ?>
-		  <!--Mostramos los registros de base de datos -->
+		  <!--Mostramos los registros de base de datos recorrridos por el foreach -->
+        <!--Con la variable "$fila" utilizamos los metodos de tipo "afiliados" -->
+
         <tr class="<?php echo $color_fila;?>" >
           <td><?php echo $fila->getId() ?></td>
           <td><?php echo $fila->getNif() ?></td>
