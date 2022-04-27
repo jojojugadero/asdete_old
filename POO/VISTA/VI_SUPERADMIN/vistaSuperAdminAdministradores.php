@@ -46,7 +46,7 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
         document.getElementById('id').value = id;
         return true;
       }
-      /*Validaciones para nuestro "CRUD" de superAdministradores en JAVASCRIPT para aplicar la modificación del registro*/
+      /*Validaciones para nuestro "CRUD" de superAdministradores en JAVASCRIPT (Método confirm) para aplicar la modificación del registro*/
       function applyModReg() {
         var c = confirm("¿Estas seguro de querer modificar este registro?");
         if(!c) {
@@ -125,7 +125,8 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
           $num = 0;
           //Si hay registros se recorren para mostar las filas
           foreach($administradores as $fila){
-            //Con este operador ternario damos estilo a cada de las lineas del formulario "estilo_fila1_tabla" y "estilo_fila2_tabla" haciendo el efecto "Pijama"
+            //Con este operador ternario damos estilo a cada de las lineas del formulario 
+            //"estilo_fila1_tabla" y "estilo_fila2_tabla" haciendo el efecto "Pijama"
             $color_fila = $num%2 == 1 ? 'estilo_fila1_tabla':'estilo_fila2_tabla';
             $num++;
       ?>
@@ -145,7 +146,7 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
           }
       }
     ?>
-    <!--Mostramos los campos para insertar o modificar registros -->
+    <!--Mostramos los campos para  modificar registros -->
     <tr class="estilo_bottom_tabla" >
 	    <td class="celda-campo ultima_fila"><?php echo $mostrarDatos == 'S' ?  $admin_modi->getId():''; ?></td>
       <td class="celda-campo ultima_fila"><input value="<?php echo $mostrarDatos == 'S' ?  $admin_modi->getNickname():'';?>" type='text' name='nickname' size='10' class='centrado'></td>
