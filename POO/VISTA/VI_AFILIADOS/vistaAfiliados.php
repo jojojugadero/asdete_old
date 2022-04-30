@@ -72,9 +72,12 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
   <div class="afil-contenedor">
     <div class="row">
         <div class="afil-centrado">
-    <!--Div realizado con bootstrap -->
-
+           <!--Div realizado con bootstrap para poner bienvenida, 
+           datos del afiliado y botón de realizar solicitud de 
+           cambio de datos -->
             <div class="afil-form-1">
+           <!--Mensaje de bienvenida al afiliado con sus datos personales  -->
+
                 <h3><?php echo "Hola ".$afiliado->getNombre() ?></h3>
                 <table >
                     <tr>
@@ -99,11 +102,16 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
                     </tr>
                     <tr>
                       <td>
-                      <!--Con este option mostramos las empresas desde base de datos para seleccionar el convenio que el afiliado quiera consultar, con el action del form de  más arriba nos llevara a convenios.php donde se nos redirigira a la página del convenio seleccionado  -->
+                      <!--Con este option mostramos las empresas desde base de datos 
+                      para seleccionar el convenio que el afiliado quiera consultar,
+                       con el action del form de  más arriba nos llevara a convenios.php
+                       donde se nos redirigira a la página del convenio seleccionado  -->
                         <select name='empresa' class='centrado'>
                           <option value="">Seleccionar</option>
                           <?php
-                          //En este select mostramos las empresas con el método anterior getEmpresas()
+                          /*En este select mostramos las empresas con 
+                           el método de la clase Empresas, getEmpresas(), 
+                           lllamado en la clase appAfiliado*/
                               if (count($empresas) == 0) {
                               } else {
                                 foreach($empresas as $fila_option){

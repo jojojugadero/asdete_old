@@ -28,6 +28,9 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script type="text/javascript">
       
+      /*
+        Método con confirmación para aceptar la solicitud de un afiliado
+      */
       function aceptarAfil(id) {
         var c = confirm("¿Estas seguro de querer aceptar la solicitud de modificación de este afiliado?");
         if(!c) {
@@ -37,6 +40,9 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
         document.getElementById('id').value = id;
         return true;
       }
+      /*
+        Método con confirmación para rechazar la solicitud de un afiliado
+      */
       function rechazarAfil(id) {
         var c = confirm("¿Estas seguro de querer rechazar la solicitud de modificación de este afiliado?");
         if(!c) {
@@ -46,6 +52,9 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
         document.getElementById('id').value = id;
         return true;
       }
+      /*
+        Método con confirmación para aceptar la solicitud de un prestamo
+      */
       function aceptarPres(id) {
         var c = confirm("¿Estas seguro de querer aceptar esta solicitud de prestamo?");
         if(!c) {
@@ -55,6 +64,9 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
         document.getElementById('id').value = id;
         return true;
       }
+      /*
+        Método con confirmación para rechazar la solicitud de un prestamo
+      */
       function rechazarPres(id) {
         var c = confirm("¿Estas seguro de querer rechazar esta solicitud de prestamo?");
         if(!c) {
@@ -96,6 +108,7 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
     <!--Formulario para realizar todas las operaciones de base de datos-->
 <form name="formTabla" id="formTabla" href="<?php echo $dirRoot; ?>POO/VISTA/VI_AFILIADOS/appAfiliado.php" method="post">
   
+<!--Cabecera de nuestra tabla-->
   <table class="estilo_tabla" width="90%" align="center" >
     <tr class="estilo_cab_tabla<?php echo $sufijo_estilo; ?>">
       <th class="subtitulo" colspan="13"><h1><span >Solicitudes de modificación de datos de afiliados</span></h1></th>
@@ -117,8 +130,9 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
     </tr> 
    
     <?php
-      //Comprobamos si hay registros
-        if (count($sol_afil) == 0) {
+       /*Comprobamos si hay registros y de no haber mostramos el estilo "estilo_noresultados_tabla" utilizamos 
+      la variable  "$sol_afil" proveniente de la clase appAdminAgenda.php*/
+      if (count($sol_afil) == 0) {
           echo '<tr>
               <td class="estilo_noresultados_tabla" colspan="13">No se han encontrado solicitudes</td>
              </tr>';
@@ -128,12 +142,14 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
           foreach($sol_afil as $fila){
             $empresa = Empresa::getEmpresaId($fila->getIdEmpresa());
             $afiliado = Afiliados::getAfiliadoId($fila->getIdAfiliado());
-            //Con este operador ternario damos estilo a cada de las lineas del formulario
+            //Con este operador ternario damos estilo a cada de las lineas del formulario 
+            //"estilo_fila1_tabla" y "estilo_fila2_tabla" haciendo el efecto "Pijama"
             $color_fila = $num%2 == 1 ? 'estilo_fila1_tabla':'estilo_fila2_tabla';
             $num++;
       ?>
-		  <!--Mostramos los registros de base de datos -->
-        <tr class="<?php echo $color_fila;?>" >
+      <!--Mostramos los registros de base de datos recorridos por el foreach -->
+      <!--Con la variable "$fila" utilizamos los metodos de tipo "administradores" -->
+      <tr class="<?php echo $color_fila;?>" >
           <td>Datos antigüos</td>
           <td><?php echo $afiliado->getId() ?></td>
           <td><?php echo $afiliado->getNif() ?></td>
@@ -171,6 +187,7 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
     ?>
   </table>
 
+<!--Cabecera de nuestra tabla-->
   <table class="estilo_tabla" width="90%" align="center" >
     <tr class="estilo_cab_tabla<?php echo $sufijo_estilo; ?>">
       <th class="subtitulo" colspan="7"><h1><span >Solicitudes de prestamos</span></h1></th>
@@ -186,8 +203,9 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
     </tr> 
    
     <?php
-      //Comprobamos si hay registros
-        if (count($sol_pres) == 0) {
+      /*Comprobamos si hay registros y de no haber mostramos el estilo "estilo_noresultados_tabla" utilizamos 
+      la variable  "$sol_pres" proveniente de la clase appAdminAgenda.php*/
+      if (count($sol_pres) == 0) {
           echo '<tr>
               <td class="estilo_noresultados_tabla" colspan="7">No se han encontrado solicitudes</td>
              </tr>';
@@ -196,7 +214,8 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
           //Si hay registros se recorren para mostar las filas
           foreach($sol_pres as $fila){
             $afiliado = Afiliados::getAfiliadoId($fila->getIdAfiliado());
-            //Con este operador ternario damos estilo a cada de las lineas del formulario
+            //Con este operador ternario damos estilo a cada de las lineas del formulario 
+            //"estilo_fila1_tabla" y "estilo_fila2_tabla" haciendo el efecto "Pijama"
             $color_fila = $num%2 == 1 ? 'estilo_fila1_tabla':'estilo_fila2_tabla';
             $num++;
       ?>
@@ -231,6 +250,7 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
   <p>&nbsp;</p>
 </form>
     </article>
+    <!--Footer con su "INCLUDE" -->
     <footer class="pie<?php echo $sufijo_estilo; ?>"><?php include $incRoot."POO/VISTA/VI_INCLUDES/pie.php" ?></footer>
     
 

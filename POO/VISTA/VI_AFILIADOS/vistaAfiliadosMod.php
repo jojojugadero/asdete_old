@@ -28,10 +28,13 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script type="text/javascript">
-      
+
+      /*Muestra mensaje de validación para nuestro "CRUD" de superAdministradores en JAVASCRIPT según se haya cáculado*/
       function validacion() {
       <?php echo trim($msgValidacion) == "" ? "": "alert('".$msgValidacion."');"; ?>
       }
+      /*Método con confirmación para nuestro "CRUD" de afiliados en JAVASCRIPT para enviar la solicitud.
+        Esto envia la solicitud de modificación de datos del afiliado.*/
       function enviarSol() {
         var c = confirm("¿Estas seguro de querer enviar la solicitud de modificación?");
         if(!c) {
@@ -79,6 +82,7 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
             <tr class="estilo_cab_tabla<?php echo $sufijo_estilo; ?>">
               <th class="subtitulo" colspan="12"><h1><span >Solicitud de modificación</span></h1></th>
             </tr>
+            <!--Cabecera de nuestra tabla-->
             <tr class="estilo_subcab_tabla<?php echo $sufijo_estilo; ?>" >
               <td class="primera_fila">Id</td>
               <td class="primera_fila">NIF</td>
@@ -93,7 +97,7 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
               <td class="primera_fila">Enviar solicitud</td>
             </tr> 
           
-            <!--Mostramos los campos para insertar o modificar registros -->
+            <!--Mostramos los campos para modificar y enviar la solicitud -->
             <tr class="estilo_bottom_tabla" >
               <td class="celda-campo ultima_fila">
                 <?php echo  $afiliado->getId(); ?>
@@ -112,16 +116,20 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
                 <select name='empresa' class='centrado'>
                   <option value="">Seleccionar</option>
                   <?php
+                    /*En este select mostramos las empresas con 
+                      el método de la clase Empresas, getEmpresas(), 
+                      lllamado en la clase appAfiliadoMod*/
                       if (count($empresas) == 0) {
                       } else {
                         foreach($empresas as $fila_option){
                     ?>
                     <option 
                     <?php 
-
+                        //Si el afiliado tiene la empresa que sale del foreach la selecciona
                       if($fila_option->getId() == $afiliado->getIdEmpresa()) {
                         echo "selected='selected'";
                       } 
+                      //Muestra opción de select con nombre de empresa y con valor su ID
                     ?> value="<?php echo $fila_option->getId() ?>"><?php echo $fila_option->getNombre() ?></option>
                     <?php
                       }
@@ -130,11 +138,12 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
                 </select>
               </td>
               <td class='bot' colspan="2">
-                <!--Botones con las operación de crear un nuevo registo en javascript -->
+                <!--Botones con las operación de enviar una nueva solicitud en javascript -->
                   <input class="btn btn-success btn-sm" type='submit' onclick="enviarSol();" name='cr' id='cr' value='Enviar solicitud'>
               </td>
             </tr>    
           </table>
+          <!--Camos ocultos (HIDDEN) para mandar las acciones a realizar en el submit cuando realizamos una acción -->
           <input value="" name="swinsertar" id="swinsertar" type="hidden" />
 
         <p>&nbsp;</p>

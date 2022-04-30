@@ -28,27 +28,31 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script type="text/javascript">
       
-    /*Validaciones para nuestro "CRUD" de Administradores en JAVASCRIPT*/
+    /*Muestra mensaje de validación para nuestro "CRUD" de Administradores en JAVASCRIPT según se haya cálculado*/
 
       function validacion() {
       <?php echo trim($msgValidacion) == "" ? "": "alert('".$msgValidacion."');"; ?>
       }
-      /*Validaciones para nuestro "CRUD" de Administradores en JAVASCRIPT*/
+      /*Método para nuestro "CRUD" de Administradores en JAVASCRIPT nuevo registro. 
+        Si se esta modificando un registro esto reinicia los datos para dar de alta uno nuevo registro*/
       function nuevoReg() {
         return true;
       }
-      /*Validaciones para nuestro "CRUD" de Administradores en JAVASCRIPT*/
+      /*Método para nuestro "CRUD" de Administradores en JAVASCRIPT alta registro.
+        Esto hace la inserción de un nuevo registro*/
       function altaReg() {
         document.getElementById('swinsertar').value = 'S';
         return true;
       }
-      /*Validaciones para nuestro "CRUD" de Administradores en JAVASCRIPT*/
+      /*Método para nuestro "CRUD" de Administradores en JAVASCRIPT para modificar registro.
+        Esto inicia la modificación de un regsitro   */
       function modReg(id) {
         document.getElementById('swmodificar').value = 'S';
         document.getElementById('id').value = id;
         return true;
       }
-      /*Validaciones para nuestro "CRUD" de Administradores en JAVASCRIPT*/
+      /*Método con confirmación para nuestro "CRUD" de Administradores en JAVASCRIPT (Método confirm) para aplicar la modificación del registro.
+        Esto confirma la modificación de un registro*/
       function applyModReg() {
         var c = confirm("¿Estas seguro de querer modificar este registro?");
         if(!c) {
@@ -58,7 +62,8 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
         document.getElementById('swmodificar').value = 'S';
         return true;
       }
-      /*Validaciones para nuestro "CRUD" de Administradores en JAVASCRIPT*/
+      /*Método con confirmación para nuestro "CRUD" de Administradores en JAVASCRIPT para aplicar eliminación del registro.
+        Esto elimina un registro*/
       function delReg(id) {
         var c = confirm("¿Estas seguro de querer eliminar este registro?");
         if(!c) {

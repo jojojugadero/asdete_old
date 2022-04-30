@@ -26,28 +26,32 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
 
   <script type="text/javascript">
       
-      /*Validaciones para nuestro "CRUD" de superAdministradores en JAVASCRIPT*/
+      /*Muestra mensaje de validación para nuestro "CRUD" de superAdministradores en JAVASCRIPT según se haya cáculado*/
       function validacion() {
       <?php echo trim($msgValidacion) == "" ? "": "alert('".$msgValidacion."');"; ?>
       }
 
-      /*Validaciones para nuestro "CRUD" de superAdministradores en JAVASCRIPT nuevo registro*/
+      /*Método para nuestro "CRUD" de superAdministradores en JAVASCRIPT nuevo registro. 
+      Si se esta modificando un registro esto reinicia los datos para dar de alta uno nuevo registro*/
       function nuevoReg() {
         return true;
       }
-      /*Validaciones para nuestro "CRUD" de superAdministradores en JAVASCRIPT alta registro*/
+     /*Método para nuestro "CRUD" de superAdministradores en JAVASCRIPT alta registro.
+      Esto hace la inserción de un nuevo registro*/
       function altaReg() {
         document.getElementById('swinsertar').value = 'S';
         return true;
       }
-      /*Validaciones para nuestro "CRUD" de superAdministradores en JAVASCRIPT para modificar registro*/
-      function modReg(id) {
+       /*Método para nuestro "CRUD" de superAdministradores en JAVASCRIPT para modificar registro.
+        Esto inicia la modificación de un regsitro   */
+        function modReg(id) {
         document.getElementById('swmodificar').value = 'S';
         document.getElementById('id').value = id;
         return true;
       }
-      /*Validaciones para nuestro "CRUD" de superAdministradores en JAVASCRIPT para aplicar la modificación del registro*/
-      function applyModReg() {
+      /*Método con confirmación para nuestro "CRUD" de superAdministradores en JAVASCRIPT (Método confirm) para aplicar la modificación del registro.
+        Esto confirma la modificación de un registro*/
+        function applyModReg() {
         var c = confirm("¿Estas seguro de querer modificar este registro?");
         if(!c) {
           return false;
@@ -56,7 +60,8 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
         document.getElementById('swmodificar').value = 'S';
         return true;
       }
-      /*Validaciones para nuestro "CRUD" de superAdministradores en JAVASCRIPT para aplicar eliminación del registro*/
+      /*Método con confirmación para nuestro "CRUD" de superAdministradores en JAVASCRIPT para aplicar eliminación del registro.
+      Esto elimina un registro*/
       function delReg(id) {
         var c = confirm("¿Estas seguro de querer eliminar este registro?");
         if(!c) {
@@ -121,8 +126,9 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
     </tr> 
    
     <?php
-      //Comprobamos si hay registros y de no haber mostramos el estilo "estilo_noresultados_tabla"
-        if (count($empresas) == 0) {
+      /*Comprobamos si hay registros y de no haber mostramos el estilo "estilo_noresultados_tabla" utilizamos 
+      la variable  "$empresas" proveniente de la clase appSuperAdminEmpresas.php*/
+      if (count($empresas) == 0) {
           echo '<tr>
               <td class="estilo_noresultados_tabla" colspan="11">No se han encontrado empresas</td>
              </tr>';
@@ -130,12 +136,14 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
           $num = 0;
           //Si hay registros se recorren para mostar las filas
           foreach($empresas as $fila){
-            //Con este operador ternario damos estilo a cada de las lineas del formulario
+            //Con este operador ternario damos estilo a cada de las lineas del formulario 
+            //"estilo_fila1_tabla" y "estilo_fila2_tabla" haciendo el efecto "Pijama"
             $color_fila = $num%2 == 1 ? 'estilo_fila1_tabla':'estilo_fila2_tabla';
             $num++;
       ?>
-		  <!--Mostramos los registros de base de datos -->
-        <tr class="<?php echo $color_fila;?>" >
+		  <!--Mostramos los registros de base de datos recorridos por el foreach -->
+      <!--Con la variable "$fila" utilizamos los metodos de tipo "empresa" -->
+      <tr class="<?php echo $color_fila;?>" >
           <td><?php echo $fila->getId() ?></td>
           <td><?php echo $fila->getCif() ?></td>
           <td><?php echo $fila->getNombre() ?></td>
@@ -150,8 +158,9 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
           }
       }
     ?>
-    <!--Mostramos los campos para insertar o modificar registros -->
-    <tr class="estilo_bottom_tabla" >
+    <!--Mostramos los registros de base de datos recorridos por el foreach -->
+      <!--Con la variable "$fila" utilizamos los metodos de tipo "empresa" -->
+      <tr class="estilo_bottom_tabla" >
 	    <td class="celda-campo ultima_fila"><?php echo $mostrarDatos == 'S' ?$empr_modi->getId():''; ?></td>
       <td class="celda-campo ultima_fila"><input value="<?php echo $mostrarDatos == 'S' ?$empr_modi->getCif():''; ?>" type='text' name='cif' size='10' class='centrado'></td>
       <td class="celda-campo ultima_fila"><input value="<?php echo $mostrarDatos == 'S' ?$empr_modi->getNombre():''; ?>" type='text' name='nombre' size='10' class='centrado'></td>
@@ -186,6 +195,7 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
   <p>&nbsp;</p>
 </form>
     </article>
+    <!--Footer con su "INCLUDE" -->
     <footer class="pie<?php echo $sufijo_estilo; ?>"> <?php include $incRoot."POO/VISTA/VI_INCLUDES/pie.php" ?></footer>
     
 
