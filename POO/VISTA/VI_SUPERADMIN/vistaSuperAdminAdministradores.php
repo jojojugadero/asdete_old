@@ -27,26 +27,30 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script type="text/javascript">
     
-      /*Validaciones para nuestro "CRUD" de superAdministradores en JAVASCRIPT*/
+      /*Muestra mensaje de validación para nuestro "CRUD" de superAdministradores en JAVASCRIPT según se haya cáculado*/
       function validacion() {
       <?php echo trim($msgValidacion) == "" ? "": "alert('".$msgValidacion."');"; ?>
       }
-      /*Validaciones para nuestro "CRUD" de superAdministradores en JAVASCRIPT nuevo registro*/
+      /*Método para nuestro "CRUD" de superAdministradores en JAVASCRIPT nuevo registro. 
+        Si se esta modificando un registro esto reinicia los datos para dar de alta uno nuevo registro*/
       function nuevoReg() {
         return true;
       }
-      /*Validaciones para nuestro "CRUD" de superAdministradores en JAVASCRIPT alta registro*/
+      /*Método para nuestro "CRUD" de superAdministradores en JAVASCRIPT alta registro.
+        Esto hace la inserción de un nuevo registro*/
       function altaReg() {
         document.getElementById('swinsertar').value = 'S';
         return true;
       }
-       /*Validaciones para nuestro "CRUD" de superAdministradores en JAVASCRIPT para modificar registro*/
+       /*Método para nuestro "CRUD" de superAdministradores en JAVASCRIPT para modificar registro.
+        Esto inicia la modificación de un regsitro   */
       function modReg(id) {
         document.getElementById('swmodificar').value = 'S';
         document.getElementById('id').value = id;
         return true;
       }
-      /*Validaciones para nuestro "CRUD" de superAdministradores en JAVASCRIPT (Método confirm) para aplicar la modificación del registro*/
+      /*Método con confirmación para nuestro "CRUD" de superAdministradores en JAVASCRIPT (Método confirm) para aplicar la modificación del registro.
+        Esto confirma la modificación de un registro*/
       function applyModReg() {
         var c = confirm("¿Estas seguro de querer modificar este registro?");
         if(!c) {
@@ -56,7 +60,8 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
         document.getElementById('swmodificar').value = 'S';
         return true;
       }
-      /*Validaciones para nuestro "CRUD" de superAdministradores en JAVASCRIPT para aplicar eliminación del registro*/
+      /*Método con confirmación para nuestro "CRUD" de superAdministradores en JAVASCRIPT para aplicar eliminación del registro.
+        Esto elimina un registro*/
       function delReg(id) {
         var c = confirm("¿Estas seguro de querer eliminar este registro?");
         if(!c) {
@@ -156,13 +161,13 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
         <?php
           if ($swmodificar == 'S') {
         ?>
-         <!--Botones con las operaciones para confirmar la modificacion o crear un registro nuevo en javascript -->
+         <!--Botones con las operaciones para confirmar la modificacion o crear un registro nuevo con funciones en javascript -->
           <input class="btn btn-success btn-sm" type='submit' onclick="applyModReg();" name='cr' id='cr' value='Modificar'>
           <input class="btn btn-warning btn-sm" type='submit' onclick="nuevoReg();" name='cr' id='cr' value='Nuevo'>
         <?php
           } else {
         ?>
-         <!--Botones con las operación de crear un nuevo registo en javascript -->
+         <!--Botones con las operación de crear un nuevo registo con funciones javascript -->
           <input class="btn btn-success btn-sm" type='submit' onclick="altaReg();" name='cr' id='cr' value='Insertar'>
         <?php
           }

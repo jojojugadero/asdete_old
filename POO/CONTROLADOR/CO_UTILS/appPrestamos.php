@@ -23,28 +23,28 @@ $sol_pres->loadPost();
 $swinsertar =  isset($_POST['swinsertar']) ? trim($_POST['swinsertar']) : '';
 $id_afil =  isset($_SESSION['id_afiliado']) ? $_SESSION['id_afiliado'] : '';
 $afiliado = Afiliados::getAfiliadoId($id_afil);
-//Con este metodo de la clase datos sacamos el nombre del afiliado con su ID
-//$afiliado = SolPrestamo::getAfiliadoId($id_afil);
 
 
 
-//Con este operador ternario mejor preguntar al crack PREGUNTAR A PARTIR DE AQUÍ BIEN
+
+//Se comprueba si se tiene que dar de alta un nuevo registro para validar los datos.
 $msgValidacion = $swinsertar == 'S' ? $sol_pres->validar() : '';
 
 if(trim($msgValidacion) == "") {
   if($swinsertar == 'S') {
+    //Se establece estado pendiente en solicitud de prestamo
     $sol_pres->setEstadoPendiente();
+    //Se elimina prestamos anteriores si hubiera para el afiliado
     $dat->eliminarPrestamosIdAfil($sol_pres->getIdAfiliado());
+    //Se da de alta la solicitud de prestamo con los datos de pantalla
     $dat->altaSolPrestamos($sol_pres->getDatos());
 
+    //Se establece mensaje de confirmación.
     $msgValidacion = "Solicitud enviada correctamente.";
   }
 }
 
-//Con el id de la empresa sacamos los datos de la misma a traves del metodo getEmpresa() de la clase datos
-//$empresa = Empresa::getEmpresaId($afiliado->getIdEmpresa());
-//Guardamos dicho nombre de la empresa en una variable
-//$nom_empresa =  $empresa->getNombre();
+
 
 //Obtenemos las empresas para mostrarlas con el select
 $empresas = Empresa::getEmpresas();

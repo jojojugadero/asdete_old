@@ -40,10 +40,7 @@ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
 				setcookie("personal_cookie", $nombre, 1);
 				$url = $dirRoot.'POO/VISTA/VI_ADMINISTRADORES/vistaAdminMenu.php';
 				header('Location: '.$url);
-			/*	$host  = $_SERVER['HTTP_HOST'];
-				$uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
-				$extra = '../VISTA/VI_ADMINISTRADORES/appAdmin.php';
-				header("Location: http://$host$uri/$extra");*/
+			
 		} else {
 			//Si no mostramos un mensaje de no encontrado y un link a index
 			$url = $dirRoot.'POO/VISTA/user_pass_error.php?tipologin=admin';
