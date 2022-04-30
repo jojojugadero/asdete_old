@@ -48,13 +48,19 @@ $mostrarDatos = $swmodificar == 'S' || trim($msgValidacion) != "" ? 'S':'N';
 //Si pasa la validación OK comprueba si es un alta/modificación/eliminación para realizar dicha operación
 if(trim($msgValidacion) == "") {
   if($swinsertar == 'S') {
+    //Se da de alta la empresa con los datos de pantalla
     $dat->altaEmpresa($empr->getDatos());
+    //Se establece mensaje de confirmación
     $msgValidacion = "Se ha dado de alta la empresa correctamente.";
   } else if($swmodificarapply == 'S') {
+    //Se modifica la empresa con los datos de pantalla
     $dat->modEmpresa($empr->getDatos());
+    //Se establece mensaje de confirmación
     $msgValidacion = "Se ha modificado la empresa correctamente.";
   } else if($sweliminar == 'S') {
+    //Se elimina la empresa seleccionada
     $dat->eliminarEmpresa($empr->getId());
+    //Se establece mensaje de confirmación
     $msgValidacion = "Se ha eliminado la empresa correctamente.";
   }
 }

@@ -49,13 +49,19 @@
       //Si pasa la validación OK comprueba si es un alta/modificación/eliminación para realizar dicha operación
       if(trim($msgValidacion) == "") {
         if($swinsertar == 'S') {
+          //Se da de alta el afiliado con los datos de pantalla
           $dat->altaAfiliado($afil->getDatos());
+          //Se establece mensaje de confirmación
           $msgValidacion = "Se ha dado de alta el afiliado correctamente.";
         } else if($swmodificarapply == 'S') {
+          //Se modifica el afiliado con los datos de pantalla
           $dat->modAfiliado($afil->getDatos());
+          //Se establece mensaje de confirmación
           $msgValidacion = "Se ha modificado el afiliado correctamente.";
         } else if($sweliminar == 'S') {
+          //Se elimina el afiliado seleccionado
           $dat->eliminarAfiliado($afil->getId());
+          //Se establece mensaje de confirmación
           $msgValidacion = "Se ha eliminado el afiliado correctamente.";
         }
       }

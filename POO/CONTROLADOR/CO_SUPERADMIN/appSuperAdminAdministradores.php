@@ -49,13 +49,19 @@ $mostrarDatos = $swmodificar == 'S' || trim($msgValidacion) != "" ? 'S':'N';
  //Si pasa la validación OK comprueba si es un alta/modificación/eliminación para realizar dicha operación
 if(trim($msgValidacion) == "") {
   if($swinsertar == 'S') {
+    //Se da de alta el administrador con los datos de pantalla
     $dat->altaAdmin($admi->getDatos());
+    //Se establece mensaje de confirmación
     $msgValidacion = "Se ha dado de alta el administrador correctamente.";
   } else if($swmodificarapply == 'S') {
+    //Se modifica el administrador con los datos de pantalla
     $dat->modAdmin($admi->getDatos());
+    //Se establece mensaje de confirmación
     $msgValidacion = "Se ha modificado el administrador correctamente.";
   } else if($sweliminar == 'S') {
+    //Se elimina el administrador seleccionado
     $dat->eliminarAdmin($admi->getId());
+    //Se establece mensaje de confirmación
     $msgValidacion = "Se ha eliminado el administrador correctamente.";
   }
 }

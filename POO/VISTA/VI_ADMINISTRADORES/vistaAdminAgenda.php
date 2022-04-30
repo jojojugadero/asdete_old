@@ -222,7 +222,7 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
     ?>
   </table>
 
-  <!--Camos ocultos (HIDDEN) para mandar las acciones a realizar -->
+  <!--Camos ocultos (HIDDEN) para mandar las acciones a realizar en el submit cuando realizamos una acción -->
   <input value="" name="id" id="id" type="hidden" />
   <input value="" name="swaceptar_solafil" id="swaceptar_solafil" type="hidden" />
   <input value="" name="swrechazar_solafil" id="swrechazar_solafil" type="hidden" />
