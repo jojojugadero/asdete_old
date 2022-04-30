@@ -72,81 +72,9 @@ if(isset($_SESSION['user_session']) == 'afiliado_session') {
 
     <a href="<?php echo $dirRoot?>POO/VISTA/index.php?tipologin=afil">Indice</a> > <a href="<?php echo $dirRoot?>POO/VISTA/VI_AFILIADOS/vistaAfiliados.php">Afiliados</a>
 
-    <h2>CONVENIO 1</h2>
-                <section>
-                    <h3>Artículo 1. Partes que conciertan el convenio colectivo</h3>
-                    <p>El presente Convenio Colectivo ha sido negociado por la Comisión Negociadora del
-Convenio Colectivo, integrada por la Asociación de Empresas de Limpieza Pública
-(ASELIP), como parte empresarial, y por la parte social, integrada por la Federación
-Regional de Servicios Públicos en representación de la Unión General de Trabajadores
-(U.G.T.), por la Federación de Construcción y Servicios de CCOO de Madrid y el Sindicato
-de Limpiezas, Mantenimiento Urbano y Medio Ambiente de la CAM de la Confederación
-General de Trabajo (CGT).</p>
-                    <p>El presente Convenio Colectivo ha sido firmado y ratificado por la Asociación de Empresas
-de Limpieza Pública (ASELIP) y por la Federación Regional de empleados y empleadas de
-los Servicios Públicos en representación de la Unión General de Trabajadores (U.G.T.) y
-por la Federación de Construcción y Servicios de CCOO de Madrid y la Confederación
-Territorial de Madrid, Castilla La Mancha, y Extremadura de la Confederación General del
-Trabajo (CGT).</p>
-                </section>
-                <section>
-                    <h3>Artículo 2. Ámbito personal y territorial</h3>
-                    <section>
-                        <h3>Art2</h3>
-                        <p>El presente Convenio Colectivo tendrá ámbito local limitado al término municipal de Madrid
-y será de aplicación a todas las Empresas dedicadas a la actividad de Limpieza Pública
-Viaria en el ámbito territorial antes delimitado, regulando las relaciones laborales entre tales
-Empresas y los/as trabajadores/as que prestan sus servicios en la L.P.V. de Madrid-Capital,
-cualquiera que sea su modalidad de contrato y siendo de obligado cumplimiento por unas
-y otros/as.</p>
-                    </section>
-                    <section>
-                        <h3>Artículo 3. Vigencia, duración y prorroga</h3>
-                        <p>Las condiciones establecidas en este Convenio forman un todo orgánico indivisible y a
-efecto de su aplicación práctica serán consideradas globalmente en cómputo anual, sin que
-quepa la aplicación de una normativa aislada sobre condiciones anteriores.
-                        </p>
-                    </section>
-                    <section>
-                        <h3>Artículo 7. Derechos adquiridos</h3>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est repellat harum voluptatibus error accusamus quisquam, ipsa ullam nostrum exercitationem dolorem necessitatibus asperiores distinctio sint tenetur! Exercitationem atque earum obcaecati veritatis. eran superestrellas de la editorial.
-                        </p>
-                    </section>
-                    <section>
-                        <h3>1990</h3>
-                        <p>El gobierno de los Estados Unidos revocó la carta del Estado de Nueva York de los Vengadores en un tratado con la Unión Soviética. Los Vengadores luego recibieron un estatuto de las Naciones Unidas y los Vengadores se dividieron en dos equipos con un equipo suplente de reserva que respaldaba a los equipos principales.</p>
-                    </section>
-                    <section>
-                        <h3>2000</h3>
-                        <p>Se respetarán todos los derechos adquiridos que, pactados individual o colectivamente,
-superen o no se recojan en el presente Convenio.</p>
-                    </section>
-                    <section>
-                        <h3>Artículo 8. Comisión mixta paritaria</h3>
-                        <p>El mismo día de la firma del presente Convenio Colectivo se constituirá una Comisión Mixta
-Paritaria.</p>
-                    </section>
-                    <section>
-                        <h4>Artículo 9. Solución extrajudicial de conflictos</h4>
-                        <p>La solución de los conflictos que afecten a los trabajadores y empresarios incluidos en el
-ámbito de aplicación de este Convenio Colectivo, se efectuará conforme a los
-procedimientos regulados en el Acuerdo Interprofesional sobre la creación del sistema de
-Solución Extrajudicial de Conflictos y del Instituto Laboral de Madrid en su reglamento..</p>
-                        <p>
-                        Todas las discrepancias que se produzcan en la aplicación o interpretación del presente
-Convenio Colectivo que no hayan podido ser resueltas en el seno de la Comisión Mixta
-Paritaria deberán solventarse, con carácter previo a una demanda judicial, de acuerdo con
-los procedimientos regulados en el Acuerdo Interprofesional sobre la creación de un
-sistema de solución extrajudicial de conflictos de trabajo, a través del Instituto Laboral de la
-Comunidad de Madrid.</p>
-                        <p>Todas las discrepancias que se produzcan en la aplicación o interpretación del presente
-Convenio Colectivo que no hayan podido ser resueltas en el seno de la Comisión Mixta
-Paritaria deberán solventarse, con carácter previo a una demanda judicial, de acuerdo con
-los procedimientos regulados en el Acuerdo Interprofesional sobre la creación de un
-sistema de solución extrajudicial de conflictos de trabajo, a través del Instituto Laboral de la
-Comunidad de Madrid.</p>
-                    </section>
-                </section>
+    <embed src="<?php echo $dirRoot; ?>POO/VISTA/FICHEROS/empresa1.pdf" type="application/pdf" width="100%" height="600px" />
+
+<h1>CONVENIO</h1>
     
     </article>
     <footer class="pie<?php echo $sufijo_estilo; ?>"><?php include $incRoot."POO/VISTA/VI_INCLUDES/pie.php" ?></footer>
