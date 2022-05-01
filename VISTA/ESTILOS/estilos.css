@@ -1,0 +1,896 @@
+@import url("https://fonts.googleapis.com/css2?family=Public+Sans&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+/*Nuestro html ocupe el 100% de la página*/
+html {
+  height: 100%;
+}
+
+body {
+  font-family: "Public Sans", sans-serif;
+  font-size: 1.2rem;
+  min-height: 100%;
+}
+
+/*Creamos unos estilos para todos los hijos del body*/
+
+/*-----------ESTILOS BASE---------------------*/
+.cuerpo_contenedor > * {
+  box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
+  border-radius: 4px;
+  padding: 10px;
+  text-align: center;
+}
+/*Creamos unos estilos para cada parte*/
+.cabecera {
+  grid-area: cabecera;
+  background-color: #d3d3d3;
+}
+
+.navega {
+  grid-area: navega;
+  background-color: #d3d3d3;
+}
+
+.barra {
+  grid-area: barra;
+  background-color: #d3d3d3;
+}
+
+.skynet {
+  grid-area: skynet;
+  background-color: #f5f5f5;
+}
+
+.pie {
+  grid-area: pie;
+  background-color: #8c96a0;
+}
+/*-----------ESTILOS AFILIADO---------------------*/
+
+.cuerpo_contenedor_afil > * {
+  box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
+  border-radius: 4px;
+  padding: 10px;
+  text-align: center;
+}
+
+.cabecera_afil {
+  grid-area: cabecera_afil;
+  background-color: #dcedc8;
+}
+
+.navega_afil {
+  grid-area: navega_afil;
+  background-color: #dcedc8;
+}
+
+.barra_afil {
+  grid-area: barra_afil;
+  background-color: #dcedc8;
+}
+
+.skynet_afil {
+  grid-area: skynet_afil;
+  background-color: #f5f5f5;
+}
+
+.pie_afil {
+  grid-area: pie_afil;
+  background-color: #9ccc65;
+}
+/*-----------ESTILOS ADMINISTRADOR---------------------*/
+
+.cuerpo_contenedor_admin > * {
+  box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
+  border-radius: 4px;
+  padding: 10px;
+  text-align: center;
+}
+
+.cabecera_admin {
+  grid-area: cabecera_admin;
+  background-color: #b3e5fc;
+}
+
+.navega_admin {
+  grid-area: navega_admin;
+  background-color: #b3e5fc;
+}
+
+.barra_admin {
+  grid-area: barra_admin;
+  background-color: #b3e5fc;
+}
+
+.skynet_admin {
+  grid-area: skynet_admin;
+  background-color: #f5f5f5;
+}
+
+.pie_admin {
+  grid-area: pie_admin;
+  background-color: #29b6f6;
+}
+/*-----------ESTILOS SUPERADMIN---------------------*/
+
+.cuerpo_contenedor_sadmin > * {
+  box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
+  border-radius: 4px;
+  padding: 10px;
+  text-align: center;
+}
+
+.cabecera_sadmin {
+  grid-area: cabecera_sadmin;
+  background-color: #ffe0b2;
+}
+
+.navega_sadmin {
+  grid-area: navega_sadmin;
+  background-color: #ffe0b2;
+}
+
+.barra_sadmin {
+  grid-area: barra_sadmin;
+  background-color: #ffe0b2;
+}
+
+.skynet_sadmin {
+  grid-area: skynet_sadmin;
+  background-color: #f5f5f5;
+}
+
+.pie_sadmin {
+  grid-area: pie_sadmin;
+  background-color: #ffb74d;
+}
+
+/*-----------GRID---------------------*/
+
+/*Grid para la parte del login*/
+.cuerpo_contenedor {
+  display: grid;
+  /*separamos elementos 10 pixeles*/
+  gap: 10px;
+
+  /*Creamos las areas que tendrá nuestro grid*/
+  grid-template-areas:
+    "cabecera" 100px
+    "navega" 50px
+    "skynet" auto
+    "barra" 100px
+    "pie" 100px;
+}
+/*Grid para la parte AFILIADOS*/
+.cuerpo_contenedor_afil {
+  display: grid;
+  /*separamos elementos 10 pixeles*/
+  gap: 10px;
+
+  /*Creamos las areas que tendrá nuestro grid*/
+  grid-template-areas:
+    "cabecera_afil" 100px
+    "navega_afil" 50px
+    "skynet_afil" auto
+    "barra_afil" 100px
+    "pie_afil" 100px;
+}
+/*Grid para la parte ADMIN*/
+.cuerpo_contenedor_admin {
+  display: grid;
+  /*separamos elementos 10 pixeles*/
+  gap: 10px;
+
+  /*Creamos las areas que tendrá nuestro grid*/
+  grid-template-areas:
+    "cabecera_admin" 100px
+    "navega_admin" 50px
+    "skynet_admin" auto
+    "barra_admin" 100px
+    "pie_admin" 100px;
+}
+/*Grid para la parte SUPERADMIN*/
+.cuerpo_contenedor_sadmin {
+  display: grid;
+  /*separamos elementos 10 pixeles*/
+  gap: 10px;
+
+  /*Creamos las areas que tendrá nuestro grid*/
+  grid-template-areas:
+    "cabecera_sadmin" 100px
+    "navega_sadmin" 50px
+    "skynet_sadmin" auto
+    "barra_sadmin" 100px
+    "pie_sadmin" 100px;
+}
+
+/*Hacemos una media query para el diseño responsive en vista de télefono*/
+
+@media (min-width: 600px) {
+  .cuerpo_contenedor {
+    grid-template:
+      "cabecera  cabecera" 100px
+      "navega  navega" 50px
+      "barra skynet" auto
+      "pie  pie" 100px /
+      200px auto;
+  }
+  /*Hacemos una media query para el diseño responsive en vista de télefono*/
+
+  .cuerpo_contenedor_afil {
+    grid-template:
+      "cabecera_afil  cabecera_afil" 100px
+      "navega_afil  navega_afil" 50px
+      "barra_afil skynet_afil" auto
+      "pie_afil  pie_afil" 100px /
+      200px auto;
+  }
+  .cuerpo_contenedor_admin {
+    grid-template:
+      "cabecera_admin  cabecera_admin" 100px
+      "navega_admin  navega_admin" 50px
+      "barra_admin skynet_admin" auto
+      "pie_admin  pie_admin" 100px /
+      200px auto;
+  }
+  .cuerpo_contenedor_sadmin {
+    grid-template:
+      "cabecera_sadmin  cabecera_sadmin" 100px
+      "navega_sadmin  navega_sadmin" 50px
+      "barra_sadmin skynet_sadmin" auto
+      "pie_sadmin  pie_sadmin" 100px /
+      200px auto;
+  }
+}
+
+/*Hacemos una media query para el diseño responsive en vista de tablet*/
+@media (min-width: 900px) {
+  .cuerpo_contenedor {
+    grid-template:
+      "cabecera  cabecera cabecera" 100px
+      "navega  skynet barra" auto
+      "pie  pie pie" 100px /
+      200px auto 200px;
+  }
+  .cuerpo_contenedor_afil {
+    grid-template:
+      "cabecera_afil  cabecera_afil cabecera_afil" 100px
+      "navega_afil  skynet_afil barra_afil" auto
+      "pie_afil  pie_afil pie_afil" 100px /
+      200px auto 200px;
+  }
+  .cuerpo_contenedor_admin {
+    grid-template:
+      "cabecera_admin  cabecera_admin cabecera_admin" 100px
+      "navega_admin  skynet_admin barra_admin" auto
+      "pie_admin  pie_admin pie_admin" 100px /
+      200px auto 200px;
+  }
+  .cuerpo_contenedor_sadmin {
+    grid-template:
+      "cabecera_sadmin  cabecera_sadmin cabecera_sadmin" 100px
+      "navega_sadmin  skynet_sadmin barra_sadmin" auto
+      "pie_sadmin  pie_sadmin pie_sadmin" 100px /
+      200px auto 200px;
+  }
+}
+
+/*.divbar {
+  margin-left: 15px;
+  text-align: left;
+}
+.tabla {
+  padding: auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
+  margin-bottom: auto;
+}*/
+/* Botones administradores*/
+.botadmin {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4682b4;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.4), 0 9px 26px 0 rgba(0, 0, 0, 0.38);
+}
+/* Botones administradores cuando esta el ratón encima*/
+.botadmin:hover {
+  background-color: #151616;
+}
+
+/* Botones administradores cuando pulsas*/
+.botadmin:active {
+  background-color: #fc0a0a;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+/* Botones afiliados*/
+.botafil {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #2e8b57;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.4), 0 9px 26px 0 rgba(0, 0, 0, 0.38);
+}
+/* Botones afiliados cuando esta el ratón encima*/
+.botafil:hover {
+  background-color: #101110;
+}
+
+/* Botones afiliados cuando pulsas*/
+.botafil:active {
+  background-color: #fc0a0a;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+/* Controla el margen de los botones en el menu de administrador y superadministrador */
+.boton-margen {
+  padding: 8px 16px !important;
+}
+
+/* Controla el margen de los botones y campos dentro de las tablas */
+.celda-campo {
+  padding: 5px;
+}
+
+/* Controla el ancho de los input en la tabla */
+.ultima_fila input {
+  width: 100%;
+}
+/* Controla el ancho de los select en la tabla */
+.ultima_fila select {
+  width: 100%;
+}
+/* Controla el borde de la primera fila */
+.primera_fila {
+  border: solid thin;
+}
+
+/* Controla el margen y fuente de la leyenda de las tablas */
+.estilo_tabla_leyenda {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  font-size: medium;
+}
+/* Controla los margenes y el estilo de las tabla */
+.estilo_tabla {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
+  font-size: medium;
+  background-color: #000000;
+  box-shadow: 0px 10px 10px black;
+  border: solid thin;
+}
+/* Controla el color y bordes de la cabecera de la tabla de afiliados */
+.estilo_cab_tabla_afil {
+  background-color: #9ccc65;
+  border: solid thin;
+}
+/* Controla el color y bordes de la subcabecera de la tabla de afiliados */
+.estilo_subcab_tabla_afil {
+  background-color: #dcedc8;
+  border: solid thin;
+}
+/* Controla el color y bordes de la cabecera de la tabla de administradores */
+.estilo_cab_tabla_admin {
+  background-color: #87cefa;
+  border: solid thin;
+}
+/* Controla el color y bordes de la subcabecera de la tabla de administradores */
+.estilo_subcab_tabla_admin {
+  background-color: #add8e6;
+  border: solid thin;
+}
+/* Controla el color y bordes de la cabecera de la tabla de superadministradores */
+.estilo_cab_tabla_sadmin {
+  background-color: #ffb74d;
+  border: solid thin;
+}
+/* Controla el color y bordes de la subcabecera de la tabla de superadministradores */
+.estilo_subcab_tabla_sadmin {
+  background-color: #ffe0b2;
+  border: solid thin;
+}
+/* Controla el color y bordes de las filas pares  */
+.estilo_fila1_tabla {
+  background-color: #c0c0c0;
+  border: solid thin;
+}
+/* Controla el color y bordes de las filas impares  */
+.estilo_fila2_tabla {
+  background-color: #f8f8ff;
+  border: solid thin;
+}
+/* Controla el color, borde y margenes cuando no hay resultados   */
+.estilo_noresultados_tabla {
+  background-color: #f8f8ff;
+  border: solid thin;
+  padding: 10px;
+}
+/* Controla el margen de las celdas de las filas de datos  */
+.estilo_fila1_tabla td {
+  padding: 3px;
+}
+/* Controla el margen de las celdas de las filas de datos  */
+.estilo_fila2_tabla td {
+  padding: 3px;
+}
+/* Controla el color y borde de la última fila  */
+.estilo_bottom_tabla {
+  background-color: #708090;
+  border: solid thin;
+}
+
+/* Controla el color y tamaño de la fuente de los enlaces de la barra de navegación lateral  */
+.enlace_sidebar {
+  color: black;
+  font-size: 16px;
+}
+/* Controla el color  de los enlaces de la barra de navegación lateral cuando esta el ratón encima  */
+.enlace_sidebar:hover {
+  color: #059862;
+}
+/* Controla el margen superior de la barra de navegación lateral  */
+.li_barra_lateral {
+  padding-top: 10px;
+}
+/* Controla la fuente y margenes de la barra de contactos lateral  */
+.li_contactos_titulo {
+  font-size: 16px;
+  padding-top: 10px;
+  list-style-type: none;
+  text-align: left;
+}
+/* Controla la fuente y margenes de la barra de contactos lateral  */
+.li_contactos_valores {
+  font-size: 16px;
+  list-style-type: none;
+  text-align: left;
+}
+
+/* Controla que la caja de login este centrada */
+.login-centrado {
+  margin: auto;
+}
+/* Controla margenes superior/inferior de la caja de login */
+.login-contenedor {
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+/* Controla borde, redondeo, padding, sombra y color de caja de login de afiliados  */
+.login-formulario1 {
+  border-radius: 25px;
+  padding: 5%;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+  background-color: #fff;
+}
+/* Controla texto y color de titulo de caja de login de afiliados  */
+.login-formulario1 h3 {
+  text-align: center;
+  color: #333;
+}
+/* Controla borde, redondeo, padding, sombra y color de caja de login de superadministrador  */
+.login-formulario3 {
+  border-radius: 25px;
+  padding: 5%;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+  background-color: #fff;
+}
+/* Controla texto y color de titulo de caja de login de superadministrador  */
+.login-formulario3 h3 {
+  text-align: center;
+  color: #333;
+}
+/* Controla borde, redondeo, padding, sombra y color de caja de login de administradores  */
+.login-formulario2 {
+  border-radius: 25px;
+  padding: 5%;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+  background-color: #fff;
+}
+/* Controla texto y color de titulo de caja de login de administradores  */
+.login-formulario2 h3 {
+  text-align: center;
+  color: #333;
+}
+/*.login-contenedor form {
+  /*padding: 10%;*/
+/*}*/
+
+/* Controla tamaño, redondeo, padding y bordes de botones de submit */
+.btnSubmit {
+  width: 50%;
+  border-radius: 1rem;
+  padding: 1.5%;
+  border: none;
+  cursor: pointer;
+}
+/* Controla fuente, color y color de fondo de botón de submit de caja de login de afiliados  */
+.login-formulario1 .btnSubmit {
+  font-weight: 600;
+  color: #fff;
+  background-color: #27ae60;
+}
+/* Controla fuente, color y color de fondo de botón de submit de caja de login de administrador  */
+.login-formulario2 .btnSubmit {
+  font-weight: 600;
+  color: #fff;
+  background-color: #5499c7;
+}
+/* Controla fuente, color y color de fondo de botón de submit de caja de login de superadministrador  */
+.login-formulario3 .btnSubmit {
+  font-weight: 600;
+  color: #fff;
+  background-color: #dc7633;
+}
+/* Controla fuente, color y estilo de links de contraseña olvidada de indice para administradores  */
+.login-formulario2 .PasswordOlvidado {
+  color: #5499c7;
+  font-weight: 600;
+  text-decoration: none;
+}
+/* Controla fuente, color y estilo de links de contraseña olvidada de indice para afiliados  */
+.login-formulario1 .PasswordOlvidado {
+  color: #27ae60;
+  font-weight: 600;
+  text-decoration: none;
+}
+/* Controla fuente, color y estilo de links de contraseña olvidada de indice para superadministradores  */
+.login-formulario3 .PasswordOlvidado {
+  color: #dc7633;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* Controla el margen superior de los links para cambiar entre los diferentes logins */
+.formularioMargenSuperior {
+  margin-top: 25px;
+}
+
+/* Controla la alineación de los campos en la caja de información del usuario logeado */
+.loginUsuario {
+  float: right;
+}
+
+/* Controla el tamaño del botón de logout de la caja de información del usuario logeado */
+.logoutUsuario {
+  width: 20px;
+  height: 20px;
+}
+/* Controla el margen superior y ancho del contenedor de las cajas de la vista afiliados  */
+.afil-contenedor {
+  margin-top: 22%;
+  width: 100%;
+}
+/* Controla el centrado y ancho de las cajas de la vista afiliados */
+.afil-centrado {
+  margin: auto;
+  width: 90%;
+}
+/* Controla el margen, redondeado, padding, sombra y color de la caja de la izquierda de la vista afiliados */
+.afil-form-1 {
+  float: left;
+  margin: 10px;
+  border-radius: 25px;
+  padding: 5%;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.4), 0 9px 26px 0 rgba(0, 0, 0, 0.38);
+  background-color: #66bb6a;
+}
+/* Controla el margen, redondeado, padding, sombra y color de la caja de la derecha de la vista afiliados */
+.afil-form-2 {
+  margin-top: 50px;
+  float: right;
+  border-radius: 25px;
+  padding: 5%;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.4), 0 9px 26px 0 rgba(0, 0, 0, 0.38);
+  background-color: #66bb6a;
+}
+/* Controla el padding y altura del botón de logout */
+.boton-desconectar {
+  padding: 0.15rem 0.3rem !important;
+  line-height: 0.5 !important;
+}
+/* Controla el padding, altura y color del botón de logout de superadministrador */
+.boton-desconectar-sadmin {
+  padding: 0.15rem 0.3rem !important;
+  line-height: 0.5 !important;
+  background-color: #f57c00 !important;
+  border-color: #f57c00 !important;
+}
+
+/* Controla el color, redondeo, tamaño de fuente, borde, padding, sombra de la caja de información del usuario */
+@media (max-width: 1255px) {
+  .bloque-usuario {
+    background-color: #abc;
+    border-radius: 25px;
+    font-size: x-small;
+    border: solid thin;
+    padding: 4px;
+    box-shadow: 4px 3px #aaa;
+    display: block;
+  }
+}
+@media (min-width: 1256px) {
+  .bloque-usuario {
+    background-color: #abc;
+    border-radius: 25px;
+    font-size: small;
+    border: solid thin;
+    padding: 4px;
+    box-shadow: 4px 3px #aaa;
+    display: block;
+  }
+}
+/* Controla el padding de las celdas de la tabla de la caja de información del usuario */
+.celda-login-usuario {
+  padding: 2px;
+}
+/* Controla el fondo la pantalla de vista de afiliados  */
+.bg-personas {
+  /*100% 50% no-repeat top center*/
+  background-image: url("../IMAGENES/personas.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 70%;
+}
+/* Controla el color, padding y redondeo del link de volver al indice de la vista afiliados  */
+.link-afiliados {
+  background-color: burlywood;
+  border-radius: 25px;
+  padding: 5px;
+  float: right;
+}
+/************* ESTILOS CARRUSEL CALENDARIOS ***********/
+
+/* Controla el ancho, margen superior y alineado al centro del calendario  */
+.tabs {
+  width: 87%;
+  margin: 50px auto;
+}
+
+/* Controla el borde, color, color de fondo de la caja del calendario  */
+nav > .nav.nav-tabs {
+  border: none;
+  color: #fff;
+  background: #272e38;
+  border-radius: 0;
+}
+/* Controla el borde, padding, color, color de fondo de los links de la caja del calendario */
+nav > div a.nav-item.nav-link,
+nav > div a.nav-item.nav-link.active {
+  border: none;
+  padding: 18px 25px;
+  color: #fff;
+  background: #272e38;
+  border-radius: 0;
+}
+
+/* Controla el borde, padding, color, color de fondo de los links de la caja del calendario despues de pulsarse */
+nav > div a.nav-item.nav-link.active:after {
+  content: "";
+  position: relative;
+  bottom: -60px;
+  left: -10%;
+  border: 15px solid transparent;
+  border-top-color: #66bb6a;
+}
+/* Controla el borde, padding, color de fondo del contenedor de la caja del calendario  */
+.tab-content {
+  background: #fdfdfd;
+  line-height: 25px;
+  border: 1px solid #ddd;
+  border-top: 5px solid #66bb6a;
+  border-bottom: 5px solid #66bb6a;
+  padding: 30px 25px;
+}
+
+/* Controla el borde, padding, color, color de fondo de los links de la caja del calendario cuando esta el ratón encima */
+nav > div a.nav-item.nav-link:hover,
+nav > div a.nav-item.nav-link:focus {
+  border: none;
+  background: #66bb6a;
+  color: #fff;
+  border-radius: 0;
+  transition: background 0.2s linear;
+}
+
+/* Controla el estilo de la lista de los elementos 
+   la barra de navegación y de la barra de contactos */
+.lista-normal {
+  list-style-type: none;
+}
+/* Controla los margenes de la caja carrusel de las páginas de empleo y formación */
+.contenedorCarrusel {
+  margin-top: 100px;
+  padding-left: 8%;
+  padding-top: 7%;
+}
+/* Controla el margen inferior de las cajas de las páginas de empleo y formación */
+.col-md-4 {
+  padding-bottom: 20px;
+}
+
+/* Controla el color del titulo y botones de las páginas de empleo y formación */
+.white {
+  color: #fff !important;
+}
+/* Controla la alineación y margenes superiores de los botones de las páginas de empleo y formación */
+.mt {
+  float: left;
+  margin-top: -20px;
+  padding-top: 20px;
+}
+/* Controla el color de fondo de los botones de las páginas de empleo y formación */
+.bg-blue-ui {
+  background-color: #708198 !important;
+}
+/* Controla el ancho de las imagenes  de las páginas de empleo y formación */
+figure img {
+  width: 300px;
+}
+
+/* Controla el margen inferior de la caja del carrusel de las páginas de empleo y formación */
+#blogCarousel {
+  padding-bottom: 100px;
+}
+
+/* Controla los margenes y posición los botones para moverse entre las diferentes paginas de las páginas del carrusel de empleo y formación */
+.blog .carousel-indicators {
+  left: 0;
+  top: -50px;
+  height: 50%;
+}
+
+/* Color de indicaciones */
+.blog .carousel-indicators li {
+  background: #708198;
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+}
+
+/* Controla el color de fondo los botones cuando estan activos para moverse entre las diferentes paginas de las páginas del carrusel de empleo y formación */
+.blog .carousel-indicators .active {
+  background: #0fc9af;
+}
+
+.item-carousel-blog-block {
+  outline: medium none;
+  padding: 15px;
+}
+
+/* Controla el borde, fuente y margenes de las cajas del carrusel de empleo y formación */
+.item-box-blog {
+  border: 1px solid #dadada;
+  text-align: center;
+  z-index: 4;
+  padding: 20px;
+}
+
+/* Controla la posición de la imagen dentro de la caja del carrusel de empleo y formación */
+.item-box-blog-image {
+  position: relative;
+}
+
+/* Controla el ancho y altura de la imagen dentro de la caja del carrusel de empleo y formación */
+.item-box-blog-image figure img {
+  width: 100%;
+  height: auto;
+}
+
+/* Controla posición y color de fondo de la fecha dentro de la caja del carrusel de empleo y formación */
+.item-box-blog-date {
+  position: absolute;
+  z-index: 5;
+  padding: 4px 20px;
+  top: -20px;
+  right: 8px;
+  background-color: #41cb52;
+}
+
+/* Controla color, altura y alineación de la fecha dentro de la caja del carrusel de empleo y formación */
+.item-box-blog-date span {
+  color: #fff;
+  display: block;
+  text-align: center;
+  line-height: 1.2;
+}
+
+/* Controla tamaño de la fuenta de la fecha dentro de la caja del carrusel de empleo y formación */
+.item-box-blog-date span.mon {
+  font-size: 18px;
+}
+
+/* Controla tamaño de la fuenta de la fecha dentro de la caja del carrusel de empleo y formación */
+.item-box-blog-date span.day {
+  font-size: 16px;
+}
+
+/* Controla padding del cuerpo de la caja del carrusel de empleo y formación */
+.item-box-blog-body {
+  padding: 10px;
+}
+/*
+.item-heading-blog a h5 {
+  margin: 0;
+  line-height: 1;
+  text-decoration: none;
+  transition: color 0.3s;
+}*/
+
+/* Controla elimina decorado de enlace de titulo de la caja del carrusel de empleo y formación */
+.item-box-blog-heading a {
+  text-decoration: none;
+}
+
+/* Controla el tamaño de la fuente de la caja del carrusel de empleo y formación */
+.item-box-blog-data p {
+  font-size: 13px;
+}
+
+/* Controla el tamaño de la fuente del subtitulo de la caja del carrusel de empleo y formación */
+.item-box-blog-data p i {
+  font-size: 12px;
+}
+
+/* Controla la altura y scroll del texto de la caja del carrusel de empleo y formación */
+.item-box-blog-text {
+  max-height: 100px;
+  overflow: hidden;
+}
+/*
+.mt-10 {
+  float: left;
+  margin-top: -10px;
+  padding-top: 10px;
+}*/
+
+/* Controla el cursor, padding, alineación y margen superior de los botones de las cajas del carrusel de empleo y formación */
+.btn.bg-blue-ui.white.read {
+  cursor: pointer;
+  padding: 4px 20px;
+  float: left;
+  margin-top: 10px;
+}
+
+/* Controla la sombra de los botones de las cajas del carrusel de empleo y formación cuando esta el ratón encima */
+.btn.bg-blue-ui.white.read:hover {
+  box-shadow: 0px 5px 15px inset #4d5f77;
+}
+
+/* Controla el margen superior, alineación, fuente, sombra, color del titulo de arriba */
+.clase {
+  padding-top: 0.5%;
+  -webkit-text-stroke: 2px rgb(0, 0, 0);
+
+  text-align: center;
+
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+
+  text-shadow: -2px -2px 2px #000, 2px 2px 2px #000, -2px 2px 2px #000,
+    2px -2px 2px #000;
+  -webkit-text-fill-color: #d5ec09;
+  -webkit-text-stroke: 2px black;
+}
