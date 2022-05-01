@@ -24,6 +24,7 @@ if($sesion != ''){
         $img_desconectar = $dirRoot."POO/VISTA/IMAGENES/logout_afil.png";
         //Almacenamos la URL a la que nos redirigimos 
         $url_desconectar = $dirRoot."POO/VISTA/index.php?tipologin=afil&swlogout=S";
+        //Almacenamos la URL para volver a donde corresponda
         $url_volver = $dirRoot."POO/VISTA/VI_AFILIADOS/vistaAfiliados.php";
         //Aqui mostramos estilos "dinamicamente" según el tipo de usuario correspondiente
         $ses_desc = "<p class='loginUsuario'><strong>Nombre usuario:</strong> ".$username."</p>";

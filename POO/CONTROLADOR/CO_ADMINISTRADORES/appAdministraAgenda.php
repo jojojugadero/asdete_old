@@ -22,21 +22,34 @@
       
       //Comprobamos que acción se ha realizado el usuario para hacerla (Acetar/Rechazar datos) y (Aceptar/Rechazar prestamos)
       if($swaceptar_solafil == 'S') {
+        //Recogemos solicitud de afiliado por ID
         $solafil = SolAfiliados::getSolAfiliadoId($id);
+        //Eliminamos solicitud de afiliado por ID
         $dat->eliminarSolAfiliado($solafil->getId());
-        $afil = Afiliados::getAfiliadoId($solafil->getId());
+        //Recogemos afiliado por ID afiliado
+        $afil = Afiliados::getAfiliadoId($solafil->getIdAfiliado());
+        //Cargamos afiliado con datos de la solicitud
         $afil->loadSolicitud($solafil->getDatos());
+        //Modificamos afiliado con nuevos datos
         $dat->modAfiliado($afil->getDatos());
       } else if($swrechazar_solafil == 'S') {
+        //Recogemos solicitud de afiliado por ID
         $solafil = SolAfiliados::getSolAfiliadoId($id);
+        //Eliminamos solicitud de afiliado por ID
         $dat->eliminarSolAfiliado($solafil->getId());
       } else if($swaceptar_solpres == 'S') {
+        //Recogemos solicitud de prestamo por ID
         $solpres = SolPrestamo::getSolPrestamoId($id);
+        //Establece estado correspondiente a prestamo
         $solpres->setEstadoAceptado();
+        //Modificamos prestamo con estado actual
         $dat->modSolPrestamos($solpres->getDatos());
       } else if($swrechazar_solpres == 'S') {
+        //Recogemos solicitud de prestamo por ID
         $solpres = SolPrestamo::getSolPrestamoId($id);
+        //Establece estado correspondiente a prestamo
         $solpres->setEstadoRechazado();
+        //Modificamos prestamo con estado actual
         $dat->modSolPrestamos($solpres->getDatos());
       }
         //Recogemos todos los afiliados,empresas y prestamos para mostarlos por pantalla

@@ -545,21 +545,24 @@ body {
   color: #fff;
   background-color: #dc7633;
 }
-/*.login-formulario2 .ForgetPwd {
+/* Controla fuente, color y estilo de links de contraseña olvidada de indice para administradores  */
+.login-formulario2 .PasswordOlvidado {
   color: #5499c7;
   font-weight: 600;
   text-decoration: none;
 }
-.login-formulario1 .ForgetPwd {
+/* Controla fuente, color y estilo de links de contraseña olvidada de indice para afiliados  */
+.login-formulario1 .PasswordOlvidado {
   color: #27ae60;
   font-weight: 600;
   text-decoration: none;
 }
-.login-formulario3 .ForgetPwd {
+/* Controla fuente, color y estilo de links de contraseña olvidada de indice para superadministradores  */
+.login-formulario3 .PasswordOlvidado {
   color: #dc7633;
   font-weight: 600;
   text-decoration: none;
-}*/
+}
 
 /* Controla el margen superior de los links para cambiar entre los diferentes logins */
 .formularioMargenSuperior {

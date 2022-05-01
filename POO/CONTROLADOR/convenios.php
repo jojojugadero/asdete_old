@@ -66,6 +66,18 @@ if(isset($_SESSION['user_session']) == 'afiliado_session') {
   }elseif($id_empresa_conv == 3 ){
     $url = $dirRoot."POO/VISTA/VI_CONVENIOS/convenios_empresa_3.php";
     header("Location: ".$url);
+  }elseif($id_empresa_conv == 4 ){
+    $url = $dirRoot."POO/VISTA/VI_CONVENIOS/convenios_empresa_4.php";
+    header("Location: ".$url);
+  }elseif($id_empresa_conv == 5 ){
+    $url = $dirRoot."POO/VISTA/VI_CONVENIOS/convenios_empresa_5.php";
+    header("Location: ".$url);
+  }elseif($id_empresa_conv == 9 ){
+    $url = $dirRoot."POO/VISTA/VI_CONVENIOS/convenios_empresa_6.php";
+    header("Location: ".$url);
+  }elseif($id_empresa_conv == 7 ){
+    $url = $dirRoot."POO/VISTA/VI_CONVENIOS/convenios_empresa_7.php";
+    header("Location: ".$url);
   }else {
     $url = $dirRoot."POO/VISTA/VI_CONVENIOS/convenios_empresa_noexiste.php";
     header("Location: ".$url);

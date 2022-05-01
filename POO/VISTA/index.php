@@ -82,9 +82,10 @@ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
                                 <div class="form-group">
                                     <input type="submit" class="btnSubmit" value="Login" />
                                 </div>
-                                <!-- <div class="form-group">
-                                    <a href="#" class="ForgetPwd">¿Ha olvidado su contraseña?</a>
-                                </div>  -->
+                                <div class="form-group">
+
+                                <a href="mailto:administracion@asdete.com?Subject=He%20olvidado%20la%20contraseña" class="PasswordOlvidado">¿Ha olvidado su contraseña?</a>
+                                </div>
                             </form>
                         </div>
                     <?php } else if($tipologin == 'admin') {?>
@@ -101,10 +102,10 @@ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
                                 <div class="form-group">
                                     <input type="submit" class="btnSubmit" value="Login" />
                                 </div>
-                                <!--<div class="form-group">
+                                <div class="form-group">
 
-                                <a href="#" class="ForgetPwd">¿Ha olvidado su contraseña?</a>
-                                </div>-->
+                                <a href="mailto:administracion@asdete.com?Subject=He%20olvidado%20la%20contraseña" class="PasswordOlvidado">¿Ha olvidado su contraseña?</a>
+                                </div>
                             </form>
                         </div>
                     <?php } else if($tipologin == 'sadmin') {?>
@@ -121,10 +122,10 @@ $incRoot = $_SERVER['DOCUMENT_ROOT'].$dirRoot;
                                 <div class="form-group">
                                     <input type="submit" class="btnSubmit" value="Login" />
                                 </div>
-                                <!--<div class="form-group">
+                                <div class="form-group">
 
-                                <a href="#" class="ForgetPwd">¿Ha olvidado su contraseña?</a>
-                                </div>-->
+                                <a href="mailto:administracion@asdete.com?Subject=He%20olvidado%20la%20contraseña" class="PasswordOlvidado">¿Ha olvidado su contraseña?</a>
+                                </div>
                             </form>
                         </div>
                     <?php } ?>

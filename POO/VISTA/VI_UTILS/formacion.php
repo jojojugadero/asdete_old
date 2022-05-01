@@ -88,7 +88,7 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
                                         <div class="item-box-blog-text">
                                         <p>Lorem ipsum dolor sit amet, adipiscing. Lorem ipsum dolor sit amet, consectetuer adipiscing. Lorem ipsum dolor sit amet, adipiscing. Lorem ipsum dolor sit amet, adipiscing. Lorem ipsum dolor sit amet, consectetuer adipiscing. Lorem ipsum dolor.</p>
                                         </div>
-                                        <div class="mt"> <a href="#" tabindex="0" class="btn bg-blue-ui white read">read more</a> </div>
+                                        <div class="mt"> <a href="mailto:formacionasdete@asdete.com?Subject=Formación" tabindex="0" class="btn bg-blue-ui white read">Inscribite</a>  </div>
                                         <!--Read More Button-->
                                     </div>
                                     </div>
@@ -116,7 +116,7 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
                                         <div class="item-box-blog-text">
                                         <p>Lorem ipsum dolor sit amet, adipiscing. Lorem ipsum dolor sit amet, consectetuer adipiscing. Lorem ipsum dolor sit amet, adipiscing. Lorem ipsum dolor sit amet, adipiscing. Lorem ipsum dolor sit amet, consectetuer adipiscing. Lorem ipsum dolor.</p>
                                         </div>
-                                        <div class="mt"> <a href="#" tabindex="0" class="btn bg-blue-ui white read">read more</a> </div>
+                                        <div class="mt"> <a href="mailto:formacionasdete@asdete.com?Subject=Formación" tabindex="0" class="btn bg-blue-ui white read">Inscribite</a> </div>
                                         <!--Read More Button-->
                                     </div>
                                     </div>
@@ -144,7 +144,7 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
                                         <div class="item-box-blog-text">
                                         <p>Lorem ipsum dolor sit amet, adipiscing. Lorem ipsum dolor sit amet, consectetuer adipiscing. Lorem ipsum dolor sit amet, adipiscing. Lorem ipsum dolor sit amet, adipiscing. Lorem ipsum dolor sit amet, consectetuer adipiscing. Lorem ipsum dolor.</p>
                                         </div>
-                                        <div class="mt"> <a href="#" tabindex="0" class="btn bg-blue-ui white read">read more</a> </div>
+                                        <div class="mt"> <a href="mailto:formacionasdete@asdete.com?Subject=Formación" tabindex="0" class="btn bg-blue-ui white read">Inscribite</a> </div>
                                         <!--Read More Button-->
                                     </div>
                                     </div>
@@ -178,7 +178,7 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
                                         <div class="item-box-blog-text">
                                         <p>Lorem ipsum dolor sit amet, adipiscing. Lorem ipsum dolor sit amet, consectetuer adipiscing. Lorem ipsum dolor sit amet, adipiscing. Lorem ipsum dolor sit amet, adipiscing. Lorem ipsum dolor sit amet, consectetuer adipiscing. Lorem ipsum dolor.</p>
                                         </div>
-                                        <div class="mt"> <a href="#" tabindex="0" class="btn bg-blue-ui white read">read more</a> </div>
+                                        <div class="mt"> <a href="mailto:formacionasdete@asdete.com?Subject=Formación" tabindex="0" class="btn bg-blue-ui white read">Inscribite</a> </div>
                                         <!--Read More Button-->
                                     </div>
                                     </div>
@@ -206,7 +206,7 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
                                         <div class="item-box-blog-text">
                                         <p>Lorem ipsum dolor sit amet, adipiscing. Lorem ipsum dolor sit amet, consectetuer adipiscing. Lorem ipsum dolor sit amet, adipiscing. Lorem ipsum dolor sit amet, adipiscing. Lorem ipsum dolor sit amet, consectetuer adipiscing. Lorem ipsum dolor.</p>
                                         </div>
-                                        <div class="mt"> <a href="#" tabindex="0" class="btn bg-blue-ui white read">read more</a> </div>
+                                        <div class="mt"> <a href="mailto:formacionasdete@asdete.com?Subject=Formación" tabindex="0" class="btn bg-blue-ui white read">Inscribite</a> </div>
                                         <!--Read More Button-->
                                     </div>
                                     </div>
@@ -234,7 +234,7 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
                                         <div class="item-box-blog-text">
                                         <p>Lorem ipsum dolor sit amet, adipiscing. Lorem ipsum dolor sit amet, consectetuer adipiscing. Lorem ipsum dolor sit amet, adipiscing. Lorem ipsum dolor sit amet, adipiscing. Lorem ipsum dolor sit amet, consectetuer adipiscing. Lorem ipsum dolor.</p>
                                         </div>
-                                        <div class="mt"> <a href="#" tabindex="0" class="btn bg-blue-ui white read">read more</a> </div>
+                                        <div class="mt"> <a href="mailto:formacionasdete@asdete.com?Subject=Formación" tabindex="0" class="btn bg-blue-ui white read">Inscribite</a> </div>
                                         <!--Read More Button-->
                                     </div>
                                     </div>
