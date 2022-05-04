@@ -111,7 +111,7 @@ include $incRoot."POO/CONTROLADOR/ControlEstilos.php";
                           <?php
                           /*En este select mostramos las empresas con 
                            el método de la clase Empresas, getEmpresas(), 
-                           lllamado en la clase appAfiliado*/
+                           llamado en la clase appAfiliado*/
                               if (count($empresas) == 0) {
                               } else {
                                 foreach($empresas as $fila_option){

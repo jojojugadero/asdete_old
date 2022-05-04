@@ -18,7 +18,7 @@ if($sesion != ''){
     if($sesion == 'afiliado_session'){
         //Ponemos a 'S' la variable $ind_sesion que usaremos más adelante
         $ind_sesion = 'S';
-        //En la variable $tipo_usuario guardaremos el tipo de usuario que ha iniicado sesión y que se mostrará por pantalla
+        //En la variable $tipo_usuario guardaremos el tipo de usuario que ha inicIado sesión y que se mostrará por pantalla
         $tipo_usuario = 'Afiliado';
         //Aquí guardamos la imagen de logout correspondiente al usuario 
         $img_desconectar = $dirRoot."VISTA/IMAGENES/logout_afil.png";
